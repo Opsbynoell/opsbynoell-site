@@ -1,0 +1,2 @@
+ALTER TABLE `botSessions` MODIFY COLUMN `step` enum('start','awaiting_name','awaiting_interest','awaiting_contact_method','awaiting_phone','awaiting_email','complete') NOT NULL DEFAULT 'start';--> statement-breakpoint
+ALTER TABLE `botSessions` ADD `leadName` varchar(128);
