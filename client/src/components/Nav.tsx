@@ -104,7 +104,7 @@ export default function Nav() {
 
           {/* Desktop CTAs */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }} className="hidden md:flex">
-            <a href="/book" className="btn-primary" style={{ padding: '0.625rem 1.5rem', fontSize: '0.875rem', fontWeight: 700 }}>
+            <a href="/book" className="btn-gradient" style={{ padding: '0.625rem 1.5rem', fontSize: '0.875rem', fontWeight: 700 }}>
               Book Free Intro Call
             </a>
           </div>
@@ -165,7 +165,7 @@ export default function Nav() {
             })}
           </nav>
           <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-            <a href="/book" className="btn-primary" style={{ display: 'flex', justifyContent: 'center', fontWeight: 700 }}>
+            <a href="/book" className="btn-gradient" style={{ display: 'flex', justifyContent: 'center', fontWeight: 700 }}>
               Book Free Intro Call
             </a>
           </div>
