@@ -44,23 +44,23 @@ function SectionBadge({ children }: { children: React.ReactNode }) {
 const differentiators = [
   {
     icon: Target,
-    title: "We build it. It runs. We're still here.",
-    body: "This isn't a tool you figure out yourself. We design your system, build every piece, and get it running. After that, the automation does the work, and we stay available when you need us. You never touch a setting.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Revenue outcomes, not vanity metrics.",
-    body: "We don't report on impressions or follower counts. We track what matters: new appointments booked, no-shows prevented, reviews collected, and revenue recovered.",
+    title: "We specialize in local businesses.",
+    body: "No enterprise clients. No SaaS. No corporate workflows. Every system we've built is for a local service business owner who wears every hat and needs infrastructure that fits their life.",
   },
   {
     icon: Zap,
-    title: "Custom-built for your business.",
-    body: "No generic templates. Every system is scoped around your specific workflows, client journey, and growth objectives, then maintained and optimized as you scale.",
+    title: "We build it. We manage it. We keep it running.",
+    body: "We design your system, install every component, test it before go-live, and manage it from there. You never touch a setting.",
+  },
+  {
+    icon: TrendingUp,
+    title: "We focus on revenue, not vanity metrics.",
+    body: "We track leads recovered, appointments booked, no-shows prevented, reviews generated, clients reactivated. Every conversation is anchored in revenue impact.",
   },
   {
     icon: Shield,
-    title: "We show you the math first.",
-    body: "Before you spend a dollar, we quantify exactly what your current operational gaps are costing you monthly. You see the numbers. You decide if the investment makes sense. No pressure, no pitch. Just clarity.",
+    title: "We show you the math first. Always.",
+    body: "Before you spend a dollar on a build, you see exactly what your operational gaps cost you monthly, quantified from your actual numbers. Informed decisions, every step.",
     highlight: true,
   },
 ];
@@ -195,7 +195,7 @@ export default function About() {
                 Most automation stops at the surface. We go deeper.
               </h2>
               <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1.0625rem', color: '#a0a8b8', lineHeight: 1.8 }}>
-                The automation industry is full of tools, platforms, and consultants who hand you a login and call it done. We built Ops by Noell because we believed businesses deserved something different: a partner who builds the system, manages it ongoing, and is accountable for the results.
+                Most hand you a login and call it done. We built Ops by Noell because we believed businesses deserved something different: a partner who builds the system, runs it, and stands behind it.
               </p>
             </div>
           </FadeItem>

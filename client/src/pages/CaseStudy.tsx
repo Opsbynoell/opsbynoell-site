@@ -391,7 +391,7 @@ export default function CaseStudy() {
               Ready to close your revenue gaps?
             </h2>
             <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#a0a8b8', lineHeight: 1.75, maxWidth: '460px', margin: '0 auto 2.5rem' }}>
-              Santa went from zero digital infrastructure to a fully automated business in two weeks. Start with a free 15-minute intro call and we'll show you exactly what we'd build for yours.
+              15 minutes. Free. No obligation. We map your gaps, show you what we'd build, and tell you what it costs.
             </p>
             <a href="/book" className="btn-gradient" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none', fontSize: '1rem', padding: '1rem 2.25rem' }}>
               Book Your Free Intro Call <ArrowRight size={16} />

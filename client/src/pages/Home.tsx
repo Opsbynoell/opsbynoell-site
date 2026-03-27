@@ -15,12 +15,12 @@ const FEATURES = [
   {
     icon: PhoneCall,
     title: 'Missed Call Text-Back',
-    desc: 'Every missed call gets an instant automated text so you never lose a lead to voicemail again.',
+    desc: 'Every missed call triggers an instant text response. The lead stays warm. You never lose another prospect to voicemail.',
   },
   {
     icon: CalendarCheck,
     title: 'Appointment Booking',
-    desc: 'Clients book themselves 24/7. No back-and-forth, no phone tag — just filled calendars.',
+    desc: 'Clients book themselves 24/7. No back-and-forth, no phone tag. Just filled calendars.',
   },
   {
     icon: MessageSquare,
@@ -40,25 +40,25 @@ const FEATURES = [
   {
     icon: TrendingUp,
     title: 'No-Show Reduction',
-    desc: 'Smart reminder sequences cut no-shows by up to 42%, protecting your revenue.',
+    desc: 'Automated reminder sequences at 48hr and 2hr before every appointment. No-shows drop 30-50% in the first month.',
   },
 ];
 
 const STEPS = [
   {
     number: '01',
-    title: 'We Audit Your Current Systems',
-    desc: "In a 30-minute call, we map where leads are slipping through the cracks and where you're losing revenue to manual work.",
+    title: 'Free Intro Call',
+    desc: 'A free 15-minute conversation about your business. We learn what\'s working, what isn\'t, and tell you honestly whether automation is the right fit.',
   },
   {
     number: '02',
-    title: 'We Build Your Automation Stack',
-    desc: 'Custom-built inside your CRM. Missed call flows, booking systems, follow-up sequences, review requests — all wired together.',
+    title: 'Revenue Audit',
+    desc: 'We map every revenue gap, quantify the monthly cost in dollars, and design your complete custom system on paper before you commit to building anything.',
   },
   {
     number: '03',
-    title: 'You Launch and We Manage It',
-    desc: "We go live, monitor performance, and optimize continuously. You focus on your business. We handle the backend.",
+    title: 'We Build It. We Run It.',
+    desc: 'We build your system, test everything before go-live, and manage it from there. You focus on your business. We handle the backend.',
   },
 ];
 
@@ -103,31 +103,32 @@ const PRICING = [
     name: 'Starter',
     price: '$797',
     period: '/mo',
-    desc: 'The essential foundation. Stop losing leads from missed calls and start filling your calendar automatically.',
+    desc: 'The essentials. Stop losing leads to missed calls and reduce no-shows with automated reminders.',
     features: [
       'Missed Call Text-Back',
-      'AI Booking + Reminder System',
-      'Onboarding & setup included',
-      'Ongoing management & maintenance',
+      'AI Booking + Appointment Reminders',
+      'Review Generation (Google + Yelp)',
+      'Monthly performance report',
+      'Ongoing monitoring and optimization',
     ],
-    note: 'One-time $1,500 setup fee.',
-    cta: 'Book Intro Call',
+    note: 'One-time $997 setup fee. Credited if audit done.',
+    cta: 'Get Started',
     featured: false,
   },
   {
     name: 'Growth',
     price: '$1,197',
     period: '/mo',
-    desc: 'The full build. Every system connected and working together, running always.',
+    desc: 'Everything in Starter, plus lead follow-up, client reactivation, and marketing automation. The complete system.',
     features: [
       'Everything in Starter',
-      'Automated Review Generation',
-      'Lead Follow-Up Automation',
-      'Marketing Automation',
-      'Monthly strategy call',
-      'Priority support & optimization',
+      'AI Lead Follow-Up (SMS + email)',
+      'Client Reactivation (30/60/90-day)',
+      'Marketing Automation + seasonal campaigns',
+      'Full CRM setup and management',
+      'Bi-weekly performance check-ins',
     ],
-    note: 'One-time $2,500 setup fee.',
+    note: 'One-time $1,497 setup fee. Credited if audit done.',
     cta: 'Most Popular',
     featured: true,
   },
@@ -135,41 +136,41 @@ const PRICING = [
     name: 'Scale',
     price: '$1,497',
     period: '/mo',
-    desc: 'Everything in Growth plus full AI operations. Built for businesses ready to run on autopilot.',
+    desc: 'Everything in Growth, plus AI Voice Agent, advanced analytics, and dedicated account management.',
     features: [
       'Everything in Growth',
-      'AI Voice Receptionist (24/7)',
-      'Advanced practice management integrations',
-      'AI-powered content for social & email',
-      'Dedicated monthly optimization',
-      'Same-day priority support',
+      'AI Voice Agent (24/7 call answering)',
+      'Revenue dashboard with weekly digests',
+      'Advanced lead scoring and routing',
+      'Custom workflow builds',
+      'Weekly strategy calls',
     ],
-    note: 'One-time $2,500 setup fee.',
-    cta: 'Book Intro Call',
+    note: 'One-time $1,997 setup fee. Credited if audit done.',
+    cta: 'Get Started',
     featured: false,
   },
 ];
 
 const FAQS = [
   {
-    q: 'What platforms do you work with?',
-    a: "We primarily build inside GoHighLevel, the most powerful all-in-one CRM for local businesses. We also integrate with Calendly, Stripe, Zapier, Google, Facebook, and dozens of other tools your business already uses.",
+    q: "What's included in the monthly fee?",
+    a: "The monthly fee includes everything: ongoing system management, monitoring, optimization, updates, and our support. You're not paying for software. You're paying for us to run it. We watch your systems, adjust based on performance, and make sure everything keeps working as your business evolves.",
+  },
+  {
+    q: "Are there setup fees separate from the monthly?",
+    a: "Yes. There's a one-time setup fee to build your systems. The amount depends on which package you choose. If you've completed the Revenue Audit, the $497 audit fee is credited toward your setup cost. Setup fees are disclosed clearly before you commit to anything.",
   },
   {
     q: "How long does it take to get set up?",
-    a: "Most clients are fully live within 7–14 days of onboarding. We handle everything — setup, testing, and launch. You'll be running automated follow-up, booking, and reviews faster than you think.",
-  },
-  {
-    q: "Do I need any technical knowledge?",
-    a: "None. We design, build, and manage everything. You'll get a simple dashboard to monitor performance, and we handle all the technical work on the backend.",
+    a: "Most clients are fully live within 7 to 14 days. We handle everything: setup, testing, and launch. You don't configure a single setting.",
   },
   {
     q: "Is there a contract?",
-    a: "We offer month-to-month plans after the initial 3-month onboarding period. We're confident in our results — we don't lock you into contracts you don't want.",
+    a: "No. Month-to-month, always. We keep your business because we deliver results, not because you're contractually stuck. Cancel with 30 days' notice, no penalty.",
   },
   {
-    q: "What makes you different from a regular marketing agency?",
-    a: "We don't run ads or create content. We build operational infrastructure — the systems that capture, respond to, and convert leads automatically. Our ROI is measurable from day one.",
+    q: "What if I want to start with just one system?",
+    a: "The Missed Call Text-Back system is available as a standalone entry offer: $497 setup + $197/month. Many clients start here, see immediate results, and expand to a full package. It's a low-risk way to prove the concept before committing to a full build.",
   },
 ];
 
@@ -274,13 +275,13 @@ export default function Home() {
             color: '#a0a8b8', lineHeight: 1.75,
             maxWidth: '600px', margin: '0 auto 2.5rem',
           }}>
-            We design, install, and manage AI automation systems for local service businesses — handling lead capture, booking, follow-up, and reviews so you never miss revenue again.
+            We design, install, and manage AI automation systems for local service businesses. Lead capture, booking, follow-up, reviews. All running automatically so you never miss revenue again.
           </p>
 
           {/* CTAs */}
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '3.5rem' }}>
             <a href="/book" className="btn-gradient" style={{ padding: '1rem 2rem', fontSize: '1rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-              Book Free Strategy Call <ArrowRight size={16} />
+              Book Free Intro Call <ArrowRight size={16} />
             </a>
             <a href="/services" className="btn-outline" style={{ padding: '1rem 2rem', fontSize: '1rem' }}>
               See How It Works
@@ -495,7 +496,7 @@ export default function Home() {
               Simple, transparent{' '}<GradientText>pricing</GradientText>
             </h2>
             <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1.0625rem', color: '#a0a8b8', maxWidth: '460px', margin: '0 auto', lineHeight: 1.7 }}>
-              No setup fees. No hidden costs. Cancel anytime after 3 months.
+              Transparent pricing. No contracts. No lock-in. Cancel anytime.
             </p>
           </div>
 
@@ -590,14 +591,14 @@ export default function Home() {
             Stop losing leads to{' '}<GradientText>slow follow-up.</GradientText>
           </h2>
           <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1.125rem', color: '#a0a8b8', maxWidth: '500px', margin: '0 auto 2.5rem', lineHeight: 1.75 }}>
-            Book a free 30-minute strategy call. We'll map your automation opportunities and show you exactly what we'd build.
+            15 minutes. Free. No obligation. We map your gaps, show you what we'd build, and tell you what it costs.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="/book" className="btn-gradient" style={{ padding: '1.125rem 2.25rem', fontSize: '1.0625rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-              Book Free Strategy Call <ArrowRight size={17} />
+              Book Free Intro Call <ArrowRight size={17} />
             </a>
             <a href="/case-study" className="btn-outline" style={{ padding: '1.125rem 2.25rem', fontSize: '1.0625rem' }}>
-              See Our Work
+              See Our Results
             </a>
           </div>
           <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#6b7280', marginTop: '1.5rem' }}>
