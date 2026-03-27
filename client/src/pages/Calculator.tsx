@@ -1,0 +1,59 @@
+/*
+ * OPS BY NOELL — Revenue Calculator Page
+ * Standalone page for the interactive cost-of-inaction calculator
+ */
+
+import Nav from '@/components/Nav';
+import Footer from '@/components/Footer';
+import RevenueCalculator from '@/components/RevenueCalculator';
+
+export default function Calculator() {
+  return (
+    <div style={{ backgroundColor: '#010509', minHeight: '100vh' }}>
+      <Nav />
+
+      {/* Hero */}
+      <section style={{
+        position: 'relative',
+        paddingTop: '140px',
+        paddingBottom: '2rem',
+        textAlign: 'center',
+        overflow: 'hidden',
+      }}>
+        <div style={{
+          position: 'absolute', inset: 0, pointerEvents: 'none',
+          background: 'linear-gradient(180deg, rgba(120,58,237,0.18) 0%, rgba(139,92,246,0.12) 35%, #010509 72%)',
+        }} />
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <p style={{
+            fontFamily: "'Sora', sans-serif",
+            fontSize: '0.75rem', fontWeight: 600,
+            letterSpacing: '0.1em', textTransform: 'uppercase',
+            color: '#A78BFA', marginBottom: '1rem',
+          }}>
+            Revenue Calculator
+          </p>
+          <h1 style={{
+            fontFamily: "'Satoshi', sans-serif",
+            fontSize: 'clamp(2rem, 4vw, 3rem)',
+            fontWeight: 700, color: '#ffffff',
+            lineHeight: 1.1, marginBottom: '1rem',
+          }}>
+            What are your operational gaps costing you?
+          </h1>
+          <p style={{
+            fontFamily: "'Sora', sans-serif",
+            fontSize: '1rem', color: '#868583',
+            lineHeight: 1.75, maxWidth: '520px', margin: '0 auto',
+          }}>
+            Adjust the sliders to match your business. See exactly how much revenue slips through the cracks each month.
+          </p>
+        </div>
+      </section>
+
+      <RevenueCalculator />
+
+      <Footer />
+    </div>
+  );
+}
