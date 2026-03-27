@@ -107,11 +107,9 @@ export default function Footer() {
             <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {[
                 { label: 'Home', href: '/' },
-                { label: 'Solutions', href: '/solutions' },
                 { label: 'Services', href: '/services' },
-                { label: 'Case Study', href: '/case-study' },
+                { label: 'Results', href: '/case-study' },
                 { label: 'About', href: '/about' },
-                { label: 'Industries We Serve', href: '/industries' },
                 { label: 'Book a Free Intro Call', href: '/book' },
               ].map((link) => (
                 <Link

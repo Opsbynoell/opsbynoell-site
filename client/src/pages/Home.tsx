@@ -101,49 +101,51 @@ const TESTIMONIALS = [
 const PRICING = [
   {
     name: 'Starter',
-    price: '$997',
+    price: '$797',
     period: '/mo',
-    desc: 'For solo operators ready to stop losing leads.',
+    desc: 'The essential foundation. Stop losing leads from missed calls and start filling your calendar automatically.',
     features: [
-      'Missed call text-back',
-      'Appointment booking automation',
-      '1 lead nurture sequence',
-      'Review request automation',
-      'Monthly performance report',
+      'Missed Call Text-Back',
+      'AI Booking + Reminder System',
+      'Onboarding & setup included',
+      'Ongoing management & maintenance',
     ],
-    cta: 'Get Started',
+    note: 'One-time $1,500 setup fee.',
+    cta: 'Book Intro Call',
     featured: false,
   },
   {
     name: 'Growth',
-    price: '$1,997',
+    price: '$1,197',
     period: '/mo',
-    desc: 'For growing businesses ready to scale on autopilot.',
+    desc: 'The full build. Every system connected and working together, running always.',
     features: [
       'Everything in Starter',
-      'AI Receptionist (24/7)',
-      '3 custom nurture sequences',
-      'No-show reduction system',
-      'Live dashboard access',
-      'Bi-weekly strategy call',
+      'Automated Review Generation',
+      'Lead Follow-Up Automation',
+      'Marketing Automation',
+      'Monthly strategy call',
+      'Priority support & optimization',
     ],
+    note: 'One-time $2,500 setup fee.',
     cta: 'Most Popular',
     featured: true,
   },
   {
-    name: 'Full Stack',
-    price: 'Custom',
-    period: '',
-    desc: 'For multi-location businesses that need the full system.',
+    name: 'Scale',
+    price: '$1,497',
+    period: '/mo',
+    desc: 'Everything in Growth plus full AI operations. Built for businesses ready to run on autopilot.',
     features: [
       'Everything in Growth',
-      'Multi-location setup',
-      'Custom AI workflows',
-      'CRM integration & cleanup',
-      'Dedicated account manager',
-      'Priority support',
+      'AI Voice Receptionist (24/7)',
+      'Advanced practice management integrations',
+      'AI-powered content for social & email',
+      'Dedicated monthly optimization',
+      'Same-day priority support',
     ],
-    cta: 'Book a Call',
+    note: 'One-time $2,500 setup fee.',
+    cta: 'Book Intro Call',
     featured: false,
   },
 ];
@@ -280,7 +282,7 @@ export default function Home() {
             <a href="/book" className="btn-gradient" style={{ padding: '1rem 2rem', fontSize: '1rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
               Book Free Strategy Call <ArrowRight size={16} />
             </a>
-            <a href="/solutions" className="btn-outline" style={{ padding: '1rem 2rem', fontSize: '1rem' }}>
+            <a href="/services" className="btn-outline" style={{ padding: '1rem 2rem', fontSize: '1rem' }}>
               See How It Works
             </a>
           </div>
@@ -519,7 +521,10 @@ export default function Home() {
                     <span style={{ fontFamily: "'Satoshi', sans-serif", fontSize: '2.25rem', fontWeight: 800, color: '#ffffff' }}>{price}</span>
                     {period && <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#6b7280' }}>{period}</span>}
                   </div>
-                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#a0a8b8', lineHeight: 1.6, marginBottom: '1.5rem' }}>{desc}</p>
+                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#a0a8b8', lineHeight: 1.6, marginBottom: '1rem' }}>{desc}</p>
+                  {'note' in pkg && (pkg as any).note && (
+                    <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.75rem', color: '#6b7280', marginBottom: '1rem' }}>{(pkg as any).note}</p>
+                  )}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.625rem', marginBottom: '2rem' }}>
                     {features.map((f) => (
                       <div key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.625rem' }}>
@@ -591,7 +596,7 @@ export default function Home() {
             <a href="/book" className="btn-gradient" style={{ padding: '1.125rem 2.25rem', fontSize: '1.0625rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
               Book Free Strategy Call <ArrowRight size={17} />
             </a>
-            <a href="/solutions" className="btn-outline" style={{ padding: '1.125rem 2.25rem', fontSize: '1.0625rem' }}>
+            <a href="/case-study" className="btn-outline" style={{ padding: '1.125rem 2.25rem', fontSize: '1.0625rem' }}>
               See Our Work
             </a>
           </div>

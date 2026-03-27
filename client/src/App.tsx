@@ -163,19 +163,19 @@ function Router() {
   return (
     <>
       {/* Flat dark background — no animation */}
-      <div style={{ position: 'fixed', inset: 0, zIndex: 0, backgroundColor: '#0A0A0A', pointerEvents: 'none' }} />
+      <div style={{ position: 'fixed', inset: 0, zIndex: 0, backgroundColor: '#010509', pointerEvents: 'none' }} />
       <MetaUpdater />
       {/* Page content wrapper — z-index:2 ensures it sits above the fixed overlay */}
       <div style={{ position: 'relative', zIndex: 2 }}>
       {!isAdminPage && <ChatWidget />}
       <Switch>
         <Route path="/" component={Home} />
-        <Route path="/solutions" component={Solutions} />
+        <Route path="/solutions" component={Services} />
         <Route path="/services" component={Services} />
         <Route path="/case-study" component={CaseStudy} />
         <Route path="/about" component={About} />
         <Route path="/book" component={Book} />
-        <Route path="/industries" component={Industries} />
+        <Route path="/industries" component={Services} />
         <Route path="/newsletter" component={Newsletter} />
         <Route path="/analytics" component={BotAnalytics} />
         <Route path="/admin/inbox" component={ChatInbox} />
