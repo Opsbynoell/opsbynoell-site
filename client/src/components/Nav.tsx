@@ -16,7 +16,7 @@ const navLinks = [
   { label: 'About', href: '/about' },
 ];
 
-const LOGO_URL = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663120940829/n7rBKSsjtvarmxAHpVkZmb/ops-by-noell-logo-new_f7b785e3.png';
+const LOGO_URL = '/logo.png';
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
