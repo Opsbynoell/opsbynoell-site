@@ -500,7 +500,7 @@ export default function Home() {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', maxWidth: '960px', margin: '0 auto' }}>
-            {PRICING.map(({ name, price, period, desc, features, cta, featured }) => (
+            {PRICING.map(({ name, price, period, desc, features, cta, featured, note }) => (
               <div key={name} className={featured ? 'pricing-card featured' : 'pricing-card'}
                 style={{ padding: '2rem', position: 'relative', display: 'flex', flexDirection: 'column' }}>
                 {featured && (
@@ -522,8 +522,8 @@ export default function Home() {
                     {period && <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#6b7280' }}>{period}</span>}
                   </div>
                   <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#a0a8b8', lineHeight: 1.6, marginBottom: '1rem' }}>{desc}</p>
-                  {'note' in pkg && (pkg as any).note && (
-                    <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.75rem', color: '#6b7280', marginBottom: '1rem' }}>{(pkg as any).note}</p>
+                  {note && (
+                    <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.75rem', color: '#6b7280', marginBottom: '1rem' }}>{note}</p>
                   )}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.625rem', marginBottom: '2rem' }}>
                     {features.map((f) => (
