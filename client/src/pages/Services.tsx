@@ -1,11 +1,11 @@
 /*
  * OPS BY NOELL — Services Page (NeuraFlas Design System)
  * Merged: Solutions + Services + Industries
- * Sections: Hero → What We Build (6 builds) → Service Deep-Dives (7) → Who We Serve (6 industries) → Packages → FAQ → CTA
+ * Sections: Hero → What We Build (6 builds) → Service Deep-Dives (6) → Who We Serve (6 industries) → Packages → FAQ → CTA
  */
 
 import { useState } from 'react';
-import { ArrowRight, Bot, Zap, MessageSquare, BarChart3, Phone, Calendar, Star, Megaphone, Settings, Mic, ChevronDown, Check, Scissors, Heart, Smile, Home as HomeIcon, Dumbbell, Stethoscope } from 'lucide-react';
+import { ArrowRight, Bot, Zap, MessageSquare, BarChart3, Phone, Calendar, Star, Megaphone, Settings, ChevronDown, Check, Scissors, Heart, Smile, Home as HomeIcon, Dumbbell, Stethoscope } from 'lucide-react';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import { useFadeIn } from '@/hooks/useFadeIn';
@@ -53,43 +53,37 @@ const SERVICES = [
     icon: Phone, number: '01', title: 'Missed Call Text-Back', tagline: 'Never lose a lead to voicemail again.',
     whatItDoes: 'The moment a call goes unanswered, your system fires an instant, personalized text message to the caller within seconds. The message acknowledges their call, offers to help, and guides them toward booking. No manual action required.',
     whyItMatters: "Studies show 85% of callers who don't reach a business on the first try will not call back. They call your competitor. Missed Call Text-Back eliminates that window entirely, keeping leads warm and in conversation before they disappear.",
-    bestFor: "Solo practitioners, service providers, and any appointment-based business that can't answer the phone while with a client.",
+    bestFor: 'Any appointment-based business that receives phone calls: massage therapists, med spas, chiropractors, salons, wellness providers, consultants.',
   },
   {
     icon: Calendar, number: '02', title: 'AI Booking + Reminder System', tagline: 'Fill your calendar without picking up the phone.',
     whatItDoes: 'A fully automated booking system that allows clients to schedule appointments 24/7 from your website, text, or social media. Automated reminders go out via text and email at strategic intervals before each appointment.',
     whyItMatters: 'No-shows cost local service businesses an estimated 10–15% of annual revenue. Automated reminders reduce no-shows by 30–50%. Combined with 24/7 booking, you capture clients who decide to book at 10pm on a Sunday.',
-    bestFor: 'Any service business with a calendar: wellness practices, salons, dental offices, home services, and consultants who book appointments.',
+    bestFor: 'Any business with a calendar: spas, clinics, salons, wellness studios, consultants, coaches.',
   },
   {
     icon: Star, number: '03', title: 'Automated Review Generation', tagline: 'Turn every satisfied client into a five-star review.',
     whatItDoes: 'After each appointment, your system automatically sends a review request via text, timed for peak response rates. Clients are guided to your preferred platform (Google, Yelp, etc.) with a frictionless one-tap experience.',
     whyItMatters: '93% of consumers read online reviews before choosing a local service provider. Businesses with consistent review generation outrank competitors and convert more website visitors. Most businesses never ask, and lose the compounding benefit of social proof.',
-    bestFor: 'Every service business with an online presence. Reviews are the single highest-ROI reputation asset you can build.',
+    bestFor: 'Every local service business. Reviews are the single highest-ROI reputation asset you can build.',
   },
   {
     icon: MessageSquare, number: '04', title: 'Lead Follow-Up Automation', tagline: 'Most businesses follow up once. We follow up until it converts.',
-    whatItDoes: "Follow-up sequences that activate when a lead doesn't book, when a client hasn't returned, or when a prospect goes cold. Personalized messages go out at the right intervals via text, email, or both.",
-    whyItMatters: "80% of sales require 5+ follow-up touches. Most businesses follow up once, if at all. Automated follow-up sequences recover revenue that would otherwise be permanently lost from leads who were interested but got busy.",
-    bestFor: 'Service businesses with high-value offerings where prospects need multiple touches before booking: med spas, dental practices, home services, and professional services.',
+    whatItDoes: "Multi-touch follow-up sequences that activate when a lead doesn't book, when a client hasn't returned, or when a prospect goes cold. Personalized messages go out at the right intervals via text, email, or both.",
+    whyItMatters: "80% of sales require 5+ follow-up touches. Most businesses follow up once, if at all. Automated follow-up sequences recover revenue that would otherwise be permanently lost, from leads who were interested but got busy.",
+    bestFor: 'Businesses with longer sales cycles, high-value services, or clients who need multiple touchpoints before committing.',
   },
   {
     icon: Megaphone, number: '05', title: 'Marketing Automation', tagline: 'Stay top of mind without lifting a finger.',
     whatItDoes: 'Automated campaigns that re-engage past clients, promote seasonal offers, and keep your brand present between appointments. Includes birthday messages, win-back sequences, referral requests, and consistent outreach to your existing client base.',
     whyItMatters: 'Acquiring a new client costs 5–7x more than retaining an existing one. Your past clients are your most valuable asset, and most businesses never market to them systematically. Marketing automation turns your client list into a recurring revenue engine.',
-    bestFor: 'Established service businesses with an existing client base looking to increase rebooking rates, lifetime value, and referrals.',
+    bestFor: 'Established businesses with an existing client base looking to increase lifetime value and referrals.',
   },
   {
-    icon: Mic, number: '06', title: 'AI Voice Agent', tagline: 'Your phone, answered by AI. 24/7. Sounds human.',
-    whatItDoes: 'A trained AI voice agent that answers every inbound call, handles FAQs, books appointments, takes messages, and transfers to you when needed. All in a natural, conversational voice — configured specifically for your business, your services, and your tone.',
-    whyItMatters: "The average local service business misses 27% of inbound calls. Each missed call is a potential client who called your competitor next. An AI voice agent eliminates that gap entirely — answering every call instantly, 24 hours a day, 7 days a week, even when you're with a client or asleep. At a fraction of the cost of a human receptionist.",
-    bestFor: 'High-volume appointment businesses where a missed call means a missed booking.',
-  },
-  {
-    icon: Settings, number: '07', title: 'Custom Operations Buildout', tagline: "If it's a repeatable process, it can be automated.",
+    icon: Settings, number: '06', title: 'Custom Operations Buildout', tagline: "If it's a repeatable process, it can be automated.",
     whatItDoes: "Your business doesn't fit a template. We scope and build exactly what you need: internal process automation, team workflows, client onboarding systems, reporting, integrations, and beyond. Every custom buildout starts with a deep-dive into your current operations to identify every manual step that can be systematized.",
     whyItMatters: 'Most automation agencies stop at lead capture. We go further. The real leverage in a growing business is in the back office: the handoffs, the follow-through, the reporting, the onboarding. When those run automatically, you scale without adding headcount.',
-    bestFor: 'Growing businesses with multiple team members, complex scheduling, or unique workflows that standard automation cannot handle.',
+    bestFor: 'Growing businesses with complex operations, multiple team members, or unique workflows that off-the-shelf tools can\'t handle.',
   },
 ];
 
@@ -128,21 +122,11 @@ const INDUSTRIES = [
 
 const PACKAGES = [
   {
-    name: 'Revenue Audit',
-    subtitle: 'Recommended Starting Point',
-    price: '$497',
-    period: 'one-time · credited toward setup',
-    desc: 'A deep-dive into your operation. We map every gap, quantify the monthly revenue impact, and hand you a clear roadmap of exactly what to build and in what order.',
-    includes: ['Full lead flow & operations review', 'Revenue impact quantification per gap', 'Custom automation roadmap', 'System design recommendations', 'Priority ranking: biggest wins first'],
-    cta: 'Book Intro Call',
-    featured: false,
-  },
-  {
     name: 'Starter',
     subtitle: 'Lead Capture + Booking Fix',
     price: '$797',
-    period: '/mo · + $1,500 setup',
-    desc: 'The essential foundation. Stop losing leads from missed calls and start filling your calendar automatically.',
+    period: '/mo · + $997 setup',
+    desc: 'The essential foundation for any appointment-based business. Stop losing leads from missed calls and start filling your calendar automatically.',
     includes: ['Missed Call Text-Back', 'AI Booking + Reminder System', 'Onboarding & setup included', 'Ongoing management & maintenance'],
     cta: 'Book Intro Call',
     featured: false,
@@ -151,20 +135,30 @@ const PACKAGES = [
     name: 'Growth',
     subtitle: 'Full AI Back Office',
     price: '$1,197',
-    period: '/mo · + $2,500 setup',
-    desc: 'The full build. Every system connected and working together: follow-up, bookings, reminders, reviews, and reactivation.',
-    includes: ['Everything in Starter', 'Automated Review Generation', 'Lead Follow-Up Automation', 'Marketing Automation', 'Monthly strategy call', 'Priority support & optimization'],
+    period: '/mo · + $1,497 setup',
+    desc: 'The complete operational transformation. Every system working together to capture, convert, retain, and grow, on autopilot.',
+    includes: ['Everything in Starter', 'Automated Review Generation', 'Lead Follow-Up Automation', 'Marketing Automation', 'Priority support & optimization'],
     cta: 'Most Popular',
     featured: true,
   },
   {
-    name: 'Scale',
-    subtitle: 'Full AI Operations System',
-    price: '$1,497',
-    period: '/mo · + $2,500 setup',
-    desc: 'Everything in Growth plus the full AI operations stack — built for businesses ready to run on autopilot.',
-    includes: ['Everything in Growth', 'AI Voice Receptionist (24/7)', 'Advanced practice management integrations', 'AI-powered content for social & email', 'Dedicated monthly optimization', 'Same-day priority support'],
+    name: 'Website Add-On',
+    subtitle: 'Professional Web Presence',
+    price: 'Add-On',
+    period: 'available with any package',
+    desc: 'A clean, conversion-focused website designed to work with your automation systems, not just look good.',
+    includes: ['Custom website design & build', 'Booking integration included', 'Mobile-optimized', 'SEO foundation'],
     cta: 'Book Intro Call',
+    featured: false,
+  },
+  {
+    name: 'Custom',
+    subtitle: 'Full Operations Buildout',
+    price: 'Scoped',
+    period: 'pricing after audit',
+    desc: 'For businesses with complex or unique operational needs. We scope, build, and manage a fully custom automation stack: internal workflows, integrations, team systems, and beyond.',
+    includes: ['Deep-dive operations scoping', 'Custom workflow & process automation', 'Team systems & internal integrations', 'Client onboarding automation', 'Reporting & data pipelines', 'Ongoing management & iteration'],
+    cta: 'Book a Scoping Call',
     featured: false,
   },
 ];
@@ -262,7 +256,7 @@ export default function Services() {
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <SectionBadge>The Full Service Stack</SectionBadge>
             <h2 style={{ fontFamily: "'Satoshi', sans-serif", fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
-              Seven systems. <GradientText>One integrated operation.</GradientText>
+              Six systems. <GradientText>One integrated operation.</GradientText>
             </h2>
             <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1.0625rem', color: '#a0a8b8', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
               Each service is done-for-you from day one — designed, built, and managed by us. You don't touch a single setting.

@@ -38,29 +38,29 @@ const expectations = [
     detail: 'Video or phone, your choice. Relaxed, conversational, no slides or sales deck.',
   },
   {
-    icon: MessageSquare,
-    title: 'We learn about your business',
-    detail: 'Tell us what you do, who you serve, and where things feel broken. We listen first.',
-  },
-  {
     icon: FileSearch,
-    title: 'You learn about us',
-    detail: 'We\'ll explain exactly how we work, what we build, and what results look like for businesses like yours.',
+    title: 'We learn about your business',
+    detail: 'Lead flow, internal processes, team workflows, and client experience. We listen first and ask the right questions.',
   },
   {
     icon: TrendingDown,
-    title: 'We spot the obvious gaps',
-    detail: 'Even in 15 minutes, we can usually identify 2–3 places where automation would immediately recover revenue or reduce manual work.',
+    title: 'Top revenue leaks identified',
+    detail: 'Even in 15 minutes, we can usually identify 2-3 operational gaps that are costing you the most right now.',
   },
   {
     icon: Calculator,
-    title: 'Clear next step',
-    detail: 'If we\'re a fit, we\'ll recommend a paid Revenue Audit to map your full operation and design your system.',
+    title: 'Quantified monthly cost',
+    detail: 'We calculate a plain-language estimate of what each gap is costing you per month.',
+  },
+  {
+    icon: MessageSquare,
+    title: 'Plain-language recommendation',
+    detail: 'We tell you exactly what we\'d build for your business and why. No jargon.',
   },
   {
     icon: Shield,
     title: 'Zero pressure',
-    detail: 'This is a conversation, not a pitch. You leave with clarity regardless of what you decide.',
+    detail: 'This is a diagnostic call, not a sales call. You leave with clarity regardless of what you decide.',
   },
 ];
 
@@ -701,7 +701,7 @@ export default function Book() {
               lineHeight: 1.75,
               maxWidth: '520px',
             }}>
-              Book a free 15-minute intro call with Nikki. We'll learn about your business, show you where automation can make an immediate difference, and tell you exactly what we'd build. If it's a fit, we'll recommend a Revenue Audit as the next step. If it's not, we'll tell you that too.
+              Book a free intro call with Nikki. We'll learn about your business, identify where automation can make an immediate difference, and tell you exactly what we'd build. If it's a fit, we'll recommend a Revenue Audit as the next step. If it's not, we'll tell you that too.
             </p>
           </FadeItem>
         </div>
