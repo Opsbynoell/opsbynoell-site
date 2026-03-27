@@ -62,18 +62,19 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* Brand dark tokens */
-  --color-brand-bg:        #0A0A0A;
-  --color-brand-card:      #141414;
-  --color-brand-surface:   #1A1A1A;
-  --color-brand-headline:  #F5F0EB;
-  --color-brand-body:      #C8C0B8;
-  --color-brand-muted:     #8A8480;
+  /* Brand dark tokens — NeuraFlas design system */
+  --color-brand-bg:        #010509;
+  --color-brand-card:      #010509;
+  --color-brand-surface:   #0a0d14;
+  --color-brand-headline:  #ffffff;
+  --color-brand-body:      #a0a8b8;
+  --color-brand-muted:     #6b7280;
   --color-brand-accent:    #A78BFA;
-  --color-brand-accent-h:  #8B6EE8;
-  --color-brand-accent-bg: rgba(167,139,250,0.12);
-  --color-brand-secondary: #F5F0EB;
-  --color-brand-border:    #2A2A2A;
+  --color-brand-accent-2:  #C4B5FD;
+  --color-brand-accent-h:  #7C3AED;
+  --color-brand-accent-bg: rgba(167,139,250,0.08);
+  --color-brand-secondary: #ffffff;
+  --color-brand-border:    rgba(167,139,250,0.15);
 }
 
 :root {
@@ -123,9 +124,9 @@
   }
 
   body {
-    background-color: #0A0A0A;
-    color: #F5F0EB;
-    font-family: 'Inter', sans-serif;
+    background-color: #010509;
+    color: #ffffff;
+    font-family: 'Sora', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -348,16 +349,23 @@
 
 /* ─── FRAMER AI AGENCY UPGRADES ─────────────────────────────────── */
 
-/* Gradient headline text */
+/* Gradient headline text — NeuraFlas style */
 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #E8E0FF 45%, #A78BFA 100%);
+  background: linear-gradient(90deg, #A78BFA 0%, #C4B5FD 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-purple {
-  background: linear-gradient(135deg, #C4B5FD 0%, #818CF8 100%);
+  background: linear-gradient(90deg, #A78BFA 0%, #C4B5FD 60%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-white {
+  background: linear-gradient(135deg, #ffffff 0%, #e2d9f3 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -403,49 +411,71 @@
   border-radius: 1rem;
 }
 
+/* NeuraFlas-style feature card — inset glow signature */
 .glass-card-violet {
-  background: rgba(167, 139, 250, 0.04);
-  border: 1px solid rgba(167, 139, 250, 0.18);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-radius: 1rem;
-  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  background: #010509;
+  border: 1px solid rgba(167,139,250,0.12);
+  border-radius: 20px;
+  box-shadow: rgba(167,139,250,0.05) 0px 4px 37px 18px inset;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .glass-card-violet:hover {
-  border-color: rgba(167, 139, 250, 0.4);
-  background: rgba(167, 139, 250, 0.07);
-  box-shadow: 0 8px 40px rgba(139, 92, 246, 0.12);
+  border-color: rgba(167,139,250,0.28);
+  box-shadow: rgba(167,139,250,0.12) 0px 4px 37px 18px inset, 0 0 40px rgba(167,139,250,0.06);
 }
 
 /* Gradient primary button */
+/* NeuraFlas-style primary button */
 .btn-gradient {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%);
+  background: linear-gradient(90deg, #A78BFA 0%, #6366F1 100%);
   color: #ffffff;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.9375rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  padding: 0.875rem 2rem;
+  font-family: 'Sora', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1.125rem 1.75rem;
   border: none;
-  border-radius: 0.625rem;
-  transition: all 0.2s ease;
+  border-radius: 12px;
+  transition: all 0.25s ease;
   text-decoration: none;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.35), 0 1px 4px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 0 30px rgba(167,139,250,0.35);
   position: relative;
 }
 
 .btn-gradient:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 40px rgba(139, 92, 246, 0.55), 0 4px 12px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 50px rgba(167,139,250,0.55);
 }
 
 .btn-gradient:active {
   transform: translateY(0);
+}
+
+/* Ghost/outline button */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: #ffffff;
+  font-family: 'Sora', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1.125rem 1.75rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  border-color: rgba(167,139,250,0.5);
+  background: rgba(167,139,250,0.08);
 }
 
 /* Marquee */
@@ -523,7 +553,7 @@
 .icon-box {
   width: 44px;
   height: 44px;
-  background: linear-gradient(135deg, rgba(139,92,246,0.2) 0%, rgba(99,102,241,0.15) 100%);
+  background: linear-gradient(135deg, rgba(167,139,250,0.2) 0%, rgba(99,102,241,0.15) 100%);
   border: 1px solid rgba(167,139,250,0.25);
   border-radius: 0.625rem;
   display: flex;
@@ -534,7 +564,7 @@
 
 /* Glow on CTA section */
 .cta-glow-bg {
-  background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(139,92,246,0.18) 0%, transparent 70%);
+  background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(167,139,250,0.18) 0%, transparent 70%);
 }
 
 /* ─── HERO SPLIT LAYOUT ─────────────────────────────────────────── */
@@ -575,11 +605,139 @@
   background: rgba(167,139,250,0.1);
   border: 1px solid rgba(167,139,250,0.2);
   border-radius: 4px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Sora', sans-serif;
   font-size: 0.625rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #A78BFA;
+}
+
+/* ─── NEURAFLAS DESIGN SYSTEM ADDITIONS ─────────────────────────── */
+.font-satoshi { font-family: 'Satoshi', sans-serif; }
+.font-sora    { font-family: 'Sora', sans-serif; }
+
+.hero-gradient-bg {
+  background: linear-gradient(180deg, rgba(36,64,180,0.35) 0%, rgba(100,50,220,0.2) 30%, #010509 70%);
+}
+
+.section-heading {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+/* Giant faded step numbers — NeuraFlas How It Works */
+.step-number {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(6rem, 12vw, 11.25rem);
+  font-weight: 700;
+  line-height: 1;
+  background: linear-gradient(179deg, rgb(71,85,102) 0%, rgba(30,38,47,0.7) 56%, rgba(0,0,0,0) 74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  user-select: none;
+}
+
+/* Sticky nav with glass blur */
+.nav-blur {
+  background: rgba(1,5,9,0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(167,139,250,0.1);
+}
+
+/* Integration logo pill */
+.integration-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 100px;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  white-space: nowrap;
+}
+
+/* Marquee / infinite scroll strip */
+.marquee-track {
+  display: flex;
+  gap: 1.5rem;
+  animation: marquee 28s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Feature card accent-top line on hover */
+.feature-card {
+  background: #010509;
+  border: 1px solid rgba(167,139,250,0.12);
+  border-radius: 20px;
+  box-shadow: rgba(167,139,250,0.05) 0px 4px 37px 18px inset;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+.feature-card:hover {
+  box-shadow: rgba(167,139,250,0.12) 0px 4px 60px 24px inset;
+  border-color: rgba(167,139,250,0.3);
+  transform: translateY(-4px);
+}
+
+/* Pricing card */
+.pricing-card {
+  background: #010509;
+  border: 1px solid rgba(167,139,250,0.15);
+  border-radius: 24px;
+  box-shadow: rgba(167,139,250,0.05) 0px 4px 37px 18px inset;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.pricing-card.featured {
+  border-color: rgba(167,139,250,0.45);
+  box-shadow: rgba(167,139,250,0.18) 0px 4px 60px 24px inset;
+}
+
+/* Testimonial card */
+.testimonial-card {
+  background: #010509;
+  border: 1px solid rgba(167,139,250,0.1);
+  border-radius: 20px;
+  box-shadow: rgba(167,139,250,0.04) 0px 4px 30px 14px inset;
+}
+
+/* FAQ accordion item */
+.faq-item {
+  border-bottom: 1px solid rgba(167,139,250,0.12);
+}
+
+/* Section divider glow line */
+.glow-divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #A78BFA, #C4B5FD);
+  border-radius: 99px;
+  margin: 0 auto 2rem;
+}
+
+/* Accent icon wrapper */
+.icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(167,139,250,0.12);
+  border: 1px solid rgba(167,139,250,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 

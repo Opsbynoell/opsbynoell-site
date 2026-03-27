@@ -1,8 +1,7 @@
 /*
- * OPS BY NOELL — Footer Component (Dark Theme)
- * - #0A0A0A background, #2A2A2A border
- * - Warm cream text #F5F0EB, muted #8A8480
- * - Gold #A78BFA accents
+ * OPS BY NOELL — Footer (NeuraFlas Design System)
+ * - Background: #010509, border: rgba(167,139,250,0.12)
+ * - Sora font, purple accents
  */
 
 import { Link } from 'wouter';
@@ -12,7 +11,7 @@ const LOGO_URL = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663120940829/n7rBK
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#0A0A0A', borderTop: '1px solid #2A2A2A' }}>
+    <footer style={{ backgroundColor: '#010509', borderTop: '1px solid rgba(167,139,250,0.12)' }}>
       <div className="container" style={{ paddingTop: '4rem', paddingBottom: '3rem' }}>
         {/* Top row */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem' }} className="lg:grid-cols-3">
@@ -25,13 +24,12 @@ export default function Footer() {
                 style={{ width: '140px', height: 'auto', objectFit: 'contain', display: 'block' }}
               />
             </div>
-            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.875rem', color: '#B0A8A0', lineHeight: 1.75, maxWidth: '260px', marginBottom: '1.5rem' }}>
+            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#a0a8b8', lineHeight: 1.75, maxWidth: '260px', marginBottom: '1.5rem' }}>
               AI automation systems for local service businesses. Done for you. Running 24/7.
             </p>
-            {/* Social icons — replace # with real URLs when profiles are live */}
             <div style={{ display: 'flex', gap: '0.875rem', alignItems: 'center' }}>
               {[
-                { icon: Instagram, label: 'Instagram', href: '#' },
+                { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/opsbynoell' },
                 { icon: Linkedin, label: 'LinkedIn', href: '#' },
                 { icon: Facebook, label: 'Facebook', href: '#' },
               ].map(({ icon: Icon, label, href }) => (
@@ -39,7 +37,6 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  title={`${label} (coming soon)`}
                   style={{
                     display: 'flex',
                     alignItems: 'center',
@@ -47,28 +44,31 @@ export default function Footer() {
                     width: '36px',
                     height: '36px',
                     borderRadius: '50%',
-                    border: '1px solid #2A2A2A',
-                    color: '#8A8480',
+                    border: '1px solid rgba(167,139,250,0.2)',
+                    color: 'rgba(160,168,184,0.7)',
                     textDecoration: 'none',
-                    transition: 'border-color 0.15s ease, color 0.15s ease',
+                    transition: 'border-color 0.2s ease, color 0.2s ease, background 0.2s ease',
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = '#A78BFA';
-                    (e.currentTarget as HTMLElement).style.color = '#A78BFA';
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.borderColor = '#A78BFA';
+                    el.style.color = '#C4B5FD';
+                    el.style.background = 'rgba(167,139,250,0.1)';
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = '#2A2A2A';
-                    (e.currentTarget as HTMLElement).style.color = '#8A8480';
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.borderColor = 'rgba(167,139,250,0.2)';
+                    el.style.color = 'rgba(160,168,184,0.7)';
+                    el.style.background = 'transparent';
                   }}
                 >
                   <Icon size={15} />
                 </a>
               ))}
-              {/* TikTok — lucide doesn't have TikTok, using SVG */}
+              {/* TikTok */}
               <a
                 href="#"
                 aria-label="TikTok"
-                title="TikTok (coming soon)"
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -76,18 +76,22 @@ export default function Footer() {
                   width: '36px',
                   height: '36px',
                   borderRadius: '50%',
-                  border: '1px solid #2A2A2A',
-                  color: '#8A8480',
+                  border: '1px solid rgba(167,139,250,0.2)',
+                  color: 'rgba(160,168,184,0.7)',
                   textDecoration: 'none',
-                  transition: 'border-color 0.15s ease, color 0.15s ease',
+                  transition: 'border-color 0.2s ease, color 0.2s ease, background 0.2s ease',
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = '#A78BFA';
-                  (e.currentTarget as HTMLElement).style.color = '#A78BFA';
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.borderColor = '#A78BFA';
+                  el.style.color = '#C4B5FD';
+                  el.style.background = 'rgba(167,139,250,0.1)';
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = '#2A2A2A';
-                  (e.currentTarget as HTMLElement).style.color = '#8A8480';
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.borderColor = 'rgba(167,139,250,0.2)';
+                  el.style.color = 'rgba(160,168,184,0.7)';
+                  el.style.background = 'transparent';
                 }}
               >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
@@ -99,7 +103,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <p className="eyebrow" style={{ marginBottom: '1.25rem' }}>Navigation</p>
+            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#A78BFA', marginBottom: '1.25rem' }}>Navigation</p>
             <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {[
                 { label: 'Home', href: '/' },
@@ -114,14 +118,14 @@ export default function Footer() {
                   key={link.href}
                   href={link.href}
                   style={{
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Sora', sans-serif",
                     fontSize: '0.875rem',
-                    color: '#B0A8A0',
+                    color: '#a0a8b8',
                     textDecoration: 'none',
                     transition: 'color 0.15s ease',
                   }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#F5F0EB'; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#B0A8A0'; }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#ffffff'; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#a0a8b8'; }}
                 >
                   {link.label}
                 </Link>
@@ -131,59 +135,59 @@ export default function Footer() {
 
           {/* Contact + CTA */}
           <div>
-            <p className="eyebrow" style={{ marginBottom: '1.25rem' }}>Contact</p>
+            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#A78BFA', marginBottom: '1.25rem' }}>Contact</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1.75rem' }}>
-              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.875rem', color: '#B0A8A0' }}>
+              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#a0a8b8' }}>
                 Mission Viejo, CA
               </p>
-              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.875rem', color: '#B0A8A0' }}>
+              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#a0a8b8' }}>
                 Based in Orange County. Built for businesses everywhere.
               </p>
               <a
                 href="mailto:hello@opsbynoell.com"
-                style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.875rem', color: '#A78BFA', textDecoration: 'none', transition: 'opacity 0.15s ease' }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.opacity = '0.75'; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.opacity = '1'; }}
+                style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#A78BFA', textDecoration: 'none', transition: 'color 0.15s ease' }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#C4B5FD'; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#A78BFA'; }}
               >
                 hello@opsbynoell.com
               </a>
               <a
                 href="tel:+19492429161"
-                style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.875rem', color: '#A78BFA', textDecoration: 'none', transition: 'opacity 0.15s ease' }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.opacity = '0.75'; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.opacity = '1'; }}
+                style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#A78BFA', textDecoration: 'none', transition: 'color 0.15s ease' }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#C4B5FD'; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#A78BFA'; }}
               >
                 (949) 242-9161
               </a>
             </div>
-            <a href="/book" className="btn-primary" style={{ fontSize: '0.8125rem', padding: '0.75rem 1.5rem' }}>
+            <a href="/book" className="btn-gradient" style={{ fontSize: '0.8125rem', padding: '0.75rem 1.5rem', display: 'inline-block' }}>
               Book Free Intro Call
             </a>
           </div>
         </div>
 
         {/* Divider */}
-        <div style={{ height: '1px', backgroundColor: '#2A2A2A', margin: '2.5rem 0 1.75rem' }} />
+        <div style={{ height: '1px', background: 'rgba(167,139,250,0.12)', margin: '2.5rem 0 1.75rem' }} />
 
         {/* Copyright */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }} className="sm:flex-row sm:justify-between sm:items-center">
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8125rem', color: '#B0A8A0' }}>
+          <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#6b7280' }}>
             © 2026 Ops by Noell. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
             <Link
               href="/privacy-policy"
-              style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8125rem', color: '#8A8480', textDecoration: 'none', transition: 'color 0.15s ease' }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#F5F0EB'; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#8A8480'; }}
+              style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#6b7280', textDecoration: 'none', transition: 'color 0.15s ease' }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#ffffff'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#6b7280'; }}
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8125rem', color: '#8A8480', textDecoration: 'none', transition: 'color 0.15s ease' }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#F5F0EB'; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#8A8480'; }}
+              style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#6b7280', textDecoration: 'none', transition: 'color 0.15s ease' }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#ffffff'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#6b7280'; }}
             >
               Terms of Service
             </Link>
