@@ -69,7 +69,7 @@ export default function Book() {
   };
 
   return (
-    <div style={{ backgroundColor: 'transparent', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#010509', minHeight: '100vh' }}>
       <Nav />
 
       {/* ─── HERO ─── */}

@@ -7,7 +7,7 @@
 import { Link } from 'wouter';
 import { Instagram, Linkedin, Facebook } from 'lucide-react';
 
-const LOGO_URL = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663120940829/n7rBKSsjtvarmxAHpVkZmb/ops-by-noell-logo-new_f7b785e3.png';
+const LOGO_URL = '/logo.png';
 
 export default function Footer() {
   return (
