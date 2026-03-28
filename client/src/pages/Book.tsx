@@ -187,12 +187,31 @@ export default function Book() {
             <FadeItem delay={0.15}>
               <div id="booking">
                 <p className="eyebrow" style={{ marginBottom: '1.5rem' }}>Choose a Time</p>
-                <iframe
-                  src="https://api.leadconnectorhq.com/widget/booking/ko7eXb5zooItceadiV02"
-                  style={{ width: '100%', height: '750px', border: 'none', borderRadius: '0.75rem', overflow: 'hidden' }}
-                  scrolling="no"
-                  title="Book a call with Ops by Noell"
-                />
+                {/* Dark wrapper softens the white GHL iframe against the dark site */}
+                <div style={{
+                  borderRadius: '12px',
+                  overflow: 'hidden',
+                  border: '1px solid rgba(167,139,250,0.15)',
+                  background: '#0d0d14',
+                  boxShadow: '0 0 0 1px rgba(167,139,250,0.08), 0 24px 48px rgba(0,0,0,0.4)',
+                  position: 'relative',
+                }}>
+                  {/* Subtle dark tint overlay — reduces white blowout without blocking interaction */}
+                  <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'rgba(1,5,9,0.08)',
+                    pointerEvents: 'none',
+                    zIndex: 1,
+                    borderRadius: '12px',
+                  }} />
+                  <iframe
+                    src="https://api.leadconnectorhq.com/widget/booking/ko7eXb5zooItceadiV02"
+                    style={{ width: '100%', height: '750px', border: 'none', display: 'block' }}
+                    scrolling="no"
+                    title="Book a call with Ops by Noell"
+                  />
+                </div>
               </div>
             </FadeItem>
           </div>
