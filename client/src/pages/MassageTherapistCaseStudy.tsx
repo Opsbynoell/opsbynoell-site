@@ -113,7 +113,7 @@ export default function MassageTherapistCaseStudy() {
           <FadeItem delay={0.4}>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="/book" className="btn-gradient" style={{ padding: '1rem 2rem', fontSize: '1rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                Book Free 15-Minute Intro Call <ArrowRight size={16} />
+                Book Free 30-Minute Intro Call <ArrowRight size={16} />
               </a>
               <a href="/massage-therapist-automation" className="btn-outline" style={{ padding: '1rem 2rem', fontSize: '1rem' }}>
                 Massage Therapist Automation
@@ -295,11 +295,11 @@ export default function MassageTherapistCaseStudy() {
               Ready to close your own revenue gaps?
             </h2>
             <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#868583', lineHeight: 1.75, maxWidth: '460px', margin: '0 auto 2.5rem' }}>
-              15 minutes. Free. No obligation. We map your gaps, show you what we'd build, and tell you what it costs.
+              30 minutes. Free. No obligation. We map your gaps, show you what we'd build, and tell you what it costs.
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="/book" className="btn-gradient" style={{ padding: '1.125rem 2.25rem', fontSize: '1.0625rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                Book Free 15-Minute Intro Call <ArrowRight size={17} />
+                Book Free 30-Minute Intro Call <ArrowRight size={17} />
               </a>
               <a href="/services" className="btn-outline" style={{ padding: '1.125rem 2.25rem', fontSize: '1.0625rem' }}>
                 See Pricing

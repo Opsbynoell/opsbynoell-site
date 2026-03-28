@@ -69,7 +69,7 @@ export default function SalonAutomation() {
           <FadeItem delay={0.3}>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="/book" className="btn-gradient" style={{ padding: '1rem 2rem', fontSize: '1rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                Book Free 15-Minute Intro Call <ArrowRight size={16} />
+                Book Free 30-Minute Intro Call <ArrowRight size={16} />
               </a>
               <a href="/services" className="btn-outline" style={{ padding: '1rem 2rem', fontSize: '1rem' }}>See Pricing</a>
             </div>
@@ -142,10 +142,10 @@ export default function SalonAutomation() {
               More bookings. Fewer no-shows. Less manual work.
             </h2>
             <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#868583', lineHeight: 1.75, maxWidth: '480px', margin: '0 auto 2.5rem' }}>
-              15 minutes. Free. No obligation. We'll show you exactly what we'd build for your salon.
+              30 minutes. Free. No obligation. We'll show you exactly what we'd build for your salon.
             </p>
             <a href="/book" className="btn-gradient" style={{ padding: '1.125rem 2.25rem', fontSize: '1.0625rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-              Book Free 15-Minute Intro Call <ArrowRight size={17} />
+              Book Free 30-Minute Intro Call <ArrowRight size={17} />
             </a>
           </FadeItem>
         </div>
