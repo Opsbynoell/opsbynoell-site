@@ -76,7 +76,7 @@ const pageMeta: Record<string, { title: string; description: string; keywords: s
       "about Ops by Noell, AI automation agency Orange County, done-for-you automation team, local business operations, revenue automation, AI systems for service businesses, automation agency founders",
   },
   "/book": {
-    title: "Book a Free Revenue Audit Call | Ops by Noell",
+    title: "Book a Free 30-Minute Intro Call | Ops by Noell",
     description:
       "Book a free 30-minute intro call with Nikki. We map your revenue gaps and show you exactly how AI automation can recover lost leads and bookings.",
     keywords:
