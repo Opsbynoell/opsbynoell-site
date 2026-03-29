@@ -240,6 +240,7 @@ export default function MassageTherapistCaseStudy() {
                 { value: '<1/week', label: 'No-shows after', color: '#A78BFA' },
                 { value: '<10s', label: 'Missed call response time', color: '#A78BFA' },
                 { value: '14 days', label: 'From zero to fully live', color: '#A78BFA' },
+                { value: '$33,000+', label: 'Annual revenue recovered', color: '#A78BFA' },
               ].map(({ value, label, color }) => (
                 <div key={label} style={{ textAlign: 'center', padding: '2rem', background: 'rgba(167,139,250,0.04)', border: '1px solid rgba(167,139,250,0.12)', borderRadius: '10px' }}>
                   <div style={{ fontFamily: "'Nicholas', serif", fontSize: '2rem', fontWeight: 800, color, lineHeight: 1.1, marginBottom: '0.5rem' }}>{value}</div>
