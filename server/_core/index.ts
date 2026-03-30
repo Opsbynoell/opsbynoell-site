@@ -93,14 +93,7 @@ async function startServer() {
 
   server.listen(port, () => {
     console.log(`Server running on http://localhost:${port}/`);
-    // Auto-register Telegram webhook in production using the public domain
-    if (process.env.NODE_ENV === "production" && process.env.VITE_APP_ID) {
-      // Derive the public URL from the app ID (Manus hosting convention)
-      const appId = process.env.VITE_APP_ID;
-      const publicUrl = `https://${appId}.manus.space`;
-      const webhookUrl = `${publicUrl}/api/telegram/webhook`;
-      registerWebhookWithTelegram(webhookUrl).catch(console.error);
-    }
+    // Telegram bot webhook registration removed (was Manus-specific)
   });
 }
 
