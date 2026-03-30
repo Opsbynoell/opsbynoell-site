@@ -1,10 +1,10 @@
 /*
  * OPS BY NOELL — Med Spa Automation Landing Page
  * Route: /med-spa-automation
- * SEO: "med spa automation", "AI booking for med spas"
+ * SEO: "med spa automation", "AI booking for med spas", "AI receptionist med spa"
  */
 
-import { ArrowRight, Check, X } from 'lucide-react';
+import { ArrowRight, Check, Phone, X } from 'lucide-react';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import { useFadeIn } from '@/hooks/useFadeIn';
@@ -31,19 +31,32 @@ function GradientText({ children }: { children: React.ReactNode }) {
   return <span style={{ background: 'linear-gradient(90deg, #A78BFA 0%, #C4B5FD 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>{children}</span>;
 }
 
+const stats = [
+  { value: '< 10s', label: 'Response to missed calls' },
+  { value: '85%', label: 'Of callers never call back after voicemail' },
+  { value: '$500–$2K', label: 'Revenue per missed med spa appointment' },
+  { value: '2 weeks', label: 'To full automation' },
+];
+
 const problems = [
-  { title: 'High-value appointments lost to voicemail', detail: 'A single missed call at a med spa can represent $500–$2,000 in lost revenue. No response means no booking.' },
-  { title: 'Manual confirmation calls drain staff time', detail: 'Your front desk is spending hours confirming appointments by phone. That time should be spent with clients who are in the building.' },
+  { title: 'High-value appointments lost to voicemail', detail: 'A single missed call at a med spa can represent $500–$2,000 in lost revenue. No response within minutes means no booking.' },
+  { title: 'No AI receptionist answering after hours', detail: 'Prospects call at 8pm when your team is gone. Without a voice agent picking up, you lose them to whoever answers first.' },
+  { title: 'Manual confirmation calls drain staff time', detail: 'Your front desk spends hours confirming appointments by phone — time that should be spent on clients who are already in the building.' },
   { title: 'No automated recall for overdue patients', detail: 'Clients who haven\'t returned in 60 or 90 days get no reminder. They\'re not gone — they just need a prompt.' },
   { title: 'Inconsistent review generation', detail: '93% of consumers read reviews before choosing a med spa. Your results deserve more visibility than you\'re getting.' },
 ];
 
 const solutions = [
-  { item: 'Missed call text-back', detail: 'Every missed call triggers an instant, personalized text. The lead stays warm and is guided toward booking without staff intervention.' },
-  { item: 'Automated appointment confirmations', detail: 'Text and email confirmations go out automatically after booking. Reminders follow at 48 hours and 2 hours before the appointment.' },
-  { item: 'Online booking 24/7', detail: 'Clients book themselves after hours, on mobile, without calling. High-value appointments fill while your team is focused on in-person care.' },
-  { item: 'Lapsed client re-engagement', detail: 'Automated sequences reach out to clients at 30, 60, and 90-day intervals with a natural, personal-feeling message. Most re-book.' },
-  { item: 'Review generation', detail: 'Post-appointment review requests go out at exactly the right moment to capture satisfied clients while the experience is fresh.' },
+  {
+    item: 'AI Voice Receptionist — answers every call, 24/7',
+    detail: 'A trained AI agent answers missed calls, books appointments, answers service questions, and collects contact info — at any hour, without staff. Sounds natural. Works instantly.',
+    highlight: true,
+  },
+  { item: 'Instant missed call text-back', detail: 'Every missed call that isn\'t caught by the voice agent triggers an immediate, personalized text. The lead stays warm and is guided toward booking without staff intervention.', highlight: false },
+  { item: 'Automated appointment confirmations + reminders', detail: 'Confirmations go out automatically after booking. Reminders follow at 48 hours and 2 hours before — cutting no-shows without a single manual call.', highlight: false },
+  { item: 'Online booking 24/7', detail: 'Clients book themselves after hours, on mobile, without calling. High-value appointments fill while your team is focused on in-person care.', highlight: false },
+  { item: 'Lapsed client re-engagement', detail: 'Automated sequences reach out at 30, 60, and 90-day intervals with a natural, personal-feeling message. Most re-book within a week.', highlight: false },
+  { item: 'Review generation', detail: 'Post-appointment review requests go out at exactly the right moment — capturing satisfied clients while the experience is still fresh.', highlight: false },
 ];
 
 export default function MedSpaAutomation() {
@@ -51,18 +64,19 @@ export default function MedSpaAutomation() {
     <div style={{ backgroundColor: '#010509', minHeight: '100vh' }}>
       <Nav />
 
+      {/* Hero */}
       <section style={{ position: 'relative', paddingTop: '80px', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(120,58,237,0.2) 0%, rgba(139,92,246,0.12) 35%, #010509 72%)' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '5rem', paddingBottom: '5.5rem' }}>
           <FadeItem delay={0}><div style={{ marginBottom: '1.5rem' }}><SectionBadge>Med Spa Automation</SectionBadge></div></FadeItem>
           <FadeItem delay={0.1}>
             <h1 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2.75rem, 6.5vw, 5rem)', fontWeight: 800, lineHeight: 1.05, letterSpacing: '-0.03em', maxWidth: '820px', marginBottom: '1.75rem' }}>
-              <GradientText>AI automation</GradientText>{' '}<span style={{ color: '#ffffff' }}>for med spas. Every missed call recovered.</span>
+              <GradientText>AI receptionist and automation</GradientText>{' '}<span style={{ color: '#ffffff' }}>for med spas. Every call answered. Every appointment filled.</span>
             </h1>
           </FadeItem>
           <FadeItem delay={0.2}>
             <p style={{ fontFamily: "'Sora', sans-serif", fontSize: 'clamp(1rem, 1.4vw, 1.125rem)', color: '#868583', lineHeight: 1.75, maxWidth: '580px', marginBottom: '2.5rem' }}>
-              Med spa appointments are high-value and time-sensitive. A slow response or a missed call doesn't just cost you one booking — it costs you the client. We build the systems that ensure you're always the first to respond.
+              Med spa appointments are high-value and time-sensitive. A slow response or a missed call doesn't just cost you one booking — it costs you the client. We build the AI systems that ensure you're always the first to respond, day or night.
             </p>
           </FadeItem>
           <FadeItem delay={0.3}>
@@ -76,7 +90,54 @@ export default function MedSpaAutomation() {
         </div>
       </section>
 
+      {/* Stats strip */}
+      <section style={{ borderTop: '1px solid rgba(167,139,250,0.1)', borderBottom: '1px solid rgba(167,139,250,0.1)', padding: '3rem 0' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '2rem', textAlign: 'center' }}>
+            {stats.map((s, i) => (
+              <FadeItem key={i} delay={i * 0.07}>
+                <div style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 800, color: '#A78BFA', marginBottom: '0.4rem' }}>{s.value}</div>
+                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583', lineHeight: 1.5 }}>{s.label}</div>
+              </FadeItem>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Voice AI feature callout */}
       <section style={{ padding: '7rem 0' }}>
+        <div className="container">
+          <FadeItem delay={0}>
+            <div style={{ background: 'linear-gradient(135deg, rgba(167,139,250,0.08) 0%, rgba(167,139,250,0.03) 100%)', border: '1px solid rgba(167,139,250,0.2)', borderRadius: '16px', padding: '3rem', display: 'flex', flexDirection: 'column', gap: '1.5rem', maxWidth: '780px', margin: '0 auto' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(167,139,250,0.15)', border: '1px solid rgba(167,139,250,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <Phone size={22} color="#A78BFA" />
+                </div>
+                <div>
+                  <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#A78BFA', marginBottom: '0.25rem' }}>New Feature</div>
+                  <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
+                    An AI receptionist that answers your phone — every time
+                  </h2>
+                </div>
+              </div>
+              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#868583', lineHeight: 1.75 }}>
+                Your AI receptionist picks up missed calls, greets callers by name of your practice, answers questions about services and pricing, and books appointments directly into your calendar — 24 hours a day, 7 days a week. No staff required. No voicemail. No lost bookings.
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+                {['Books appointments in real time', 'Answers service and pricing questions', 'Handles after-hours calls automatically', 'Warm handoff to staff when needed'].map((feat, i) => (
+                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
+                    <Check size={14} color="#A78BFA" />
+                    <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#e2e2e2' }}>{feat}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeItem>
+        </div>
+      </section>
+
+      {/* Problems */}
+      <section style={{ padding: '4rem 0 7rem' }}>
         <div className="container">
           <FadeItem delay={0}>
             <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
@@ -104,6 +165,7 @@ export default function MedSpaAutomation() {
         </div>
       </section>
 
+      {/* Solutions */}
       <section style={{ padding: '7rem 0', borderTop: '1px solid rgba(167,139,250,0.08)' }}>
         <div className="container">
           <FadeItem delay={0}>
@@ -117,7 +179,7 @@ export default function MedSpaAutomation() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'rgba(167,139,250,0.1)', borderRadius: '12px', overflow: 'hidden' }}>
             {solutions.map((s, i) => (
               <FadeItem key={i} delay={i * 0.08}>
-                <div style={{ background: i % 2 === 0 ? 'rgba(167,139,250,0.02)' : 'rgba(167,139,250,0.04)', padding: '1.75rem 2rem', display: 'flex', alignItems: 'flex-start', gap: '1.5rem' }}>
+                <div style={{ background: s.highlight ? 'rgba(167,139,250,0.08)' : (i % 2 === 0 ? 'rgba(167,139,250,0.02)' : 'rgba(167,139,250,0.04)'), padding: '1.75rem 2rem', display: 'flex', alignItems: 'flex-start', gap: '1.5rem', borderLeft: s.highlight ? '2px solid #A78BFA' : 'none' }}>
                   <div style={{ width: '30px', height: '30px', borderRadius: '8px', background: 'rgba(167,139,250,0.15)', border: '1px solid rgba(167,139,250,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
                     <Check size={14} color="#A78BFA" />
                   </div>
@@ -132,6 +194,7 @@ export default function MedSpaAutomation() {
         </div>
       </section>
 
+      {/* CTA */}
       <section style={{ position: 'relative', padding: '7rem 0', borderTop: '1px solid rgba(167,139,250,0.08)', overflow: 'hidden', textAlign: 'center' }}>
         <div style={{ position: 'absolute', bottom: '-60px', left: '50%', transform: 'translateX(-50%)', width: '800px', height: '400px', background: 'radial-gradient(ellipse, rgba(167,139,250,0.1) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '680px', margin: '0 auto' }}>
@@ -141,7 +204,7 @@ export default function MedSpaAutomation() {
               Stop losing high-value appointments to slow response times.
             </h2>
             <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#868583', lineHeight: 1.75, maxWidth: '480px', margin: '0 auto 2.5rem' }}>
-              30 minutes. Free. No obligation. We'll map your gaps and show you exactly what we'd build.
+              30 minutes. Free. No obligation. We'll map your revenue gaps and show you exactly what we'd build.
             </p>
             <a href="/book" className="btn-gradient" style={{ padding: '1.125rem 2.25rem', fontSize: '1.0625rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
               Book Free 30-Minute Intro Call <ArrowRight size={17} />
