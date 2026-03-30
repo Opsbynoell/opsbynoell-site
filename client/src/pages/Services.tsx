@@ -88,31 +88,37 @@ const SERVICES = [
 const INDUSTRIES = [
   {
     icon: Scissors, name: 'Salons & Spas', tagline: 'Fill your chair. Keep it full.',
+    href: '/salon-automation',
     desc: 'Missed calls, last-minute cancellations, and clients who never come back are the three biggest revenue leaks in salon and spa businesses. We automate the entire client lifecycle — from the first call to the fifth visit.',
     outcome: 'Salons using our systems typically see 30–50% fewer no-shows and a measurable increase in repeat bookings within 60 days.',
   },
   {
     icon: Heart, name: 'Wellness & Massage', tagline: 'Your practice, running on autopilot.',
+    href: '/massage-therapist-automation',
     desc: 'Solo practitioners and small wellness studios lose clients not because of bad service, but because nothing happens between appointments. No follow-up. No reminders. No review requests. We fix the invisible gaps.',
     outcome: 'Our founding client, a 25-year massage therapist in Laguna Niguel, went from zero digital infrastructure to a fully automated practice in two weeks.',
   },
   {
     icon: Smile, name: 'Dental & Med Spa', tagline: 'Every missed call is a missed patient.',
+    href: '/med-spa-automation',
     desc: 'Dental offices and med spas run on high-value appointments. A single missed call can cost $500–$2,000 in lost revenue. We install systems that respond instantly, confirm appointments automatically, and keep your schedule full.',
     outcome: 'Automated appointment confirmation and recall systems reduce no-shows and recover patients who would otherwise churn silently.',
   },
   {
     icon: HomeIcon, name: 'Home Services', tagline: 'Never miss a job request again.',
+    href: '/home-services-automation',
     desc: "Plumbers, HVAC technicians, electricians, and contractors lose jobs every day to missed calls and slow response times. The first company to respond wins the job. We make sure that company is yours.",
     outcome: 'Home service businesses using missed call text-back and automated follow-up recover 20–40% of leads that would otherwise go to a competitor.',
   },
   {
     icon: Dumbbell, name: 'Fitness & Personal Training', tagline: 'Fill your classes. Retain your members.',
+    href: '/book',
     desc: "Gyms, studios, and personal trainers face constant churn. Members stop showing up before they cancel, and by then it's too late. We build re-engagement systems that catch at-risk clients before they leave.",
     outcome: 'Automated re-engagement sequences and milestone-based review requests improve retention and build social proof consistently.',
   },
   {
     icon: Stethoscope, name: 'Healthcare & Chiropractic', tagline: 'Reduce no-shows. Improve patient retention.',
+    href: '/book',
     desc: "Healthcare practices lose thousands monthly to no-shows and patients who don't return for follow-up care. We build HIPAA-aware automation systems that reduce no-shows, automate recall, and keep your schedule optimized.",
     outcome: 'Automated appointment reminders and recall sequences reduce no-shows by 30–50% and recover patients who would otherwise churn.',
   },
@@ -294,19 +300,24 @@ export default function Services() {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
-            {INDUSTRIES.map(({ icon: Icon, name, tagline, desc, outcome }, i) => (
+            {INDUSTRIES.map(({ icon: Icon, name, tagline, desc, outcome, href }, i) => (
               <FadeItem key={name} delay={i * 0.07}>
-                <div className="feature-card" style={{ padding: '2rem', height: '100%', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  <div className="icon-box"><Icon size={20} style={{ color: '#A78BFA' }} /></div>
-                  <div>
-                    <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.125rem', fontWeight: 700, color: '#ffffff', marginBottom: '0.25rem' }}>{name}</h3>
-                    <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', fontWeight: 600, color: '#A78BFA' }}>{tagline}</p>
+                <a href={href} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+                  <div className="feature-card" style={{ padding: '2rem', height: '100%', display: 'flex', flexDirection: 'column', gap: '1rem', cursor: 'pointer', transition: 'border-color 0.2s ease', boxSizing: 'border-box' }}>
+                    <div className="icon-box"><Icon size={20} style={{ color: '#A78BFA' }} /></div>
+                    <div>
+                      <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.125rem', fontWeight: 700, color: '#ffffff', marginBottom: '0.25rem' }}>{name}</h3>
+                      <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', fontWeight: 600, color: '#A78BFA' }}>{tagline}</p>
+                    </div>
+                    <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9rem', color: '#868583', lineHeight: 1.7, flex: 1 }}>{desc}</p>
+                    <div style={{ borderTop: '1px solid rgba(167,139,250,0.12)', paddingTop: '1rem', display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: '1rem' }}>
+                      <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#C4B5FD', lineHeight: 1.65, fontStyle: 'italic', flex: 1 }}>{outcome}</p>
+                      <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', fontWeight: 600, color: '#A78BFA', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '0.25rem', flexShrink: 0 }}>
+                        See how it works <ArrowRight size={13} />
+                      </span>
+                    </div>
                   </div>
-                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9rem', color: '#868583', lineHeight: 1.7, flex: 1 }}>{desc}</p>
-                  <div style={{ borderTop: '1px solid rgba(167,139,250,0.12)', paddingTop: '1rem' }}>
-                    <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#C4B5FD', lineHeight: 1.65, fontStyle: 'italic' }}>{outcome}</p>
-                  </div>
-                </div>
+                </a>
               </FadeItem>
             ))}
           </div>
