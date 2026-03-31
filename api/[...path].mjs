@@ -158,7 +158,7 @@ var systemRouter = router({
 });
 
 // server/db.ts
-import { eq, sql, gte, desc } from "drizzle-orm";
+import { eq, gte, desc } from "drizzle-orm"; // sql is inlined below
 // --- INLINED: postgres + drizzle-orm/postgres-js ---
 // node_modules/postgres/src/index.js
 import os from "os";
