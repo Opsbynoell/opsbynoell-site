@@ -2431,6 +2431,7 @@ async function handler(req, res) {
       });
       const claudeData = await claudeRes.json();
       const rawText = claudeData?.content?.[0]?.text?.trim() ?? "";
+      console.log("[qualify-lead] Claude raw:", rawText.substring(0, 300), "claudeStatus:", claudeRes.status);
       let analysis = { intent: "low", businessType: null, painPoint: null, extractedEmail: null };
       try { analysis = JSON.parse(rawText); } catch {}
       if (!["hot","warm","low"].includes(analysis.intent)) analysis.intent = "low";
