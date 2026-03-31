@@ -55,7 +55,7 @@ export default function ChatInbox() {
   const [replyText, setReplyText] = useState('');
   const [showThread, setShowThread] = useState<boolean>(() => !!getSessionFromUrl());
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
 
   // ─── Data fetching (with fallback polling) ────────────────────────────────
   const { data: sessions, refetch: refetchSessions } = trpc.chat.getSessions.useQuery(
@@ -111,6 +111,13 @@ export default function ChatInbox() {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  // ─── Phase 4: Mobile — detect screen width reactively ────────────────────
+  useEffect(() => {
+    const handler = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handler);
+    return () => window.removeEventListener('resize', handler);
+  }, []);
+
   if (loading) {
     return (
       <div style={{ minHeight: '100vh', backgroundColor: '#0A0A0A', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -150,13 +157,6 @@ export default function ChatInbox() {
     }
   };
 
-  // ─── Phase 4: Mobile — detect screen width reactively ────────────────────
-  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
-  useEffect(() => {
-    const handler = () => setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', handler);
-    return () => window.removeEventListener('resize', handler);
-  }, []);
   const isMobileView = windowWidth < 768;
 
   // On mobile: show either list or thread, not both
