@@ -2370,25 +2370,6 @@ async function handler(req, res) {
   }
 
 
-  // ─── /api/ghl-test (debug only — remove before go-live) ─────────────────
-  if (urlPath === "/api/ghl-test") {
-    const GHL_KEY = process.env.GHL_API_KEY;
-    if (!GHL_KEY) { res.status(500).json({ error: "GHL_API_KEY not set" }); return; }
-    try {
-      const testPayload = { firstName: "NOVA", lastName: "TestContact", email: "nova-test@opsbynoell.com", locationId: "Un5H1b2zXJM3agZ56j7c", tags: ["nova-test"] };
-      const r = await fetch("https://services.leadconnectorhq.com/contacts/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Authorization": "Bearer " + GHL_KEY, "Version": "2021-07-28" },
-        body: JSON.stringify(testPayload)
-      });
-      const text = await r.text();
-      res.status(200).json({ ghlStatus: r.status, ghlBody: text.substring(0, 800), keyPresent: true, keyPrefix: GHL_KEY.substring(0, 8) });
-    } catch(e) {
-      res.status(500).json({ error: e.message });
-    }
-    return;
-  }
-
   // ─── /api/qualify-lead ────────────────────────────────────────────────────
   if (urlPath === "/api/qualify-lead") {
     if (req.method !== "POST") {
@@ -2471,7 +2452,6 @@ async function handler(req, res) {
       const resolvedEmail = sess.visitorEmail || extractedEmail;
       const resolvedName = sess.visitorName || "";
       let contactCaptured = false;
-      let ghlContactIdResult = null;
       if (resolvedEmail) {
         try {
           // Upsert: update intent/name if row already exists, always run GHL sync after
@@ -2511,16 +2491,13 @@ async function handler(req, res) {
                 const ghlData = await ghlRes.json();
                 const ghlContactId = ghlData?.contact?.id ?? null;
                 if (ghlContactId) {
-                  ghlContactIdResult = ghlContactId;
                   await qlPool.query(
                     `UPDATE "chatLeads" SET "ghlContactId"=$1, notified='yes' WHERE email=$2 AND "sessionId"=$3`,
                     [ghlContactId, resolvedEmail, qlSessionId]
                   );
                 }
               } else {
-                const ghlErrText = await ghlRes.text();
-                console.error("GHL sync failed:", ghlRes.status, ghlErrText);
-                ghlContactIdResult = "ERR:" + ghlRes.status + ":" + ghlErrText.substring(0, 100);
+                console.error("GHL sync failed:", ghlRes.status, await ghlRes.text());
               }
             } catch (ghlErr) {
               console.error("ghl-sync inline error:", ghlErr);
@@ -2535,8 +2512,7 @@ async function handler(req, res) {
         intent: analysis.intent,
         businessType: analysis.businessType || sess.businessType || null,
         painPoint: analysis.painPoint ?? null,
-        contactCaptured,
-        ghlContactId: ghlContactIdResult || null
+        contactCaptured
       });
     } catch (err) {
       console.error("qualify-lead error:", err);
