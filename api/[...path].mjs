@@ -2473,6 +2473,7 @@ async function handler(req, res) {
       let contactCaptured = false;
       if (resolvedEmail) {
         try {
+          // Upsert: update intent/name if row already exists, always run GHL sync after
           await qlPool.query(
             `INSERT INTO "chatLeads" (name, email, "sessionId", "businessType", question, page, notified, intent, "ghlContactId")
              VALUES ($1,$2,$3,$4,$5,$6,'no',$7,NULL)
@@ -2488,7 +2489,7 @@ async function handler(req, res) {
             ]
           );
           contactCaptured = true;
-          // Sync to GHL for hot/warm
+          // Sync to GHL for hot/warm (always attempt — upsert ensures fresh row)
           if (QL_GHL_KEY && (analysis.intent === "hot" || analysis.intent === "warm")) {
             try {
               const nameParts = resolvedName.trim().split(/\s+/);
@@ -2496,7 +2497,8 @@ async function handler(req, res) {
                 firstName: nameParts[0] || "Unknown",
                 lastName: nameParts.slice(1).join(" "),
                 email: resolvedEmail,
-                tags: [`nova-${analysis.intent}`, "nova-support"],
+                locationId: "Un5H1b2zXJM3agZ56j7c",
+                tags: ["nova-" + analysis.intent, "nova-support"],
                 customField: {
                   lead_source: "NOVA Support",
                   business_type: analysis.businessType || sess.businessType || "",
@@ -2505,20 +2507,17 @@ async function handler(req, res) {
                   nova_intent: analysis.intent
                 }
               };
-              console.error("[QL-GHL] About to call GHL, GHL_KEY_present=" + !!QL_GHL_KEY + " email=" + resolvedEmail + " intent=" + analysis.intent);
-              ghlPayload.locationId = "Un5H1b2zXJM3agZ56j7c";
               const ghlRes = await fetch("https://services.leadconnectorhq.com/contacts/", {
                 method: "POST",
                 headers: { "Content-Type": "application/json", "Authorization": "Bearer " + QL_GHL_KEY, "Version": "2021-07-28" },
                 body: JSON.stringify(ghlPayload)
               });
-              console.error("[QL-GHL] Response status=" + ghlRes.status + " ok=" + ghlRes.ok);
               if (ghlRes.ok) {
                 const ghlData = await ghlRes.json();
                 const ghlContactId = ghlData?.contact?.id ?? null;
                 if (ghlContactId) {
                   await qlPool.query(
-                    `UPDATE "chatLeads" SET "ghlContactId"=$1, notified='yes' WHERE email=$2 AND "sessionId"=$3 AND "ghlContactId" IS NULL`,
+                    `UPDATE "chatLeads" SET "ghlContactId"=$1, notified='yes' WHERE email=$2 AND "sessionId"=$3`,
                     [ghlContactId, resolvedEmail, qlSessionId]
                   );
                 }
