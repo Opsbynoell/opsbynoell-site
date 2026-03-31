@@ -1,6 +1,6 @@
 /**
  * OPS BY NOELL — Admin Chat Inbox
- * Phases 2–4: SSE real-time, deep linking, mobile-responsive UI
+ * Phases 2–4: polling real-time (3s/2s), deep linking, mobile-responsive UI
  */
 
 import { useState, useEffect, useRef, useCallback } from 'react';
@@ -62,7 +62,7 @@ export default function ChatInbox() {
     undefined,
     {
       enabled: !!user && user.role === 'admin',
-      refetchInterval: 30000, // fallback: 30s polling (SSE handles real-time)
+      refetchInterval: 3000,
     }
   );
 
@@ -70,7 +70,7 @@ export default function ChatInbox() {
     { sessionId: selectedSession! },
     {
       enabled: !!selectedSession,
-      refetchInterval: 15000, // fallback polling
+      refetchInterval: 2000,
     }
   );
 
@@ -85,51 +85,9 @@ export default function ChatInbox() {
   const setTakeover = trpc.chat.setTakeover.useMutation({
     onSuccess: () => {
       refetchSessions();
+      refetchMessages();
     },
   });
-
-  // ─── Phase 2: SSE real-time updates ───────────────────────────────────────
-  useEffect(() => {
-    if (!user || user.role !== 'admin') return;
-
-    let es: EventSource | null = null;
-    let retryTimeout: ReturnType<typeof setTimeout> | null = null;
-
-    function connect() {
-      es = new EventSource('/api/chat-sse');
-
-      es.addEventListener('new_message', (e: MessageEvent) => {
-        const payload = JSON.parse(e.data);
-        // If this message belongs to the active thread, refetch messages
-        if (payload.sessionId === selectedSession) {
-          refetchMessages();
-        }
-        // Always refetch sessions list for unread count + ordering
-        refetchSessions();
-      });
-
-      es.addEventListener('session_updated', (e: MessageEvent) => {
-        refetchSessions();
-        const payload = JSON.parse(e.data);
-        if (payload.sessionId === selectedSession) {
-          refetchMessages();
-        }
-      });
-
-      es.onerror = () => {
-        es?.close();
-        // Reconnect after 3s
-        retryTimeout = setTimeout(connect, 3000);
-      };
-    }
-
-    connect();
-
-    return () => {
-      es?.close();
-      if (retryTimeout) clearTimeout(retryTimeout);
-    };
-  }, [user, selectedSession, refetchMessages, refetchSessions]);
 
   // ─── Phase 3: Sync selected session to/from URL ───────────────────────────
   const selectSession = useCallback((sessionId: string | null) => {
