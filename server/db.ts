@@ -5,6 +5,7 @@ import { InsertUser, users, chatLeads, InsertChatLead, botSessions, BotSession, 
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
+let _migrationRun = false;
 
 export async function getDb() {
   if (!_db && process.env.DATABASE_URL) {
@@ -19,6 +20,19 @@ export async function getDb() {
       _db = null;
     }
   }
+
+  // Run additive migrations once per process startup (safe to repeat).
+  if (_db && !_migrationRun) {
+    _migrationRun = true;
+    try {
+      await (_db as any).execute(
+        `ALTER TABLE "chatSessions" ADD COLUMN IF NOT EXISTS "priority" varchar(16) DEFAULT 'low'`
+      );
+    } catch {
+      // Non-fatal — column may already exist or DB may not support IF NOT EXISTS
+    }
+  }
+
   return _db;
 }
 
