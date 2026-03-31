@@ -14,6 +14,39 @@ import { invokeLLM } from "../_core/llm";
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 
+// ─── SSE Event Emitter (in-process, per Vercel instance) ─────────────────────
+// Keeps track of active SSE connections so we can push updates instantly.
+// Note: Vercel serverless functions are stateless across invocations, so this
+// only broadcasts to connections on the same function instance. For a single
+// admin user refreshing the inbox, this covers the common case perfectly.
+
+type SSEClient = {
+  id: string;
+  write: (data: string) => void;
+};
+
+const sseClients: SSEClient[] = [];
+
+export function broadcastSSE(event: string, payload: unknown) {
+  const data = `event: ${event}\ndata: ${JSON.stringify(payload)}\n\n`;
+  for (const client of sseClients) {
+    try {
+      client.write(data);
+    } catch {
+      // Client disconnected — will be cleaned up on close
+    }
+  }
+}
+
+export function addSSEClient(client: SSEClient) {
+  sseClients.push(client);
+}
+
+export function removeSSEClient(id: string) {
+  const idx = sseClients.findIndex(c => c.id === id);
+  if (idx !== -1) sseClients.splice(idx, 1);
+}
+
 export const chatRouter = router({
   /**
    * Called by ChatWidget to persist a visitor message and get a bot response.
@@ -67,39 +100,52 @@ export const chatRouter = router({
       // Store visitor message
       await insertChatMessage(input.sessionId, "visitor", input.message);
 
-      // Notify owner of every visitor message (fire-and-forget, non-blocking)
+      // PHASE 1: Check if human has taken over BEFORE doing anything else.
+      // If humanTakeover === 1, DO NOT call AI. Persist message, notify, return.
+      const session = await getChatSession(input.sessionId);
+      if (session?.humanTakeover) {
+        // Broadcast SSE so inbox updates instantly
+        broadcastSSE('new_message', {
+          sessionId: input.sessionId,
+          role: 'visitor',
+          content: input.message,
+          visitorName: input.visitorName,
+        });
+        broadcastSSE('session_updated', { sessionId: input.sessionId });
+
+        // Notify via Telegram with direct deep link
+        const inboxLink = `https://www.opsbynoell.com/admin/inbox?session=${input.sessionId}`;
+        sendTelegram(
+          `<b>💬 Nova Inbox — Human Takeover</b>\n\n` +
+          `<b>From:</b> ${input.visitorName ?? 'Visitor'}\n` +
+          `<b>Message:</b> ${input.message}\n\n` +
+          `<a href="${inboxLink}">Open conversation →</a>`
+        ).catch(() => {});
+
+        return { botReply: null, humanTakeover: true };
+      }
+
+      // Notify owner of every visitor message (fire-and-forget)
+      // Only send ONE notification here — removed the duplicate that fired before the takeover check
       {
         const locationStr = visitorLocation ? ` (${visitorLocation})` : '';
+        const inboxLink = `https://www.opsbynoell.com/admin/inbox?session=${input.sessionId}`;
         sendTelegram(
-          `<b>Nova Chat</b>\n` +
+          `<b>💬 Nova Chat</b>\n\n` +
           `<b>From:</b> ${input.visitorName ?? 'Visitor'}${locationStr}\n` +
-          `<b>Message:</b> ${input.message}`
+          `<b>Message:</b> ${input.message}\n\n` +
+          `<a href="${inboxLink}">Open in inbox →</a>`
         ).catch(() => {});
       }
 
-      // Check if human has taken over — if so, just store and notify
-      const session = await getChatSession(input.sessionId);
-      if (session?.humanTakeover) {
-        const history = await getSessionMessages(input.sessionId);
-        await Promise.allSettled([
-          sendTelegram(
-            `\u{1F4AC} *Human Takeover Chat — New Message*\n\n` +
-            `*From:* ${input.visitorName ?? "Visitor"}\n` +
-            `*Message:* ${input.message}\n` +
-            `*Session:* ${input.sessionId}\n\n` +
-            `Reply from your admin inbox at opsbynoell.com/admin/inbox`
-          ),
-          sendHumanTakeoverEmail({
-            visitorName: input.visitorName,
-            visitorEmail: input.visitorEmail,
-            businessType: input.businessType,
-            lastMessage: input.message,
-            sessionId: input.sessionId,
-            chatHistory: history,
-          }),
-        ]);
-        return { botReply: null, humanTakeover: true };
-      }
+      // Broadcast SSE — visitor message arrived
+      broadcastSSE('new_message', {
+        sessionId: input.sessionId,
+        role: 'visitor',
+        content: input.message,
+        visitorName: input.visitorName,
+      });
+      broadcastSSE('session_updated', { sessionId: input.sessionId });
 
       // Detect human handoff request — notify owner immediately
       const HANDOFF_KEYWORDS = [
@@ -112,14 +158,15 @@ export const chatRouter = router({
       const isHandoff = HANDOFF_KEYWORDS.some(kw => msgLower.includes(kw));
       if (isHandoff) {
         const history = await getSessionMessages(input.sessionId);
+        const inboxLink = `https://www.opsbynoell.com/admin/inbox?session=${input.sessionId}`;
         await Promise.allSettled([
           sendTelegram(
-            `\u{1F64B} *Visitor Wants to Speak to a Person*\n\n` +
-            `*Name:* ${input.visitorName ?? 'Unknown'}\n` +
-            `*Email:* ${input.visitorEmail ?? 'Not provided'}\n` +
-            `*Business:* ${input.businessType ?? 'Not provided'}\n` +
-            `*Message:* ${input.message}\n\n` +
-            `Reply from your admin inbox at opsbynoell.com/admin/inbox`
+            `<b>🙋 Visitor Wants a Person</b>\n\n` +
+            `<b>Name:</b> ${input.visitorName ?? 'Unknown'}\n` +
+            `<b>Email:</b> ${input.visitorEmail ?? 'Not provided'}\n` +
+            `<b>Business:</b> ${input.businessType ?? 'Not provided'}\n` +
+            `<b>Message:</b> ${input.message}\n\n` +
+            `<a href="${inboxLink}">Take over conversation →</a>`
           ),
           sendHumanTakeoverEmail({
             visitorName: input.visitorName,
@@ -132,6 +179,13 @@ export const chatRouter = router({
         ]);
         const handoffReply = "Of course. Let me get James and Nikki on this for you. They'll reach out shortly. You can also book a free 30-minute intro call directly at opsbynoell.com/book if that's easier.";
         await insertChatMessage(input.sessionId, "bot", handoffReply);
+
+        broadcastSSE('new_message', {
+          sessionId: input.sessionId,
+          role: 'bot',
+          content: handoffReply,
+        });
+
         return { botReply: handoffReply, humanTakeover: false };
       }
 
@@ -144,6 +198,13 @@ export const chatRouter = router({
         businessType: input.businessType,
       });
       await insertChatMessage(input.sessionId, "bot", botReply);
+
+      // Broadcast bot reply to SSE
+      broadcastSSE('new_message', {
+        sessionId: input.sessionId,
+        role: 'bot',
+        content: botReply,
+      });
 
       return { botReply, humanTakeover: false };
     }),
@@ -187,8 +248,18 @@ export const chatRouter = router({
       if (ctx.user.role !== "admin") {
         throw new TRPCError({ code: "FORBIDDEN", message: "Admin only" });
       }
+      // Ensure takeover is active when admin replies
       await setHumanTakeover(input.sessionId, true);
       await insertChatMessage(input.sessionId, "human", input.message);
+
+      // Broadcast to SSE so the thread updates live
+      broadcastSSE('new_message', {
+        sessionId: input.sessionId,
+        role: 'human',
+        content: input.message,
+      });
+      broadcastSSE('session_updated', { sessionId: input.sessionId });
+
       return { success: true };
     }),
 
@@ -204,17 +275,12 @@ export const chatRouter = router({
         throw new TRPCError({ code: "FORBIDDEN", message: "Admin only" });
       }
       await setHumanTakeover(input.sessionId, input.active);
+      broadcastSSE('session_updated', { sessionId: input.sessionId });
       return { success: true };
     }),
 });
 
 // ─── Nova Level 2 — LLM-Backed Response Engine ──────────────────────────────
-//
-// Nova is the AI assistant for Ops by Noell. Her responses are generated by
-// an LLM with a rich system prompt containing all business knowledge.
-// The system prompt can be updated without code deploys — just edit NOVA_SYSTEM_PROMPT.
-//
-// Keyword fallback fires if the LLM call fails (network, quota, etc.).
 
 const NOVA_SYSTEM_PROMPT = `You are Nova, the AI assistant for Ops by Noell — an AI automation agency for appointment-based service businesses in Orange County, California. You are friendly, direct, and knowledgeable. You sound like a real person, not a bot.
 
@@ -290,9 +356,7 @@ async function generateNovaResponse(
 ): Promise<string> {
   // Try LLM first
   try {
-    // Build message history for LLM — exclude the message we just stored (last item)
-    // history already includes the new visitor message we just inserted
-    const priorMessages = history.slice(0, -1); // everything before current message
+    const priorMessages = history.slice(0, -1);
 
     const llmMessages: Array<{ role: "user" | "assistant"; content: string }> = [];
 
@@ -304,7 +368,6 @@ async function generateNovaResponse(
       }
     }
 
-    // Add current visitor message
     llmMessages.push({ role: "user", content: currentMessage });
 
     const result = await invokeLLM({
@@ -320,16 +383,11 @@ async function generateNovaResponse(
       return responseContent.trim();
     }
   } catch (err) {
-    // LLM failed — fall through to keyword fallback
     console.error("[Nova] LLM call failed, using keyword fallback:", err);
   }
 
-  // Keyword fallback — always works, no external dependencies
   return generateKeywordFallback(currentMessage);
 }
-
-// ─── Keyword Fallback ─────────────────────────────────────────────────────────
-// Used when LLM is unavailable. Kept in sync with ChatWidget.tsx KNOWLEDGE array.
 
 const QA_PAIRS: Array<{ keywords: string[]; answer: string }> = [
   {
