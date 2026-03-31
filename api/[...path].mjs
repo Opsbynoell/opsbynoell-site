@@ -2442,7 +2442,7 @@ async function handler(req, res) {
       console.error("[QL-POST-CALL] claudeRes.status=" + claudeRes.status + " rawText=" + rawText.substring(0, 300));
       console.error("[QL-DEBUG] status=" + claudeRes.status + " rawText=" + rawText.substring(0, 400) + " claudeDataKeys=" + Object.keys(claudeData||{}).join(",") + " content0=" + JSON.stringify((claudeData?.content||[])[0]));
       let analysis = { intent: "low", businessType: null, painPoint: null, extractedEmail: null };
-      try { analysis = JSON.parse(rawText); } catch {}
+      try { const stripped = rawText.replace(/^```(?:json)?\s*/,"").replace(/\s*```$/,"").trim(); analysis = JSON.parse(stripped); } catch {}
       if (!["hot","warm","low"].includes(analysis.intent)) analysis.intent = "low";
       // Resolve email
       const emailRegex = /[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}/g;
