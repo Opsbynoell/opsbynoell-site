@@ -9169,7 +9169,6 @@ function drizzle(...params) {
   }
   drizzle2.mock = mock;
 })(drizzle || (drizzle = {}));
-var postgres = src_default;
 
 // --- END INLINED ---
 
@@ -9295,7 +9294,7 @@ var _db = null;
 async function getDb() {
   if (!_db && process.env.DATABASE_URL) {
     try {
-      const client = postgres(process.env.DATABASE_URL, { ssl: 'require' });
+      const client = src_default(process.env.DATABASE_URL, { ssl: 'require', connect_timeout: 10, idle_timeout: 20, max_lifetime: 1800 });
       _db = drizzle(client);
     } catch (error) {
       console.warn("[Database] Failed to connect:", error);
