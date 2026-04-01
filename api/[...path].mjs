@@ -2578,6 +2578,62 @@ async function handler(req, res) {
   }
 
 
+
+  // ─── /api/widget-config ─────────────────────────────────────────────────────
+  if (urlPath === "/api/widget-config") {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+    if (req.method === "OPTIONS") {
+      res.status(204).end();
+      return;
+    }
+    if (req.method !== "GET") {
+      res.status(405).json({ error: "Method not allowed" });
+      return;
+    }
+
+    const clientId = new URL(rawUrl, "http://localhost").searchParams.get("client_id");
+    if (!clientId || typeof clientId !== "string") {
+      res.status(400).json({ error: "client_id is required" });
+      return;
+    }
+
+    const WC_DB_URL = process.env.DATABASE_URL;
+    if (!WC_DB_URL) {
+      res.status(500).json({ error: "Database not configured" });
+      return;
+    }
+
+    let wcPool;
+    try {
+      wcPool = new Pool({ connectionString: WC_DB_URL, ssl: { rejectUnauthorized: false } });
+      const result = await wcPool.query(
+        `SELECT business_name, system_prompt, primary_color, booking_link FROM clients WHERE client_id = $1 AND active = true LIMIT 1`,
+        [clientId]
+      );
+      if (result.rows.length === 0) {
+        res.status(404).json({ error: "Client not found or inactive" });
+        return;
+      }
+      const row = result.rows[0];
+      res.status(200).json({
+        business_name: row.business_name,
+        system_prompt: row.system_prompt,
+        primary_color: row.primary_color,
+        booking_link: row.booking_link,
+      });
+    } catch (err) {
+      console.error("widget-config error:", err);
+      res.status(500).json({ error: "Internal server error" });
+    } finally {
+      if (wcPool) wcPool.end().catch(() => {});
+    }
+    return;
+  }
+
+
   if (urlPath.startsWith("/api/trpc")) {
     const trpcPath = urlPath.replace(/^\/api\/trpc\/?/, "");
     return nodeHTTPRequestHandler({
@@ -2601,3 +2657,4 @@ async function handler(req, res) {
 export {
   handler as default
 };
+
