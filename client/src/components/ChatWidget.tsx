@@ -93,6 +93,14 @@ export default function ChatWidget() {
   const [hasManuallyClosed, setHasManuallyClosed] = useState(false);
   const [autoOpenTriggered, setAutoOpenTriggered] = useState(false);
 
+  // Mobile detection
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' && window.innerWidth < 768);
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const [location] = useLocation();
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -175,10 +183,10 @@ export default function ChatWidget() {
         text: message,
         timestamp: new Date(),
       }]);
-    }, 45000);
+    }, isMobile ? 90000 : 45000);
 
     return () => clearTimeout(timer);
-  }, [location, isOpen, proactiveTriggered]);
+  }, [location, isOpen, proactiveTriggered, isMobile]);
 
   // Auto-open after 45 seconds if all conditions are met
   useEffect(() => {
@@ -203,10 +211,10 @@ export default function ChatWidget() {
         }]);
         return true;
       });
-    }, 45000);
+    }, isMobile ? 90000 : 45000);
 
     return () => clearTimeout(timer);
-  }, [autoOpenTriggered, hasManuallyClosed, hasOpenedOnce]);
+  }, [autoOpenTriggered, hasManuallyClosed, hasOpenedOnce, isMobile]);
 
   // Outside-click: only collapse if the visitor has NOT yet sent a message.
   // Once hasEngaged is true, the widget stays open until the X button is clicked.
@@ -355,8 +363,8 @@ export default function ChatWidget() {
       <div
         style={{
           position: 'fixed',
-          bottom: '2rem',
-          right: '2rem',
+          bottom: isMobile ? '1rem' : '2rem',
+          right: isMobile ? '1rem' : '2rem',
           zIndex: 9999,
           display: 'flex',
           flexDirection: 'column',
@@ -437,8 +445,8 @@ export default function ChatWidget() {
           ref={toggleRef}
           onClick={() => isOpen ? (!hasEngaged && setIsOpen(false)) : openChat()}
           style={{
-            width: '52px',
-            height: '52px',
+            width: isMobile ? '48px' : '52px',
+            height: isMobile ? '48px' : '52px',
             backgroundColor: '#A78BFA',
             border: 'none',
             borderRadius: '50%',
@@ -489,8 +497,8 @@ export default function ChatWidget() {
         ref={panelRef}
         style={{
           position: 'fixed',
-          bottom: '6rem',
-          right: '2rem',
+          bottom: isMobile ? '4.5rem' : '6rem',
+          right: isMobile ? '1rem' : '2rem',
           zIndex: 9998,
           width: '360px',
           maxWidth: 'calc(100vw - 2rem)',
@@ -786,4 +794,3 @@ export default function ChatWidget() {
     </>
   );
 }
-
