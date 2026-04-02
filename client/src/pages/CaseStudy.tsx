@@ -15,9 +15,9 @@ function FadeItem({ children, delay = 0, style = {} }: { children: React.ReactNo
     <div
       ref={ref}
       style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? 'translateY(0)' : 'translateY(24px)',
-        transition: `opacity 0.65s ease-out ${delay}s, transform 0.65s ease-out ${delay}s`,
+        opacity: visible ? 1 : 0.7,
+        transform: visible ? 'translateY(0)' : 'translateY(10px)',
+        transition: `opacity 0.3s ease-out ${delay}s, transform 0.3s ease-out ${delay}s`,
         ...style,
       }}
     >
