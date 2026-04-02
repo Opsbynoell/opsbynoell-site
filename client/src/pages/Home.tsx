@@ -7,6 +7,7 @@ import { Star, Zap, ArrowRight } from 'lucide-react';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import { RevealSection } from '@/components/RevealSection'
+import { SectionDivider } from '@/components/SectionDivider'
 
 /* ─── SHARED BADGE COMPONENT ────────────────────────────────────── */
 function SectionBadge({ children }: { children: React.ReactNode }) {
@@ -158,6 +159,8 @@ export default function Home() {
           Trusted by massage therapists, dental practices, and med spas across Orange County.
         </div>
 
+        <SectionDivider />
+
         {/* ═══ CASE STUDY ════════════════════════════════════════════ */}
         <RevealSection>
         <section style={{ padding: '7rem 0', borderTop: '1px solid rgba(167,139,250,0.08)' }}>
@@ -225,6 +228,8 @@ export default function Home() {
           </div>
         </section>
         </RevealSection>
+
+        <SectionDivider />
 
         {/* ═══ CALCULATOR CTA ══════════════════════════════════════════ */}
         <RevealSection>
@@ -314,6 +319,8 @@ export default function Home() {
         </section>
         </RevealSection>
 
+        <SectionDivider />
+
         {/* ═══ INDUSTRIES ════════════════════════════════════════════ */}
         <RevealSection>
         <section style={{ padding: '7rem 0', borderTop: '1px solid rgba(167,139,250,0.08)' }}>
@@ -372,6 +379,8 @@ export default function Home() {
           </div>
         </section>
         </RevealSection>
+
+        <SectionDivider />
 
         {/* ═══ FINAL CTA ══════════════════════════════════════════════ */}
         <RevealSection>
