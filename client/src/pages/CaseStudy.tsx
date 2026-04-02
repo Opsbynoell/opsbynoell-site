@@ -88,7 +88,7 @@ export default function CaseStudy() {
           
             <h1 style={{
               fontFamily: "'Nicholas', serif",
-              fontSize: 'clamp(2.75rem, 6.5vw, 5.5rem)',
+              fontSize: 'clamp(1.75rem, 5vw, 3.5rem)',
               fontWeight: 800, lineHeight: 1.7, letterSpacing: '-0.04em',
               maxWidth: '860px', marginBottom: '2.5rem',
             }}>
@@ -130,7 +130,7 @@ export default function CaseStudy() {
                 </div>
                 <h2 style={{
                   fontFamily: "'Nicholas', serif",
-                  fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+                  fontSize: 'clamp(1.375rem, 4vw, 2.5rem)',
                   fontWeight: 700, color: '#ffffff',
                   lineHeight: 1.7, marginBottom: '1.5rem',
                 }}>
@@ -185,7 +185,7 @@ export default function CaseStudy() {
               </div>
               <h2 style={{
                 fontFamily: "'Nicholas', serif",
-                fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+                fontSize: 'clamp(1.375rem, 4vw, 2.5rem)',
                 fontWeight: 700, color: '#ffffff',
                 lineHeight: 1.7, marginBottom: '1rem',
               }}>
@@ -235,7 +235,7 @@ export default function CaseStudy() {
               </div>
               <h2 style={{
                 fontFamily: "'Nicholas', serif",
-                fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+                fontSize: 'clamp(1.375rem, 4vw, 2.5rem)',
                 fontWeight: 700, color: '#ffffff',
                 lineHeight: 1.7, marginBottom: '1rem',
               }}>
