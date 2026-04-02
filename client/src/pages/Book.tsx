@@ -85,7 +85,7 @@ export default function Book() {
           
             <h1 style={{
               fontFamily: "'Nicholas', serif",
-              fontSize: 'clamp(2rem, 4vw, 3.25rem)',
+              fontSize: 'clamp(1.75rem, 5vw, 3rem)',
               fontWeight: 700,
               color: '#F5F0EC',
               lineHeight: 1.7,
@@ -236,7 +236,7 @@ export default function Book() {
             <p className="eyebrow" style={{ marginBottom: '1rem' }}>Still Have Questions?</p>
             <h2 style={{
               fontFamily: "'Nicholas', serif",
-              fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+              fontSize: 'clamp(1.375rem, 4vw, 2.5rem)',
               fontWeight: 700,
               color: '#F5F0EC',
               lineHeight: 1.7,
