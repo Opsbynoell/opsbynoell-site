@@ -151,7 +151,7 @@ export default function MassageTherapistAutomation() {
           <FadeItem delay={0.3}>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="/book" className="btn-gradient" style={{ padding: '1rem 2rem', fontSize: '1rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                Book Free 30-Minute Intro Call <ArrowRight size={16} />
+                Book a Free 30-Minute Audit <ArrowRight size={16} />
               </a>
               <a href="#pricing" className="btn-outline" style={{ padding: '1rem 2rem', fontSize: '1rem' }}>See Pricing</a>
             </div>
@@ -345,7 +345,7 @@ export default function MassageTherapistAutomation() {
               30 minutes. Free. No obligation. We will map your revenue gaps and show you exactly what we would build.
             </p>
             <a href="/book" className="btn-gradient" style={{ padding: '1.125rem 2.25rem', fontSize: '1.0625rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-              Book Free 30-Minute Intro Call <ArrowRight size={17} />
+              Book a Free 30-Minute Audit <ArrowRight size={17} />
             </a>
           </FadeItem>
         </div>
