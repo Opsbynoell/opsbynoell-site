@@ -171,6 +171,8 @@ export default function ChatWidget() {
     const message = proactiveMessages[location];
     if (!message) return;
 
+    if (isMobile) return; // on mobile, never auto-open — user taps the bubble
+
     const timer = setTimeout(() => {
       if (isOpen) return; // don't interrupt if already open
       sessionStorage.setItem(sessionKey, '1');
@@ -183,7 +185,7 @@ export default function ChatWidget() {
         text: message,
         timestamp: new Date(),
       }]);
-    }, isMobile ? 90000 : 45000);
+    }, 45000);
 
     return () => clearTimeout(timer);
   }, [location, isOpen, proactiveTriggered, isMobile]);
@@ -194,6 +196,8 @@ export default function ChatWidget() {
     if (hasManuallyClosed) return;
     if (hasOpenedOnce) return;
     if (sessionStorage.getItem('nova_auto_opened')) return;
+
+    if (isMobile) return; // on mobile, never auto-open — user taps the bubble
 
     const timer = setTimeout(() => {
       // Re-check at fire time (isOpen could have changed)
@@ -211,7 +215,7 @@ export default function ChatWidget() {
         }]);
         return true;
       });
-    }, isMobile ? 90000 : 45000);
+    }, 45000);
 
     return () => clearTimeout(timer);
   }, [autoOpenTriggered, hasManuallyClosed, hasOpenedOnce, isMobile]);
@@ -500,7 +504,7 @@ export default function ChatWidget() {
           bottom: isMobile ? '4.5rem' : '6rem',
           right: isMobile ? '1rem' : '2rem',
           zIndex: 9998,
-          width: '360px',
+          width: isMobile ? 'min(320px, calc(100vw - 2rem))' : '360px',
           maxWidth: 'calc(100vw - 2rem)',
           backgroundColor: '#0F0F0F',
           borderWidth: '1px',
