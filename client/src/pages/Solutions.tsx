@@ -80,7 +80,7 @@ function FAQSection() {
               fontFamily: "'Nicholas', serif",
               fontSize: 'clamp(1.75rem, 3vw, 2.75rem)',
               fontWeight: 800,
-              color: '#F5F0EC',
+              color: '#1A1A1A',
               lineHeight: 1.1,
               letterSpacing: '-0.02em',
             }}>
@@ -218,7 +218,7 @@ const BUILDS = [
 
 export default function Solutions() {
   return (
-    <div style={{ backgroundColor: '#0A0A0A', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
       <Nav />
 
       {/* ─── HERO ─── */}
@@ -245,7 +245,7 @@ export default function Solutions() {
               marginBottom: '1.75rem',
               maxWidth: '800px',
             }}>
-              <span style={{ color: '#F5F0EC' }}>The AI systems</span>{' '}
+              <span style={{ color: '#1A1A1A' }}>The AI systems</span>{' '}
               <span className="gradient-text-purple">we build.</span>
             </h1>
           </FadeItem>
@@ -316,7 +316,7 @@ export default function Solutions() {
                     fontFamily: "'Sora', sans-serif",
                     fontSize: '1.0625rem',
                     fontWeight: 700,
-                    color: '#F5F0EC',
+                    color: '#1A1A1A',
                     lineHeight: 1.3,
                     letterSpacing: '-0.01em',
                   }}>{build.title}</h3>
@@ -338,7 +338,7 @@ export default function Solutions() {
                       color: '#868583',
                       lineHeight: 1.6,
                     }}>
-                      <span style={{ color: '#A78BFA', fontWeight: 600 }}>Perfect for: </span>
+                      <span style={{ color: '#0CA2A2', fontWeight: 600 }}>Perfect for: </span>
                       {(build as any).perfectFor}
                     </p>
                   )}
@@ -356,7 +356,7 @@ export default function Solutions() {
                       fontFamily: "'Sora', sans-serif",
                       fontSize: '0.8125rem',
                       fontWeight: 700,
-                      color: '#A78BFA',
+                      color: '#0CA2A2',
                       letterSpacing: '-0.01em',
                     }}>{build.outcome}</p>
                   </div>
