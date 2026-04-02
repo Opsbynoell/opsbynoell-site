@@ -66,7 +66,7 @@ export default function Home() {
             background: 'linear-gradient(180deg, rgba(120,58,237,0.28) 0%, rgba(139,92,246,0.18) 35%, #010509 72%)',
           }} />
           {/* Purple orb */}
-          <div style={{
+          <div className="hero-glow" style={{
             position: 'absolute', top: '5%', left: '50%',
             transform: 'translateX(-50%)',
             width: '700px', height: '700px', pointerEvents: 'none',
