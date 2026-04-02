@@ -182,8 +182,8 @@ export default function ChatInbox() {
 
   if (loading) {
     return (
-      <div style={{ minHeight: '100vh', backgroundColor: '#0A0A0A', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ color: '#868583', fontFamily: "'Sora', sans-serif" }}>Loading...</div>
+      <div style={{ minHeight: '100vh', backgroundColor: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ color: '#555555', fontFamily: "'Nicholas', serif" }}>Loading...</div>
       </div>
     );
   }
@@ -195,10 +195,10 @@ export default function ChatInbox() {
 
   if (user.role !== 'admin') {
     return (
-      <div style={{ minHeight: '100vh', backgroundColor: '#0A0A0A', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ color: '#F5F0EC', fontFamily: "'Sora', sans-serif", textAlign: 'center' }}>
+      <div style={{ minHeight: '100vh', backgroundColor: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ color: '#555555', fontFamily: "'Nicholas', serif", textAlign: 'center' }}>
           <p style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Access Denied</p>
-          <p style={{ color: '#868583', fontSize: '0.875rem' }}>Admin access required.</p>
+          <p style={{ color: '#555555', fontSize: '0.875rem' }}>Admin access required.</p>
         </div>
       </div>
     );
@@ -231,7 +231,7 @@ export default function ChatInbox() {
     lastMsg?.role !== 'bot';
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#0A0A0A', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#FFFFFF', display: 'flex', flexDirection: 'column' }}>
       {/* CSS keyframes */}
       <style>{`
         @keyframes pulse { 0%, 100% { opacity: 0.3; transform: scale(0.85) } 50% { opacity: 1; transform: scale(1.1) } }
@@ -240,7 +240,7 @@ export default function ChatInbox() {
 
       {/* Header */}
       <div style={{
-        backgroundColor: '#141414',
+        backgroundColor: '#FAFAF8',
         borderBottom: '1px solid #2A2A2A',
         padding: '0.875rem 1rem',
         display: 'flex',
@@ -252,32 +252,32 @@ export default function ChatInbox() {
           {isMobileView && showThread && (
             <button
               onClick={() => { setShowThread(false); selectSession(null); }}
-              style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#A78BFA', padding: '0.25rem', display: 'flex', alignItems: 'center' }}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#0CA2A2', padding: '0.25rem', display: 'flex', alignItems: 'center' }}
             >
               <ArrowLeft size={20} />
             </button>
           )}
-          <MessageSquare size={18} color="#A78BFA" />
-          <span style={{ fontFamily: "'Sora', sans-serif", fontWeight: 600, color: '#F5F0EC', fontSize: '0.9375rem' }}>
+          <MessageSquare size={18} color="#0CA2A2" />
+          <span style={{ fontFamily: "'Nicholas', serif", fontWeight: 600, color: '#555555', fontSize: '0.9375rem' }}>
             {isMobileView && showThread && selectedSessionData
               ? (selectedSessionData.visitorName ?? 'Visitor')
               : 'Nova Chat Inbox'}
           </span>
           {totalUnread > 0 && (
             <span style={{
-              backgroundColor: '#A78BFA',
-              color: '#0A0A0A',
+              backgroundColor: '#0CA2A2',
+              color: '#1A1A1A',
               borderRadius: '999px',
               padding: '0.125rem 0.45rem',
               fontSize: '0.625rem',
               fontWeight: 700,
-              fontFamily: "'Sora', sans-serif",
+              fontFamily: "'Nicholas', serif",
             }}>
               {totalUnread}
             </span>
           )}
         </div>
-        <a href="/" style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.75rem', color: '#868583', textDecoration: 'none' }}>
+        <a href="/" style={{ fontFamily: "'Nicholas', serif", fontSize: '0.75rem', color: '#555555', textDecoration: 'none' }}>
           ← Site
         </a>
       </div>
@@ -292,11 +292,11 @@ export default function ChatInbox() {
             flexShrink: 0,
             borderRight: isMobileView ? 'none' : '1px solid #2A2A2A',
             overflowY: 'auto',
-            backgroundColor: '#0F0F0F',
+            backgroundColor: '#FFFFFF',
             WebkitOverflowScrolling: 'touch',
           }}>
             {!sessions || sessions.length === 0 ? (
-              <div style={{ padding: '2rem', textAlign: 'center', color: '#868583', fontFamily: "'Sora', sans-serif", fontSize: '0.875rem' }}>
+              <div style={{ padding: '2rem', textAlign: 'center', color: '#555555', fontFamily: "'Nicholas', serif", fontSize: '0.875rem' }}>
                 No conversations yet.
               </div>
             ) : (
@@ -318,15 +318,15 @@ export default function ChatInbox() {
                     <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '0.2rem' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', minWidth: 0 }}>
                         {session.humanTakeover ? (
-                          <UserCheck size={13} color="#A78BFA" style={{ flexShrink: 0 }} />
+                          <UserCheck size={13} color="#0CA2A2" style={{ flexShrink: 0 }} />
                         ) : (
                           <Bot size={13} color="#868583" style={{ flexShrink: 0 }} />
                         )}
                         <span style={{
-                          fontFamily: "'Sora', sans-serif",
+                          fontFamily: "'Nicholas', serif",
                           fontSize: '0.8125rem',
                           fontWeight: 600,
-                          color: '#F5F0EC',
+                          color: '#555555',
                           overflow: 'hidden',
                           textOverflow: 'ellipsis',
                           whiteSpace: 'nowrap',
@@ -336,35 +336,35 @@ export default function ChatInbox() {
                       </div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', flexShrink: 0 }}>
                         {session.priority === 'hot' && (
-                          <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.5rem', fontWeight: 700, color: '#FF6B6B', backgroundColor: 'rgba(255,107,107,0.12)', borderRadius: '999px', padding: '0.1rem 0.375rem', letterSpacing: '0.06em' }}>HOT</span>
+                          <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.5rem', fontWeight: 700, color: '#FF6B6B', backgroundColor: 'rgba(255,107,107,0.12)', borderRadius: '999px', padding: '0.1rem 0.375rem', letterSpacing: '0.06em' }}>HOT</span>
                         )}
                         {session.humanTakeover ? (
-                          <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.5625rem', color: '#A78BFA', fontWeight: 600 }}>YOU</span>
+                          <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.5625rem', color: '#0CA2A2', fontWeight: 600 }}>YOU</span>
                         ) : null}
                         {session.unreadCount > 0 && (
-                          <Circle size={7} fill="#A78BFA" color="#A78BFA" />
+                          <Circle size={7} fill="#0CA2A2" color="#0CA2A2" />
                         )}
                       </div>
                     </div>
                     {session.visitorEmail && (
-                      <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.6875rem', color: '#868583', margin: '0 0 0.1rem 0' }}>
+                      <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', color: '#555555', margin: '0 0 0.1rem 0' }}>
                         {session.visitorEmail}
                       </p>
                     )}
                     {session.businessType && (
-                      <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.6875rem', color: '#5A5450', margin: 0 }}>
+                      <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', color: '#5A5450', margin: 0 }}>
                         {session.businessType}
                       </p>
                     )}
                     {/* Prospect active pulse */}
                     {isActive && (
-                      <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.5625rem', color: '#6EE7B7', marginTop: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+                      <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.5625rem', color: '#6EE7B7', marginTop: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
                         <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: '#6EE7B7', display: 'inline-block', animation: 'pulse 1.2s ease-in-out infinite' }} />
                         active
                       </p>
                     )}
                     {!isActive && (
-                      <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.5625rem', color: '#3A3430', marginTop: '0.3rem' }}>
+                      <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.5625rem', color: '#3A3430', marginTop: '0.3rem' }}>
                         {new Date(session.updatedAt).toLocaleString()}
                       </p>
                     )}
@@ -381,7 +381,7 @@ export default function ChatInbox() {
             {!selectedSession ? (
               <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '1rem' }}>
                 <MessageSquare size={36} color="#2A2A2A" />
-                <p style={{ fontFamily: "'Sora', sans-serif", color: '#4A4440', fontSize: '0.875rem' }}>
+                <p style={{ fontFamily: "'Nicholas', serif", color: '#4A4440', fontSize: '0.875rem' }}>
                   Select a conversation
                 </p>
               </div>
@@ -391,17 +391,17 @@ export default function ChatInbox() {
                 <div style={{
                   padding: '0.75rem 1rem',
                   borderBottom: '1px solid #2A2A2A',
-                  backgroundColor: '#141414',
+                  backgroundColor: '#FAFAF8',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   flexShrink: 0,
                 }}>
                   <div style={{ minWidth: 0, flex: 1, marginRight: '0.5rem' }}>
-                    <p style={{ fontFamily: "'Sora', sans-serif", fontWeight: 600, color: '#F5F0EC', fontSize: '0.8125rem', margin: 0 }}>
+                    <p style={{ fontFamily: "'Nicholas', serif", fontWeight: 600, color: '#555555', fontSize: '0.8125rem', margin: 0 }}>
                       {selectedSessionData?.visitorName ?? 'Anonymous'}
                     </p>
-                    <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.625rem', color: '#868583', margin: '0.125rem 0 0', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                    <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.625rem', color: '#555555', margin: '0.125rem 0 0', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                       {selectedSessionData?.visitorEmail ?? 'No email'}
                       {selectedSessionData?.businessType ? ` · ${selectedSessionData.businessType}` : ''}
                       {selectedSessionData?.visitorLocation ? ` · 📍 ${selectedSessionData.visitorLocation}` : ''}
@@ -413,13 +413,13 @@ export default function ChatInbox() {
                       active: !selectedSessionData?.humanTakeover,
                     })}
                     style={{
-                      backgroundColor: selectedSessionData?.humanTakeover ? '#A78BFA' : '#2A2A2A',
-                      color: selectedSessionData?.humanTakeover ? '#0A0A0A' : '#F5F0EC',
+                      backgroundColor: selectedSessionData?.humanTakeover ? '#0CA2A2' : '#2A2A2A',
+                      color: selectedSessionData?.humanTakeover ? '#FFFFFF' : '#F5F0EC',
                       border: 'none',
                       borderRadius: '6px',
                       padding: '0.5rem 0.75rem',
                       cursor: 'pointer',
-                      fontFamily: "'Sora', sans-serif",
+                      fontFamily: "'Nicholas', serif",
                       fontSize: '0.6875rem',
                       fontWeight: 700,
                       display: 'flex',
@@ -437,19 +437,19 @@ export default function ChatInbox() {
                 {/* Takeover banner */}
                 {selectedSessionData?.humanTakeover ? (
                   <div style={{
-                    background: 'linear-gradient(90deg, rgba(167,139,250,0.12) 0%, rgba(167,139,250,0.06) 100%)',
-                    borderBottom: '1px solid rgba(167,139,250,0.25)',
+                    background: 'linear-gradient(90deg, rgba(12,162,162,0.12) 0%, rgba(12,162,162,0.06) 100%)',
+                    borderBottom: '1px solid rgba(12,162,162,0.25)',
                     padding: '0.5rem 1rem',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '0.5rem',
                     flexShrink: 0,
                   }}>
-                    <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#A78BFA', flexShrink: 0 }} />
-                    <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.6875rem', color: '#A78BFA', fontWeight: 600 }}>
+                    <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#0CA2A2', flexShrink: 0 }} />
+                    <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', color: '#0CA2A2', fontWeight: 600 }}>
                       You have control
                     </span>
-                    <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.6875rem', color: 'rgba(167,139,250,0.5)' }}>
+                    <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', color: 'rgba(12,162,162,0.5)' }}>
                       · Nova is paused
                     </span>
                   </div>
@@ -458,7 +458,7 @@ export default function ChatInbox() {
                 {/* Messages */}
                 <div style={{ flex: 1, overflowY: 'auto', padding: '1rem', display: 'flex', flexDirection: 'column', gap: '0.625rem', WebkitOverflowScrolling: 'touch' }}>
                   {!messages || messages.length === 0 ? (
-                    <div style={{ textAlign: 'center', color: '#4A4440', fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', marginTop: '2rem' }}>
+                    <div style={{ textAlign: 'center', color: '#4A4440', fontFamily: "'Nicholas', serif", fontSize: '0.875rem', marginTop: '2rem' }}>
                       No messages yet
                     </div>
                   ) : (
@@ -483,13 +483,13 @@ export default function ChatInbox() {
                         )}
                         <div style={{
                           maxWidth: '78%',
-                          backgroundColor: msg.role === 'visitor' ? '#1A1A1A' : msg.role === 'human' ? '#A78BFA' : '#2A2A2A',
+                          backgroundColor: msg.role === 'visitor' ? '#1A1A1A' : msg.role === 'human' ? '#0CA2A2' : '#2A2A2A',
                           borderRadius: msg.role === 'visitor' ? '12px 12px 12px 3px' : '12px 12px 3px 12px',
                           padding: '0.5rem 0.75rem',
                         }}>
                           {msg.role !== 'visitor' && (
                             <p style={{
-                              fontFamily: "'Sora', sans-serif",
+                              fontFamily: "'Nicholas', serif",
                               fontSize: '0.5rem',
                               fontWeight: 700,
                               letterSpacing: '0.08em',
@@ -501,9 +501,9 @@ export default function ChatInbox() {
                             </p>
                           )}
                           <p style={{
-                            fontFamily: "'Sora', sans-serif",
+                            fontFamily: "'Nicholas', serif",
                             fontSize: '0.8125rem',
-                            color: msg.role === 'human' ? '#0A0A0A' : '#F5F0EC',
+                            color: msg.role === 'human' ? '#FFFFFF' : '#F5F0EC',
                             lineHeight: 1.5,
                             whiteSpace: 'pre-wrap',
                             margin: 0,
@@ -511,7 +511,7 @@ export default function ChatInbox() {
                             {msg.content}
                           </p>
                           <p style={{
-                            fontFamily: "'Sora', sans-serif",
+                            fontFamily: "'Nicholas', serif",
                             fontSize: '0.5rem',
                             color: msg.role === 'human' ? 'rgba(10,10,10,0.4)' : '#3A3430',
                             marginTop: '0.2rem',
@@ -523,10 +523,10 @@ export default function ChatInbox() {
                         {msg.role !== 'visitor' && (
                           <div style={{
                             width: '24px', height: '24px', borderRadius: '50%',
-                            backgroundColor: msg.role === 'human' ? '#A78BFA' : '#2A2A2A',
+                            backgroundColor: msg.role === 'human' ? '#0CA2A2' : '#2A2A2A',
                             display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
                           }}>
-                            {msg.role === 'human' ? <UserCheck size={12} color="#0A0A0A" /> : <Bot size={12} color="#868583" />}
+                            {msg.role === 'human' ? <UserCheck size={12} color="#FFFFFF" /> : <Bot size={12} color="#868583" />}
                           </div>
                         )}
                       </div>
@@ -551,9 +551,9 @@ export default function ChatInbox() {
                         gap: '0.25rem',
                       }}>
                         <span style={{
-                          fontFamily: "'Sora', sans-serif",
+                          fontFamily: "'Nicholas', serif",
                           fontSize: '0.5625rem',
-                          color: '#868583',
+                          color: '#555555',
                           marginRight: '0.375rem',
                           fontStyle: 'italic',
                         }}>
@@ -562,7 +562,7 @@ export default function ChatInbox() {
                         {[0, 1, 2].map(i => (
                           <div key={i} style={{
                             width: '4px', height: '4px', borderRadius: '50%',
-                            backgroundColor: 'rgba(167,139,250,0.6)',
+                            backgroundColor: 'rgba(12,162,162,0.6)',
                             animation: `pulse 1.1s ease-in-out ${i * 0.18}s infinite`,
                           }} />
                         ))}
@@ -584,7 +584,7 @@ export default function ChatInbox() {
                 <div style={{
                   borderTop: '1px solid #2A2A2A',
                   padding: '0.75rem',
-                  backgroundColor: '#141414',
+                  backgroundColor: '#FAFAF8',
                   display: 'flex',
                   gap: '0.625rem',
                   alignItems: 'flex-end',
@@ -599,13 +599,13 @@ export default function ChatInbox() {
                       rows={2}
                       style={{
                         width: '100%',
-                        backgroundColor: '#0A0A0A',
-                        border: '1px solid #2A2A2A',
+                        backgroundColor: '#FFFFFF',
+                        border: '1px solid #E5E5E5',
                         borderRadius: '8px',
                         padding: '0.5rem 0.75rem',
-                        fontFamily: "'Sora', sans-serif",
+                        fontFamily: "'Nicholas', serif",
                         fontSize: '0.8125rem',
-                        color: '#F5F0EC',
+                        color: '#555555',
                         resize: 'none',
                         outline: 'none',
                         lineHeight: 1.5,
@@ -613,7 +613,7 @@ export default function ChatInbox() {
                         WebkitAppearance: 'none',
                         touchAction: 'manipulation',
                       }}
-                      onFocus={e => (e.target as HTMLTextAreaElement).style.borderColor = '#A78BFA'}
+                      onFocus={e => (e.target as HTMLTextAreaElement).style.borderColor = '#0CA2A2'}
                       onBlur={e => (e.target as HTMLTextAreaElement).style.borderColor = '#2A2A2A'}
                     />
                   </div>
@@ -623,7 +623,7 @@ export default function ChatInbox() {
                     style={{
                       width: '44px',
                       height: '44px',
-                      backgroundColor: replyText.trim() ? '#A78BFA' : '#2A2A2A',
+                      backgroundColor: replyText.trim() ? '#0CA2A2' : '#2A2A2A',
                       border: 'none',
                       borderRadius: '8px',
                       cursor: replyText.trim() ? 'pointer' : 'not-allowed',
@@ -634,7 +634,7 @@ export default function ChatInbox() {
                     }}
                     aria-label="Send reply"
                   >
-                    <Send size={16} color={replyText.trim() ? '#0A0A0A' : '#4A4440'} />
+                    <Send size={16} color={replyText.trim() ? '#FFFFFF' : '#4A4440'} />
                   </button>
                 </div>
               </>
