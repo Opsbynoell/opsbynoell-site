@@ -145,9 +145,8 @@ export default function Home() {
             fontWeight: 800, color: '#ffffff',
             lineHeight: 1.12, letterSpacing: '-0.03em', marginBottom: '1.5rem',
           }}>
-            Done-for-you AI automation for{' '}
-            <GradientText>appointment-based</GradientText>
-            {' '}and service businesses.
+            You're losing clients between appointments.{' '}
+            <GradientText>We build the systems that stop that.</GradientText>
           </h1>
 
           {/* Sub */}
@@ -157,25 +156,25 @@ export default function Home() {
             color: '#868583', lineHeight: 1.75,
             maxWidth: '640px', margin: '0 auto 2.5rem',
           }}>
-            We build and manage the systems that capture leads, book appointments, reduce no-shows, and follow up automatically — so your business runs even when you're busy.
+            Every missed call, every no-show, every slow follow-up is revenue walking out your door. We build AI-powered systems that stop the bleeding, automatically, for massage therapists, dental practices, and local service businesses.
           </p>
 
           {/* CTAs */}
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '3.5rem' }}>
-            <a href="/book" className="btn-gradient" style={{ padding: '1rem 2rem', fontSize: '1rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-              Book Free 30-Minute Intro Call <ArrowRight size={16} />
+            <a href="/resources/revenue-calculator" className="btn-gradient" style={{ padding: '1rem 2rem', fontSize: '1rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+              See What You're Losing <ArrowRight size={16} />
             </a>
-            <a href="/services" className="btn-outline" style={{ padding: '1rem 2rem', fontSize: '1rem' }}>
-              See How It Works
+            <a href="/book" className="btn-outline" style={{ padding: '1rem 2rem', fontSize: '1rem' }}>
+              Book a Free 30-Minute Audit
             </a>
           </div>
 
           {/* Trust stats */}
           <div style={{ display: 'flex', gap: '2.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             {[
-              { value: '< 10s', label: 'Avg. lead response time' },
-              { value: '−42%', label: 'No-show rate reduction' },
-              { value: '24/7', label: 'Automation uptime' },
+              { value: '40+', label: 'Google reviews generated' },
+              { value: '$960', label: 'Recovered in 14 days' },
+              { value: '75%', label: 'Fewer no-shows' },
             ].map(({ value, label }) => (
               <div key={label} style={{ textAlign: 'center' }}>
                 <div style={{ fontFamily: "'Nicholas', serif", fontSize: '1.625rem', fontWeight: 700, color: '#ffffff', lineHeight: 1.1 }}>{value}</div>
