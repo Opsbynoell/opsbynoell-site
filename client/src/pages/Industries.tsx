@@ -79,7 +79,7 @@ const industries = [
 
 export default function Industries() {
   return (
-    <div style={{ backgroundColor: '#0A0A0A', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
       <Nav />
 
       {/* ─── HERO ─── */}
@@ -96,7 +96,7 @@ export default function Industries() {
           </FadeItem>
           <FadeItem delay={0.1}>
             <h1 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2.75rem, 6.5vw, 5.5rem)', fontWeight: 800, lineHeight: 1.0, letterSpacing: '-0.04em', maxWidth: '800px', marginBottom: '1.75rem' }}>
-              <span style={{ color: '#F5F0EC' }}>Built for local service</span>{' '}
+              <span style={{ color: '#1A1A1A' }}>Built for local service</span>{' '}
               <span className="gradient-text-purple">businesses.</span>
             </h1>
           </FadeItem>
@@ -142,7 +142,7 @@ export default function Industries() {
                         fontFamily: "'Nicholas', serif",
                         fontSize: '1.75rem',
                         fontWeight: 700,
-                        color: '#F5F0EC',
+                        color: '#1A1A1A',
                         marginBottom: '0.375rem',
                       }}>
                         {industry.name}
@@ -150,7 +150,7 @@ export default function Industries() {
                       <p style={{
                         fontFamily: "'Sora', sans-serif",
                         fontSize: '0.875rem',
-                        color: '#A78BFA',
+                        color: '#0CA2A2',
                         fontWeight: 500,
                         letterSpacing: '0.02em',
                       }}>
@@ -186,11 +186,11 @@ export default function Industries() {
                     borderLeft: '2px solid #A78BFA',
                     padding: '1.5rem',
                   }}>
-                    <p className="eyebrow" style={{ color: '#A78BFA', marginBottom: '0.75rem' }}>Typical Outcome</p>
+                    <p className="eyebrow" style={{ color: '#0CA2A2', marginBottom: '0.75rem' }}>Typical Outcome</p>
                     <p style={{
                       fontFamily: "'Sora', sans-serif",
                       fontSize: '0.9375rem',
-                      color: '#F5F0EC',
+                      color: '#1A1A1A',
                       lineHeight: 1.7,
                     }}>
                       {industry.outcome}
