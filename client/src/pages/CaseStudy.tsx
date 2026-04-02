@@ -1,6 +1,6 @@
 /*
  * OPS BY NOELL — Case Study Page (NeuraFlas Design System)
- * - Background: #010509, Nicholas headings, Sora body, #A78BFA accent
+ * - Background: #010509, Nicholas headings, Sora body, #0CA2A2 accent
  * - Client: Santa, licensed massage therapist, Laguna Niguel
  */
 
@@ -13,7 +13,7 @@ function SectionBadge({ children }: { children: React.ReactNode }) {
     <span style={{
       display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
       padding: '0.5rem 1.25rem', borderRadius: '4px',
-      border: '1px solid #E8E8E8', background: 'rgba(12,162,162,0.06)',
+      border: '1px solid #E8E8E8', background: '#FFFFFF',
       fontFamily: "'Nicholas', serif", fontSize: '0.75rem', fontWeight: 600,
       letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: '#0CA2A2',
     }}>
@@ -48,10 +48,11 @@ export default function CaseStudy() {
       <section style={{ position: 'relative', paddingTop: '80px', overflow: 'hidden', textAlign: 'center' }}>
         <div style={{
           position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none',
-          background: 'linear-gradient(180deg, rgba(120,58,237,0.18) 0%, rgba(139,92,246,0.12) 35%, #010509 72%)',
+          background: '#FFFFFF', /* gradient removed */
+          /* _removed: linear-gradient(180deg, rgba(255,255,255,0),0.18) 0%, rgba(139,92,246,0.12) 35%, #010509 72%)',
         }} />
-        <div style={{ position: 'absolute', top: '-80px', left: '-80px', width: '700px', height: '700px', background: 'radial-gradient(circle, rgba(167,139,250,0.12) 0%, transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
-        <div style={{ position: 'absolute', top: '80px', right: '-100px', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(167,139,250,0.08) 0%, transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
+        <div style={{ position: 'absolute', top: '-80px', left: '-80px', width: '700px', height: '700px', background: 'radial-gradient(circle, rgba(12,162,162,0.12) 0%, transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
+        <div style={{ position: 'absolute', top: '80px', right: '-100px', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(12,162,162,0.08) 0%, transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: 'clamp(2rem, 5vw, 5rem)', paddingBottom: '5.5rem' }}>
 
@@ -59,9 +60,10 @@ export default function CaseStudy() {
               <SectionBadge>Case Study · Laguna Niguel, CA</SectionBadge>
               <span style={{
                 fontFamily: "'Nicholas', serif", fontSize: '0.625rem', fontWeight: 700,
-                letterSpacing: '0.12em', textTransform: 'uppercase', color: '#010509',
-                background: 'linear-gradient(135deg, #A78BFA, #C4B5FD)',
-                padding: '0.3rem 0.875rem', borderRadius: '99px',
+                letterSpacing: '0.12em', textTransform: 'uppercase', color: '#1A1A1A',
+                background: '#FFFFFF', /* gradient removed */
+          /* _removed: linear-gradient(135deg, #0CA2A2, #0CA2A2)',
+                padding: '0', borderRadius: '99px',
               }}>Founding Client Partner</span>
             </div>
 
@@ -72,7 +74,8 @@ export default function CaseStudy() {
               fontWeight: 800, lineHeight: 1.7, letterSpacing: '-0.04em',
               maxWidth: '860px', marginBottom: '2.5rem', marginLeft: 'auto', marginRight: 'auto',
             }}>
-              <span style={{ background: 'linear-gradient(90deg, #0CA2A2 0%, #0DCFCF 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>25 years of expertise.</span>{' '}
+              <span style={{ background: '#FFFFFF', /* gradient removed */
+          /* _removed: linear-gradient(90deg, #0CA2A2 0%, #0DCFCF 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>25 years of expertise.</span>{' '}
               <span style={{ color: '#1A1A1A' }}>Zero infrastructure.</span>
             </h1>
 
@@ -219,19 +222,19 @@ export default function CaseStudy() {
             </p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'rgba(12,162,162,0.06)', borderRadius: '12px', overflow: 'hidden' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: '#FFFFFF', borderRadius: '12px', overflow: 'hidden' }}>
             {built.map((item, i) => (
               <div key={i} className="reveal" style={{
-                background: i % 2 === 0 ? 'rgba(167,139,250,0.02)' : 'rgba(167,139,250,0.04)',
+                background: i % 2 === 0 ? 'rgba(12,162,162,0.02)' : 'rgba(12,162,162,0.04)',
                 padding: '1.75rem 2rem',
                 display: 'flex', alignItems: 'flex-start', gap: '1.5rem',
               }}>
                 <div style={{
                   width: '32px', height: '32px', borderRadius: '8px',
-                  background: '#E5E5E5', border: '1px solid rgba(167,139,250,0.3)',
+                  background: '#E5E5E5', border: 'none',
                   display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px',
                 }}>
-                  <Check size={16} color="#A78BFA" />
+                  <Check size={16} color="#0CA2A2" />
                 </div>
                 <div>
                   <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.25rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '0.375rem' }}>
@@ -273,7 +276,7 @@ export default function CaseStudy() {
                 { value: '2 weeks', label: 'Time to Live', sub: 'Audit to launch' },
                 { value: '< 10s', label: 'Response Time', sub: 'Missed call text-back' },
               ].map((s, i) => (
-                <div key={i} style={{ background: 'rgba(167,139,250,0.03)', padding: '1.75rem 1.5rem' }}>
+                <div key={i} style={{ background: 'rgba(12,162,162,0.03)', padding: '1.75rem 1.5rem' }}>
                   <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1.625rem', fontWeight: 700, color: '#1A1A1A', lineHeight: 1, marginBottom: '0.25rem', letterSpacing: '-0.02em' }}>{s.value}</p>
                   <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.625rem', fontWeight: 600, color: '#0CA2A2', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>{s.label}</p>
                   <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.75rem', color: '#555555' }}>{s.sub}</p>
@@ -296,7 +299,7 @@ export default function CaseStudy() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: "'Nicholas', serif" }}>
               <thead>
-                <tr style={{ borderBottom: '1px solid rgba(167,139,250,0.2)' }}>
+                <tr style={{ borderBottom: '1px solid rgba(12,162,162,0.2)' }}>
                   {['Metric', 'Before', 'After', 'Timeline'].map((h) => (
                     <th key={h} style={{ padding: '0.75rem 1rem', textAlign: 'left', fontSize: '0.625rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: '#0CA2A2' }}>{h}</th>
                   ))}
@@ -309,7 +312,7 @@ export default function CaseStudy() {
                   { metric: 'Google reviews', before: 'Starting from zero', after: '40+ reviews', timeline: '8 weeks' },
                   { metric: 'Time to go live', before: '—', after: '14 days total', timeline: 'Audit to automation' },
                 ].map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid #E5E5E5', background: i % 2 === 0 ? 'rgba(167,139,250,0.02)' : 'transparent' }}>
+                  <tr key={i} style={{ borderBottom: '1px solid #E5E5E5', background: i % 2 === 0 ? 'rgba(12,162,162,0.02)' : 'transparent' }}>
                     <td style={{ padding: '1rem', fontSize: '0.9375rem', color: '#1A1A1A', fontWeight: 600 }}>{row.metric}</td>
                     <td style={{ padding: '1rem', fontSize: '0.9375rem', color: '#555555' }}>{row.before}</td>
                     <td style={{ padding: '1rem', fontSize: '0.9375rem', color: '#0CA2A2', fontWeight: 600 }}>{row.after}</td>
@@ -380,14 +383,14 @@ export default function CaseStudy() {
             {/* After */}
             <div className="reveal" style={{
               background: '#FAFAF8',
-              borderLeft: '2px solid rgba(167,139,250,0.4)',
+              borderLeft: '2px solid rgba(12,162,162,0.4)',
               padding: '2.5rem', height: '100%',
             }}>
               <p style={{
                 fontFamily: "'Nicholas', serif", fontSize: '0.625rem', fontWeight: 600,
                 letterSpacing: '0.18em', textTransform: 'uppercase', color: '#0CA2A2',
                 marginBottom: '1.5rem', paddingBottom: '1rem',
-                borderBottom: '1px solid rgba(167,139,250,0.2)',
+                borderBottom: '1px solid rgba(12,162,162,0.2)',
               }}>
                 After Ops by Noell
               </p>
@@ -408,7 +411,7 @@ export default function CaseStudy() {
                     width: '20px', height: '20px', borderRadius: '4px', flexShrink: 0,
                     background: '#E5E5E5', display: 'flex', alignItems: 'center', justifyContent: 'center',
                   }}>
-                    <Check size={11} color="#A78BFA" />
+                    <Check size={11} color="#0CA2A2" />
                   </div>
                   <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9375rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>{item}</p>
                 </div>
@@ -422,7 +425,7 @@ export default function CaseStudy() {
       {/* ─── CTA ─── */}
       <div className="reveal">
       <section style={{ position: 'relative', padding: 'clamp(2rem, 4vw, 2.5rem) 0', borderTop: '1px solid #E5E5E5', overflow: 'hidden', textAlign: 'center' }}>
-        <div style={{ position: 'absolute', bottom: '-60px', left: '50%', transform: 'translateX(-50%)', width: '800px', height: '400px', background: 'radial-gradient(ellipse, rgba(167,139,250,0.1) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', bottom: '-60px', left: '50%', transform: 'translateX(-50%)', width: '800px', height: '400px', background: 'radial-gradient(ellipse, rgba(12,162,162,0.1) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div className="reveal" style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>
             <SectionBadge>Your Turn</SectionBadge>
@@ -432,7 +435,8 @@ export default function CaseStudy() {
             fontSize: 'clamp(2rem, 4vw, 3.5rem)',
             fontWeight: 800, lineHeight: 1.7, letterSpacing: '-0.03em',
             marginBottom: '1.25rem', maxWidth: '700px', margin: '0 auto 1.25rem',
-            background: 'linear-gradient(90deg, #0CA2A2 0%, #0DCFCF 100%)',
+            background: '#FFFFFF', /* gradient removed */
+          /* _removed: linear-gradient(90deg, #0CA2A2 0%, #0DCFCF 100%)',
             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
             display: 'block',
           }}>
