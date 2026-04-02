@@ -457,6 +457,26 @@ export default function RevenueCalculator() {
                   const emailInput = form.elements.namedItem('calc_email') as HTMLInputElement;
                   const email = emailInput?.value;
                   if (!email) return;
+
+                  // Fire analytics events on calculator completion
+                  if (typeof window !== 'undefined') {
+                    const annualLeak = Math.round(costs.total * 12);
+                    if (typeof (window as any).fbq === 'function') {
+                      (window as any).fbq('track', 'Lead', {
+                        content_name: 'Revenue Calculator',
+                        value: annualLeak,
+                        currency: 'USD',
+                      });
+                    }
+                    if (typeof (window as any).gtag === 'function') {
+                      (window as any).gtag('event', 'calculator_complete', {
+                        event_category: 'engagement',
+                        event_label: 'revenue_calculator',
+                        value: annualLeak,
+                      });
+                    }
+                  }
+
                   fetch('/api/leads', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
