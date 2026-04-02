@@ -96,7 +96,7 @@ export default function Nav() {
                   key={link.href}
                   href={link.href}
                   style={{
-                    fontFamily: "'Sora', sans-serif",
+                    fontFamily: "'Nicholas', serif",
                     fontSize: '0.875rem',
                     fontWeight: isActive ? 600 : 400,
                     color: isActive ? '#ffffff' : 'rgba(160,168,184,0.85)',
@@ -135,7 +135,7 @@ export default function Nav() {
               <button
                 onClick={() => setIndustriesOpen(!industriesOpen)}
                 style={{
-                  fontFamily: "'Sora', sans-serif",
+                  fontFamily: "'Nicholas', serif",
                   fontSize: '0.875rem',
                   fontWeight: isIndustriesActive ? 600 : 400,
                   color: isIndustriesActive ? '#ffffff' : 'rgba(160,168,184,0.85)',
@@ -209,10 +209,10 @@ export default function Nav() {
                           if (!isItemActive) (e.currentTarget as HTMLElement).style.background = 'transparent';
                         }}
                       >
-                        <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', fontWeight: 600, color: isItemActive ? '#C4B5FD' : '#ffffff', marginBottom: '0.2rem' }}>
+                        <div style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', fontWeight: 600, color: isItemActive ? '#C4B5FD' : '#ffffff', marginBottom: '0.2rem' }}>
                           {item.label}
                         </div>
-                        <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.75rem', color: 'rgba(160,168,184,0.7)', lineHeight: 1.4 }}>
+                        <div style={{ fontFamily: "'Nicholas', serif", fontSize: '0.75rem', color: 'rgba(160,168,184,0.7)', lineHeight: 1.7 }}>
                           {item.desc}
                         </div>
                       </a>
@@ -270,7 +270,7 @@ export default function Nav() {
                   key={link.href}
                   href={link.href}
                   style={{
-                    fontFamily: "'Sora', sans-serif",
+                    fontFamily: "'Nicholas', serif",
                     fontSize: '1.125rem',
                     fontWeight: isActive ? 600 : 400,
                     color: isActive ? '#ffffff' : 'rgba(160,168,184,0.85)',
@@ -291,7 +291,7 @@ export default function Nav() {
             <button
               onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
               style={{
-                fontFamily: "'Sora', sans-serif",
+                fontFamily: "'Nicholas', serif",
                 fontSize: '1.125rem',
                 fontWeight: isIndustriesActive ? 600 : 400,
                 color: isIndustriesActive ? '#ffffff' : 'rgba(160,168,184,0.85)',
@@ -321,7 +321,7 @@ export default function Nav() {
                       key={item.href}
                       href={item.href}
                       style={{
-                        fontFamily: "'Sora', sans-serif",
+                        fontFamily: "'Nicholas', serif",
                         fontSize: '1rem',
                         fontWeight: isItemActive ? 600 : 400,
                         color: isItemActive ? '#C4B5FD' : 'rgba(160,168,184,0.85)',
@@ -346,7 +346,7 @@ export default function Nav() {
             </a>
           </div>
           <div style={{ marginTop: 'auto', paddingTop: '2rem', borderTop: '1px solid rgba(167,139,250,0.12)' }}>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.75rem', color: 'rgba(160,168,184,0.6)', letterSpacing: '0.04em' }}>
+            <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.75rem', color: 'rgba(160,168,184,0.6)', letterSpacing: '0.04em' }}>
               Based in Orange County. Built for businesses everywhere.
             </p>
           </div>
