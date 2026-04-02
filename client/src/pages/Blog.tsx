@@ -62,10 +62,10 @@ export default function Blog() {
 
       {/* ═══ PAGE HERO ══════════════════════════════════════════════ */}
       <section style={{ position: 'relative', paddingTop: '140px', paddingBottom: '64px', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(120,58,237,0.15) 0%, rgba(139,92,246,0.06) 45%, #010509 72%)' }} />
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '900px', margin: '0 auto' }}>
           <FadeItem delay={0}>
-            <span style={{ display: 'inline-block', padding: '0.25rem 0.75rem', background: 'rgba(12,162,162,0.06)', border: '1px solid rgba(167,139,250,0.25)', borderRadius: '100px', fontFamily: "'Sora', sans-serif", fontSize: '0.6875rem', fontWeight: 600, color: '#0CA2A2', letterSpacing: '0.1em', textTransform: 'uppercase' as const, marginBottom: '1.25rem' }}>
+            <span style={{ display: 'inline-block', padding: '0.25rem 0.75rem', background: '#FFFFFF', border: '1px solid #E5E5E5', borderRadius: '100px', fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, color: '#0CA2A2', letterSpacing: '0.1em', textTransform: 'uppercase' as const, marginBottom: '1.25rem' }}>
               The Ops Blog
             </span>
           </FadeItem>
@@ -75,7 +75,7 @@ export default function Blog() {
             </h1>
           </FadeItem>
           <FadeItem delay={0.12}>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1.0625rem', color: '#868583', lineHeight: 1.75, maxWidth: '540px' }}>
+            <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1.0625rem', color: '#555555', lineHeight: 1.75, maxWidth: '540px' }}>
               Practical AI automation insights for massage therapists, med spas, salons, and appointment-based businesses in Orange County.
             </p>
           </FadeItem>
@@ -92,34 +92,34 @@ export default function Blog() {
                   href={post.slug}
                   style={{ display: 'block', textDecoration: 'none' }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).querySelector('.post-card')?.setAttribute('style', 'background: rgba(167,139,250,0.06); border-color: rgba(167,139,250,0.3); border-radius: 16px; padding: 2.25rem; transition: all 0.2s ease;');
+                    (e.currentTarget as HTMLElement).querySelector('.post-card')?.setAttribute('style', 'background: rgba(12,162,162,0.06); border-color: rgba(12,162,162,0.3); border-radius: 16px; padding: 2.25rem; transition: all 0.2s ease;');
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).querySelector('.post-card')?.setAttribute('style', 'background: rgba(167,139,250,0.03); border-color: rgba(167,139,250,0.12); border-radius: 16px; padding: 2.25rem; transition: all 0.2s ease;');
+                    (e.currentTarget as HTMLElement).querySelector('.post-card')?.setAttribute('style', 'background: rgba(12,162,162,0.03); border-color: rgba(12,162,162,0.12); border-radius: 16px; padding: 2.25rem; transition: all 0.2s ease;');
                   }}
                 >
                   <div
                     className="post-card"
-                    style={{ background: 'rgba(167,139,250,0.03)', border: '1px solid #E8E8E8', borderRadius: '16px', padding: '2.25rem', transition: 'all 0.2s ease' }}
+                    style={{ background: 'rgba(12,162,162,0.03)', border: '1px solid #E8E8E8', borderRadius: '16px', padding: '2.25rem', transition: 'all 0.2s ease' }}
                   >
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap' as const }}>
-                      <span style={{ display: 'inline-block', padding: '0.2rem 0.625rem', background: '#E5E5E5', border: '1px solid rgba(167,139,250,0.22)', borderRadius: '100px', fontFamily: "'Sora', sans-serif", fontSize: '0.6875rem', fontWeight: 600, color: '#0CA2A2', letterSpacing: '0.08em', textTransform: 'uppercase' as const }}>
+                      <span style={{ display: 'inline-block', padding: '0.2rem 0.625rem', background: '#E5E5E5', border: '1px solid rgba(12,162,162,0.22)', borderRadius: '100px', fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, color: '#0CA2A2', letterSpacing: '0.08em', textTransform: 'uppercase' as const }}>
                         {post.category}
                       </span>
-                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583' }}>
+                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontFamily: "'Nicholas', serif", fontSize: '0.8125rem', color: '#555555' }}>
                         <Calendar size={11} /> {post.date}
                       </span>
-                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583' }}>
+                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontFamily: "'Nicholas', serif", fontSize: '0.8125rem', color: '#555555' }}>
                         <Clock size={11} /> {post.readTime}
                       </span>
                     </div>
                     <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.25rem, 2.5vw, 1.625rem)', fontWeight: 700, color: '#1A1A1A', lineHeight: 1.2, letterSpacing: '-0.02em', marginBottom: '0.75rem' }}>
                       {post.title}
                     </h2>
-                    <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#868583', lineHeight: 1.7, marginBottom: '1.25rem', maxWidth: '680px' }}>
+                    <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9375rem', color: '#555555', lineHeight: 1.7, marginBottom: '1.25rem', maxWidth: '680px' }}>
                       {post.excerpt}
                     </p>
-                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.375rem', fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', fontWeight: 600, color: '#0CA2A2' }}>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.375rem', fontFamily: "'Nicholas', serif", fontSize: '0.875rem', fontWeight: 600, color: '#0CA2A2' }}>
                       Read post <ArrowRight size={14} />
                     </span>
                   </div>
@@ -131,13 +131,13 @@ export default function Blog() {
       </section>
 
       {/* ═══ CTA STRIP ══════════════════════════════════════════════ */}
-      <section style={{ padding: '5rem 0', borderTop: '1px solid #E5E5E5', background: 'rgba(167,139,250,0.015)', textAlign: 'center' }}>
+      <section style={{ padding: '5rem 0', borderTop: '1px solid #E5E5E5', background: '#FAFAF8', textAlign: 'center' }}>
         <div className="container" style={{ maxWidth: '620px', margin: '0 auto' }}>
           <FadeItem delay={0}>
             <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 800, color: '#1A1A1A', lineHeight: 1.12, letterSpacing: '-0.03em', marginBottom: '1rem' }}>
               Ready to see your numbers?
             </h2>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#868583', lineHeight: 1.75, marginBottom: '2rem' }}>
+            <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1rem', color: '#555555', lineHeight: 1.75, marginBottom: '2rem' }}>
               Run the revenue calculator and find out what your gaps are costing you — then book a free call if you want to talk through the fix.
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' as const }}>
