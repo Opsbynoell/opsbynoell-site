@@ -75,7 +75,7 @@ export default function About() {
         {/* Hero gradient bg */}
         <div style={{
           position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none',
-          background: '#FFFFFF', /* was: linear-gradient(180deg, rgba(255,255,255,0),0.18) 0%, rgba(139,92,246,0.12) 35%, #010509 72%)',
+          background: 'none',
         }} />
         <div style={{ position: 'absolute', top: '-80px', left: '-100px', width: '700px', height: '700px', background: 'radial-gradient(circle, rgba(12,162,162,0.12) 0%, transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
         <div style={{ position: 'absolute', top: '60px', right: '-80px', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(12,162,162,0.08) 0%, transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
