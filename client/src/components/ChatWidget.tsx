@@ -1,6 +1,6 @@
 /*
  * OPS BY NOELL — Live Chat Widget
- * Design: Premium Dark — matches site theme (#0A0A0A / #141414 / #A78BFA)
+ * Design: Premium Dark — matches site theme (#0A0A0A / #141414 / #0CA2A2)
  * Purpose: Capture leads who have questions before booking
  */
 
@@ -37,7 +37,89 @@ interface LeadInfo {
   businessType: string;
 }
 
-// ─── Human Handoff ───────────────────────────────────────────────────────────
+// ─── Bot Response Logic ───────────────────────────────────────────────────────
+// Approved Q&A responses for Nova
+
+const QA_PAIRS: Array<{ keywords: string[]; answer: string }> = [
+  {
+    keywords: ['what do you do', 'what is ops by noell', 'what does ops by noell do', 'tell me about', 'what you do', 'services', 'what you offer', 'what can you do'],
+    answer: "Good question. We build done-for-you AI systems for service businesses. Things like missed call text-back, automated booking and reminders, review requests, lead follow-up, and an AI voice receptionist. The key thing is we don't just hand you a tool. We build it, we manage it, and it runs in the background while you focus on your clients.",
+  },
+  {
+    keywords: ['how much', 'cost', 'price', 'pricing', 'fee', 'charge', 'rate', 'package', 'tier', 'affordable', 'expensive'],
+    answer: "Here's how it works. A Revenue Audit starts at $497 and that's where most clients begin. If you want to move fast, the Activation Sprint is $1,500 flat to get one system live in two weeks. Monthly retainers start at $797/mo for Starter, $1,197/mo for Growth, and $1,497/mo for Scale, which includes the AI voice receptionist. If you start with an Activation Sprint, that setup fee gets credited toward your retainer.",
+  },
+  {
+    keywords: ['who do you work with', 'what type of business', 'what businesses', 'industry', 'industries', 'who is this for', 'med spa', 'salon', 'dental', 'massage', 'chiropractor', 'home service'],
+    answer: "We work with appointment-based service businesses. Med spas, massage therapists, salons, dental offices, chiropractors, home service companies, and similar. Basically, if your business runs on bookings and phone calls, we can almost certainly help.",
+  },
+  {
+    keywords: ['how long', 'timeline', 'setup time', 'how soon', 'when will', 'how fast', 'get started', 'onboard'],
+    answer: "Faster than most people expect. Most clients are fully live within two weeks of completing their audit. We handle all the setup so there's nothing on your end to figure out.",
+  },
+  {
+    keywords: ['tech', 'technical', 'tech-savvy', 'complicated', 'difficult', 'do i need to', 'hard to use'],
+    answer: "Not at all. That's honestly one of the things people appreciate most. We build everything, configure everything, and manage it ongoing. You don't log into dashboards or learn new software. You just see the results.",
+  },
+  {
+    keywords: ['how do i start', 'next step', 'how to begin', 'sign up', 'book', 'schedule', 'call', 'consult', 'audit', 'intro'],
+    answer: "The easiest way is to book a free 15-minute intro call at opsbynoell.com/book. It's a quick conversation, no pitch, no pressure. We just want to understand your business and see if we're a good fit.",
+  },
+  {
+    keywords: ['different', 'unique', 'why you', 'why ops by noell', 'what makes you', 'stand out', 'better than', 'compared to', 'versus'],
+    answer: "Honestly, the biggest difference is that we don't sell you software. A lot of companies hand you a login and wish you luck. We design your system, build every piece of it, and then stay on to manage it. We also show you the math upfront so you know exactly what your gaps are costing you before you spend anything.",
+  },
+  {
+    keywords: ['missed call', 'missed calls', 'text back', 'call back', 'unanswered'],
+    answer: "Every missed call gets an automatic text back within seconds. So even if you're with a client and can't pick up, the person who called gets a message right away and the conversation stays alive. It's one of the fastest ways to stop losing leads.",
+  },
+  {
+    keywords: ['ai voice', 'voice receptionist', 'phone answering', 'answer the phone', 'receptionist', 'front desk'],
+    answer: "The AI Voice Receptionist answers calls around the clock, qualifies leads, answers common questions, and books appointments without anyone needing to be on the phone. It's included in the Scale package at $1,497/mo and it's genuinely impressive once it's running.",
+  },
+  {
+    keywords: ['review', 'reviews', 'google review', 'reputation', 'testimonial', 'rating'],
+    answer: "We set up automated review requests that go out after every appointment. Happy clients get a gentle follow-up asking them to share their experience on Google. Most clients see a real jump in review volume within the first 30 days.",
+  },
+  {
+    keywords: ['no-show', 'no show', 'cancellation', 'cancel', 'reminder', 'reminders', 'appointment reminder'],
+    answer: "We build automated reminder sequences that go out via SMS and email before every appointment. Most clients see no-shows drop by 30 to 50 percent within the first month. It adds up fast.",
+  },
+  {
+    keywords: ['follow up', 'follow-up', 'lead nurture', 'nurture', 'reactivate', 'win back', 'past clients'],
+    answer: "We build follow-up sequences that re-engage past clients, stay in touch with new leads, and keep your business top of mind. All of it runs automatically so you're not manually chasing anyone.",
+  },
+  {
+    keywords: ['orange county', 'oc', 'local', 'near me', 'southern california', 'socal', 'california'],
+    answer: "We're based in Orange County and most of our clients are in the OC and Southern California area. That said, we work with businesses across the US, so location isn't a barrier.",
+  },
+  {
+    keywords: ['contract', 'commitment', 'lock in', 'cancel anytime', 'month to month', 'long term'],
+    answer: "Month-to-month, no long-term contracts. We want to earn your business every month by actually delivering results, not by locking you in.",
+  },
+  {
+    keywords: ['roi', 'return on investment', 'worth it', 'results', 'guarantee', 'proof', 'case study'],
+    answer: "We show you the math before you spend anything. The Revenue Audit calculates exactly what missed calls, no-shows, and gaps in follow-up are costing your business each month. You see the numbers. You decide if it makes sense.",
+  },
+  {
+    keywords: ['what is a revenue audit', 'revenue audit', 'audit', 'assessment', 'analysis'],
+    answer: "The Revenue Audit is a deep look at your current operations. We map out where you're losing revenue, whether that's missed calls, no-shows, weak follow-up, or lack of reviews, and we put a dollar figure on each gap. It starts at $497 and the fee gets credited if you move forward with a retainer.",
+  },
+  {
+    keywords: ['activation sprint', 'sprint', 'one system', 'quick start', 'fast start'],
+    answer: "The Activation Sprint is $1,500 flat to get one automation system built and live in two weeks. It's the fastest way to see results. And if you decide to move to a monthly retainer after that, the setup fee is credited.",
+  },
+  {
+    keywords: ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening', 'howdy'],
+    answer: "Hey! I'm Nova. Nikki and James built me to help answer questions about Ops by Noell. What's on your mind?",
+  },
+  {
+    keywords: ['thank you', 'thanks', 'appreciate', 'helpful', 'great'],
+    answer: "Of course, happy to help! If anything else comes up, just ask. And whenever you're ready to take the next step, you can book a free 15-minute call at opsbynoell.com/book.",
+  },
+];
+
+const FALLBACK_RESPONSE = "That's a good one. I want to make sure you get a real answer on that, so let me connect you with Nikki directly. You can book a free 15-minute call at opsbynoell.com/book, or drop your email and she'll reach out to you. What works best?";
 
 const HUMAN_HANDOFF_KEYWORDS = [
   'talk to a person', 'talk to someone', 'speak to a person', 'speak to someone',
@@ -50,13 +132,31 @@ function isHumanHandoffRequest(input: string): boolean {
   return HUMAN_HANDOFF_KEYWORDS.some(kw => lower.includes(kw));
 }
 
-const HUMAN_HANDOFF_RESPONSE = "Of course. Let me get Nikki on this for you. She'll reach out shortly. You can also grab a time directly at opsbynoell.com/book if that's easier.";
+const HUMAN_HANDOFF_RESPONSE = "Totally understand. I'll flag this for Nikki right now and she'll be in touch soon. You're also welcome to grab a time directly at opsbynoell.com/book if that's easier.";
+
+function getBotResponse(input: string): string {
+  const lower = input.toLowerCase();
+  for (const qa of QA_PAIRS) {
+    if (qa.keywords.some(kw => lower.includes(kw))) {
+      return qa.answer;
+    }
+  }
+  return FALLBACK_RESPONSE;
+}
+
+// ─── Quick Question Chips ─────────────────────────────────────────────────────
+
+const QUICK_QUESTIONS = [
+  'What do you actually build?',
+  'How does the process start?',
+  'What kinds of businesses do you work with?',
+];
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
 function TypingIndicator() {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '4px', padding: '10px 14px', backgroundColor: '#1A1A1A', borderRadius: '8px', maxWidth: '60px' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '4px', padding: '10px 14px', backgroundColor: '#F0F0F0', borderRadius: '8px', maxWidth: '60px' }}>
       {[0, 1, 2].map(i => (
         <span
           key={i}
@@ -64,7 +164,7 @@ function TypingIndicator() {
             width: '6px',
             height: '6px',
             borderRadius: '50%',
-            backgroundColor: '#A78BFA',
+            backgroundColor: '#0CA2A2',
             display: 'inline-block',
             animation: `chatBounce 1.2s ease-in-out ${i * 0.2}s infinite`,
           }}
@@ -79,12 +179,14 @@ function TypingIndicator() {
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [hasUnread, setHasUnread] = useState(true);
-  const [stage, setStage] = useState<'chat'>('chat');
+  const [stage, setStage] = useState<'intro' | 'answer' | 'capture' | 'chat'>('intro');
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [leadInfo, setLeadInfo] = useState<Partial<LeadInfo>>({});
-
+  const [captureStep, setCaptureStep] = useState<'name' | 'email' | 'biz'>('name');
+  const [captureInput, setCaptureInput] = useState('');
+  const [showQuickQ, setShowQuickQ] = useState(true);
   const [proactiveTriggered, setProactiveTriggered] = useState(false);
   // Hover tooltip
   const [isButtonHovered, setIsButtonHovered] = useState(false);
@@ -93,14 +195,6 @@ export default function ChatWidget() {
   const [hasManuallyClosed, setHasManuallyClosed] = useState(false);
   const [autoOpenTriggered, setAutoOpenTriggered] = useState(false);
 
-  // Mobile detection
-  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' && window.innerWidth < 768);
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   const [location] = useLocation();
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -108,15 +202,15 @@ export default function ChatWidget() {
   const panelRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
 
-
+  const submitLead = trpc.leads.submit.useMutation();
   const sendMessageMutation = trpc.chat.sendMessage.useMutation();
   const [sessionId] = useState(() => getSessionId());
   const [lastHumanCount, setLastHumanCount] = useState(0);
 
-  // Poll for human replies every 5 seconds when chat is open
+  // Poll for human replies every 5 seconds when chat is open and in chat stage
   const { data: serverMessages } = trpc.chat.getMessages.useQuery(
     { sessionId },
-    { enabled: isOpen, refetchInterval: 5000 }
+    { enabled: isOpen && stage === 'chat', refetchInterval: 5000 }
   );
 
   // Sync human replies from server into local messages
@@ -146,10 +240,10 @@ export default function ChatWidget() {
   }, [messages, isTyping]);
 
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && stage === 'chat') {
       setTimeout(() => inputRef.current?.focus(), 300);
     }
-  }, [isOpen]);
+  }, [isOpen, stage]);
 
   useEffect(() => {
     const timer = setTimeout(() => setHasUnread(true), 3000);
@@ -165,13 +259,10 @@ export default function ChatWidget() {
     const proactiveMessages: Record<string, string> = {
       '/services': `Hey! Trying to figure out which plan makes sense for your business? Happy to help you think it through. What type of business do you run?`,
       '/book': `Hey! If you have any questions before booking, I'm here. Nikki will walk you through exactly where your revenue gaps are on the call. Anything I can answer first?`,
-      '/nova': `You're checking out Nova — want to see what I'd actually say to someone landing on your business's website? Tell me what kind of business you run.`,
     };
 
     const message = proactiveMessages[location];
     if (!message) return;
-
-    if (isMobile) return; // on mobile, never auto-open — user taps the bubble
 
     const timer = setTimeout(() => {
       if (isOpen) return; // don't interrupt if already open
@@ -185,10 +276,10 @@ export default function ChatWidget() {
         text: message,
         timestamp: new Date(),
       }]);
-    }, 90000);
+    }, 45000);
 
     return () => clearTimeout(timer);
-  }, [location, isOpen, proactiveTriggered, isMobile]);
+  }, [location, isOpen, proactiveTriggered]);
 
   // Auto-open after 45 seconds if all conditions are met
   useEffect(() => {
@@ -196,8 +287,6 @@ export default function ChatWidget() {
     if (hasManuallyClosed) return;
     if (hasOpenedOnce) return;
     if (sessionStorage.getItem('nova_auto_opened')) return;
-
-    if (isMobile) return; // on mobile, never auto-open — user taps the bubble
 
     const timer = setTimeout(() => {
       // Re-check at fire time (isOpen could have changed)
@@ -207,18 +296,19 @@ export default function ChatWidget() {
         sessionStorage.setItem('nova_auto_opened', '1');
         setHasOpenedOnce(true);
         setHasUnread(false);
+        setStage('intro');
         setMessages([{
           id: 'auto_open_1',
           role: 'bot',
-          text: `Hey! Quick question — is there something specific going on in your business right now that brought you here, or are you still figuring out if this is the right fit?`,
+          text: `Hey! I'm Nova. Nikki and James set me up to answer questions about Ops by Noell.\n\nWhat's on your mind?`,
           timestamp: new Date(),
         }]);
         return true;
       });
-    }, 90000);
+    }, 45000);
 
     return () => clearTimeout(timer);
-  }, [autoOpenTriggered, hasManuallyClosed, hasOpenedOnce, isMobile]);
+  }, [autoOpenTriggered, hasManuallyClosed, hasOpenedOnce]);
 
   // Outside-click: only collapse if the visitor has NOT yet sent a message.
   // Once hasEngaged is true, the widget stays open until the X button is clicked.
@@ -244,11 +334,11 @@ export default function ChatWidget() {
     setHasUnread(false);
     setHasOpenedOnce(true);
     setAutoOpenTriggered(true); // prevent auto-open from firing if visitor opens manually first
-    if (messages.length === 0) {
+    if (stage === 'intro') {
       setMessages([{
         id: '1',
         role: 'bot',
-        text: `Hey! Quick question — is there something specific going on in your business right now that brought you here, or are you still figuring out if this is the right fit?`,
+        text: `Hey! I'm Nova. Nikki and James set me up to answer questions about Ops by Noell.\n\nWhat's on your mind?`,
         timestamp: new Date(),
       }]);
     }
@@ -263,9 +353,77 @@ export default function ChatWidget() {
     }, 1200 + Math.random() * 600);
   }
 
+  function handleQuickQuestion(q: string) {
+    setShowQuickQ(false);
+    setStage('answer');
+    setMessages(prev => [...prev, {
+      id: Date.now().toString(),
+      role: 'user',
+      text: q,
+      timestamp: new Date(),
+    }]);
+    sessionStorage.setItem('ops_pending_question', q);
+    // Answer first, then ask for contact info
+    const response = getBotResponse(q);
+    setIsTyping(true);
+    setTimeout(() => {
+      setIsTyping(false);
+      const answerId = Date.now().toString();
+      setMessages(prev => [...prev, { id: answerId, role: 'bot', text: response, timestamp: new Date() }]);
+      // After answer, transition to capture
+      setTimeout(() => {
+        setStage('capture');
+        setCaptureStep('name');
+        addBotMessage(`Before I forget, I'd love to grab your info so Nikki can follow up with you personally.\n\nWhat's your first name?`);
+      }, 800);
+    }, 1200 + Math.random() * 600);
+  }
 
+  function handleCaptureSubmit() {
+    if (!captureInput.trim()) return;
+    const value = captureInput.trim();
+    setCaptureInput('');
 
+    setMessages(prev => [...prev, {
+      id: Date.now().toString(),
+      role: 'user',
+      text: value,
+      timestamp: new Date(),
+    }]);
 
+    if (captureStep === 'name') {
+      setLeadInfo(prev => ({ ...prev, name: value }));
+      setCaptureStep('email');
+      setTimeout(() => {
+        addBotMessage(`Nice to meet you, ${value}! What email address should Nikki use to reach you?`);
+      }, 400);
+    } else if (captureStep === 'email') {
+      setLeadInfo(prev => ({ ...prev, email: value }));
+      setCaptureStep('biz');
+      setTimeout(() => {
+        addBotMessage(`Got it. And what kind of business do you run?`);
+      }, 400);
+    } else if (captureStep === 'biz') {
+      const updatedLead = { ...leadInfo, businessType: value };
+      setLeadInfo(updatedLead);
+      sessionStorage.setItem('ops_lead', JSON.stringify(updatedLead));
+      setStage('chat');
+
+      const pendingQ = sessionStorage.getItem('ops_pending_question') || '';
+      submitLead.mutate({
+        name: updatedLead.name ?? '',
+        email: updatedLead.email ?? '',
+        businessType: value,
+        question: pendingQ || undefined,
+        page: typeof window !== 'undefined' ? window.location.pathname : undefined,
+      });
+
+      // Answer was already given before capture — just thank them and invite more questions
+      setTimeout(() => {
+        addBotMessage(`Thanks, ${updatedLead.name ?? 'there'}! I've sent your info to Nikki and she'll be in touch. In the meantime, feel free to keep asking questions or grab a time at opsbynoell.com/book whenever it works for you.`);
+      }, 400);
+    }
+  }
 
   function handleSendMessage() {
     if (!inputValue.trim()) return;
@@ -278,32 +436,41 @@ export default function ChatWidget() {
       timestamp: new Date(),
     }]);
 
-    // Detect human handoff request
+    // If visitor types their own question in the intro stage, answer first then capture
+    if (stage === 'intro') {
+      setShowQuickQ(false);
+      setStage('answer');
+      sessionStorage.setItem('ops_pending_question', text);
+      const response = getBotResponse(text);
+      setIsTyping(true);
+      setTimeout(() => {
+        setIsTyping(false);
+        const answerId = Date.now().toString();
+        setMessages(prev => [...prev, { id: answerId, role: 'bot', text: response, timestamp: new Date() }]);
+        setTimeout(() => {
+          setStage('capture');
+          setCaptureStep('name');
+          addBotMessage(`Before I forget, I'd love to grab your info so Nikki can follow up with you personally.\n\nWhat's your first name?`);
+        }, 800);
+      }, 1200 + Math.random() * 600);
+      return;
+    }
+
+    // Detect human handoff request before sending to bot
     if (isHumanHandoffRequest(text)) {
       addBotMessage(HUMAN_HANDOFF_RESPONSE);
+      // Notify owner via backend (fire-and-forget)
       sendMessageMutation.mutate({
         sessionId,
         message: `[HUMAN HANDOFF REQUEST] ${text}`,
         visitorName: leadInfo.name,
         visitorEmail: leadInfo.email,
         businessType: leadInfo.businessType,
-        page: typeof window !== 'undefined' ? window.location.pathname : undefined,
       });
       return;
     }
 
-    // All messages go through backend Claude
-    setIsTyping(true);
-
-    // Set a 15-second timeout — if no response, show graceful fallback
-    const timeoutId = setTimeout(() => {
-      setIsTyping(false);
-      addBotMessage(
-        "Looks like I'm running a bit slow right now. " +
-        "You can reach Nikki directly at hello@opsbynoell.com or grab a time at opsbynoell.com/book."
-      );
-    }, 15000);
-
+    // Persist to backend and get bot response (handles human takeover too)
     sendMessageMutation.mutate(
       {
         sessionId,
@@ -311,13 +478,11 @@ export default function ChatWidget() {
         visitorName: leadInfo.name,
         visitorEmail: leadInfo.email,
         businessType: leadInfo.businessType,
-        page: typeof window !== 'undefined' ? window.location.pathname : undefined,
       },
       {
         onSuccess: (data) => {
-          clearTimeout(timeoutId);
-          setIsTyping(false);
           if (!data.humanTakeover && data.botReply) {
+            // Bot responded — show it
             const id = Date.now().toString();
             setIsTyping(true);
             setTimeout(() => {
@@ -328,12 +493,9 @@ export default function ChatWidget() {
           // If humanTakeover, the polling will pick up the human reply
         },
         onError: () => {
-          clearTimeout(timeoutId);
-          setIsTyping(false);
-          addBotMessage(
-            "I'm having a moment — let me get you connected directly. " +
-            "You can reach Nikki at hello@opsbynoell.com or book a time at opsbynoell.com/book."
-          );
+          // Fallback to local bot response if backend unavailable
+          const response = getBotResponse(text);
+          addBotMessage(response);
         },
       }
     );
@@ -342,7 +504,11 @@ export default function ChatWidget() {
   function handleKeyDown(e: React.KeyboardEvent) {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      handleSendMessage();
+      if (stage === 'capture') {
+        handleCaptureSubmit();
+      } else {
+        handleSendMessage();
+      }
     }
   }
 
@@ -356,7 +522,7 @@ export default function ChatWidget() {
     }
   }
 
-
+  const isCapturing = stage === 'capture';
   // Once a visitor has sent at least one message, only the X button can close the widget.
   // Clicking the floating toggle or outside the panel should not collapse it.
   const hasEngaged = messages.some(m => m.role === 'user');
@@ -367,8 +533,8 @@ export default function ChatWidget() {
       <div
         style={{
           position: 'fixed',
-          bottom: isMobile ? '1rem' : '2rem',
-          right: isMobile ? '1rem' : '2rem',
+          bottom: '2rem',
+          right: '2rem',
           zIndex: 9999,
           display: 'flex',
           flexDirection: 'column',
@@ -394,18 +560,18 @@ export default function ChatWidget() {
             onClick={openChat}
           >
             <p style={{
-              fontFamily: "'Nicholas', serif",
-              fontSize: '0.875rem',
+              fontFamily: "'Sora', sans-serif",
+              fontSize: '0.8125rem',
               color: '#F5F0EC',
-              lineHeight: 1.7,
+              lineHeight: 1.5,
               marginBottom: '0.375rem',
             }}>
               Have a question? I'm Nova, ask me anything.
             </p>
             <p style={{
-              fontFamily: "'Nicholas', serif",
+              fontFamily: "'Sora', sans-serif",
               fontSize: '0.75rem',
-              color: '#A78BFA',
+              color: '#0CA2A2',
               display: 'flex',
               alignItems: 'center',
               gap: '0.25rem',
@@ -422,7 +588,7 @@ export default function ChatWidget() {
               backgroundColor: '#1F1D28',
               borderWidth: '1px',
               borderStyle: 'solid',
-              borderColor: '#A78BFA',
+              borderColor: '#0CA2A2',
               borderRadius: '10px',
               padding: '0.625rem 0.875rem',
               maxWidth: '210px',
@@ -433,11 +599,11 @@ export default function ChatWidget() {
             }}
           >
             <p style={{
-              fontFamily: "'Nicholas', serif",
+              fontFamily: "'Sora', sans-serif",
               fontSize: '0.75rem',
               color: '#F5F0EC',
               margin: 0,
-              lineHeight: 1.7,
+              lineHeight: 1.4,
             }}>
               Chat with Nova — usually replies instantly.
             </p>
@@ -449,34 +615,34 @@ export default function ChatWidget() {
           ref={toggleRef}
           onClick={() => isOpen ? (!hasEngaged && setIsOpen(false)) : openChat()}
           style={{
-            width: isMobile ? '48px' : '52px',
-            height: isMobile ? '48px' : '52px',
-            backgroundColor: '#A78BFA',
+            width: '52px',
+            height: '52px',
+            backgroundColor: '#0CA2A2',
             border: 'none',
             borderRadius: '50%',
             cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 4px 24px rgba(167,139,250,0.35)',
+            boxShadow: '0 4px 24px rgba(12,162,162,0.35)',
             transition: 'transform 0.2s ease, box-shadow 0.2s ease',
             position: 'relative',
           }}
           onMouseEnter={e => {
             setIsButtonHovered(true);
             (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1.08)';
-            (e.currentTarget as HTMLButtonElement).style.boxShadow = '0 6px 32px rgba(167,139,250,0.5)';
+            (e.currentTarget as HTMLButtonElement).style.boxShadow = '0 6px 32px rgba(12,162,162,0.5)';
           }}
           onMouseLeave={e => {
             setIsButtonHovered(false);
             (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1)';
-            (e.currentTarget as HTMLButtonElement).style.boxShadow = '0 4px 24px rgba(167,139,250,0.35)';
+            (e.currentTarget as HTMLButtonElement).style.boxShadow = '0 4px 24px rgba(12,162,162,0.35)';
           }}
           aria-label={isOpen ? 'Close chat' : 'Open chat'}
         >
           {isOpen
-            ? <ChevronDown size={20} color="#0A0A0A" />
-            : <MessageCircle size={20} color="#0A0A0A" />
+            ? <ChevronDown size={20} color="#FFFFFF" />
+            : <MessageCircle size={20} color="#FFFFFF" />
           }
           {/* Unread dot */}
           {hasUnread && !isOpen && (
@@ -490,7 +656,7 @@ export default function ChatWidget() {
               borderRadius: '50%',
               borderWidth: '2px',
               borderStyle: 'solid',
-              borderColor: '#0A0A0A',
+              borderColor: '#FFFFFF',
             }} />
           )}
         </button>
@@ -501,15 +667,15 @@ export default function ChatWidget() {
         ref={panelRef}
         style={{
           position: 'fixed',
-          bottom: isMobile ? '4.5rem' : '6rem',
-          right: isMobile ? '1rem' : '2rem',
+          bottom: '6rem',
+          right: '2rem',
           zIndex: 9998,
-          width: isMobile ? 'min(320px, calc(100vw - 2rem))' : '360px',
+          width: '360px',
           maxWidth: 'calc(100vw - 2rem)',
-          backgroundColor: '#0F0F0F',
+          backgroundColor: '#FFFFFF',
           borderWidth: '1px',
           borderStyle: 'solid',
-          borderColor: '#2A2A2A',
+          borderColor: '#E5E5E5',
           borderRadius: '16px',
           boxShadow: '0 16px 64px rgba(0,0,0,0.7)',
           display: 'flex',
@@ -525,41 +691,41 @@ export default function ChatWidget() {
       >
         {/* Header */}
         <div style={{
-          backgroundColor: '#141414',
+          backgroundColor: '#0CA2A2',
           padding: '1rem 1.25rem',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           flexShrink: 0,
-          borderBottom: '1px solid #2A2A2A',
+          borderBottom: '1px solid rgba(255,255,255,0.2)',
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <div style={{
               width: '32px',
               height: '32px',
-              backgroundColor: '#A78BFA',
+              backgroundColor: '#0CA2A2',
               borderRadius: '8px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               flexShrink: 0,
             }}>
-              <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#0A0A0A', fontWeight: 700 }}>N</span>
+              <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#FFFFFF', fontWeight: 700 }}>N</span>
             </div>
             <div>
-              <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', fontWeight: 700, color: '#F5F0EC', lineHeight: 1.7 }}>
+              <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', fontWeight: 700, color: '#FFFFFF', lineHeight: 1.2 }}>
                 Ops by Noell
               </p>
-              <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#b8b6b3' }}>
+              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.8)' }}>
                 Typically replies in minutes
               </p>
             </div>
           </div>
           <button
             onClick={() => { setIsOpen(false); setHasManuallyClosed(true); }}
-            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '4px', color: '#b8b6b3', display: 'flex', alignItems: 'center', borderRadius: '4px', transition: 'color 0.15s ease' }}
-            onMouseEnter={e => (e.currentTarget as HTMLButtonElement).style.color = '#F5F0EC'}
-            onMouseLeave={e => (e.currentTarget as HTMLButtonElement).style.color = '#b8b6b3'}
+            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '4px', color: 'rgba(255,255,255,0.8)', display: 'flex', alignItems: 'center', borderRadius: '4px', transition: 'color 0.15s ease' }}
+            onMouseEnter={e => (e.currentTarget as HTMLButtonElement).style.color = '#FFFFFF'}
+            onMouseLeave={e => (e.currentTarget as HTMLButtonElement).style.color = 'rgba(255,255,255,0.8)'}
             aria-label="Close chat"
           >
             <X size={16} />
@@ -577,7 +743,7 @@ export default function ChatWidget() {
           minHeight: 0,
           maxHeight: '320px',
           scrollbarWidth: 'thin',
-          scrollbarColor: '#2A2A2A transparent',
+          scrollbarColor: '#E5E5E5 transparent',
         }}>
           {messages.map(msg => (
             <div
@@ -591,14 +757,14 @@ export default function ChatWidget() {
               <div style={{
                 maxWidth: '82%',
                 padding: '0.625rem 0.875rem',
-                backgroundColor: msg.role === 'user' ? '#A78BFA' : '#1A1A1A',
+                backgroundColor: msg.role === 'user' ? '#0CA2A2' : '#F0F0F0',
                 borderRadius: msg.role === 'user' ? '12px 12px 2px 12px' : '12px 12px 12px 2px',
-                borderLeft: msg.role === 'bot' ? '2px solid #2A2A2A' : 'none',
+                borderLeft: msg.role === 'bot' ? '2px solid #E5E5E5' : 'none',
               }}>
                 <p style={{
-                  fontFamily: "'Nicholas', serif",
-                  fontSize: '0.875rem',
-                  color: msg.role === 'user' ? '#0A0A0A' : '#b8b6b3',
+                  fontFamily: "'Sora', sans-serif",
+                  fontSize: '0.8125rem',
+                  color: msg.role === 'user' ? '#FFFFFF' : '#1A1A1A',
                   lineHeight: 1.6,
                   whiteSpace: 'pre-line',
                   margin: 0,
@@ -616,10 +782,47 @@ export default function ChatWidget() {
             </div>
           )}
 
-
+          {/* Quick questions — shown once on intro stage, hidden after selection */}
+          {showQuickQ && stage === 'intro' && messages.length > 0 && !isTyping && (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.25rem' }}>
+              {QUICK_QUESTIONS.map((q, i) => (
+                <button
+                  key={i}
+                  onClick={() => handleQuickQuestion(q)}
+                  style={{
+                    textAlign: 'left',
+                    backgroundColor: 'transparent',
+                    borderWidth: '1px',
+                    borderStyle: 'solid',
+                    borderColor: '#E5E5E5',
+                    borderRadius: '8px',
+                    padding: '0.5rem 0.75rem',
+                    cursor: 'pointer',
+                    fontFamily: "'Sora', sans-serif",
+                    fontSize: '0.75rem',
+                    color: '#555555',
+                    lineHeight: 1.4,
+                    transition: 'background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease',
+                  }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'rgba(12,162,162,0.08)';
+                    (e.currentTarget as HTMLButtonElement).style.borderColor = '#0CA2A2';
+                    (e.currentTarget as HTMLButtonElement).style.color = '#F5F0EC';
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'transparent';
+                    (e.currentTarget as HTMLButtonElement).style.borderColor = '#E5E5E5';
+                    (e.currentTarget as HTMLButtonElement).style.color = '#555555';
+                  }}
+                >
+                  {q}
+                </button>
+              ))}
+            </div>
+          )}
 
           {/* Still need help? Talk to a person — shown after 3+ exchanges in chat stage */}
-          {messages.filter(m => m.role === 'user').length >= 3 && !isTyping && (
+          {stage === 'chat' && messages.filter(m => m.role === 'user').length >= 3 && !isTyping && (
             <div style={{
               display: 'flex',
               justifyContent: 'center',
@@ -636,23 +839,22 @@ export default function ChatWidget() {
                     visitorName: leadInfo.name,
                     visitorEmail: leadInfo.email,
                     businessType: leadInfo.businessType,
-                    page: typeof window !== 'undefined' ? window.location.pathname : undefined,
                   });
                 }}
                 style={{
                   background: 'none',
                   border: 'none',
                   cursor: 'pointer',
-                  fontFamily: "'Nicholas', serif",
+                  fontFamily: "'Sora', sans-serif",
                   fontSize: '0.6875rem',
-                  color: '#b8b6b3',
+                  color: '#777777',
                   textDecoration: 'underline',
                   textUnderlineOffset: '3px',
                   padding: '0.25rem 0',
                   transition: 'color 0.15s ease',
                 }}
-                onMouseEnter={e => (e.currentTarget as HTMLButtonElement).style.color = '#A78BFA'}
-                onMouseLeave={e => (e.currentTarget as HTMLButtonElement).style.color = '#b8b6b3'}
+                onMouseEnter={e => (e.currentTarget as HTMLButtonElement).style.color = '#0CA2A2'}
+                onMouseLeave={e => (e.currentTarget as HTMLButtonElement).style.color = '#777777'}
               >
                 Still need help? Talk to a person
               </button>
@@ -660,18 +862,18 @@ export default function ChatWidget() {
           )}
 
           {/* Book CTA after chat */}
-          {messages.length >= 4 && !isTyping && (
+          {stage === 'chat' && messages.length >= 4 && !isTyping && (
             <div style={{
-              backgroundColor: '#141414',
+              backgroundColor: '#FAFAF8',
               borderWidth: '1px',
               borderStyle: 'solid',
-              borderColor: '#2A2A2A',
+              borderColor: '#E5E5E5',
               borderRadius: '10px',
               padding: '0.875rem',
               marginTop: '0.25rem',
               animation: 'chatFadeIn 0.4s ease-out',
             }}>
-              <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.75rem', color: '#b8b6b3', marginBottom: '0.625rem', lineHeight: 1.7 }}>
+              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.75rem', color: '#555555', marginBottom: '0.625rem', lineHeight: 1.5 }}>
                 Want to see exactly where your revenue is leaking?
               </p>
               <button
@@ -680,23 +882,23 @@ export default function ChatWidget() {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.375rem',
-                  backgroundColor: '#A78BFA',
+                  backgroundColor: '#0CA2A2',
                   border: 'none',
                   borderRadius: '6px',
                   padding: '0.5rem 0.875rem',
                   cursor: 'pointer',
-                  fontFamily: "'Nicholas', serif",
+                  fontFamily: "'Sora', sans-serif",
                   fontSize: '0.6875rem',
                   fontWeight: 600,
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
-                  color: '#0A0A0A',
+                  color: '#FFFFFF',
                   transition: 'background-color 0.2s ease',
                   width: '100%',
                   justifyContent: 'center',
                 }}
-                onMouseEnter={e => (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#c4b0fd'}
-                onMouseLeave={e => (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#A78BFA'}
+                onMouseEnter={e => (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#0ab8b8'}
+                onMouseLeave={e => (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#0CA2A2'}
               >
                 Book Your Free Intro Call <ArrowRight size={12} />
               </button>
@@ -708,73 +910,93 @@ export default function ChatWidget() {
 
         {/* Input area */}
         <div style={{
-          borderTop: '1px solid #2A2A2A',
+          borderTop: '1px solid #E5E5E5',
           padding: '0.75rem',
           display: 'flex',
           gap: '0.5rem',
           alignItems: 'center',
           flexShrink: 0,
-          backgroundColor: '#141414',
+          backgroundColor: '#FFFFFF',
         }}>
           <input
             ref={inputRef}
-            type="text"
-            value={inputValue}
-            onChange={e => setInputValue(e.target.value)}
+            type={isCapturing && captureStep === 'email' ? 'email' : 'text'}
+            value={isCapturing ? captureInput : inputValue}
+            onChange={e => isCapturing ? setCaptureInput(e.target.value) : setInputValue(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Ask a question..."
-
+            placeholder={
+              isCapturing
+                ? captureStep === 'name' ? 'Your first name...'
+                  : captureStep === 'email' ? 'Your email address...'
+                  : 'Type of business...'
+                : 'Ask a question...'
+            }
             style={{
               flex: 1,
               borderWidth: '1px',
               borderStyle: 'solid',
-              borderColor: '#2A2A2A',
+              borderColor: '#E5E5E5',
               borderRadius: '8px',
               padding: '0.5rem 0.75rem',
-              fontFamily: "'Nicholas', serif",
-              fontSize: '0.875rem',
-              color: '#F5F0EC',
-              backgroundColor: '#0A0A0A',
+              fontFamily: "'Sora', sans-serif",
+              fontSize: '0.8125rem',
+              color: '#1A1A1A',
+              backgroundColor: '#FFFFFF',
               outline: 'none',
               transition: 'border-color 0.2s ease',
             }}
-            onFocus={e => (e.target as HTMLInputElement).style.borderColor = '#A78BFA'}
-            onBlur={e => (e.target as HTMLInputElement).style.borderColor = '#2A2A2A'}
+            onFocus={e => (e.target as HTMLInputElement).style.borderColor = '#0CA2A2'}
+            onBlur={e => (e.target as HTMLInputElement).style.borderColor = '#E5E5E5'}
           />
           <button
-            onClick={handleSendMessage}
-            disabled={!inputValue.trim()}
+            onClick={isCapturing ? handleCaptureSubmit : handleSendMessage}
+            disabled={isCapturing ? !captureInput.trim() : !inputValue.trim()}
             style={{
               width: '36px',
               height: '36px',
-              backgroundColor: '#A78BFA',
+              backgroundColor: '#0CA2A2',
               border: 'none',
               borderRadius: '8px',
-              cursor: !inputValue.trim() ? 'not-allowed' : 'pointer',
+              cursor: (isCapturing ? !captureInput.trim() : !inputValue.trim()) ? 'not-allowed' : 'pointer',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               flexShrink: 0,
-              opacity: !inputValue.trim() ? 0.4 : 1,
+              opacity: (isCapturing ? !captureInput.trim() : !inputValue.trim()) ? 0.4 : 1,
               transition: 'opacity 0.2s ease',
             }}
             aria-label="Send message"
           >
-            <Send size={14} color="#0A0A0A" />
+            <Send size={14} color="#FFFFFF" />
           </button>
         </div>
 
-
+        {/* Consent line — shown only during lead capture */}
+        {isCapturing && (
+          <div style={{
+            padding: '0.375rem 0.75rem 0',
+            backgroundColor: '#FAFAF8',
+            textAlign: 'center',
+            flexShrink: 0,
+          }}>
+            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.625rem', color: '#777777', lineHeight: 1.5 }}>
+              By continuing, you agree to our{' '}
+              <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ color: '#0CA2A2', textDecoration: 'underline' }}>Privacy Policy</a>
+              {' '}and{' '}
+              <a href="/terms" target="_blank" rel="noopener noreferrer" style={{ color: '#0CA2A2', textDecoration: 'underline' }}>Terms of Service</a>.
+            </p>
+          </div>
+        )}
 
         {/* Footer */}
         <div style={{
           padding: '0.5rem 0.75rem',
-          backgroundColor: '#0A0A0A',
-          borderTop: '1px solid #1A1A1A',
+          backgroundColor: '#FAFAF8',
+          borderTop: '1px solid #E5E5E5',
           textAlign: 'center',
           flexShrink: 0,
         }}>
-          <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.5625rem', color: '#3A3A3A', letterSpacing: '0.08em' }}>
+          <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.5625rem', color: '#AAAAAA', letterSpacing: '0.08em' }}>
             Ops by Noell · hello@opsbynoell.com
           </p>
         </div>
