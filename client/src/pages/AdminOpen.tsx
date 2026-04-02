@@ -50,7 +50,7 @@ export default function AdminOpen() {
   return (
     <div style={{
       minHeight: '100vh',
-      backgroundColor: '#0A0A0A',
+      backgroundColor: '#FFFFFF',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -60,13 +60,13 @@ export default function AdminOpen() {
       <div style={{
         width: 28,
         height: 28,
-        border: '2px solid rgba(167,139,250,0.2)',
+        border: '2px solid rgba(12,162,162,0.2)',
         borderTopColor: '#0ca2a2',
         borderRadius: '50%',
         animation: 'spin 0.7s linear infinite',
       }} />
       <p style={{
-        fontFamily: "'Sora', sans-serif",
+        fontFamily: "'Nicholas', serif",
         fontSize: '0.75rem',
         color: '#3A3430',
         margin: 0,
