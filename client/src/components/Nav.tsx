@@ -226,7 +226,7 @@ export default function Nav() {
           {/* Desktop CTA */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }} className="hidden md:flex">
             <a href="/book" className="btn-gradient" style={{ padding: '0.625rem 1.5rem', fontSize: '0.875rem', fontWeight: 600 }}>
-              Book Free Call
+              Book Free Audit
             </a>
           </div>
 
@@ -342,7 +342,7 @@ export default function Nav() {
 
           <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             <a href="/book" className="btn-gradient" style={{ display: 'flex', justifyContent: 'center', fontWeight: 600 }}>
-              Book Free Call
+              Book Free Audit
             </a>
           </div>
           <div style={{ marginTop: 'auto', paddingTop: '2rem', borderTop: '1px solid rgba(167,139,250,0.12)' }}>
@@ -355,3 +355,5 @@ export default function Nav() {
     </>
   );
 }
+
+
