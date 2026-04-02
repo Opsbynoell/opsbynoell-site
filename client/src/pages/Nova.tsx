@@ -95,7 +95,7 @@ function SectionBadge({ children }: { children: React.ReactNode }) {
         background: 'rgba(167,139,250,0.1)',
         border: '1px solid rgba(167,139,250,0.25)',
         borderRadius: '100px',
-        fontFamily: "'Sora', sans-serif",
+        fontFamily: "'Nicholas', serif",
         fontSize: '0.75rem',
         fontWeight: 600,
         color: '#C4B5FD',
@@ -160,11 +160,11 @@ function FaqAccordion({ items }: { items: FaqItem[] }) {
             }}
           >
             <span style={{
-              fontFamily: "'Sora', sans-serif",
+              fontFamily: "'Nicholas', serif",
               fontSize: '1rem',
               fontWeight: 600,
               color: '#ffffff',
-              lineHeight: 1.5,
+              lineHeight: 1.7,
             }}>
               {item.q}
             </span>
@@ -181,7 +181,7 @@ function FaqAccordion({ items }: { items: FaqItem[] }) {
           {open === i && (
             <div style={{
               paddingBottom: '1.375rem',
-              fontFamily: "'Sora', sans-serif",
+              fontFamily: "'Nicholas', serif",
               fontSize: '0.9375rem',
               color: '#b8b6b3',
               lineHeight: 1.75,
@@ -232,8 +232,8 @@ export default function Nova() {
                 background: 'rgba(167,139,250,0.12)',
                 border: '1px solid rgba(167,139,250,0.3)',
                 borderRadius: '100px',
-                fontFamily: "'Sora', sans-serif",
-                fontSize: '0.8125rem', fontWeight: 500, color: '#C4B5FD', letterSpacing: '0.02em',
+                fontFamily: "'Nicholas', serif",
+                fontSize: '0.875rem', fontWeight: 500, color: '#C4B5FD', letterSpacing: '0.02em',
               }}>
                 <Zap size={13} style={{ color: '#A78BFA' }} />
                 AI Chat Agent for Service Businesses
@@ -246,7 +246,7 @@ export default function Nova() {
               fontSize: 'clamp(2.5rem, 5.5vw, 4rem)',
               fontWeight: 800,
               color: '#ffffff',
-              lineHeight: 1.12,
+              lineHeight: 1.7,
               letterSpacing: '-0.03em',
               marginBottom: '1.5rem',
             }}>
@@ -256,7 +256,7 @@ export default function Nova() {
 
             {/* Sub */}
             <p style={{
-              fontFamily: "'Sora', sans-serif",
+              fontFamily: "'Nicholas', serif",
               fontSize: 'clamp(1rem, 2vw, 1.175rem)',
               color: '#b8b6b3',
               lineHeight: 1.75,
@@ -270,7 +270,7 @@ export default function Nova() {
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.875rem' }}>
               <CtaButton href="/book" large>Get Nova on Your Site — $497 Setup — Founding Client Rate</CtaButton>
               <p style={{
-                fontFamily: "'Sora', sans-serif",
+                fontFamily: "'Nicholas', serif",
                 fontSize: '0.875rem',
                 color: '#b8b6b3',
               }}>
@@ -294,7 +294,7 @@ export default function Nova() {
               fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)',
               fontWeight: 700,
               color: '#ffffff',
-              lineHeight: 1.2,
+              lineHeight: 1.7,
               letterSpacing: '-0.02em',
               marginBottom: '1.75rem',
             }}>
@@ -302,7 +302,7 @@ export default function Nova() {
               <GradientText>without ever reaching out.</GradientText>
             </h2>
             <p style={{
-              fontFamily: "'Sora', sans-serif",
+              fontFamily: "'Nicholas', serif",
               fontSize: '1.0625rem',
               color: '#b8b6b3',
               lineHeight: 1.8,
@@ -322,7 +322,7 @@ export default function Nova() {
                 fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)',
                 fontWeight: 700,
                 color: '#ffffff',
-                lineHeight: 1.2,
+                lineHeight: 1.7,
                 letterSpacing: '-0.02em',
               }}>
                 Everything built in. <GradientText>Nothing to manage.</GradientText>
@@ -361,13 +361,13 @@ export default function Nova() {
                     fontSize: '1.0625rem',
                     fontWeight: 700,
                     color: '#ffffff',
-                    lineHeight: 1.3,
+                    lineHeight: 1.7,
                     marginBottom: '0.625rem',
                   }}>
                     {title}
                   </h3>
                   <p style={{
-                    fontFamily: "'Sora', sans-serif",
+                    fontFamily: "'Nicholas', serif",
                     fontSize: '0.9rem',
                     color: '#b8b6b3',
                     lineHeight: 1.7,
@@ -394,14 +394,14 @@ export default function Nova() {
               fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)',
               fontWeight: 700,
               color: '#ffffff',
-              lineHeight: 1.2,
+              lineHeight: 1.7,
               letterSpacing: '-0.02em',
               marginBottom: '1.25rem',
             }}>
               Want to see it <GradientText>before you buy?</GradientText>
             </h2>
             <p style={{
-              fontFamily: "'Sora', sans-serif",
+              fontFamily: "'Nicholas', serif",
               fontSize: '1.0625rem',
               color: '#b8b6b3',
               lineHeight: 1.8,
@@ -421,7 +421,7 @@ export default function Nova() {
                 fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)',
                 fontWeight: 700,
                 color: '#ffffff',
-                lineHeight: 1.2,
+                lineHeight: 1.7,
                 letterSpacing: '-0.02em',
               }}>
                 What happens when you stop <GradientText>letting leads walk away.</GradientText>
@@ -442,7 +442,7 @@ export default function Nova() {
                 ))}
               </div>
               <p style={{
-                fontFamily: "'Sora', sans-serif",
+                fontFamily: "'Nicholas', serif",
                 fontSize: 'clamp(1rem, 2vw, 1.125rem)',
                 color: '#d4d0cc',
                 lineHeight: 1.8,
@@ -462,7 +462,7 @@ export default function Nova() {
                   Santa
                 </div>
                 <div style={{
-                  fontFamily: "'Sora', sans-serif",
+                  fontFamily: "'Nicholas', serif",
                   fontSize: '0.875rem',
                   color: '#b8b6b3',
                 }}>
@@ -487,7 +487,7 @@ export default function Nova() {
               fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)',
               fontWeight: 700,
               color: '#ffffff',
-              lineHeight: 1.2,
+              lineHeight: 1.7,
               letterSpacing: '-0.02em',
               marginBottom: '3rem',
             }}>
@@ -505,8 +505,8 @@ export default function Nova() {
               {/* Card Header */}
               <div style={{ marginBottom: '1.75rem', paddingBottom: '1.75rem', borderBottom: '1px solid rgba(167,139,250,0.12)' }}>
                 <div style={{
-                  fontFamily: "'Sora', sans-serif",
-                  fontSize: '0.8125rem',
+                  fontFamily: "'Nicholas', serif",
+                  fontSize: '0.875rem',
                   fontWeight: 600,
                   color: '#C4B5FD',
                   letterSpacing: '0.08em',
@@ -517,12 +517,12 @@ export default function Nova() {
                 </div>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', marginBottom: '0.375rem' }}>
                   <span style={{ fontFamily: "'Nicholas', serif", fontSize: '2.75rem', fontWeight: 800, color: '#ffffff', lineHeight: 1 }}>$497</span>
-                  <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9rem', color: '#b8b6b3' }}>one-time setup</span>
-                  <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#A78BFA', marginLeft: '0.25rem', opacity: 0.7 }}>save $500</span>
+                  <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9rem', color: '#b8b6b3' }}>one-time setup</span>
+                  <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#A78BFA', marginLeft: '0.25rem', opacity: 0.7 }}>save $500</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem' }}>
                   <span style={{ fontFamily: "'Nicholas', serif", fontSize: '1.625rem', fontWeight: 700, color: '#C4B5FD', lineHeight: 1 }}>$297</span>
-                  <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#b8b6b3' }}>/ month</span>
+                  <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#b8b6b3' }}>/ month</span>
                 </div>
               </div>
 
@@ -551,7 +551,7 @@ export default function Nova() {
                         <path d="M1 4L3.5 6.5L9 1" stroke="#A78BFA" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </span>
-                    <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#d4d0cc', lineHeight: 1.5 }}>
+                    <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9375rem', color: '#d4d0cc', lineHeight: 1.7 }}>
                       {feature}
                     </span>
                   </li>
@@ -562,8 +562,8 @@ export default function Nova() {
             </div>
 
             <p style={{
-              fontFamily: "'Sora', sans-serif",
-              fontSize: '0.8125rem',
+              fontFamily: "'Nicholas', serif",
+              fontSize: '0.875rem',
               color: '#b8b6b3',
               marginTop: '1.25rem',
             }}>
@@ -582,7 +582,7 @@ export default function Nova() {
                 fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)',
                 fontWeight: 700,
                 color: '#ffffff',
-                lineHeight: 1.2,
+                lineHeight: 1.7,
                 letterSpacing: '-0.02em',
               }}>
                 Common questions, <GradientText>answered.</GradientText>
@@ -605,7 +605,7 @@ export default function Nova() {
               fontSize: 'clamp(2rem, 5vw, 3.5rem)',
               fontWeight: 800,
               color: '#ffffff',
-              lineHeight: 1.12,
+              lineHeight: 1.7,
               letterSpacing: '-0.03em',
               marginBottom: '2rem',
             }}>
@@ -614,7 +614,7 @@ export default function Nova() {
             </h2>
             <CtaButton href="/book" large>Get Nova on Your Site — $497 Setup — Founding Client Rate</CtaButton>
             <p style={{
-              fontFamily: "'Sora', sans-serif",
+              fontFamily: "'Nicholas', serif",
               fontSize: '0.875rem',
               color: '#b8b6b3',
               marginTop: '1rem',
