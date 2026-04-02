@@ -73,7 +73,7 @@ export default function CaseStudy() {
         <div style={{ position: 'absolute', top: '-80px', left: '-80px', width: '700px', height: '700px', background: 'radial-gradient(circle, rgba(167,139,250,0.12) 0%, transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
         <div style={{ position: 'absolute', top: '80px', right: '-100px', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(167,139,250,0.08) 0%, transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
 
-        <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '5rem', paddingBottom: '5.5rem' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: 'clamp(2rem, 5vw, 5rem)', paddingBottom: '5.5rem' }}>
           
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
               <SectionBadge>Case Study · Laguna Niguel, CA</SectionBadge>
@@ -120,7 +120,7 @@ export default function CaseStudy() {
 
       {/* ─── THE CLIENT ─── */}
       <RevealSection>
-      <section style={{ padding: '6rem 0' }}>
+      <section style={{ padding: 'clamp(2.5rem, 6vw, 6rem) 0' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '4rem', alignItems: 'center' }} className="lg:grid-cols-2">
             <FadeItem delay={0}>
@@ -176,7 +176,7 @@ export default function CaseStudy() {
 
       {/* ─── THE GAPS ─── */}
       <RevealSection>
-      <section style={{ padding: '6rem 0', borderTop: '1px solid rgba(167,139,250,0.08)' }}>
+      <section style={{ padding: 'clamp(2.5rem, 6vw, 6rem) 0', borderTop: '1px solid rgba(167,139,250,0.08)' }}>
         <div className="container">
           <FadeItem delay={0}>
             <div style={{ maxWidth: '520px', marginBottom: '3.5rem' }}>
@@ -226,7 +226,7 @@ export default function CaseStudy() {
 
       {/* ─── WHAT WE BUILT ─── */}
       <RevealSection>
-      <section style={{ padding: '6rem 0', borderTop: '1px solid rgba(167,139,250,0.08)' }}>
+      <section style={{ padding: 'clamp(2.5rem, 6vw, 6rem) 0', borderTop: '1px solid rgba(167,139,250,0.08)' }}>
         <div className="container">
           <FadeItem delay={0}>
             <div style={{ maxWidth: '520px', marginBottom: '3.5rem' }}>
@@ -359,10 +359,10 @@ export default function CaseStudy() {
 
       {/* ─── THE RESULT ─── */}
       <RevealSection>
-      <section style={{ padding: '6rem 0', borderTop: '1px solid rgba(167,139,250,0.08)' }}>
+      <section style={{ padding: 'clamp(2.5rem, 6vw, 6rem) 0', borderTop: '1px solid rgba(167,139,250,0.08)' }}>
         <div className="container">
           <FadeItem delay={0}>
-            <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <div style={{ textAlign: 'center', marginBottom: 'clamp(1.5rem, 4vw, 4rem)' }}>
               <div style={{ marginBottom: '1.25rem' }}>
                 <SectionBadge>The Result</SectionBadge>
               </div>
@@ -461,7 +461,7 @@ export default function CaseStudy() {
 
       {/* ─── CTA ─── */}
       <RevealSection>
-      <section style={{ position: 'relative', padding: '7rem 0', borderTop: '1px solid rgba(167,139,250,0.08)', overflow: 'hidden' }}>
+      <section style={{ position: 'relative', padding: 'clamp(2.5rem, 6vw, 7rem) 0', borderTop: '1px solid rgba(167,139,250,0.08)', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', bottom: '-60px', left: '50%', transform: 'translateX(-50%)', width: '800px', height: '400px', background: 'radial-gradient(ellipse, rgba(167,139,250,0.1) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
           <FadeItem delay={0}>
@@ -505,4 +505,3 @@ export default function CaseStudy() {
     </div>
   );
 }
-
