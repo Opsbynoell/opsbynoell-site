@@ -258,25 +258,25 @@ export default function Services() {
         <div style={{ position: 'absolute', top: '5%', left: '50%', transform: 'translateX(-50%)', width: '700px', height: '700px', pointerEvents: 'none', background: 'radial-gradient(ellipse at center, rgba(167,139,250,0.14) 0%, rgba(167,139,250,0.05) 40%, transparent 70%)' }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '820px', margin: '0 auto' }}>
-          <FadeItem delay={0}>
+          
             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.375rem 1rem', background: 'rgba(167,139,250,0.12)', border: '1px solid rgba(167,139,250,0.3)', borderRadius: '100px', fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', fontWeight: 500, color: '#C4B5FD' }}>
                 Done-For-You · Built For Your Business
               </span>
             </div>
-          </FadeItem>
-          <FadeItem delay={0.08}>
+          
+          
             <h1 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2.75rem, 6vw, 4.5rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '1.5rem' }}>
               Missed calls answered.{' '}
               <GradientText>Leads followed up.</GradientText>
             </h1>
-          </FadeItem>
-          <FadeItem delay={0.16}>
+          
+          
             <p style={{ fontFamily: "'Sora', sans-serif", fontSize: 'clamp(1rem, 2vw, 1.175rem)', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '580px', margin: '0 auto 2.5rem' }}>
               Clients booked, retained, and reviewed — every system on this page is built for you, installed by us, and running before you know it. No software to learn. No setup on your end.
             </p>
-          </FadeItem>
-          <FadeItem delay={0.24}>
+          
+          
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="/book" className="btn-gradient" style={{ padding: '1rem 2rem', fontSize: '1rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
                 Book a Free 30-Minute Audit <ArrowRight size={16} />
@@ -285,8 +285,8 @@ export default function Services() {
                 View Pricing
               </a>
             </div>
-          </FadeItem>
-          <FadeItem delay={0.32}>
+          
+          
             <div style={{ marginTop: '2.5rem', display: 'inline-block', background: 'rgba(167,139,250,0.08)', border: '1px solid rgba(167,139,250,0.25)', borderRadius: '12px', padding: '1.5rem 2rem', maxWidth: '460px', textAlign: 'left' }}>
               <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1.125rem', fontWeight: 700, color: '#ffffff', marginBottom: '0.5rem' }}>Start with one system.</p>
               <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.7, marginBottom: '1.25rem' }}>
@@ -296,7 +296,7 @@ export default function Services() {
                 Get Started for $297 <ArrowRight size={14} />
               </a>
             </div>
-          </FadeItem>
+          
         </div>
       </section>
 
