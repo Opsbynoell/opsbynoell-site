@@ -30,7 +30,7 @@ const QA_PAIRS: Array<{ keywords: string[]; answer: string }> = [
   },
   {
     keywords: ["how do i start", "book", "schedule", "call", "consult"],
-    answer: "Book a free 15-minute intro call at opsbynoell.com/book.",
+    answer: "Book a free 30-minute intro call at opsbynoell.com/book.",
   },
   {
     keywords: ["different", "unique", "why you", "what makes you"],
