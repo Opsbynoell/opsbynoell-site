@@ -78,10 +78,10 @@ export default function Book() {
         textAlign: 'center',
       }}>
         <div className="container" style={{ maxWidth: '640px', margin: '0 auto' }}>
-          <FadeItem delay={0}>
+          
             <p className="eyebrow" style={{ marginBottom: '1rem' }}>Free 30-Minute Audit</p>
-          </FadeItem>
-          <FadeItem delay={0.1}>
+          
+          
             <h1 style={{
               fontFamily: "'Nicholas', serif",
               fontSize: 'clamp(2rem, 4vw, 3.25rem)',
@@ -93,8 +93,8 @@ export default function Book() {
             }}>
               Book Your Free 30-Minute Audit
             </h1>
-          </FadeItem>
-          <FadeItem delay={0.2}>
+          
+          
             <p style={{
               fontFamily: "'Sora', sans-serif",
               fontSize: '1.0625rem',
@@ -103,7 +103,7 @@ export default function Book() {
             }}>
               No pitch. No slides. We listen first and show you your numbers.
             </p>
-          </FadeItem>
+          
         </div>
       </section>
 
