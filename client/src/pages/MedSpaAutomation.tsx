@@ -147,7 +147,7 @@ export default function MedSpaAutomation() {
           <FadeItem delay={0}><div style={{ marginBottom: '1.5rem' }}><SectionBadge>Med Spa Automation</SectionBadge></div></FadeItem>
           <FadeItem delay={0.1}>
             <h1 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2.75rem, 6.5vw, 5rem)', fontWeight: 800, lineHeight: 1.05, letterSpacing: '-0.03em', maxWidth: '820px', marginBottom: '1.75rem' }}>
-              <GradientText>AI receptionist and automation</GradientText>{' '}<span style={{ color: '#ffffff' }}>for med spas. Every call answered. Every appointment filled.</span>
+              <span style={{ color: '#ffffff' }}>You invested everything in your practice.</span>{' '}<GradientText>Your phone shouldn't be what's costing you clients.</GradientText>
             </h1>
           </FadeItem>
           <FadeItem delay={0.2}>
