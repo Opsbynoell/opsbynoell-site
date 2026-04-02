@@ -183,7 +183,7 @@ export default function About() {
                 </div>
 
                 {/* Stats grid */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1px', background: 'rgba(167,139,250,0.12)', borderRadius: '8px', overflow: 'hidden' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '1px', background: 'rgba(167,139,250,0.12)', borderRadius: '8px', overflow: 'hidden' }}>
                   {[
                     { label: 'Founded', value: '2025', sub: 'Mission Viejo, CA' },
                     { label: 'Avg. Time to Live', value: '2 wks', sub: 'From audit to launch' },
