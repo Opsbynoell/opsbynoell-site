@@ -49,7 +49,7 @@ function InputField({ label, hint, value, onChange, prefix, suffix }: InputField
       <label style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', fontWeight: 600, color: '#ffffff' }}>
         {label}
       </label>
-      <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583', margin: 0, lineHeight: 1.5 }}>{hint}</p>
+      <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#b8b6b3', margin: 0, lineHeight: 1.5 }}>{hint}</p>
       <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
         {prefix && (
           <span style={{ position: 'absolute', left: '1rem', fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#A78BFA', fontWeight: 600, pointerEvents: 'none', zIndex: 1 }}>
@@ -79,7 +79,7 @@ function InputField({ label, hint, value, onChange, prefix, suffix }: InputField
           }}
         />
         {suffix && (
-          <span style={{ position: 'absolute', right: '1rem', fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583', pointerEvents: 'none' }}>
+          <span style={{ position: 'absolute', right: '1rem', fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#b8b6b3', pointerEvents: 'none' }}>
             {suffix}
           </span>
         )}
@@ -102,7 +102,7 @@ function ResultCard({ label, value, accent = false }: ResultCardProps) {
       borderRadius: '12px',
       padding: '1.5rem',
     }}>
-      <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583', margin: '0 0 0.5rem', lineHeight: 1.4 }}>{label}</p>
+      <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#b8b6b3', margin: '0 0 0.5rem', lineHeight: 1.4 }}>{label}</p>
       <p style={{
         fontFamily: "'Nicholas', serif",
         fontSize: accent ? '2.25rem' : '1.75rem',
@@ -199,7 +199,7 @@ export default function RevenueCalculatorPage() {
             </h1>
           </FadeItem>
           <FadeItem delay={0.14}>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1.0625rem', color: '#868583', lineHeight: 1.75, maxWidth: '520px', margin: '0 auto' }}>
+            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1.0625rem', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '520px', margin: '0 auto' }}>
               Five inputs. Three minutes. Real numbers on exactly how much revenue is slipping through the cracks in your practice.
             </p>
           </FadeItem>
@@ -323,7 +323,7 @@ export default function RevenueCalculatorPage() {
                       {interpretation.label}
                     </span>
                   </div>
-                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#868583', lineHeight: 1.7, margin: 0 }}>
+                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.7, margin: 0 }}>
                     {interpretation.description}
                   </p>
                 </div>
@@ -333,7 +333,7 @@ export default function RevenueCalculatorPage() {
                   <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.5rem', fontWeight: 700, color: '#ffffff', marginBottom: '0.75rem', lineHeight: 1.2 }}>
                     Want us to run the numbers with you?
                   </h3>
-                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#868583', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.7, marginBottom: '1.5rem' }}>
                     Book a free 30-minute audit. We map your actual gaps, verify the numbers, and show you exactly what the fix looks like — before you commit to anything.
                   </p>
                   <a
@@ -343,7 +343,7 @@ export default function RevenueCalculatorPage() {
                   >
                     Book a Free 30-Minute Audit <ArrowRight size={16} />
                   </a>
-                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583', marginTop: '0.875rem' }}>
+                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#b8b6b3', marginTop: '0.875rem' }}>
                     No commitment. No credit card. Just a real conversation.
                   </p>
                 </div>
@@ -362,16 +362,16 @@ export default function RevenueCalculatorPage() {
             <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.25rem, 2.5vw, 1.625rem)', fontWeight: 700, color: '#ffffff', marginBottom: '1rem', lineHeight: 1.2 }}>
               How this calculator works
             </h2>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#868583', lineHeight: 1.75, marginBottom: '0.75rem' }}>
+            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.75, marginBottom: '0.75rem' }}>
               <strong style={{ color: '#C4B5FD' }}>Annual no-show loss</strong> is calculated as: no-shows per week × your service price × 52 weeks.
             </p>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#868583', lineHeight: 1.75, marginBottom: '0.75rem' }}>
+            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.75, marginBottom: '0.75rem' }}>
               <strong style={{ color: '#C4B5FD' }}>Missed call loss</strong> applies the industry-standard 85% non-callback rate to your missed calls, then multiplies by price × 52.
             </p>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#868583', lineHeight: 1.75, marginBottom: '0.75rem' }}>
+            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.75, marginBottom: '0.75rem' }}>
               <strong style={{ color: '#C4B5FD' }}>Lifetime value lost</strong> multiplies the missed call loss by average visits per year — showing the true long-term cost of each lost caller, not just the single appointment.
             </p>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#868583', lineHeight: 1.75 }}>
+            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.75 }}>
               <strong style={{ color: '#C4B5FD' }}>Total annual revenue leak</strong> combines no-show loss with lifetime value lost.
             </p>
           </FadeItem>
@@ -382,3 +382,4 @@ export default function RevenueCalculatorPage() {
     </div>
   );
 }
+
