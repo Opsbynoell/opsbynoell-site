@@ -10,6 +10,7 @@ import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import { useFadeIn } from '@/hooks/useFadeIn';
 import { trpc } from '@/lib/trpc';
+import { RevealSection } from '@/components/RevealSection'
 
 function FadeItem({ children, delay = 0, style = {} }: { children: React.ReactNode; delay?: number; style?: React.CSSProperties }) {
   const { ref, visible } = useFadeIn(0.1);
@@ -108,6 +109,7 @@ export default function Book() {
       </section>
 
       {/* ─── GHL BOOKING WIDGET (above fold) ─── */}
+      <RevealSection>
       <section style={{ paddingBottom: '5rem' }}>
         <div className="container" style={{ maxWidth: '720px', margin: '0 auto' }}>
           <FadeItem delay={0.3}>
@@ -128,8 +130,10 @@ export default function Book() {
           </FadeItem>
         </div>
       </section>
+      </RevealSection>
 
       {/* ─── WHAT TO EXPECT (below fold) ─── */}
+      <RevealSection>
       <section style={{ padding: '5rem 0', borderTop: '1px solid rgba(167,139,250,0.08)' }}>
         <div className="container" style={{ maxWidth: '720px', margin: '0 auto' }}>
           <FadeItem delay={0}>
@@ -192,8 +196,10 @@ export default function Book() {
           </FadeItem>
         </div>
       </section>
+      </RevealSection>
 
       {/* ─── Santa Testimonial (below fold) ─── */}
+      <RevealSection>
       <section style={{ padding: '4rem 0', borderTop: '1px solid rgba(167,139,250,0.08)', borderBottom: '1px solid rgba(167,139,250,0.08)' }}>
         <div className="container" style={{ maxWidth: '720px', margin: '0 auto' }}>
           <FadeItem delay={0}>
@@ -220,8 +226,10 @@ export default function Book() {
           </FadeItem>
         </div>
       </section>
+      </RevealSection>
 
       {/* ─── FINAL CTA ─── */}
+      <RevealSection>
       <section className="section-pad" style={{ backgroundColor: 'transparent' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <FadeItem delay={0}>
@@ -259,6 +267,7 @@ export default function Book() {
           </FadeItem>
         </div>
       </section>
+      </RevealSection>
 
       <Footer />
     </div>
