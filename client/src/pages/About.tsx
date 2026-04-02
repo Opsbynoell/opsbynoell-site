@@ -31,8 +31,8 @@ function SectionBadge({ children }: { children: React.ReactNode }) {
     <span style={{
       display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
       padding: '0.375rem 1rem', borderRadius: '99px',
-      border: '1px solid rgba(167,139,250,0.25)', background: 'rgba(167,139,250,0.08)',
-      fontFamily: "'Sora', sans-serif", fontSize: '0.6875rem', fontWeight: 600,
+      border: '1px solid #E5E5E5', background: '#FAFAF8',
+      fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600,
       letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#0CA2A2',
     }}>
       <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#0CA2A2', display: 'inline-block' }} />
@@ -67,7 +67,7 @@ const differentiators = [
 
 export default function About() {
   return (
-    <div style={{ backgroundColor: '#010509', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
       <Nav />
 
       {/* ─── HERO ─── */}
@@ -75,10 +75,10 @@ export default function About() {
         {/* Hero gradient bg */}
         <div style={{
           position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none',
-          background: 'linear-gradient(180deg, rgba(120,58,237,0.18) 0%, rgba(139,92,246,0.12) 35%, #010509 72%)',
+          background: '#FFFFFF', /* was: linear-gradient(180deg, rgba(255,255,255,0),0.18) 0%, rgba(139,92,246,0.12) 35%, #010509 72%)',
         }} />
-        <div style={{ position: 'absolute', top: '-80px', left: '-100px', width: '700px', height: '700px', background: 'radial-gradient(circle, rgba(167,139,250,0.12) 0%, transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
-        <div style={{ position: 'absolute', top: '60px', right: '-80px', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(167,139,250,0.08) 0%, transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
+        <div style={{ position: 'absolute', top: '-80px', left: '-100px', width: '700px', height: '700px', background: 'radial-gradient(circle, rgba(12,162,162,0.12) 0%, transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
+        <div style={{ position: 'absolute', top: '60px', right: '-80px', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(12,162,162,0.08) 0%, transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '5rem', paddingBottom: '5.5rem' }}>
           <FadeItem delay={0}>
@@ -94,13 +94,13 @@ export default function About() {
               maxWidth: '800px', marginBottom: '1.75rem', color: '#ffffff',
             }}>
               Built by The Noells.{' '}
-              <span style={{ background: 'linear-gradient(90deg, #0CA2A2 0%, #C4B5FD 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+              <span style={{ color: '#0CA2A2', WebkitBackgroundClip: undefined, WebkitTextFillColor: undefined, backgroundClip: 'text' }}>
                 Powered by automation.
               </span>
             </h1>
           </FadeItem>
           <FadeItem delay={0.2}>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: 'clamp(1rem, 1.4vw, 1.1875rem)', color: '#868583', lineHeight: 1.75, maxWidth: '580px' }}>
+            <p style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1rem, 1.4vw, 1.1875rem)', color: '#555555', lineHeight: 1.75, maxWidth: '580px' }}>
               We're Nikki and James Noell, and we put our last name on this for a reason.
             </p>
           </FadeItem>
@@ -124,33 +124,33 @@ export default function About() {
                 }}>
                   We come from operations. We build what actually works.
                 </h2>
-                <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#868583', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+                <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1rem', color: '#555555', lineHeight: 1.8, marginBottom: '1.25rem' }}>
                   We're Nikki and James Noell, a husband-and-wife team from Mission Viejo, California. We've spent years inside fast-growing companies building systems, managing operations, and fixing what was broken. That's just how we're wired.
                 </p>
-                <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#868583', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+                <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1rem', color: '#555555', lineHeight: 1.8, marginBottom: '1.25rem' }}>
                   We kept seeing the same thing: talented people running great businesses, losing clients not because of bad service, but because nothing happened after the call. No follow-up. No reminder. No review request. The work was excellent. The systems behind it were nonexistent.
                 </p>
-                <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#868583', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+                <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1rem', color: '#555555', lineHeight: 1.8, marginBottom: '1.25rem' }}>
                   So we built the fix. And then we built it for everyone else.
                 </p>
-                <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#868583', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+                <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1rem', color: '#555555', lineHeight: 1.8, marginBottom: '1.25rem' }}>
                   Today, we work with appointment-based service businesses, from wellness practices and salons to dental offices and home services. If your business runs on bookings and phone calls, we build the AI systems that make sure nothing falls through the cracks.
                 </p>
-                <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#868583', lineHeight: 1.8 }}>
+                <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1rem', color: '#555555', lineHeight: 1.8 }}>
                   Ops by Noell is our family name on the door. That means something to us. Every system we build, we build like it's our own business on the line. Because in a way, it is.
                 </p>
               </div>
             </FadeItem>
 
             <FadeItem delay={0.15}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1px', background: 'rgba(167,139,250,0.12)', borderRadius: '8px', overflow: 'hidden' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1px', background: 'transparent', borderRadius: '8px', overflow: 'hidden' }}>
                 {[
                   { label: 'Founded', value: '2025', sub: 'Mission Viejo, CA' },
                   { label: 'Avg. Time to Live', value: '2 wks', sub: 'From audit to launch' },
                   { label: 'No-Show Reduction', value: '30–50%', sub: 'With automated reminders' },
                   { label: 'Response Time', value: '< 10 sec', sub: 'Missed call text-back' },
                 ].map((stat, i) => (
-                  <div key={i} style={{ background: 'rgba(167,139,250,0.03)', padding: '2rem 1.5rem' }}>
+                  <div key={i} style={{ background: 'rgba(12,162,162,0.03)', padding: '2rem 1.5rem' }}>
                     <p style={{
                       fontFamily: "'Nicholas', serif",
                       fontSize: '2rem', fontWeight: 700,
@@ -160,14 +160,14 @@ export default function About() {
                       {stat.value}
                     </p>
                     <p style={{
-                      fontFamily: "'Sora', sans-serif",
+                      fontFamily: "'Nicholas', serif",
                       fontSize: '0.6875rem', fontWeight: 600,
                       color: '#0CA2A2', letterSpacing: '0.1em',
                       textTransform: 'uppercase', marginBottom: '0.25rem',
                     }}>
                       {stat.label}
                     </p>
-                    <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583' }}>
+                    <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.8125rem', color: '#555555' }}>
                       {stat.sub}
                     </p>
                   </div>
@@ -179,7 +179,7 @@ export default function About() {
       </section>
 
       {/* ─── DIFFERENTIATORS ─── */}
-      <section style={{ padding: '6rem 0', borderTop: '1px solid rgba(167,139,250,0.08)' }}>
+      <section style={{ padding: '6rem 0', borderTop: '1px solid #E5E5E5' }}>
         <div className="container">
           <FadeItem delay={0}>
             <div style={{ maxWidth: '520px', marginBottom: '4rem' }}>
@@ -203,19 +203,19 @@ export default function About() {
                   className="feature-card"
                   style={{
                     padding: '2.5rem', height: '100%', position: 'relative',
-                    border: d.highlight ? '1px solid rgba(167,139,250,0.35)' : '1px solid rgba(167,139,250,0.12)',
-                    background: d.highlight ? 'rgba(167,139,250,0.06)' : 'rgba(167,139,250,0.02)',
+                    border: d.highlight ? '1px solid rgba(12,162,162,0.35)' : '1px solid rgba(12,162,162,0.12)',
+                    background: d.highlight ? 'rgba(12,162,162,0.06)' : 'rgba(12,162,162,0.02)',
                   }}
                 >
                   {d.highlight && (
                     <div style={{ position: 'absolute', top: '1.25rem', right: '1.25rem' }}>
                       <span style={{
-                        fontFamily: "'Sora', sans-serif",
+                        fontFamily: "'Nicholas', serif",
                         fontSize: '0.5625rem', fontWeight: 600,
                         letterSpacing: '0.15em', textTransform: 'uppercase',
-                        color: '#0CA2A2', border: '1px solid rgba(167,139,250,0.3)',
+                        color: '#0CA2A2', border: 'none',
                         padding: '0.25rem 0.625rem', borderRadius: '4px',
-                        background: 'rgba(167,139,250,0.08)',
+                        background: '#FAFAF8',
                       }}>
                         Signature Promise
                       </span>
@@ -223,7 +223,7 @@ export default function About() {
                   )}
                   <div style={{
                     width: '48px', height: '48px', borderRadius: '12px',
-                    background: 'rgba(167,139,250,0.1)', border: '1px solid rgba(167,139,250,0.2)',
+                    background: '#F0FAFA', border: 'none',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     marginBottom: '1.5rem',
                   }}>
@@ -236,20 +236,20 @@ export default function About() {
                   }}>
                     {d.title}
                   </h3>
-                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#868583', lineHeight: 1.75 }}>
+                  <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9375rem', color: '#555555', lineHeight: 1.75 }}>
                     {d.body}
                   </p>
                   {d.highlight && (
                     <div style={{ marginTop: '1.5rem' }}>
                       <a href="/book" style={{
                         display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-                        fontFamily: "'Sora', sans-serif",
+                        fontFamily: "'Nicholas', serif",
                         fontSize: '0.75rem', fontWeight: 600,
                         letterSpacing: '0.08em', textTransform: 'uppercase',
                         color: '#0CA2A2', textDecoration: 'none',
                         transition: 'color 0.15s ease',
                       }}
-                        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#C4B5FD'; }}
+                        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#0CA2A2'; }}
                         onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#0CA2A2'; }}
                       >
                         Book Free Intro Call <ArrowRight size={12} />
@@ -264,8 +264,8 @@ export default function About() {
       </section>
 
       {/* ─── CTA ─── */}
-      <section style={{ position: 'relative', padding: '7rem 0', borderTop: '1px solid rgba(167,139,250,0.08)', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', bottom: '-60px', left: '50%', transform: 'translateX(-50%)', width: '800px', height: '400px', background: 'radial-gradient(ellipse, rgba(167,139,250,0.1) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
+      <section style={{ position: 'relative', padding: '7rem 0', borderTop: '1px solid #E5E5E5', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', bottom: '-60px', left: '50%', transform: 'translateX(-50%)', width: '800px', height: '400px', background: 'radial-gradient(ellipse, rgba(12,162,162,0.1) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
           <FadeItem delay={0}>
             <div style={{ marginBottom: '1.5rem' }}>
@@ -276,13 +276,13 @@ export default function About() {
               fontSize: 'clamp(2rem, 4vw, 3.5rem)',
               fontWeight: 800, lineHeight: 1.05, letterSpacing: '-0.03em',
               marginBottom: '1.25rem', maxWidth: '600px', margin: '0 auto 1.25rem',
-              background: 'linear-gradient(90deg, #0CA2A2 0%, #C4B5FD 100%)',
-              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+              color: '#0CA2A2',
+              WebkitBackgroundClip: undefined, WebkitTextFillColor: undefined, backgroundClip: 'text',
               display: 'block',
             }}>
               Let's find out what your gaps are costing you.
             </h2>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#868583', lineHeight: 1.75, maxWidth: '460px', margin: '0 auto 2.5rem' }}>
+            <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1rem', color: '#555555', lineHeight: 1.75, maxWidth: '460px', margin: '0 auto 2.5rem' }}>
               15 minutes. Free. No obligation. We learn about your business, you learn about us, and figure out together if we're the right fit.
             </p>
             <a href="/book" className="btn-gradient" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none', fontSize: '1rem', padding: '1rem 2.25rem' }}>
