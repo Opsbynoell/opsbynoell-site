@@ -27,13 +27,151 @@ function GradientText({ children }: { children: React.ReactNode }) {
   );
 }
 
+const SERVICES = [
+  {
+    icon: Phone, number: '01', title: 'Missed Call Text-Back',
+    desc: 'Fires a personalized text to missed callers within seconds, before they dial your competitor.',
+    stat: '85% of callers never call back after voicemail.',
+    href: '/dental-automation',
+  },
+  {
+    icon: Calendar, number: '02', title: 'AI Booking + Reminder System',
+    desc: 'Lets clients book 24/7 and automatically sends reminders that cut no-shows in half.',
+    stat: 'No-shows cost 10–15% of annual revenue.',
+    href: '/massage-therapist-automation',
+  },
+  {
+    icon: Star, number: '03', title: 'Automated Review Generation',
+    desc: 'Sends a timed review request after every appointment, turning satisfied clients into five-star proof.',
+    stat: '93% of consumers read reviews before choosing.',
+    href: '/med-spa-automation',
+  },
+  {
+    icon: MessageSquare, number: '04', title: 'Lead Follow-Up Automation',
+    desc: 'Multi-touch sequences that re-engage cold leads and win-back clients who went quiet.',
+    stat: '80% of sales need 5+ follow-up touches.',
+    href: '/salon-automation',
+  },
+  {
+    icon: Megaphone, number: '05', title: 'Marketing Automation',
+    desc: 'Keeps your brand in front of past clients with birthday messages, win-backs, and referral asks — automatically.',
+    stat: 'New clients cost 5–7x more than repeat ones.',
+    href: '/home-services-automation',
+  },
+  {
+    icon: Zap, number: '06', title: 'AI Voice Receptionist',
+    desc: 'Answers every call after hours, handles FAQs, and books directly into your calendar — no voicemail.',
+    stat: 'Most missed calls happen outside business hours.',
+    href: '/book',
+  },
+  {
+    icon: Settings, number: '07', title: 'Custom Operations Buildout',
+    desc: 'We scope and build the exact workflows your business needs: onboarding, handoffs, reporting, and beyond.',
+    stat: 'Built around your operation, not a template.',
+    href: '/book',
+  },
+];
+
+const INDUSTRIES = [
+  {
+    icon: Scissors, name: 'Salons & Spas', tagline: 'Fill your chair. Keep it full.',
+    href: '/salon-automation',
+    desc: 'Missed calls, last-minute cancellations, and clients who never come back are the three biggest revenue leaks in salon and spa businesses. We automate the entire client lifecycle — from the first call to the fifth visit.',
+    outcome: 'Salons using our systems typically see 30–50% fewer no-shows and a measurable increase in repeat bookings within 60 days.',
+  },
+  {
+    icon: Heart, name: 'Wellness & Massage', tagline: 'Your practice, running on autopilot.',
+    href: '/massage-therapist-automation',
+    desc: 'Solo practitioners and small wellness studios lose clients not because of bad service, but because nothing happens between appointments. No follow-up. No reminders. No review requests. We fix the invisible gaps.',
+    outcome: 'Our founding client, a 25-year massage therapist in Laguna Niguel, went from zero digital infrastructure to a fully automated practice in two weeks.',
+  },
+  {
+    icon: Smile, name: 'Dental & Med Spa', tagline: 'Every missed call is a missed patient.',
+    href: '/dental-automation',
+    desc: 'Dental offices and med spas run on high-value appointments. A single missed call can cost $500–$2,000 in lost revenue. We install systems that respond instantly, confirm appointments automatically, and keep your schedule full.',
+    outcome: 'Automated appointment confirmation and recall systems reduce no-shows and recover patients who would otherwise churn silently.',
+  },
+  {
+    icon: HomeIcon, name: 'Home Services', tagline: 'Never miss a job request again.',
+    href: '/home-services-automation',
+    desc: "Plumbers, HVAC technicians, electricians, and contractors lose jobs every day to missed calls and slow response times. The first company to respond wins the job. We make sure that company is yours.",
+    outcome: 'Home service businesses using missed call text-back and automated follow-up recover 20–40% of leads that would otherwise go to a competitor.',
+  },
+  {
+    icon: Dumbbell, name: 'Fitness & Personal Training', tagline: 'Fill your classes. Retain your members.',
+    href: '/book',
+    desc: "Gyms, studios, and personal trainers face constant churn. Members stop showing up before they cancel, and by then it\'s too late. We build re-engagement systems that catch at-risk clients before they leave.",
+    outcome: 'Automated re-engagement sequences and milestone-based review requests improve retention and build social proof consistently.',
+  },
+  {
+    icon: Stethoscope, name: 'Healthcare & Chiropractic', tagline: 'Reduce no-shows. Improve patient retention.',
+    href: '/book',
+    desc: "Healthcare practices lose thousands monthly to no-shows and patients who don\'t return for follow-up care. We build HIPAA-aware automation systems that reduce no-shows, automate recall, and keep your schedule optimized.",
+    outcome: 'Automated appointment reminders and recall sequences reduce no-shows by 30–50% and recover patients who would otherwise churn.',
+  },
+];
+
+const PACKAGES = [
+  {
+    name: 'Entry',
+    subtitle: 'AI Receptionist — Start Here',
+    price: '$197',
+    period: '/mo · + $297 setup',
+    desc: 'The fastest way to stop losing leads to voicemail. One system, done for you, live in a week. A great first step before committing to a full stack.',
+    includes: ['Missed Call Text-Back', 'AI Voice Receptionist (after-hours)', 'Onboarding & setup included', 'Ongoing management & maintenance'],
+    cta: 'Book a Free 30-Minute Audit',
+    featured: false,
+  },
+  {
+    name: 'Starter',
+    subtitle: 'Lead Capture + Booking Fix',
+    price: '$797',
+    period: '/mo · + $997 setup',
+    desc: 'The essential foundation for any local service business. Stop losing leads from missed calls and start filling your calendar automatically.',
+    includes: ['Missed Call Text-Back', 'AI Booking + Reminder System', 'Onboarding & setup included', 'Ongoing management & maintenance'],
+    cta: 'Book a Free 30-Minute Audit',
+    featured: false,
+  },
+  {
+    name: 'Growth',
+    subtitle: 'Full AI Back Office',
+    price: '$1,497',
+    period: '/mo · + $1,497 setup',
+    desc: 'The complete operational transformation. Every system working together to capture, convert, retain, and grow, on autopilot.',
+    includes: ['Everything in Starter', 'Automated Review Generation', 'Lead Follow-Up Automation', 'Marketing Automation', 'Priority support & optimization'],
+    cta: 'Most Popular',
+    featured: true,
+  },
+  {
+    name: 'Revenue Audit',
+    subtitle: "Know exactly where you\'re leaking",
+    price: '$497',
+    period: 'one-time',
+    desc: 'A deep-dive into your current operations to identify every revenue leak, prioritize the highest-impact fixes, and build a custom automation roadmap.',
+    includes: ['60-minute operations deep-dive', 'Revenue leak analysis', 'Custom automation roadmap', 'ROI projections per system', 'Credited toward any package'],
+    cta: 'Book Revenue Audit',
+    featured: false,
+  },
+  {
+    name: 'Custom',
+    subtitle: 'Full Operations Buildout',
+    price: 'Scoped',
+    period: 'pricing after audit',
+    desc: 'For businesses with complex or unique operational needs. We scope, build, and manage a fully custom automation stack: internal workflows, integrations, team systems, and beyond.',
+    includes: ['Deep-dive operations scoping', 'Custom workflow & process automation', 'Team systems & internal integrations', 'Client onboarding automation', 'Reporting & data pipelines', 'Ongoing management & iteration'],
+    cta: 'Book a Scoping Call',
+    featured: false,
+  },
+];
+
 const FAQS = [
+  { q: 'Do I need to sign a long-term contract?', a: "No. All plans are month-to-month. We earn your business every month by delivering results. You can cancel anytime with 30 days notice. No penalties, no lock-in." },
   { q: 'How long does it take to get set up?', a: "Most clients are fully live within 7–14 days of signing. We handle all the technical setup, integrations, and testing. You just need to show up for a 60-minute onboarding call." },
   { q: 'Do I need any technical knowledge?', a: "None at all. We build, manage, and maintain everything. You'll see the results, not the dashboards. If you ever want visibility into performance, we provide clear weekly or monthly reports." },
-  { q: 'What if I already use a CRM or booking software?', a: "We integrate with the tools you already use: HubSpot, Calendly, Acuity, Jane App, Mindbody, and more. If you already have a CRM, we'll build around it rather than replace it. We'll scope the integration during your free intro call." },
-  { q: 'How does the process start?', a: "It starts with a free 30-minute intro call. We learn about your business, you learn about us, and we figure out if we're a fit. If it makes sense to move forward, we schedule a Revenue Audit to map your exact gaps and design your system." },
-  { q: 'Can I upgrade or add more systems later?', a: "Absolutely. Most clients start with one system and add more as they see results. We'll proactively recommend additions when we spot new opportunities in your operation." },
-  { q: 'What do you do with my business data?', a: "We don't sell your data. Ever. We build systems for your business, not a database for ours. Anything you share with us is used solely to build and manage your automation stack. No third-party sharing, no marketing lists." },
+  { q: 'What if I already use a CRM or booking software?', a: "We integrate with the tools you already use: HubSpot, Calendly, Acuity, Jane App, Mindbody, and more. If you already have a CRM, we\'ll build around it rather than replace it. We\'ll scope the integration during your free intro call." },
+  { q: 'How does the process start?', a: "It starts with a free 30-minute intro call. We learn about your business, you learn about us, and we figure out if we\'re a fit. If it makes sense to move forward, we schedule a Revenue Audit to map your exact gaps and design your system." },
+  { q: 'Can I upgrade or add more systems later?', a: "Absolutely. Most clients start with one system and add more as they see results. We\'ll proactively recommend additions when we spot new opportunities in your operation." },
+  { q: 'What do you do with my business data?', a: "We don\'t sell your data. Ever. We build systems for your business, not a database for ours. Anything you share with us is used solely to build and manage your automation stack. No third-party sharing, no marketing lists." },
 ];
 
 /* ─── MAIN ──────────────────────────────────────────────────────── */
