@@ -18,6 +18,7 @@ import {
   LeadIntent,
 } from "../telegram";
 import { sendHumanTakeoverEmail } from "../email";
+import { createGHLContact } from "../ghl";
 import { invokeLLM } from "../_core/llm";
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
@@ -224,6 +225,31 @@ export const chatRouter = router({
         allMessages,
         { visitorName: input.visitorName, businessType: input.businessType }
       );
+
+      // ── GHL sync for hot chat leads ──────────────────────────────────────
+      const updatedSession = await getChatSession(input.sessionId);
+      if (
+        updatedSession?.priority === 'hot' &&
+        updatedSession?.visitorEmail &&
+        updatedSession?.visitorName
+      ) {
+        const sessionMessages = await getSessionMessages(input.sessionId);
+        const alreadySynced = sessionMessages.some(m =>
+          m.role === 'bot' && m.content.includes('[GHL_SYNCED]')
+        );
+
+        if (!alreadySynced) {
+          createGHLContact({
+            name: updatedSession.visitorName,
+            email: updatedSession.visitorEmail,
+            phone: '',
+            source: 'Nova Chat',
+            tags: ['nova-hot', 'website-chat'],
+          }).catch(() => {});
+
+          await insertChatMessage(input.sessionId, 'bot', '[GHL_SYNCED]');
+        }
+      }
 
       return { botReply, humanTakeover: false };
     }),
