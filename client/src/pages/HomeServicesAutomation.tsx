@@ -84,7 +84,7 @@ export default function HomeServicesAutomation() {
           <FadeItem delay={0}><div style={{ marginBottom: '1.5rem' }}><SectionBadge>Home Services Automation</SectionBadge></div></FadeItem>
           <FadeItem delay={0.1}>
             <h1 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2.75rem, 6.5vw, 5rem)', fontWeight: 800, lineHeight: 1.05, letterSpacing: '-0.03em', maxWidth: '820px', marginBottom: '1.75rem' }}>
-              <GradientText>AI automation</GradientText>{' '}<span style={{ color: '#ffffff' }}>for home service businesses. Never miss a job request.</span>
+              <span style={{ color: '#ffffff' }}>Most home service jobs are won or lost after 5pm.</span>{' '}<GradientText>We make sure you win them.</GradientText>
             </h1>
           </FadeItem>
           <FadeItem delay={0.2}>
