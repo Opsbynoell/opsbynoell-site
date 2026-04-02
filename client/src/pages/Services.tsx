@@ -333,8 +333,8 @@ export default function Services() {
       {/* ═══ SERVICE CARDS — compact 7-service overview ══════════════ */}
       <RevealSection>
       <section style={{ borderTop: '1px solid rgba(167,139,250,0.08)', borderBottom: '1px solid rgba(167,139,250,0.08)', background: 'rgba(167,139,250,0.015)' }}>
-        <div className="container" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+        <div className="container" style={{ paddingTop: 'clamp(2.5rem, 6vw, 6rem)', paddingBottom: 'clamp(2.5rem, 6vw, 6rem)' }}>
+          <div style={{ textAlign: 'center', marginBottom: 'clamp(1.5rem, 4vw, 4rem)' }}>
             <SectionBadge>The Full Service Stack</SectionBadge>
             <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.375rem, 4vw, 2.5rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
               Seven systems. <GradientText>One integrated operation.</GradientText>
@@ -370,9 +370,9 @@ export default function Services() {
 
       {/* ═══ WHO WE SERVE — 6 industries ═══════════════════════════ */}
       <RevealSection>
-      <section style={{ padding: '6rem 0' }}>
+      <section style={{ padding: 'clamp(2.5rem, 6vw, 6rem) 0' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: 'clamp(1.5rem, 4vw, 4rem)' }}>
             <SectionBadge>Who We Serve</SectionBadge>
             <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.375rem, 4vw, 2.5rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
               Built for <GradientText>local service businesses.</GradientText>
@@ -410,9 +410,9 @@ export default function Services() {
 
       {/* ═══ PACKAGES / PRICING ═════════════════════════════════════ */}
       <RevealSection>
-      <section id="pricing" style={{ padding: '6rem 0', background: 'rgba(167,139,250,0.015)', borderTop: '1px solid rgba(167,139,250,0.08)', borderBottom: '1px solid rgba(167,139,250,0.08)' }}>
+      <section id="pricing" style={{ padding: 'clamp(2.5rem, 6vw, 6rem) 0', background: 'rgba(167,139,250,0.015)', borderTop: '1px solid rgba(167,139,250,0.08)', borderBottom: '1px solid rgba(167,139,250,0.08)' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: 'clamp(1.5rem, 4vw, 4rem)' }}>
             <SectionBadge>How We Work Together</SectionBadge>
             <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.375rem, 4vw, 2.5rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
               Start with what matters most. <GradientText>Scale from there.</GradientText>
@@ -461,7 +461,7 @@ export default function Services() {
 
       {/* ═══ FAQ ════════════════════════════════════════════════════ */}
       <RevealSection>
-      <section style={{ padding: '6rem 0' }}>
+      <section style={{ padding: 'clamp(2.5rem, 6vw, 6rem) 0' }}>
         <div className="container" style={{ maxWidth: '720px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <SectionBadge>FAQ</SectionBadge>
@@ -490,7 +490,7 @@ export default function Services() {
 
       {/* ═══ CTA ════════════════════════════════════════════════════ */}
       <RevealSection>
-      <section style={{ padding: '7rem 0', textAlign: 'center', position: 'relative', overflow: 'hidden', borderTop: '1px solid rgba(167,139,250,0.08)' }}>
+      <section style={{ padding: 'clamp(2.5rem, 6vw, 7rem) 0', textAlign: 'center', position: 'relative', overflow: 'hidden', borderTop: '1px solid rgba(167,139,250,0.08)' }}>
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(ellipse at center, rgba(167,139,250,0.12) 0%, transparent 65%)' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '660px', margin: '0 auto' }}>
           <SectionBadge>The First Step Is Free</SectionBadge>
@@ -513,4 +513,3 @@ export default function Services() {
     </div>
   );
 }
-
