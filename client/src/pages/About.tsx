@@ -32,7 +32,7 @@ function SectionBadge({ children }: { children: React.ReactNode }) {
       display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
       padding: '0.375rem 1rem', borderRadius: '99px',
       border: '1px solid rgba(167,139,250,0.25)', background: 'rgba(167,139,250,0.08)',
-      fontFamily: "'Sora', sans-serif", fontSize: '0.6875rem', fontWeight: 600,
+      fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600,
       letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#A78BFA',
     }}>
       <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#A78BFA', display: 'inline-block' }} />
@@ -90,7 +90,7 @@ export default function About() {
             <h1 style={{
               fontFamily: "'Nicholas', serif",
               fontSize: 'clamp(2rem, 4vw, 3rem)',
-              fontWeight: 800, lineHeight: 1.0, letterSpacing: '-0.04em',
+              fontWeight: 800, lineHeight: 1.7, letterSpacing: '-0.04em',
               maxWidth: '800px', marginBottom: '1.75rem', color: '#ffffff',
             }}>
               <span style={{ background: 'linear-gradient(90deg, #A78BFA 0%, #C4B5FD 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
@@ -99,7 +99,7 @@ export default function About() {
             </h1>
           </div>
           <div>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: 'clamp(1rem, 1.4vw, 1.1875rem)', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '580px' }}>
+            <p style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1rem, 1.4vw, 1.1875rem)', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '580px' }}>
               We're Nikki and James Noell, and we put our last name on this for a reason.
             </p>
           </div>
@@ -119,14 +119,14 @@ export default function About() {
                   fontFamily: "'Nicholas', serif",
                   fontSize: 'clamp(2rem, 3.5vw, 3rem)',
                   fontWeight: 700, color: '#ffffff',
-                  lineHeight: 1.1, marginBottom: '1.75rem',
+                  lineHeight: 1.7, marginBottom: '1.75rem',
                 }}>
                   We come from operations. We build what actually works.
                 </h2>
-                <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+                <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.8, marginBottom: '1.25rem' }}>
                   If you're reading this, you're probably a great service business owner running without a real back office. You're answering your own calls when you can, following up on leads when you remember, hoping clients show up. We've spent years watching that exact pattern cost service business owners thousands of dollars a month in preventable gaps. So we built the systems to fix it, and now we build them for you.
                 </p>
-                <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.8, marginBottom: '2rem' }}>
+                <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.8, marginBottom: '2rem' }}>
                   We're Nikki and James Noell, based in Mission Viejo, Orange County. Our name is on the door because every system we build, we stand behind.
                 </p>
 
@@ -141,12 +141,12 @@ export default function About() {
                     fontSize: '1.1875rem',
                     fontWeight: 700,
                     color: '#ffffff',
-                    lineHeight: 1.4,
+                    lineHeight: 1.7,
                     marginBottom: '0.5rem',
                   }}>
                     Our family name is on the door.
                   </p>
-                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.7 }}>
+                  <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.7 }}>
                     Every system we build, we build like it's our own business on the line. Because in a way, it is.
                   </p>
                 </div>
@@ -177,7 +177,7 @@ export default function About() {
                   <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9375rem', fontWeight: 700, color: '#ffffff' }}>Nikki Noell</span>
                   <span style={{ color: 'rgba(167,139,250,0.4)', fontSize: '0.9375rem' }}>&amp;</span>
                   <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9375rem', fontWeight: 700, color: '#ffffff' }}>James Noell</span>
-                  <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.6875rem', fontWeight: 600, color: '#A78BFA', letterSpacing: '0.1em', textTransform: 'uppercase' as const, alignSelf: 'center', marginLeft: '0.25rem' }}>Co-Founders</span>
+                  <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, color: '#A78BFA', letterSpacing: '0.1em', textTransform: 'uppercase' as const, alignSelf: 'center', marginLeft: '0.25rem' }}>Co-Founders</span>
                 </div>
 
                 {/* Stats grid */}
@@ -198,14 +198,14 @@ export default function About() {
                         {stat.value}
                       </p>
                       <p style={{
-                        fontFamily: "'Sora', sans-serif",
+                        fontFamily: "'Nicholas', serif",
                         fontSize: '0.6875rem', fontWeight: 600,
                         color: '#A78BFA', letterSpacing: '0.1em',
                         textTransform: 'uppercase', marginBottom: '0.25rem',
                       }}>
                         {stat.label}
                       </p>
-                      <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#b8b6b3' }}>
+                      <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#b8b6b3' }}>
                         {stat.sub}
                       </p>
                     </div>
@@ -228,7 +228,7 @@ export default function About() {
               <h2 style={{
                 fontFamily: "'Nicholas', serif",
                 fontSize: 'clamp(2rem, 3.5vw, 3rem)',
-                fontWeight: 700, color: '#ffffff', lineHeight: 1.1,
+                fontWeight: 700, color: '#ffffff', lineHeight: 1.7,
               }}>
                 Four things that make us different.
               </h2>
@@ -249,7 +249,7 @@ export default function About() {
                   {d.highlight && (
                     <div style={{ position: 'absolute', top: '1.25rem', right: '1.25rem' }}>
                       <span style={{
-                        fontFamily: "'Sora', sans-serif",
+                        fontFamily: "'Nicholas', serif",
                         fontSize: '0.5625rem', fontWeight: 600,
                         letterSpacing: '0.15em', textTransform: 'uppercase',
                         color: '#A78BFA', border: '1px solid rgba(167,139,250,0.3)',
@@ -271,18 +271,18 @@ export default function About() {
                   <h3 style={{
                     fontFamily: "'Nicholas', serif",
                     fontSize: '1.25rem', fontWeight: 700,
-                    color: '#ffffff', lineHeight: 1.2, marginBottom: '1rem',
+                    color: '#ffffff', lineHeight: 1.7, marginBottom: '1rem',
                   }}>
                     {d.title}
                   </h3>
-                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.75 }}>
+                  <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.75 }}>
                     {d.body}
                   </p>
                   {d.highlight && (
                     <div style={{ marginTop: '1.5rem' }}>
                       <a href="/book" style={{
                         display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-                        fontFamily: "'Sora', sans-serif",
+                        fontFamily: "'Nicholas', serif",
                         fontSize: '0.75rem', fontWeight: 600,
                         letterSpacing: '0.08em', textTransform: 'uppercase',
                         color: '#A78BFA', textDecoration: 'none',
@@ -313,7 +313,7 @@ export default function About() {
             <h2 style={{
               fontFamily: "'Nicholas', serif",
               fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-              fontWeight: 800, lineHeight: 1.05, letterSpacing: '-0.03em',
+              fontWeight: 800, lineHeight: 1.7, letterSpacing: '-0.03em',
               marginBottom: '1.25rem', maxWidth: '600px', margin: '0 auto 1.25rem',
               background: 'linear-gradient(90deg, #A78BFA 0%, #C4B5FD 100%)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
@@ -321,7 +321,7 @@ export default function About() {
             }}>
               Ready to see what we'd build for your business?
             </h2>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '460px', margin: '0 auto 2.5rem' }}>
+            <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '460px', margin: '0 auto 2.5rem' }}>
               30 minutes. Free. No obligation. We learn about your business, you learn about us, and figure out together if we're the right fit.
             </p>
             <a href="/book" className="btn-gradient" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none', fontSize: '1rem', padding: '1rem 2.25rem' }}>
