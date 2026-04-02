@@ -113,49 +113,6 @@ export default function About() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '4rem', alignItems: 'start' }} className="lg:grid-cols-2">
             <FadeItem delay={0}>
-              <div>
-                <div style={{ marginBottom: '1.25rem' }}>
-                  <SectionBadge>Who We Are</SectionBadge>
-                </div>
-                <h2 style={{
-                  fontFamily: "'Nicholas', serif",
-                  fontSize: 'clamp(1.375rem, 4vw, 2.5rem)',
-                  fontWeight: 700, color: '#ffffff',
-                  lineHeight: 1.7, marginBottom: '1.75rem',
-                }}>
-                  We come from operations. We build what actually works.
-                </h2>
-                <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.8, marginBottom: '1.25rem' }}>
-                  If you're reading this, you're probably a great service business owner running without a real back office. You're answering your own calls when you can, following up on leads when you remember, hoping clients show up. We've spent years watching that exact pattern cost service business owners thousands of dollars a month in preventable gaps. So we built the systems to fix it, and now we build them for you.
-                </p>
-                <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.8, marginBottom: '2rem' }}>
-                  We're Nikki and James Noell, based in Mission Viejo, Orange County. Our name is on the door because every system we build, we stand behind.
-                </p>
-
-                {/* Family name callout */}
-                <div style={{
-                  borderLeft: '3px solid #A78BFA',
-                  paddingLeft: '1.25rem',
-                  marginBottom: '0',
-                }}>
-                  <p style={{
-                    fontFamily: "'Nicholas', serif",
-                    fontSize: '1.1875rem',
-                    fontWeight: 700,
-                    color: '#ffffff',
-                    lineHeight: 1.7,
-                    marginBottom: '0.5rem',
-                  }}>
-                    Our family name is on the door.
-                  </p>
-                  <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.7 }}>
-                    Every system we build, we build like it's our own business on the line. Because in a way, it is.
-                  </p>
-                </div>
-              </div>
-            </FadeItem>
-
-            <FadeItem delay={0.15}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 {/* Founder photo */}
                 <div style={{
@@ -215,6 +172,50 @@ export default function About() {
                 </div>
               </div>
             </FadeItem>
+
+            <FadeItem delay={0.1}>
+              <div>
+                <div style={{ marginBottom: '1.25rem' }}>
+                  <SectionBadge>Who We Are</SectionBadge>
+                </div>
+                <h2 style={{
+                  fontFamily: "'Nicholas', serif",
+                  fontSize: 'clamp(1.375rem, 4vw, 2.5rem)',
+                  fontWeight: 700, color: '#ffffff',
+                  lineHeight: 1.7, marginBottom: '1.75rem',
+                }}>
+                  We come from operations. We build what actually works.
+                </h2>
+                <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+                  If you're reading this, you're probably a great service business owner running without a real back office. You're answering your own calls when you can, following up on leads when you remember, hoping clients show up. We've spent years watching that exact pattern cost service business owners thousands of dollars a month in preventable gaps. So we built the systems to fix it, and now we build them for you.
+                </p>
+                <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.8, marginBottom: '2rem' }}>
+                  We're Nikki and James Noell, based in Mission Viejo, Orange County. Our name is on the door because every system we build, we stand behind.
+                </p>
+
+                {/* Family name callout */}
+                <div style={{
+                  borderLeft: '3px solid #A78BFA',
+                  paddingLeft: '1.25rem',
+                  marginBottom: '0',
+                }}>
+                  <p style={{
+                    fontFamily: "'Nicholas', serif",
+                    fontSize: '1.1875rem',
+                    fontWeight: 700,
+                    color: '#ffffff',
+                    lineHeight: 1.7,
+                    marginBottom: '0.5rem',
+                  }}>
+                    Our family name is on the door.
+                  </p>
+                  <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.7 }}>
+                    Every system we build, we build like it's our own business on the line. Because in a way, it is.
+                  </p>
+                </div>
+              </div>
+            </FadeItem>
+
           </div>
         </div>
       </section>
