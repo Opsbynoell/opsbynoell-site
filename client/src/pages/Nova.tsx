@@ -508,7 +508,7 @@ export default function Nova() {
                   fontFamily: "'Sora', sans-serif",
                   fontSize: '0.8125rem',
                   fontWeight: 600,
-                  color: '#A78BFA',
+                  color: '#C4B5FD',
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase' as const,
                   marginBottom: '0.75rem',
