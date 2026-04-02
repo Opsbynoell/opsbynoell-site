@@ -24,7 +24,7 @@ export default function Footer() {
                 style={{ width: '140px', height: 'auto', objectFit: 'contain', display: 'block' }}
               />
             </div>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#868583', lineHeight: 1.75, maxWidth: '260px', marginBottom: '1.5rem' }}>
+            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '260px', marginBottom: '1.5rem' }}>
               AI automation systems for local service businesses. Done for you. Running 24/7.
             </p>
             <div style={{ display: 'flex', gap: '0.875rem', alignItems: 'center' }}>
@@ -86,12 +86,12 @@ export default function Footer() {
                   style={{
                     fontFamily: "'Sora', sans-serif",
                     fontSize: '0.875rem',
-                    color: '#868583',
+                    color: '#b8b6b3',
                     textDecoration: 'none',
                     transition: 'color 0.15s ease',
                   }}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#ffffff'; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#868583'; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#b8b6b3'; }}
                 >
                   {link.label}
                 </Link>
@@ -103,10 +103,10 @@ export default function Footer() {
           <div>
             <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#A78BFA', marginBottom: '1.25rem' }}>Contact</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1.75rem' }}>
-              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#868583' }}>
+              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#b8b6b3' }}>
                 Mission Viejo, CA
               </p>
-              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#868583' }}>
+              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#b8b6b3' }}>
                 Based in Orange County. Built for businesses everywhere.
               </p>
               <a
@@ -137,23 +137,23 @@ export default function Footer() {
 
         {/* Copyright */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }} className="sm:flex-row sm:justify-between sm:items-center">
-          <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583' }}>
+          <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#b8b6b3' }}>
             © 2026 Ops by Noell. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
             <Link
               href="/privacy-policy"
-              style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583', textDecoration: 'none', transition: 'color 0.15s ease' }}
+              style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#b8b6b3', textDecoration: 'none', transition: 'color 0.15s ease' }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#ffffff'; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#868583'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#b8b6b3'; }}
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583', textDecoration: 'none', transition: 'color 0.15s ease' }}
+              style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#b8b6b3', textDecoration: 'none', transition: 'color 0.15s ease' }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#ffffff'; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#868583'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#b8b6b3'; }}
             >
               Terms of Service
             </Link>
@@ -163,5 +163,6 @@ export default function Footer() {
     </footer>
   );
 }
+
 
 
