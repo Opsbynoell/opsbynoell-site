@@ -137,25 +137,25 @@ export default function MassageTherapistAutomation() {
       <section style={{ position: 'relative', paddingTop: '80px', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(120,58,237,0.2) 0%, rgba(139,92,246,0.12) 35%, #010509 72%)' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '5rem', paddingBottom: '5.5rem' }}>
-          <FadeItem delay={0}><div style={{ marginBottom: '1.5rem' }}><SectionBadge>Massage Therapist Automation</SectionBadge></div></FadeItem>
-          <FadeItem delay={0.1}>
+          <div style={{ marginBottom: '1.5rem' }}><SectionBadge>Massage Therapist Automation</SectionBadge></div>
+          
             <h1 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2.75rem, 6.5vw, 5rem)', fontWeight: 800, lineHeight: 1.05, letterSpacing: '-0.03em', maxWidth: '820px', marginBottom: '1.75rem' }}>
               <GradientText>Your hands are full.</GradientText>{' '}<span style={{ color: '#ffffff' }}>We answer your phone.</span>
             </h1>
-          </FadeItem>
-          <FadeItem delay={0.2}>
+          
+          
             <p style={{ fontFamily: "'Sora', sans-serif", fontSize: 'clamp(1rem, 1.4vw, 1.125rem)', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '580px', marginBottom: '2.5rem' }}>
               You built your practice on your hands, not on following up leads and chasing no-shows. We build the AI systems that handle every call, every reminder, and every re-engagement — so you can stay focused on your clients.
             </p>
-          </FadeItem>
-          <FadeItem delay={0.3}>
+          
+          
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="/book" className="btn-gradient" style={{ padding: '1rem 2rem', fontSize: '1rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
                 Book a Free 30-Minute Audit <ArrowRight size={16} />
               </a>
               <a href="#pricing" className="btn-outline" style={{ padding: '1rem 2rem', fontSize: '1rem' }}>See Pricing</a>
             </div>
-          </FadeItem>
+          
         </div>
       </section>
 
