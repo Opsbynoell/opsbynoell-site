@@ -139,7 +139,7 @@ export default function Home() {
           <p style={{
             fontFamily: "'Sora', sans-serif",
             fontSize: 'clamp(1rem, 2vw, 1.175rem)',
-            color: '#868583', lineHeight: 1.75,
+            color: '#b8b6b3', lineHeight: 1.75,
             maxWidth: '640px', margin: '0 auto 2.5rem',
           }}>
             Every missed call, every no-show, every slow follow-up is revenue walking out your door. We build AI-powered systems that stop the bleeding, automatically, for massage therapists, dental practices, and local service businesses.
@@ -171,7 +171,7 @@ export default function Home() {
               ].map(({ value, label }) => (
                 <div key={label} style={{ textAlign: 'center' }}>
                   <div style={{ fontFamily: "'Nicholas', serif", fontSize: '1.625rem', fontWeight: 700, color: '#ffffff', lineHeight: 1.1 }}>{value}</div>
-                  <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583', marginTop: '0.25rem' }}>{label}</div>
+                  <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#b8b6b3', marginTop: '0.25rem' }}>{label}</div>
                 </div>
               ))}
             </div>
@@ -219,7 +219,7 @@ export default function Home() {
                   <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.25rem, 2.5vw, 1.625rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.25, marginBottom: '1rem', letterSpacing: '-0.015em' }}>
                     {title}
                   </h3>
-                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#868583', lineHeight: 1.75, maxWidth: '440px' }}>
+                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '440px' }}>
                     {desc}
                   </p>
                 </div>
@@ -283,7 +283,7 @@ export default function Home() {
           <p style={{
             fontFamily: "'Sora', sans-serif",
             fontSize: 'clamp(1rem, 1.5vw, 1.125rem)',
-            color: '#868583', lineHeight: 1.85,
+            color: '#b8b6b3', lineHeight: 1.85,
             marginBottom: '0',
           }}>
             You're in back-to-back sessions. Your phone rings. You can't answer. By the time you call back, they've already booked somewhere else. That's not a people problem. That's a systems problem. And it's costing you $2,000 to $5,000 a month you don't even know you're missing.
@@ -299,7 +299,7 @@ export default function Home() {
             <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
               Explore how this works{' '}<GradientText>for your business</GradientText>
             </h2>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#868583', maxWidth: '520px', margin: '0 auto', lineHeight: 1.75 }}>
+            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#b8b6b3', maxWidth: '520px', margin: '0 auto', lineHeight: 1.75 }}>
               Every appointment-based business has the same core revenue gaps. We've built the fixes for all of them.
             </p>
           </div>
@@ -336,7 +336,7 @@ export default function Home() {
                 <div style={{ fontFamily: "'Nicholas', serif", fontSize: '1.125rem', fontWeight: 700, color: '#ffffff', marginBottom: '0.375rem' }}>
                   {label}
                 </div>
-                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583', lineHeight: 1.5 }}>
+                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#b8b6b3', lineHeight: 1.5 }}>
                   {desc}
                 </div>
                 <div style={{ marginTop: '0.875rem', display: 'flex', alignItems: 'center', gap: '0.3rem', fontFamily: "'Sora', sans-serif", fontSize: '0.75rem', color: '#A78BFA', fontWeight: 600 }}>
@@ -373,7 +373,7 @@ export default function Home() {
                 borderRadius: '10px',
               }}>
                 <div style={{ fontFamily: "'Nicholas', serif", fontSize: '1.625rem', fontWeight: 800, color: '#A78BFA', lineHeight: 1.1, marginBottom: '0.375rem' }}>{value}</div>
-                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583' }}>{label}</div>
+                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#b8b6b3' }}>{label}</div>
               </div>
             ))}
           </div>
@@ -416,7 +416,7 @@ export default function Home() {
           <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 2.75rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.15, letterSpacing: '-0.025em', marginBottom: '1.25rem' }}>
             How much are you losing{' '}<GradientText>to no-shows and missed calls?</GradientText>
           </h2>
-          <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1.0625rem', color: '#868583', lineHeight: 1.75, maxWidth: '520px', margin: '0 auto 2.25rem' }}>
+          <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1.0625rem', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '520px', margin: '0 auto 2.25rem' }}>
             Enter a few numbers and we'll calculate your exact monthly revenue leak — before you spend a dollar on automation.
           </p>
           <a href="/resources/revenue-calculator" className="btn-gradient" style={{ padding: '1.125rem 2.25rem', fontSize: '1.0625rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -436,7 +436,7 @@ export default function Home() {
           <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.12, letterSpacing: '-0.03em', marginBottom: '1.5rem' }}>
             Stop losing leads to{' '}<GradientText>slow follow-up.</GradientText>
           </h2>
-          <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1.125rem', color: '#868583', maxWidth: '500px', margin: '0 auto 2.5rem', lineHeight: 1.75 }}>
+          <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1.125rem', color: '#b8b6b3', maxWidth: '500px', margin: '0 auto 2.5rem', lineHeight: 1.75 }}>
             30 minutes. Free. No obligation. We map your gaps, show you what we'd build, and tell you what it costs.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -447,7 +447,7 @@ export default function Home() {
               See Our Results
             </a>
           </div>
-          <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583', marginTop: '1.5rem' }}>
+          <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#b8b6b3', marginTop: '1.5rem' }}>
             No commitment. No credit card. Just a conversation.
           </p>
         </div>
@@ -458,5 +458,6 @@ export default function Home() {
     </>
   );
 }
+
 
 
