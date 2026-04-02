@@ -11,7 +11,7 @@ import Footer from '@/components/Footer';
 function SectionBadge({ children }: { children: React.ReactNode }) {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.25rem' }}>
-      <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.5rem 1.25rem', background: 'rgba(12,162,162,0.06)', border: '1px solid rgba(167,139,250,0.25)', borderRadius: '100px', fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, color: '#0CA2A2', letterSpacing: '0.1em', textTransform: 'uppercase' as const }}>
+      <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.5rem 1.25rem', background: '#FFFFFF', border: '1px solid #E5E5E5', borderRadius: '100px', fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, color: '#0CA2A2', letterSpacing: '0.1em', textTransform: 'uppercase' as const }}>
         {children}
       </span>
     </div>
@@ -133,7 +133,7 @@ export default function MedSpaAutomation() {
 
       {/* Hero */}
       <section style={{ position: 'relative', paddingTop: '80px', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(120,58,237,0.2) 0%, rgba(139,92,246,0.12) 35%, #010509 72%)' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none', background: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: 'clamp(2rem, 4vw, 2.5rem)', textAlign: 'center', paddingBottom: '5.5rem' }}>
           <div style={{ marginBottom: '1.5rem' }}><SectionBadge>Med Spa Automation</SectionBadge></div>
           
@@ -159,7 +159,7 @@ export default function MedSpaAutomation() {
 
       {/* Stats strip */}
       <div className="reveal">
-      <section style={{ borderTop: '1px solid rgba(167,139,250,0.1)', borderBottom: '1px solid rgba(167,139,250,0.1)', padding: '3rem 0' }}>
+      <section style={{ borderTop: '1px solid rgba(12,162,162,0.1)', borderBottom: '1px solid rgba(12,162,162,0.1)', padding: '3rem 0' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '2rem', textAlign: 'center' }}>
             {stats.map((s, i) => (
@@ -191,9 +191,9 @@ export default function MedSpaAutomation() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
             {serviceDetails.map((s, i) => (
               <div className="reveal">
-                <div style={{ padding: '2.25rem', background: 'rgba(167,139,250,0.03)', border: '1px solid #E8E8E8', borderRadius: '12px', height: '100%', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <div style={{ padding: '2.25rem', background: 'rgba(12,162,162,0.03)', border: '1px solid #E8E8E8', borderRadius: '12px', height: '100%', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <div style={{ fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.12em', color: '#0CA2A2', background: 'rgba(12,162,162,0.06)', border: '1px solid #E8E8E8', borderRadius: '6px', padding: '0.25rem 0.625rem' }}>
+                    <div style={{ fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.12em', color: '#0CA2A2', background: '#FFFFFF', border: '1px solid #E8E8E8', borderRadius: '6px', padding: '0.25rem 0.625rem' }}>
                       {s.number}
                     </div>
                     <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.125rem', fontWeight: 600, color: '#1A1A1A' }}>{s.title}</h3>
@@ -209,7 +209,7 @@ export default function MedSpaAutomation() {
 
       {/* Med Spa Industry Stat Block */}
       <div className="reveal">
-      <section style={{ padding: 'clamp(2rem, 5vw, 5rem) 0', borderTop: '1px solid #E5E5E5', borderBottom: '1px solid #E5E5E5', background: 'rgba(167,139,250,0.02)' }}>
+      <section style={{ padding: 'clamp(2rem, 5vw, 5rem) 0', borderTop: '1px solid #E5E5E5', borderBottom: '1px solid #E5E5E5', background: 'rgba(12,162,162,0.02)' }}>
         <div className="container">
           <div className="reveal">
             <div style={{ textAlign: 'center', marginBottom: 'clamp(1.25rem, 3vw, 3rem)' }}>
@@ -222,7 +222,7 @@ export default function MedSpaAutomation() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem', maxWidth: '900px', margin: '0 auto' }}>
             {medSpaIndustryStats.map((s, i) => (
               <div className="reveal">
-                <div style={{ padding: '2.25rem', background: 'rgba(167,139,250,0.05)', border: '1px solid rgba(167,139,250,0.18)', borderRadius: '12px', textAlign: 'center' }}>
+                <div style={{ padding: '2.25rem', background: 'rgba(12,162,162,0.05)', border: '1px solid rgba(12,162,162,0.18)', borderRadius: '12px', textAlign: 'center' }}>
                   <div style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 800, color: '#0CA2A2', marginBottom: '0.75rem', lineHeight: 1 }}>{s.value}</div>
                   <div style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9rem', color: '#555555', lineHeight: 1.6 }}>{s.label}</div>
                 </div>
@@ -238,10 +238,10 @@ export default function MedSpaAutomation() {
       <section style={{ padding: 'clamp(2.5rem, 6vw, 7rem) 0' }}>
         <div className="container">
           <div className="reveal">
-            <div style={{ background: 'linear-gradient(135deg, rgba(167,139,250,0.08) 0%, rgba(167,139,250,0.03) 100%)', border: '1px solid #E8E8E8', borderRadius: '16px', padding: '3rem', display: 'flex', flexDirection: 'column', gap: '1.5rem', maxWidth: '780px', margin: '0 auto' }}>
+            <div style={{ background: 'linear-gradient(135deg, rgba(12,162,162,0.08) 0%, rgba(12,162,162,0.03) 100%)', border: '1px solid #E8E8E8', borderRadius: '16px', padding: '3rem', display: 'flex', flexDirection: 'column', gap: '1.5rem', maxWidth: '780px', margin: '0 auto' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#E5E5E5', border: '1px solid rgba(167,139,250,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <Phone size={22} color="#A78BFA" />
+                <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#E5E5E5', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <Phone size={22} color="#0CA2A2" />
                 </div>
                 <div>
                   <div style={{ fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#0CA2A2', marginBottom: '0.25rem' }}>New Feature</div>
@@ -256,7 +256,7 @@ export default function MedSpaAutomation() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
                 {['Books appointments in real time', 'Answers service and pricing questions', 'Handles after-hours calls automatically', 'Warm handoff to staff when needed'].map((feat, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
-                    <Check size={14} color="#A78BFA" />
+                    <Check size={14} color="#0CA2A2" />
                     <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#c8cdd6' }}>{feat}</span>
                   </div>
                 ))}
@@ -310,12 +310,12 @@ export default function MedSpaAutomation() {
               </h2>
             </div>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'rgba(12,162,162,0.06)', borderRadius: '12px', overflow: 'hidden' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: '#FFFFFF', borderRadius: '12px', overflow: 'hidden' }}>
             {solutions.map((s, i) => (
               <div className="reveal">
-                <div style={{ background: s.highlight ? 'rgba(167,139,250,0.08)' : (i % 2 === 0 ? 'rgba(167,139,250,0.02)' : 'rgba(167,139,250,0.04)'), padding: '1.75rem 2rem', display: 'flex', alignItems: 'flex-start', gap: '1.5rem', borderLeft: s.highlight ? '2px solid #A78BFA' : 'none' }}>
-                  <div style={{ width: '30px', height: '30px', borderRadius: '8px', background: '#E5E5E5', border: '1px solid rgba(167,139,250,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                    <Check size={14} color="#A78BFA" />
+                <div style={{ background: s.highlight ? 'rgba(12,162,162,0.08)' : (i % 2 === 0 ? 'rgba(12,162,162,0.02)' : 'rgba(12,162,162,0.04)'), padding: '1.75rem 2rem', display: 'flex', alignItems: 'flex-start', gap: '1.5rem', borderLeft: s.highlight ? '2px solid #0CA2A2' : 'none' }}>
+                  <div style={{ width: '30px', height: '30px', borderRadius: '8px', background: '#E5E5E5', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                    <Check size={14} color="#0CA2A2" />
                   </div>
                   <div>
                     <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.125rem', fontWeight: 600, color: '#1A1A1A', marginBottom: '0.375rem' }}>{s.item}</h3>
@@ -337,15 +337,15 @@ export default function MedSpaAutomation() {
         <div className="container" style={{ maxWidth: '720px', margin: '0 auto' }}>
           <div style={{
             background: '#FAFAF8',
-            border: '1px solid rgba(167,139,250,0.25)',
-            borderLeft: '4px solid #A78BFA',
+            border: '1px solid #E5E5E5',
+            borderLeft: '4px solid #0CA2A2',
             borderRadius: '12px',
             padding: '2.5rem 3rem',
             textAlign: 'center',
           }}>
             <div style={{ display: 'flex', gap: '0.25rem', justifyContent: 'center', marginBottom: '1.25rem' }}>
               {[1,2,3,4,5].map((i) => (
-                <svg key={i} width="15" height="15" viewBox="0 0 24 24" fill="#A78BFA" style={{ display: 'inline-block' }}><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg key={i} width="15" height="15" viewBox="0 0 24 24" fill="#0CA2A2" style={{ display: 'inline-block' }}><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               ))}
             </div>
             <p style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.125rem, 2vw, 1.375rem)', fontWeight: 600, color: '#1A1A1A', lineHeight: 1.65, marginBottom: '1.25rem', fontStyle: 'italic' }}>
@@ -376,9 +376,9 @@ export default function MedSpaAutomation() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem', maxWidth: '1100px', margin: '0 auto' }}>
             {packages.map((pkg, i) => (
               <div className="reveal">
-                <div style={{ padding: '2.25rem', background: pkg.featured ? 'linear-gradient(135deg, rgba(167,139,250,0.12) 0%, rgba(167,139,250,0.06) 100%)' : 'rgba(167,139,250,0.03)', border: pkg.featured ? '1px solid rgba(167,139,250,0.4)' : '1px solid rgba(167,139,250,0.12)', borderRadius: '12px', height: '100%', display: 'flex', flexDirection: 'column', position: 'relative' }}>
+                <div style={{ padding: '2.25rem', background: pkg.featured ? 'linear-gradient(135deg, rgba(12,162,162,0.12) 0%, rgba(12,162,162,0.06) 100%)' : 'rgba(12,162,162,0.03)', border: pkg.featured ? '1px solid rgba(12,162,162,0.4)' : '1px solid rgba(12,162,162,0.12)', borderRadius: '12px', height: '100%', display: 'flex', flexDirection: 'column', position: 'relative' }}>
                   {pkg.featured && (
-                    <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: 'linear-gradient(90deg, #A78BFA, #C4B5FD)', borderRadius: '99px', padding: '0.25rem 1rem', fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: '#0a0010', whiteSpace: 'nowrap' }}>
+                    <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: 'linear-gradient(90deg, #0CA2A2, #0CA2A2)', borderRadius: '99px', padding: '0.25rem 1rem', fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: '#0a0010', whiteSpace: 'nowrap' }}>
                       Most Popular
                     </div>
                   )}
@@ -395,7 +395,7 @@ export default function MedSpaAutomation() {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem', flex: 1 }}>
                     {pkg.includes.map((item, j) => (
                       <div key={j} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.625rem' }}>
-                        <Check size={14} color="#A78BFA" style={{ marginTop: '2px', flexShrink: 0 }} />
+                        <Check size={14} color="#0CA2A2" style={{ marginTop: '2px', flexShrink: 0 }} />
                         <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#c8cdd6', lineHeight: 1.7 }}>{item}</span>
                       </div>
                     ))}
@@ -414,7 +414,7 @@ export default function MedSpaAutomation() {
       {/* CTA */}
       <div className="reveal">
       <section style={{ position: 'relative', padding: 'clamp(2.5rem, 6vw, 7rem) 0', borderTop: '1px solid #E5E5E5', overflow: 'hidden', textAlign: 'center' }}>
-        <div style={{ position: 'absolute', bottom: '-60px', left: '50%', transform: 'translateX(-50%)', width: '800px', height: '400px', background: 'radial-gradient(ellipse, rgba(167,139,250,0.1) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', bottom: '-60px', left: '50%', transform: 'translateX(-50%)', width: '800px', height: '400px', background: 'radial-gradient(ellipse, rgba(12,162,162,0.1) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '680px', margin: '0 auto' }}>
           <div className="reveal">
             <SectionBadge>Get Started</SectionBadge>
