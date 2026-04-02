@@ -193,7 +193,7 @@ export default function MassageTherapistAutomation() {
                 {/* Pull quote */}
                 <div style={{ position: 'relative', padding: '2rem 2rem 2rem 2.5rem', background: 'rgba(167,139,250,0.05)', border: '1px solid rgba(167,139,250,0.15)', borderLeft: '3px solid #A78BFA', borderRadius: '0 10px 10px 0', marginBottom: '2rem' }}>
                   <Quote size={20} color="rgba(167,139,250,0.3)" style={{ position: 'absolute', top: '1.25rem', right: '1.25rem' }} />
-                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#e2e2e2', lineHeight: 1.8, fontStyle: 'italic', marginBottom: '1rem' }}>
+                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#c8cdd6', lineHeight: 1.8, fontStyle: 'italic', marginBottom: '1rem' }}>
                     "I used to dread Mondays because there would always be gaps I did not expect. Now I open my calendar and it is just full. The reminders go out and people show up. I do not think about it anymore."
                   </p>
                   <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', fontWeight: 600, color: '#A78BFA' }}>
@@ -313,7 +313,7 @@ export default function MassageTherapistAutomation() {
                     {tier.features.map((feat, fi) => (
                       <div key={fi} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.625rem', marginBottom: '0.625rem' }}>
                         <Check size={14} color="#A78BFA" style={{ flexShrink: 0, marginTop: '3px' }} />
-                        <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#e2e2e2', lineHeight: 1.5 }}>{feat}</span>
+                        <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#c8cdd6', lineHeight: 1.5 }}>{feat}</span>
                       </div>
                     ))}
                   </div>
