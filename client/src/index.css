@@ -7,7 +7,7 @@
  *   Card bg:       #141414
  *   Alt section:   #1A1A1A
  *   Primary text:  #F5F0EC  (warm off-white)
- *   Muted text:    #868583
+ *   Muted text:    #b8b6b3
  *   Accent:        #A78BFA  (soft violet — premium AI)
  *   Border:        #2A2A2A
  *   Btn primary:   #A78BFA bg, #0A0A0A text
@@ -104,8 +104,8 @@
   --color-brand-card:      #010509;
   --color-brand-surface:   #0a0d14;
   --color-brand-headline:  #F5F0EC;
-  --color-brand-body:      #868583;
-  --color-brand-muted:     #868583;
+  --color-brand-body:      #b8b6b3;
+  --color-brand-muted:     #b8b6b3;
   --color-brand-accent:    #A78BFA;
   --color-brand-accent-2:  #C4B5FD;
   --color-brand-accent-h:  #7C3AED;
@@ -777,4 +777,5 @@
   justify-content: center;
   flex-shrink: 0;
 }
+
 
