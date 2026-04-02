@@ -11,7 +11,7 @@ import Footer from '@/components/Footer';
 function SectionBadge({ children }: { children: React.ReactNode }) {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.25rem' }}>
-      <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.5rem 1.25rem', background: 'rgba(12,162,162,0.06)', border: '1px solid rgba(167,139,250,0.25)', borderRadius: '100px', fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, color: '#0CA2A2', letterSpacing: '0.1em', textTransform: 'uppercase' as const }}>
+      <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.5rem 1.25rem', background: '#FFFFFF', border: '1px solid #E5E5E5', borderRadius: '100px', fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, color: '#0CA2A2', letterSpacing: '0.1em', textTransform: 'uppercase' as const }}>
         {children}
       </span>
     </div>
@@ -103,7 +103,7 @@ export default function SalonAutomation() {
 
       {/* ── Hero ── */}
       <section style={{ position: 'relative', paddingTop: '80px', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(120,58,237,0.2) 0%, rgba(139,92,246,0.12) 35%, #010509 72%)' }} />
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none', background: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: 'clamp(2rem, 4vw, 2.5rem)', textAlign: 'center', paddingBottom: '5.5rem' }}>
           <div style={{ marginBottom: '1.5rem' }}><SectionBadge>Salon Automation</SectionBadge></div>
           
@@ -142,10 +142,10 @@ export default function SalonAutomation() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
             {serviceDetails.map((s, i) => (
               <div className="reveal">
-                <div style={{ padding: '2rem', background: 'rgba(167,139,250,0.03)', border: '1px solid #E8E8E8', borderRadius: '12px', height: '100%' }}>
+                <div style={{ padding: '2rem', background: 'rgba(12,162,162,0.03)', border: '1px solid #E8E8E8', borderRadius: '12px', height: '100%' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-                    <div style={{ width: '30px', height: '30px', borderRadius: '8px', background: '#E5E5E5', border: '1px solid rgba(167,139,250,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <Check size={14} color="#A78BFA" />
+                    <div style={{ width: '30px', height: '30px', borderRadius: '8px', background: '#E5E5E5', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <Check size={14} color="#0CA2A2" />
                     </div>
                     <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.125rem', fontWeight: 600, color: '#1A1A1A' }}>{s.title}</h3>
                   </div>
@@ -160,7 +160,7 @@ export default function SalonAutomation() {
 
       {/* ── Salon Stat Block ── */}
       <div className="reveal">
-      <section style={{ borderTop: '1px solid rgba(167,139,250,0.1)', borderBottom: '1px solid rgba(167,139,250,0.1)', padding: '3.5rem 0' }}>
+      <section style={{ borderTop: '1px solid rgba(12,162,162,0.1)', borderBottom: '1px solid rgba(12,162,162,0.1)', padding: '3.5rem 0' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', textAlign: 'center' }}>
             {salonStats.map((s, i) => (
@@ -217,12 +217,12 @@ export default function SalonAutomation() {
               </h2>
             </div>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'rgba(12,162,162,0.06)', borderRadius: '12px', overflow: 'hidden' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: '#FFFFFF', borderRadius: '12px', overflow: 'hidden' }}>
             {solutions.map((s, i) => (
               <div className="reveal">
-                <div style={{ background: i % 2 === 0 ? 'rgba(167,139,250,0.02)' : 'rgba(167,139,250,0.04)', padding: '1.75rem 2rem', display: 'flex', alignItems: 'flex-start', gap: '1.5rem' }}>
-                  <div style={{ width: '30px', height: '30px', borderRadius: '8px', background: '#E5E5E5', border: '1px solid rgba(167,139,250,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                    <Check size={14} color="#A78BFA" />
+                <div style={{ background: i % 2 === 0 ? 'rgba(12,162,162,0.02)' : 'rgba(12,162,162,0.04)', padding: '1.75rem 2rem', display: 'flex', alignItems: 'flex-start', gap: '1.5rem' }}>
+                  <div style={{ width: '30px', height: '30px', borderRadius: '8px', background: '#E5E5E5', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                    <Check size={14} color="#0CA2A2" />
                   </div>
                   <div>
                     <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.125rem', fontWeight: 600, color: '#1A1A1A', marginBottom: '0.375rem' }}>{s.item}</h3>
@@ -244,15 +244,15 @@ export default function SalonAutomation() {
         <div className="container" style={{ maxWidth: '720px', margin: '0 auto' }}>
           <div style={{
             background: '#FAFAF8',
-            border: '1px solid rgba(167,139,250,0.25)',
-            borderLeft: '4px solid #A78BFA',
+            border: '1px solid #E5E5E5',
+            borderLeft: '4px solid #0CA2A2',
             borderRadius: '12px',
             padding: '2.5rem 3rem',
             textAlign: 'center',
           }}>
             <div style={{ display: 'flex', gap: '0.25rem', justifyContent: 'center', marginBottom: '1.25rem' }}>
               {[1,2,3,4,5].map((i) => (
-                <svg key={i} width="15" height="15" viewBox="0 0 24 24" fill="#A78BFA" style={{ display: 'inline-block' }}><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg key={i} width="15" height="15" viewBox="0 0 24 24" fill="#0CA2A2" style={{ display: 'inline-block' }}><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               ))}
             </div>
             <p style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.125rem, 2vw, 1.375rem)', fontWeight: 600, color: '#1A1A1A', lineHeight: 1.65, marginBottom: '1.25rem', fontStyle: 'italic' }}>
@@ -267,7 +267,7 @@ export default function SalonAutomation() {
       </div>
 
       <div className="reveal">
-      <section id="pricing" style={{ padding: 'clamp(2.5rem, 6vw, 6rem) 0', background: 'rgba(167,139,250,0.015)', borderTop: '1px solid #E5E5E5', borderBottom: '1px solid #E5E5E5' }}>
+      <section id="pricing" style={{ padding: 'clamp(2.5rem, 6vw, 6rem) 0', background: '#FAFAF8', borderTop: '1px solid #E5E5E5', borderBottom: '1px solid #E5E5E5' }}>
         <div className="container">
           <div className="reveal">
             <div style={{ textAlign: 'center', marginBottom: 'clamp(1.5rem, 4vw, 4rem)' }}>
@@ -286,7 +286,7 @@ export default function SalonAutomation() {
               <div className="reveal">
                 <div className={featured ? 'pricing-card featured' : 'pricing-card'} style={{ padding: '2rem', position: 'relative', display: 'flex', flexDirection: 'column', height: '100%' }}>
                   {featured && (
-                    <div style={{ position: 'absolute', top: '-1px', left: '50%', transform: 'translateX(-50%)', padding: '0.25rem 1rem', background: 'linear-gradient(90deg, #A78BFA, #C4B5FD)', borderRadius: '0 0 12px 12px', fontFamily: "'Nicholas', serif", fontSize: '0.75rem', fontWeight: 600, color: '#1A1A1A', whiteSpace: 'nowrap' }}>
+                    <div style={{ position: 'absolute', top: '-1px', left: '50%', transform: 'translateX(-50%)', padding: '0.25rem 1rem', background: 'linear-gradient(90deg, #0CA2A2, #0CA2A2)', borderRadius: '0 0 12px 12px', fontFamily: "'Nicholas', serif", fontSize: '0.75rem', fontWeight: 600, color: '#1A1A1A', whiteSpace: 'nowrap' }}>
                       Most Popular
                     </div>
                   )}
@@ -326,7 +326,7 @@ export default function SalonAutomation() {
       {/* ── Final CTA ── */}
       <div className="reveal">
       <section style={{ position: 'relative', padding: 'clamp(2.5rem, 6vw, 7rem) 0', borderTop: '1px solid #E5E5E5', overflow: 'hidden', textAlign: 'center' }}>
-        <div style={{ position: 'absolute', bottom: '-60px', left: '50%', transform: 'translateX(-50%)', width: '800px', height: '400px', background: 'radial-gradient(ellipse, rgba(167,139,250,0.1) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', bottom: '-60px', left: '50%', transform: 'translateX(-50%)', width: '800px', height: '400px', background: 'radial-gradient(ellipse, rgba(12,162,162,0.1) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '680px', margin: '0 auto' }}>
           <div className="reveal">
             <SectionBadge>Get Started</SectionBadge>
