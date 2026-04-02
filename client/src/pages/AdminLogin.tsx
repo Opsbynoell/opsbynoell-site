@@ -65,7 +65,7 @@ export default function AdminLogin() {
     return (
       <div style={{
         minHeight: '100vh',
-        backgroundColor: '#0A0A0A',
+        backgroundColor: '#FFFFFF',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -73,7 +73,7 @@ export default function AdminLogin() {
         <div style={{
           width: 24,
           height: 24,
-          border: '2px solid rgba(167,139,250,0.2)',
+          border: '2px solid rgba(12,162,162,0.2)',
           borderTopColor: '#0ca2a2',
           borderRadius: '50%',
           animation: 'spin 0.7s linear infinite',
@@ -86,7 +86,7 @@ export default function AdminLogin() {
   return (
     <div style={{
       minHeight: '100vh',
-      backgroundColor: '#0A0A0A',
+      backgroundColor: '#FFFFFF',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -99,7 +99,7 @@ export default function AdminLogin() {
         {/* Logo / Brand */}
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <p style={{
-            fontFamily: "'Sora', sans-serif",
+            fontFamily: "'Nicholas', serif",
             fontSize: '0.6875rem',
             fontWeight: 700,
             letterSpacing: '0.12em',
@@ -110,10 +110,10 @@ export default function AdminLogin() {
             Ops by Noell
           </p>
           <h1 style={{
-            fontFamily: "'Sora', sans-serif",
+            fontFamily: "'Nicholas', serif",
             fontSize: '1.25rem',
             fontWeight: 700,
-            color: '#F5F0EC',
+            color: '#555555',
             margin: 0,
           }}>
             Admin Access
@@ -132,13 +132,13 @@ export default function AdminLogin() {
               autoComplete="current-password"
               style={{
                 width: '100%',
-                backgroundColor: '#141414',
+                backgroundColor: '#FAFAF8',
                 border: `1px solid ${error ? '#FF6B6B' : '#2A2A2A'}`,
                 borderRadius: '8px',
                 padding: '0.75rem 1rem',
-                fontFamily: "'Sora', sans-serif",
+                fontFamily: "'Nicholas', serif",
                 fontSize: '0.9375rem',
-                color: '#F5F0EC',
+                color: '#555555',
                 outline: 'none',
                 boxSizing: 'border-box',
                 WebkitAppearance: 'none',
@@ -148,7 +148,7 @@ export default function AdminLogin() {
             />
             {error && (
               <p style={{
-                fontFamily: "'Sora', sans-serif",
+                fontFamily: "'Nicholas', serif",
                 fontSize: '0.75rem',
                 color: '#FF6B6B',
                 margin: '0.375rem 0 0 0.25rem',
@@ -164,11 +164,11 @@ export default function AdminLogin() {
             style={{
               width: '100%',
               backgroundColor: loading || !password.trim() ? '#2A2A2A' : '#0CA2A2',
-              color: loading || !password.trim() ? '#4A4440' : '#0A0A0A',
+              color: loading || !password.trim() ? '#4A4440' : '#FFFFFF',
               border: 'none',
               borderRadius: '8px',
               padding: '0.75rem',
-              fontFamily: "'Sora', sans-serif",
+              fontFamily: "'Nicholas', serif",
               fontSize: '0.9375rem',
               fontWeight: 700,
               cursor: loading || !password.trim() ? 'not-allowed' : 'pointer',
@@ -180,7 +180,7 @@ export default function AdminLogin() {
         </form>
 
         <p style={{
-          fontFamily: "'Sora', sans-serif",
+          fontFamily: "'Nicholas', serif",
           fontSize: '0.6875rem',
           color: '#3A3430',
           textAlign: 'center',
