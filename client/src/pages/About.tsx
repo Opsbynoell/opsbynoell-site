@@ -8,6 +8,7 @@ import { ArrowRight, Zap, Shield, Target, TrendingUp } from 'lucide-react';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import { useFadeIn } from '@/hooks/useFadeIn';
+import { RevealSection } from '@/components/RevealSection'
 
 function FadeItem({ children, delay = 0, style = {} }: { children: React.ReactNode; delay?: number; style?: React.CSSProperties }) {
   const { ref, visible } = useFadeIn(0.1);
@@ -107,6 +108,7 @@ export default function About() {
       </section>
 
       {/* ─── WHO WE ARE ─── */}
+      <RevealSection>
       <section style={{ padding: '4rem 0' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '4rem', alignItems: 'start' }} className="lg:grid-cols-2">
@@ -216,8 +218,10 @@ export default function About() {
           </div>
         </div>
       </section>
+      </RevealSection>
 
       {/* ─── DIFFERENTIATORS ─── */}
+      <RevealSection>
       <section style={{ padding: '6rem 0', borderTop: '1px solid rgba(167,139,250,0.08)' }}>
         <div className="container">
           <FadeItem delay={0}>
@@ -301,8 +305,10 @@ export default function About() {
           </div>
         </div>
       </section>
+      </RevealSection>
 
       {/* ─── CTA ─── */}
+      <RevealSection>
       <section style={{ position: 'relative', padding: '7rem 0', borderTop: '1px solid rgba(167,139,250,0.08)', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', bottom: '-60px', left: '50%', transform: 'translateX(-50%)', width: '800px', height: '400px', background: 'radial-gradient(ellipse, rgba(167,139,250,0.1) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
@@ -330,6 +336,7 @@ export default function About() {
           </FadeItem>
         </div>
       </section>
+      </RevealSection>
 
       <Footer />
 
