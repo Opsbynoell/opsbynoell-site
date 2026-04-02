@@ -346,7 +346,7 @@ export default function CaseStudy() {
         </div>
       </section>
 
-      {/* ─── THE RESULT ─── */
+      {/* ─── THE RESULT ─── */}
       <section style={{ padding: '6rem 0', borderTop: '1px solid rgba(167,139,250,0.08)' }}>
         <div className="container">
           <FadeItem delay={0}>
