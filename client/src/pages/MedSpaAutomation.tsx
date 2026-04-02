@@ -20,7 +20,7 @@ function FadeItem({ children, delay = 0, style = {} }: { children: React.ReactNo
 
 function SectionBadge({ children }: { children: React.ReactNode }) {
   return (
-    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.375rem 1rem', borderRadius: '99px', border: '1px solid rgba(167,139,250,0.25)', background: 'rgba(167,139,250,0.08)', fontFamily: "'Sora', sans-serif", fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#A78BFA' }}>
+    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.375rem 1rem', borderRadius: '99px', border: '1px solid rgba(167,139,250,0.25)', background: 'rgba(167,139,250,0.08)', fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#A78BFA' }}>
       <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#A78BFA', display: 'inline-block' }} />
       {children}
     </span>
@@ -146,12 +146,12 @@ export default function MedSpaAutomation() {
         <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '5rem', paddingBottom: '5.5rem' }}>
           <div style={{ marginBottom: '1.5rem' }}><SectionBadge>Med Spa Automation</SectionBadge></div>
           
-            <h1 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2.75rem, 6.5vw, 5rem)', fontWeight: 800, lineHeight: 1.05, letterSpacing: '-0.03em', maxWidth: '820px', marginBottom: '1.75rem' }}>
+            <h1 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2.75rem, 6.5vw, 5rem)', fontWeight: 800, lineHeight: 1.7, letterSpacing: '-0.03em', maxWidth: '820px', marginBottom: '1.75rem' }}>
               <span style={{ color: '#ffffff' }}>You invested everything in your practice.</span>{' '}<GradientText>Your phone shouldn't be what's costing you clients.</GradientText>
             </h1>
           
           
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: 'clamp(1rem, 1.4vw, 1.125rem)', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '580px', marginBottom: '2.5rem' }}>
+            <p style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1rem, 1.4vw, 1.125rem)', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '580px', marginBottom: '2.5rem' }}>
               Med spa appointments are high-value and time-sensitive. A slow response or a missed call doesn't just cost you one booking — it costs you the client. We build the AI systems that ensure you're always the first to respond, day or night.
             </p>
           
@@ -173,7 +173,7 @@ export default function MedSpaAutomation() {
             {stats.map((s, i) => (
               <FadeItem key={i} delay={i * 0.07}>
                 <div style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 800, color: '#A78BFA', marginBottom: '0.4rem' }}>{s.value}</div>
-                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#b8b6b3', lineHeight: 1.5 }}>{s.label}</div>
+                <div style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#b8b6b3', lineHeight: 1.7 }}>{s.label}</div>
               </FadeItem>
             ))}
           </div>
@@ -186,10 +186,10 @@ export default function MedSpaAutomation() {
           <FadeItem delay={0}>
             <div style={{ maxWidth: '600px', marginBottom: '3.5rem' }}>
               <SectionBadge>What We Build for Med Spas</SectionBadge>
-              <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.15, letterSpacing: '-0.02em', marginTop: '1rem', marginBottom: '1rem' }}>
+              <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.02em', marginTop: '1rem', marginBottom: '1rem' }}>
                 Four systems. One practice that runs itself.
               </h2>
-              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.75 }}>
+              <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.75 }}>
                 Every system is built specifically for the economics of a med spa, where one missed touchpoint can cost hundreds or thousands of dollars in lost revenue.
               </p>
             </div>
@@ -199,12 +199,12 @@ export default function MedSpaAutomation() {
               <FadeItem key={i} delay={i * 0.1}>
                 <div style={{ padding: '2.25rem', background: 'rgba(167,139,250,0.03)', border: '1px solid rgba(167,139,250,0.12)', borderRadius: '12px', height: '100%', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.12em', color: '#A78BFA', background: 'rgba(167,139,250,0.1)', border: '1px solid rgba(167,139,250,0.2)', borderRadius: '6px', padding: '0.25rem 0.625rem' }}>
+                    <div style={{ fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.12em', color: '#A78BFA', background: 'rgba(167,139,250,0.1)', border: '1px solid rgba(167,139,250,0.2)', borderRadius: '6px', padding: '0.25rem 0.625rem' }}>
                       {s.number}
                     </div>
                     <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.125rem', fontWeight: 700, color: '#ffffff' }}>{s.title}</h3>
                   </div>
-                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.75, flex: 1 }}>{s.body}</p>
+                  <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.75, flex: 1 }}>{s.body}</p>
                 </div>
               </FadeItem>
             ))}
@@ -218,7 +218,7 @@ export default function MedSpaAutomation() {
           <FadeItem delay={0}>
             <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
               <SectionBadge>Med Spa Reality Check</SectionBadge>
-              <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.2, letterSpacing: '-0.02em', marginTop: '1rem', maxWidth: '600px', margin: '1rem auto 0' }}>
+              <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.02em', marginTop: '1rem', maxWidth: '600px', margin: '1rem auto 0' }}>
                 The numbers most med spa owners never see
               </h2>
             </div>
@@ -228,7 +228,7 @@ export default function MedSpaAutomation() {
               <FadeItem key={i} delay={i * 0.1}>
                 <div style={{ padding: '2.25rem', background: 'rgba(167,139,250,0.05)', border: '1px solid rgba(167,139,250,0.18)', borderRadius: '12px', textAlign: 'center' }}>
                   <div style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 800, color: '#A78BFA', marginBottom: '0.75rem', lineHeight: 1 }}>{s.value}</div>
-                  <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9rem', color: '#a0a7b4', lineHeight: 1.6 }}>{s.label}</div>
+                  <div style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9rem', color: '#a0a7b4', lineHeight: 1.6 }}>{s.label}</div>
                 </div>
               </FadeItem>
             ))}
@@ -246,20 +246,20 @@ export default function MedSpaAutomation() {
                   <Phone size={22} color="#A78BFA" />
                 </div>
                 <div>
-                  <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#A78BFA', marginBottom: '0.25rem' }}>New Feature</div>
-                  <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
+                  <div style={{ fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#A78BFA', marginBottom: '0.25rem' }}>New Feature</div>
+                  <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.02em' }}>
                     An AI receptionist that answers your phone — every time
                   </h2>
                 </div>
               </div>
-              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.75 }}>
+              <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.75 }}>
                 Your AI receptionist picks up missed calls, greets callers by name of your practice, answers questions about services and pricing, and books appointments directly into your calendar — 24 hours a day, 7 days a week. No staff required. No voicemail. No lost bookings.
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
                 {['Books appointments in real time', 'Answers service and pricing questions', 'Handles after-hours calls automatically', 'Warm handoff to staff when needed'].map((feat, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
                     <Check size={14} color="#A78BFA" />
-                    <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#c8cdd6' }}>{feat}</span>
+                    <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#c8cdd6' }}>{feat}</span>
                   </div>
                 ))}
               </div>
@@ -274,7 +274,7 @@ export default function MedSpaAutomation() {
           <FadeItem delay={0}>
             <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
               <SectionBadge>The Problem</SectionBadge>
-              <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.15, letterSpacing: '-0.02em', marginTop: '1rem' }}>
+              <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.02em', marginTop: '1rem' }}>
                 The revenue leaks that add up fast at a med spa
               </h2>
             </div>
@@ -289,7 +289,7 @@ export default function MedSpaAutomation() {
                     </div>
                     <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.0625rem', fontWeight: 700, color: '#ffffff' }}>{p.title}</h3>
                   </div>
-                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#b8b6b3', lineHeight: 1.7 }}>{p.detail}</p>
+                  <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#b8b6b3', lineHeight: 1.7 }}>{p.detail}</p>
                 </div>
               </FadeItem>
             ))}
@@ -303,7 +303,7 @@ export default function MedSpaAutomation() {
           <FadeItem delay={0}>
             <div style={{ maxWidth: '600px', marginBottom: '3.5rem' }}>
               <SectionBadge>The Solution</SectionBadge>
-              <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.15, letterSpacing: '-0.02em', marginTop: '1rem', marginBottom: '1rem' }}>
+              <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.02em', marginTop: '1rem', marginBottom: '1rem' }}>
                 Done-for-you automation. We build it. We run it.
               </h2>
             </div>
@@ -317,7 +317,7 @@ export default function MedSpaAutomation() {
                   </div>
                   <div>
                     <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.125rem', fontWeight: 700, color: '#ffffff', marginBottom: '0.375rem' }}>{s.item}</h3>
-                    <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.7 }}>{s.detail}</p>
+                    <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.7 }}>{s.detail}</p>
                   </div>
                 </div>
               </FadeItem>
@@ -347,7 +347,7 @@ export default function MedSpaAutomation() {
             <p style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.125rem, 2vw, 1.375rem)', fontWeight: 600, color: '#ffffff', lineHeight: 1.65, marginBottom: '1.25rem', fontStyle: 'italic' }}>
               "I used to dread Mondays because there would always be gaps I did not expect. Now I open my calendar and it is just full. The reminders go out and people show up. I do not think about it anymore."
             </p>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#A78BFA' }}>
+            <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#A78BFA' }}>
               Santa M. — Licensed Massage Therapist, Laguna Niguel CA
             </p>
           </div>
@@ -359,10 +359,10 @@ export default function MedSpaAutomation() {
           <FadeItem delay={0}>
             <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
               <SectionBadge>Pricing</SectionBadge>
-              <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.15, letterSpacing: '-0.02em', marginTop: '1rem', marginBottom: '1rem' }}>
+              <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.02em', marginTop: '1rem', marginBottom: '1rem' }}>
                 Simple pricing. No lock-in. Cancel anytime.
               </h2>
-              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '520px', margin: '0 auto' }}>
+              <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '520px', margin: '0 auto' }}>
                 Every plan is month-to-month. We earn your business every month by delivering results.
               </p>
             </div>
@@ -372,25 +372,25 @@ export default function MedSpaAutomation() {
               <FadeItem key={i} delay={i * 0.08}>
                 <div style={{ padding: '2.25rem', background: pkg.featured ? 'linear-gradient(135deg, rgba(167,139,250,0.12) 0%, rgba(167,139,250,0.06) 100%)' : 'rgba(167,139,250,0.03)', border: pkg.featured ? '1px solid rgba(167,139,250,0.4)' : '1px solid rgba(167,139,250,0.12)', borderRadius: '12px', height: '100%', display: 'flex', flexDirection: 'column', position: 'relative' }}>
                   {pkg.featured && (
-                    <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: 'linear-gradient(90deg, #A78BFA, #C4B5FD)', borderRadius: '99px', padding: '0.25rem 1rem', fontFamily: "'Sora', sans-serif", fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: '#0a0010', whiteSpace: 'nowrap' }}>
+                    <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: 'linear-gradient(90deg, #A78BFA, #C4B5FD)', borderRadius: '99px', padding: '0.25rem 1rem', fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: '#0a0010', whiteSpace: 'nowrap' }}>
                       Most Popular
                     </div>
                   )}
                   <div style={{ marginBottom: '1.5rem' }}>
                     <div style={{ fontFamily: "'Nicholas', serif", fontSize: '1.375rem', fontWeight: 800, color: '#ffffff', marginBottom: '0.25rem' }}>{pkg.name}</div>
-                    <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#A78BFA', marginBottom: '1.25rem' }}>{pkg.subtitle}</div>
+                    <div style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#A78BFA', marginBottom: '1.25rem' }}>{pkg.subtitle}</div>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.25rem', marginBottom: '0.375rem' }}>
                       <span style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2rem, 3vw, 2.5rem)', fontWeight: 800, color: '#ffffff' }}>{pkg.price}</span>
-                      <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#b8b6b3' }}>{pkg.period}</span>
+                      <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#b8b6b3' }}>{pkg.period}</span>
                     </div>
-                    <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.75rem', color: '#b8b6b3' }}>{pkg.setup}</div>
+                    <div style={{ fontFamily: "'Nicholas', serif", fontSize: '0.75rem', color: '#b8b6b3' }}>{pkg.setup}</div>
                   </div>
-                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#b8b6b3', lineHeight: 1.7, marginBottom: '1.5rem' }}>{pkg.desc}</p>
+                  <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#b8b6b3', lineHeight: 1.7, marginBottom: '1.5rem' }}>{pkg.desc}</p>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem', flex: 1 }}>
                     {pkg.includes.map((item, j) => (
                       <div key={j} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.625rem' }}>
                         <Check size={14} color="#A78BFA" style={{ marginTop: '2px', flexShrink: 0 }} />
-                        <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#c8cdd6', lineHeight: 1.5 }}>{item}</span>
+                        <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#c8cdd6', lineHeight: 1.7 }}>{item}</span>
                       </div>
                     ))}
                   </div>
@@ -410,10 +410,10 @@ export default function MedSpaAutomation() {
         <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '680px', margin: '0 auto' }}>
           <FadeItem delay={0}>
             <SectionBadge>Get Started</SectionBadge>
-            <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.1, letterSpacing: '-0.03em', marginTop: '1.25rem', marginBottom: '1.25rem' }}>
+            <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.03em', marginTop: '1.25rem', marginBottom: '1.25rem' }}>
               Stop losing high-value appointments to slow response times.
             </h2>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '480px', margin: '0 auto 2.5rem' }}>
+            <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '480px', margin: '0 auto 2.5rem' }}>
               30 minutes. Free. No obligation. We'll map your revenue gaps and show you exactly what we'd build for your practice.
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
