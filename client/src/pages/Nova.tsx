@@ -244,7 +244,7 @@ export default function Nova() {
             {/* H1 */}
             <h1 style={{
               fontFamily: "'Nicholas', serif",
-              fontSize: 'clamp(2.5rem, 5.5vw, 4rem)',
+              fontSize: 'clamp(1.75rem, 5vw, 3.5rem)',
               fontWeight: 800,
               color: '#ffffff',
               lineHeight: 1.7,
@@ -293,7 +293,7 @@ export default function Nova() {
             <SectionBadge>The Problem</SectionBadge>
             <h2 style={{
               fontFamily: "'Nicholas', serif",
-              fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)',
+              fontSize: 'clamp(1.375rem, 4vw, 2.5rem)',
               fontWeight: 700,
               color: '#ffffff',
               lineHeight: 1.7,
@@ -323,7 +323,7 @@ export default function Nova() {
               <SectionBadge>What You Get</SectionBadge>
               <h2 style={{
                 fontFamily: "'Nicholas', serif",
-                fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)',
+                fontSize: 'clamp(1.375rem, 4vw, 2.5rem)',
                 fontWeight: 700,
                 color: '#ffffff',
                 lineHeight: 1.7,
@@ -397,7 +397,7 @@ export default function Nova() {
             <SectionBadge>Live Demo</SectionBadge>
             <h2 style={{
               fontFamily: "'Nicholas', serif",
-              fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)',
+              fontSize: 'clamp(1.375rem, 4vw, 2.5rem)',
               fontWeight: 700,
               color: '#ffffff',
               lineHeight: 1.7,
@@ -426,7 +426,7 @@ export default function Nova() {
               <SectionBadge>Client Results</SectionBadge>
               <h2 style={{
                 fontFamily: "'Nicholas', serif",
-                fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)',
+                fontSize: 'clamp(1.375rem, 4vw, 2.5rem)',
                 fontWeight: 700,
                 color: '#ffffff',
                 lineHeight: 1.7,
@@ -494,7 +494,7 @@ export default function Nova() {
             <SectionBadge>Pricing</SectionBadge>
             <h2 style={{
               fontFamily: "'Nicholas', serif",
-              fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)',
+              fontSize: 'clamp(1.375rem, 4vw, 2.5rem)',
               fontWeight: 700,
               color: '#ffffff',
               lineHeight: 1.7,
@@ -591,7 +591,7 @@ export default function Nova() {
               <SectionBadge>FAQ</SectionBadge>
               <h2 style={{
                 fontFamily: "'Nicholas', serif",
-                fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)',
+                fontSize: 'clamp(1.375rem, 4vw, 2.5rem)',
                 fontWeight: 700,
                 color: '#ffffff',
                 lineHeight: 1.7,
@@ -616,7 +616,7 @@ export default function Nova() {
             <SectionBadge>Get Started</SectionBadge>
             <h2 style={{
               fontFamily: "'Nicholas', serif",
-              fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+              fontSize: 'clamp(1.375rem, 4vw, 2.5rem)',
               fontWeight: 800,
               color: '#ffffff',
               lineHeight: 1.7,
