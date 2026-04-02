@@ -97,7 +97,7 @@ const packages = [
     setup: '+ $297 setup',
     desc: 'The fastest way to stop losing leads to voicemail. One system, live in a week.',
     includes: ['Missed Call Text-Back', 'AI Voice Receptionist (after-hours)', 'Onboarding & setup included', 'Ongoing management & maintenance'],
-    cta: 'Book Intro Call',
+    cta: 'Book a Free 30-Minute Audit',
     featured: false,
   },
   {
@@ -108,7 +108,7 @@ const packages = [
     setup: '+ $997 setup',
     desc: 'The essential foundation. Stop losing leads from missed calls and fill your calendar automatically.',
     includes: ['Missed Call Text-Back', 'AI Booking + Reminder System', 'Onboarding & setup included', 'Ongoing management & maintenance'],
-    cta: 'Book Intro Call',
+    cta: 'Book a Free 30-Minute Audit',
     featured: false,
   },
   {
@@ -158,7 +158,7 @@ export default function MedSpaAutomation() {
           <FadeItem delay={0.3}>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="/book" className="btn-gradient" style={{ padding: '1rem 2rem', fontSize: '1rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                Book Free 30-Minute Intro Call <ArrowRight size={16} />
+                Book a Free 30-Minute Audit <ArrowRight size={16} />
               </a>
               <a href="#pricing" className="btn-outline" style={{ padding: '1rem 2rem', fontSize: '1rem' }}>See Pricing</a>
             </div>
@@ -395,7 +395,7 @@ export default function MedSpaAutomation() {
                     ))}
                   </div>
                   <a href="/book" className={pkg.featured ? 'btn-gradient' : 'btn-outline'} style={{ padding: '0.875rem 1.5rem', fontSize: '0.9375rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', textAlign: 'center' as const }}>
-                    {pkg.cta === 'Most Popular' ? 'Book Intro Call' : pkg.cta} <ArrowRight size={14} />
+                    {pkg.cta} <ArrowRight size={14} />
                   </a>
                 </div>
               </FadeItem>
@@ -418,7 +418,7 @@ export default function MedSpaAutomation() {
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="/book" className="btn-gradient" style={{ padding: '1.125rem 2.25rem', fontSize: '1.0625rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                Book Free 30-Minute Intro Call <ArrowRight size={17} />
+                Book a Free 30-Minute Audit <ArrowRight size={17} />
               </a>
               <a href="#pricing" className="btn-outline" style={{ padding: '1.125rem 2.25rem', fontSize: '1.0625rem' }}>
                 View Pricing
