@@ -101,7 +101,7 @@ export default function Industries() {
             </h1>
           </FadeItem>
           <FadeItem delay={0.2}>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: 'clamp(1rem, 1.4vw, 1.1875rem)', color: '#A09890', lineHeight: 1.75, maxWidth: '560px' }}>
+            <p style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1rem, 1.4vw, 1.1875rem)', color: '#A09890', lineHeight: 1.75, maxWidth: '560px' }}>
               If your business runs on bookings, phone calls, and repeat clients, we build the AI systems that make sure nothing falls through the cracks. Every industry has the same core gaps. We've built the fixes for all of them.
             </p>
           </FadeItem>
@@ -129,13 +129,13 @@ export default function Industries() {
                     <div style={{
                       width: '52px',
                       height: '52px',
-                      backgroundColor: 'rgba(167,139,250,0.1)',
+                      backgroundColor: 'rgba(12,162,162,0.1)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       flexShrink: 0,
                     }}>
-                      <industry.icon size={22} color="#A78BFA" />
+                      <industry.icon size={22} color="#0CA2A2" />
                     </div>
                     <div>
                       <h2 style={{
@@ -148,7 +148,7 @@ export default function Industries() {
                         {industry.name}
                       </h2>
                       <p style={{
-                        fontFamily: "'Sora', sans-serif",
+                        fontFamily: "'Nicholas', serif",
                         fontSize: '0.875rem',
                         color: '#0CA2A2',
                         fontWeight: 500,
@@ -162,9 +162,9 @@ export default function Industries() {
                   {/* Middle: Description + Gaps */}
                   <div>
                     <p style={{
-                      fontFamily: "'Sora', sans-serif",
+                      fontFamily: "'Nicholas', serif",
                       fontSize: '0.9375rem',
-                      color: '#868583',
+                      color: '#555555',
                       lineHeight: 1.75,
                       marginBottom: '1.5rem',
                     }}>
@@ -173,8 +173,8 @@ export default function Industries() {
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                       {industry.gaps.map((gap, j) => (
                         <div key={j} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                          <div style={{ width: '5px', height: '5px', backgroundColor: '#A78BFA', borderRadius: '50%', flexShrink: 0 }} />
-                          <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#868583', lineHeight: 1.5 }}>{gap}</p>
+                          <div style={{ width: '5px', height: '5px', backgroundColor: '#0CA2A2', borderRadius: '50%', flexShrink: 0 }} />
+                          <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#555555', lineHeight: 1.5 }}>{gap}</p>
                         </div>
                       ))}
                     </div>
@@ -182,13 +182,13 @@ export default function Industries() {
 
                   {/* Right: Outcome */}
                   <div style={{
-                    backgroundColor: 'rgba(167,139,250,0.06)',
-                    borderLeft: '2px solid #A78BFA',
+                    backgroundColor: 'rgba(12,162,162,0.06)',
+                    borderLeft: '2px solid #0CA2A2',
                     padding: '1.5rem',
                   }}>
                     <p className="eyebrow" style={{ color: '#0CA2A2', marginBottom: '0.75rem' }}>Typical Outcome</p>
                     <p style={{
-                      fontFamily: "'Sora', sans-serif",
+                      fontFamily: "'Nicholas', serif",
                       fontSize: '0.9375rem',
                       color: '#1A1A1A',
                       lineHeight: 1.7,
@@ -216,7 +216,7 @@ export default function Industries() {
             <h2 className="gradient-text" style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 800, lineHeight: 1.05, letterSpacing: '-0.03em', marginBottom: '1.25rem', maxWidth: '600px', margin: '0 auto 1.25rem', display: 'block' }}>
               Don't see your industry? Let's talk anyway.
             </h2>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#A09890', lineHeight: 1.75, maxWidth: '480px', margin: '0 auto 2.5rem' }}>
+            <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1rem', color: '#A09890', lineHeight: 1.75, maxWidth: '480px', margin: '0 auto 2.5rem' }}>
               If your business runs on appointments, phone calls, and repeat clients, we can almost certainly help. Book a free 30-minute intro call and we'll tell you honestly what's possible.
             </p>
             <a href="/book" className="btn-gradient" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none', fontSize: '1rem', padding: '1rem 2.25rem' }}>
