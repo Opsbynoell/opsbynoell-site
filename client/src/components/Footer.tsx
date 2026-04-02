@@ -11,8 +11,8 @@ const LOGO_URL = '/logo.svg';
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#010509', borderTop: '1px solid rgba(167,139,250,0.12)' }}>
-      <div className="container" style={{ paddingTop: '4rem', paddingBottom: '3rem' }}>
+    <footer style={{ backgroundColor: '#080810', borderTop: '1px solid rgba(167,139,250,0.08)' }}>
+      <div className="container" style={{ paddingTop: '5rem', paddingBottom: '3rem' }}>
         {/* Top row */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem' }} className="lg:grid-cols-3">
           {/* Logo + tagline */}
@@ -163,3 +163,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+
