@@ -121,7 +121,7 @@ export default function SalonAutomation() {
             </h1>
           </FadeItem>
           <FadeItem delay={0.2}>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: 'clamp(1rem, 1.4vw, 1.125rem)', color: '#868583', lineHeight: 1.75, maxWidth: '580px', marginBottom: '2.5rem' }}>
+            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: 'clamp(1rem, 1.4vw, 1.125rem)', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '580px', marginBottom: '2.5rem' }}>
               Salons run on repeat clients and full books. Every missed call, no-show, and lapsed client is revenue left on the table. We build the systems that close those gaps automatically.
             </p>
           </FadeItem>
@@ -157,7 +157,7 @@ export default function SalonAutomation() {
                     </div>
                     <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.125rem', fontWeight: 700, color: '#ffffff' }}>{s.title}</h3>
                   </div>
-                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9rem', color: '#868583', lineHeight: 1.75 }}>{s.body}</p>
+                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9rem', color: '#b8b6b3', lineHeight: 1.75 }}>{s.body}</p>
                 </div>
               </FadeItem>
             ))}
@@ -172,7 +172,7 @@ export default function SalonAutomation() {
             {salonStats.map((s, i) => (
               <FadeItem key={i} delay={i * 0.08}>
                 <div style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 800, color: '#A78BFA', marginBottom: '0.5rem' }}>{s.value}</div>
-                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583', lineHeight: 1.5, maxWidth: '200px', margin: '0 auto' }}>{s.label}</div>
+                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#b8b6b3', lineHeight: 1.5, maxWidth: '200px', margin: '0 auto' }}>{s.label}</div>
               </FadeItem>
             ))}
           </div>
@@ -200,7 +200,7 @@ export default function SalonAutomation() {
                     </div>
                     <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.0625rem', fontWeight: 700, color: '#ffffff' }}>{p.title}</h3>
                   </div>
-                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#868583', lineHeight: 1.7 }}>{p.detail}</p>
+                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#b8b6b3', lineHeight: 1.7 }}>{p.detail}</p>
                 </div>
               </FadeItem>
             ))}
@@ -228,7 +228,7 @@ export default function SalonAutomation() {
                   </div>
                   <div>
                     <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.125rem', fontWeight: 700, color: '#ffffff', marginBottom: '0.375rem' }}>{s.item}</h3>
-                    <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#868583', lineHeight: 1.7 }}>{s.detail}</p>
+                    <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.7 }}>{s.detail}</p>
                   </div>
                 </div>
               </FadeItem>
@@ -273,7 +273,7 @@ export default function SalonAutomation() {
               <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.15, letterSpacing: '-0.02em', marginTop: '1rem', marginBottom: '1rem' }}>
                 Start with what matters most. <GradientText>Scale from there.</GradientText>
               </h2>
-              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1.0625rem', color: '#868583', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
+              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1.0625rem', color: '#b8b6b3', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
                 Every package is 100% done-for-you. We build it, connect it to your business, and once it's live, it runs. You don't touch a setting.
               </p>
             </div>
@@ -293,14 +293,14 @@ export default function SalonAutomation() {
                     <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.75rem', fontWeight: 600, color: '#A78BFA', letterSpacing: '0.06em', textTransform: 'uppercase' as const, marginBottom: '1rem' }}>{subtitle}</p>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.375rem', marginBottom: '0.375rem' }}>
                       <span style={{ fontFamily: "'Nicholas', serif", fontSize: '2.25rem', fontWeight: 800, color: '#ffffff' }}>{price}</span>
-                      <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583' }}>{period}</span>
+                      <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#b8b6b3' }}>{period}</span>
                     </div>
-                    <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#868583', lineHeight: 1.6, marginBottom: '1.5rem' }}>{desc}</p>
+                    <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#b8b6b3', lineHeight: 1.6, marginBottom: '1.5rem' }}>{desc}</p>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.625rem', marginBottom: '1.75rem' }}>
                       {includes.map((item) => (
                         <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.625rem' }}>
                           <Check size={14} style={{ color: '#A78BFA', flexShrink: 0, marginTop: '3px' }} />
-                          <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#868583' }}>{item}</span>
+                          <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#b8b6b3' }}>{item}</span>
                         </div>
                       ))}
                     </div>
@@ -313,7 +313,7 @@ export default function SalonAutomation() {
             ))}
           </div>
           <FadeItem delay={0.4}>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583', textAlign: 'center', marginTop: '1.75rem' }}>
+            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#b8b6b3', textAlign: 'center', marginTop: '1.75rem' }}>
               Month-to-month. No long-term contracts. Cancel anytime with 30 days notice.
             </p>
           </FadeItem>
@@ -329,7 +329,7 @@ export default function SalonAutomation() {
             <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.1, letterSpacing: '-0.03em', marginTop: '1.25rem', marginBottom: '1.25rem' }}>
               More bookings. Fewer no-shows. Less manual work.
             </h2>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#868583', lineHeight: 1.75, maxWidth: '480px', margin: '0 auto 2.5rem' }}>
+            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '480px', margin: '0 auto 2.5rem' }}>
               30 minutes. Free. No obligation. We'll show you exactly what we'd build for your salon.
             </p>
             <a href="/book" className="btn-gradient" style={{ padding: '1.125rem 2.25rem', fontSize: '1.0625rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -343,3 +343,4 @@ export default function SalonAutomation() {
     </div>
   );
 }
+
