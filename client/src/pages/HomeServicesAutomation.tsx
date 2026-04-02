@@ -88,7 +88,7 @@ export default function HomeServicesAutomation() {
             </h1>
           </FadeItem>
           <FadeItem delay={0.2}>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: 'clamp(1rem, 1.4vw, 1.125rem)', color: '#868583', lineHeight: 1.75, maxWidth: '580px', marginBottom: '2.5rem' }}>
+            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: 'clamp(1rem, 1.4vw, 1.125rem)', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '580px', marginBottom: '2.5rem' }}>
               In home services, the first company to respond wins. We build the systems that respond instantly to every inquiry — even when you're mid-job — so you're always first in line.
             </p>
           </FadeItem>
@@ -112,7 +112,7 @@ export default function HomeServicesAutomation() {
               <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.15, letterSpacing: '-0.02em', marginTop: '1rem', marginBottom: '1rem' }}>
                 Whoever answers first wins the job.
               </h2>
-              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#868583', lineHeight: 1.75, maxWidth: '520px', margin: '0 auto' }}>
+              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '520px', margin: '0 auto' }}>
                 Here's what we build for home service businesses — and why each piece matters.
               </p>
             </div>
@@ -125,7 +125,7 @@ export default function HomeServicesAutomation() {
                     {svc.icon}
                   </div>
                   <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.1875rem', fontWeight: 700, color: '#ffffff', marginBottom: '0.75rem' }}>{svc.title}</h3>
-                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#868583', lineHeight: 1.75 }}>{svc.body}</p>
+                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.75 }}>{svc.body}</p>
                 </div>
               </FadeItem>
             ))}
@@ -149,7 +149,7 @@ export default function HomeServicesAutomation() {
               <FadeItem key={i} delay={i * 0.1}>
                 <div style={{ padding: '2rem', background: '#010509', border: '1px solid rgba(167,139,250,0.15)', borderRadius: '12px', textAlign: 'center' }}>
                   <div style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 800, color: '#A78BFA', lineHeight: 1, marginBottom: '0.75rem', letterSpacing: '-0.03em' }}>{s.num}</div>
-                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#868583', lineHeight: 1.6 }}>{s.label}</p>
+                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#b8b6b3', lineHeight: 1.6 }}>{s.label}</p>
                 </div>
               </FadeItem>
             ))}
@@ -193,7 +193,7 @@ export default function HomeServicesAutomation() {
               <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.15, letterSpacing: '-0.02em', marginTop: '1rem', marginBottom: '1rem' }}>
                 Simple pricing. No hidden fees.
               </h2>
-              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#868583', lineHeight: 1.75, maxWidth: '500px', margin: '0 auto' }}>
+              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '500px', margin: '0 auto' }}>
                 Every plan includes setup, installation, and ongoing management. You don't touch the tech — we handle everything.
               </p>
             </div>
@@ -205,13 +205,13 @@ export default function HomeServicesAutomation() {
                 <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: '#A78BFA', marginBottom: '0.75rem' }}>Entry</div>
                 <div style={{ marginBottom: '0.5rem' }}>
                   <span style={{ fontFamily: "'Nicholas', serif", fontSize: '2.5rem', fontWeight: 800, color: '#ffffff' }}>$197</span>
-                  <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#868583' }}>/mo</span>
+                  <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#b8b6b3' }}>/mo</span>
                 </div>
-                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583', marginBottom: '1.5rem' }}>+ $497 setup fee</div>
-                <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#868583', lineHeight: 1.65, marginBottom: '1.5rem' }}>Missed call text-back only. The single highest-ROI automation for home service businesses — deploy it in days.</p>
+                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#b8b6b3', marginBottom: '1.5rem' }}>+ $497 setup fee</div>
+                <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.65, marginBottom: '1.5rem' }}>Missed call text-back only. The single highest-ROI automation for home service businesses — deploy it in days.</p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem', display: 'flex', flexDirection: 'column', gap: '0.625rem', flex: 1 }}>
                   {['Instant missed call text-back', 'Automated lead follow-up sequence', 'Monthly performance report'].map((f) => (
-                    <li key={f} style={{ display: 'flex', gap: '0.625rem', alignItems: 'flex-start', fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#868583' }}>
+                    <li key={f} style={{ display: 'flex', gap: '0.625rem', alignItems: 'flex-start', fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#b8b6b3' }}>
                       <Check size={14} color="#A78BFA" style={{ marginTop: '3px', flexShrink: 0 }} />
                       {f}
                     </li>
@@ -229,13 +229,13 @@ export default function HomeServicesAutomation() {
                 <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: '#A78BFA', marginBottom: '0.75rem' }}>Starter</div>
                 <div style={{ marginBottom: '0.5rem' }}>
                   <span style={{ fontFamily: "'Nicholas', serif", fontSize: '2.5rem', fontWeight: 800, color: '#ffffff' }}>$797</span>
-                  <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#868583' }}>/mo</span>
+                  <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#b8b6b3' }}>/mo</span>
                 </div>
-                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583', marginBottom: '1.5rem' }}>+ $997 setup fee</div>
-                <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#868583', lineHeight: 1.65, marginBottom: '1.5rem' }}>Full lead capture, follow-up, booking, and review generation. The complete stack for a busy home service operation.</p>
+                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#b8b6b3', marginBottom: '1.5rem' }}>+ $997 setup fee</div>
+                <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.65, marginBottom: '1.5rem' }}>Full lead capture, follow-up, booking, and review generation. The complete stack for a busy home service operation.</p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem', display: 'flex', flexDirection: 'column', gap: '0.625rem', flex: 1 }}>
                   {['Missed call text-back (60-second response)', 'After-hours lead capture + auto-reply', 'Estimate follow-up sequences', 'AI online booking system', 'Post-job review requests', 'Monthly performance reporting'].map((f) => (
-                    <li key={f} style={{ display: 'flex', gap: '0.625rem', alignItems: 'flex-start', fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#868583' }}>
+                    <li key={f} style={{ display: 'flex', gap: '0.625rem', alignItems: 'flex-start', fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#b8b6b3' }}>
                       <Check size={14} color="#A78BFA" style={{ marginTop: '3px', flexShrink: 0 }} />
                       {f}
                     </li>
@@ -252,13 +252,13 @@ export default function HomeServicesAutomation() {
                 <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: '#A78BFA', marginBottom: '0.75rem' }}>Growth</div>
                 <div style={{ marginBottom: '0.5rem' }}>
                   <span style={{ fontFamily: "'Nicholas', serif", fontSize: '2.5rem', fontWeight: 800, color: '#ffffff' }}>$1,497</span>
-                  <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#868583' }}>/mo</span>
+                  <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#b8b6b3' }}>/mo</span>
                 </div>
-                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583', marginBottom: '1.5rem' }}>+ $1,497 setup fee</div>
-                <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#868583', lineHeight: 1.65, marginBottom: '1.5rem' }}>Everything in Starter plus AI voice agent, seasonal maintenance campaigns, and advanced pipeline management.</p>
+                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#b8b6b3', marginBottom: '1.5rem' }}>+ $1,497 setup fee</div>
+                <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.65, marginBottom: '1.5rem' }}>Everything in Starter plus AI voice agent, seasonal maintenance campaigns, and advanced pipeline management.</p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem', display: 'flex', flexDirection: 'column', gap: '0.625rem', flex: 1 }}>
                   {['Everything in Starter', 'AI voice agent (answers calls)', 'Seasonal maintenance campaigns', 'Repeat customer win-back sequences', 'Custom CRM pipeline + reporting'].map((f) => (
-                    <li key={f} style={{ display: 'flex', gap: '0.625rem', alignItems: 'flex-start', fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#868583' }}>
+                    <li key={f} style={{ display: 'flex', gap: '0.625rem', alignItems: 'flex-start', fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#b8b6b3' }}>
                       <Check size={14} color="#A78BFA" style={{ marginTop: '3px', flexShrink: 0 }} />
                       {f}
                     </li>
@@ -294,7 +294,7 @@ export default function HomeServicesAutomation() {
                     </div>
                     <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.0625rem', fontWeight: 700, color: '#ffffff' }}>{p.title}</h3>
                   </div>
-                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#868583', lineHeight: 1.7 }}>{p.detail}</p>
+                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#b8b6b3', lineHeight: 1.7 }}>{p.detail}</p>
                 </div>
               </FadeItem>
             ))}
@@ -322,7 +322,7 @@ export default function HomeServicesAutomation() {
                   </div>
                   <div>
                     <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.125rem', fontWeight: 700, color: '#ffffff', marginBottom: '0.375rem' }}>{s.item}</h3>
-                    <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#868583', lineHeight: 1.7 }}>{s.detail}</p>
+                    <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.7 }}>{s.detail}</p>
                   </div>
                 </div>
               </FadeItem>
@@ -340,7 +340,7 @@ export default function HomeServicesAutomation() {
             <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.1, letterSpacing: '-0.03em', marginTop: '1.25rem', marginBottom: '1.25rem' }}>
               Stop losing jobs to the company that answers faster.
             </h2>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#868583', lineHeight: 1.75, maxWidth: '480px', margin: '0 auto 2.5rem' }}>
+            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '480px', margin: '0 auto 2.5rem' }}>
               30 minutes. Free. No obligation. We'll show you what we'd build and what it costs.
             </p>
             <a href={BOOKING_LINK} target="_blank" rel="noreferrer" className="btn-gradient" style={{ padding: '1.125rem 2.25rem', fontSize: '1.0625rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -354,3 +354,4 @@ export default function HomeServicesAutomation() {
     </div>
   );
 }
+
