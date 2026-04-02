@@ -94,8 +94,8 @@ export default function Home() {
             {/* H1 */}
             <h1 style={{
               fontFamily: "'Nicholas', serif",
-              fontSize: 'clamp(2.75rem, 6vw, 4.5rem)',
-              fontWeight: 800, color: '#ffffff',
+              fontSize: 'clamp(2rem, 5.5vw, 4.5rem)',
+              fontWeight: 800, color: '#ffffff', overflowWrap: 'break-word', wordBreak: 'break-word',
               lineHeight: 1.7, letterSpacing: '-0.03em', marginBottom: '1.5rem',
             }}>
               You're losing clients <span style={{ whiteSpace: 'nowrap' }}>between appointments.</span>{' '}
@@ -236,7 +236,7 @@ export default function Home() {
         <section style={{ padding: '6rem 0', background: 'rgba(167,139,250,0.015)', borderTop: '1px solid rgba(167,139,250,0.08)', borderBottom: '1px solid rgba(167,139,250,0.08)' }}>
           <div className="container" style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center' }}>
             <SectionBadge>Free Tool</SectionBadge>
-            <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 2.75rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.025em', marginBottom: '1.25rem' }}>
+            <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 2.75rem)', fontWeight: 800, color: '#ffffff', overflowWrap: 'break-word', wordBreak: 'break-word', lineHeight: 1.7, letterSpacing: '-0.025em', marginBottom: '1.25rem' }}>
               How much are you actually losing?
             </h2>
             <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1.0625rem', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '480px', margin: '0 auto 2.25rem' }}>
@@ -391,7 +391,7 @@ export default function Home() {
           }} />
           <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '720px', margin: '0 auto' }}>
             <SectionBadge>Get Started Today</SectionBadge>
-            <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.03em', marginBottom: '1.5rem' }}>
+            <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 800, color: '#ffffff', overflowWrap: 'break-word', wordBreak: 'break-word', lineHeight: 1.7, letterSpacing: '-0.03em', marginBottom: '1.5rem' }}>
               Your practice deserves a back office{' '}<GradientText>that never sleeps.</GradientText>
             </h2>
             <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1.125rem', color: '#b8b6b3', maxWidth: '500px', margin: '0 auto 2.5rem', lineHeight: 1.75 }}>
