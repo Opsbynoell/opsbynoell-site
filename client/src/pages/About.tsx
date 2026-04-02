@@ -81,12 +81,12 @@ export default function About() {
         <div style={{ position: 'absolute', top: '60px', right: '-80px', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(167,139,250,0.08) 0%, transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '5rem', paddingBottom: '5.5rem' }}>
-          <FadeItem delay={0}>
+          <div>
             <div style={{ marginBottom: '2rem' }}>
               <SectionBadge>About Ops by Noell</SectionBadge>
             </div>
-          </FadeItem>
-          <FadeItem delay={0.1}>
+          </div>
+          <div>
             <h1 style={{
               fontFamily: "'Nicholas', serif",
               fontSize: 'clamp(2rem, 4vw, 3rem)',
@@ -97,12 +97,12 @@ export default function About() {
                 We've spent years building the fix for businesses exactly like yours.
               </span>
             </h1>
-          </FadeItem>
-          <FadeItem delay={0.2}>
+          </div>
+          <div>
             <p style={{ fontFamily: "'Sora', sans-serif", fontSize: 'clamp(1rem, 1.4vw, 1.1875rem)', color: '#868583', lineHeight: 1.75, maxWidth: '580px' }}>
               We're Nikki and James Noell, and we put our last name on this for a reason.
             </p>
-          </FadeItem>
+          </div>
         </div>
       </section>
 
@@ -345,6 +345,8 @@ export default function About() {
     </div>
   );
 }
+
+
 
 
 
