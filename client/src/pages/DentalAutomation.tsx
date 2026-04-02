@@ -132,7 +132,7 @@ export default function DentalAutomation() {
             </h1>
           </FadeItem>
           <FadeItem delay={0.2}>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: 'clamp(1rem, 1.4vw, 1.125rem)', color: '#868583', lineHeight: 1.75, maxWidth: '580px', marginBottom: '2.5rem' }}>
+            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: 'clamp(1rem, 1.4vw, 1.125rem)', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '580px', marginBottom: '2.5rem' }}>
               Dental practices lose thousands monthly to no-shows, lapsed patients, and manual recall processes. We build the systems that recover that revenue automatically — without adding to your front desk's workload.
             </p>
           </FadeItem>
@@ -168,7 +168,7 @@ export default function DentalAutomation() {
                     </div>
                     <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.0625rem', fontWeight: 700, color: '#ffffff' }}>{p.title}</h3>
                   </div>
-                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#868583', lineHeight: 1.7 }}>{p.detail}</p>
+                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#b8b6b3', lineHeight: 1.7 }}>{p.detail}</p>
                 </div>
               </FadeItem>
             ))}
@@ -196,7 +196,7 @@ export default function DentalAutomation() {
                   </div>
                   <div>
                     <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.125rem', fontWeight: 700, color: '#ffffff', marginBottom: '0.375rem' }}>{s.item}</h3>
-                    <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#868583', lineHeight: 1.7 }}>{s.detail}</p>
+                    <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.7 }}>{s.detail}</p>
                   </div>
                 </div>
               </FadeItem>
@@ -214,7 +214,7 @@ export default function DentalAutomation() {
               <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.15, letterSpacing: '-0.02em', marginTop: '1rem', marginBottom: '1rem' }}>
                 Three systems. <GradientText>Immediate impact.</GradientText>
               </h2>
-              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1.0625rem', color: '#868583', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
+              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1.0625rem', color: '#b8b6b3', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
                 Every system is built for your practice, connected to your existing tools, and managed by us. You don't touch a setting.
               </p>
             </div>
@@ -232,7 +232,7 @@ export default function DentalAutomation() {
                         </div>
                         <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', fontWeight: 700, color: '#ffffff' }}>{svc.title}</h3>
                       </div>
-                      <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#868583', lineHeight: 1.75, maxWidth: '640px' }}>{svc.description}</p>
+                      <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '640px' }}>{svc.description}</p>
                     </div>
                     <div style={{ flexShrink: 0, background: 'rgba(167,139,250,0.08)', border: '1px solid rgba(167,139,250,0.2)', borderRadius: '10px', padding: '1rem 1.25rem', textAlign: 'center', minWidth: '180px' }}>
                       <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.75rem', fontWeight: 600, color: '#A78BFA', letterSpacing: '0.06em', textTransform: 'uppercase' as const, marginBottom: '0.5rem' }}>Key Stat</p>
@@ -255,7 +255,7 @@ export default function DentalAutomation() {
               <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.15, letterSpacing: '-0.02em', marginTop: '1rem' }}>
                 The revenue is already in your practice.
               </h2>
-              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#868583', maxWidth: '460px', margin: '1rem auto 0', lineHeight: 1.7 }}>
+              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#b8b6b3', maxWidth: '460px', margin: '1rem auto 0', lineHeight: 1.7 }}>
                 You're just not capturing all of it yet.
               </p>
             </div>
@@ -265,7 +265,7 @@ export default function DentalAutomation() {
               <FadeItem key={i} delay={i * 0.1}>
                 <div style={{ padding: '2.5rem 2rem', background: 'rgba(167,139,250,0.04)', border: '1px solid rgba(167,139,250,0.15)', borderRadius: '12px', textAlign: 'center' }}>
                   <p style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 800, background: 'linear-gradient(90deg, #A78BFA 0%, #C4B5FD 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', marginBottom: '0.75rem' }}>{s.figure}</p>
-                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#868583', lineHeight: 1.65 }}>{s.label}</p>
+                  <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.65 }}>{s.label}</p>
                 </div>
               </FadeItem>
             ))}
@@ -282,7 +282,7 @@ export default function DentalAutomation() {
               <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.2, letterSpacing: '-0.02em', marginBottom: '1.25rem' }}>
                 4 no-shows per week down to less than 1 — in two weeks.
               </h2>
-              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#868583', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.8, marginBottom: '1.5rem' }}>
                 Our founding client is a solo practitioner in Laguna Niguel with 25 years of experience and zero digital infrastructure before working with us. Within two weeks of launching our AI booking and reminder system, weekly no-shows dropped from an average of 4 to less than 1. No staff changes. No new software for them to learn. The same result is achievable for any appointment-based practice.
               </p>
               <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
@@ -334,7 +334,7 @@ export default function DentalAutomation() {
               <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.15, letterSpacing: '-0.02em', marginTop: '1rem', marginBottom: '1rem' }}>
                 Start with what matters most. <GradientText>Scale from there.</GradientText>
               </h2>
-              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1.0625rem', color: '#868583', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
+              <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1.0625rem', color: '#b8b6b3', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
                 Every package is 100% done-for-you. We build it, connect it to your practice, and once it's live, it runs. You don't touch a setting.
               </p>
             </div>
@@ -353,14 +353,14 @@ export default function DentalAutomation() {
                     <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.75rem', fontWeight: 600, color: '#A78BFA', letterSpacing: '0.06em', textTransform: 'uppercase' as const, marginBottom: '1rem' }}>{subtitle}</p>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.375rem', marginBottom: '0.375rem' }}>
                       <span style={{ fontFamily: "'Nicholas', serif", fontSize: '2.25rem', fontWeight: 800, color: '#ffffff' }}>{price}</span>
-                      <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#868583' }}>{period}</span>
+                      <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.8125rem', color: '#b8b6b3' }}>{period}</span>
                     </div>
-                    <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#868583', lineHeight: 1.6, marginBottom: '1.5rem' }}>{desc}</p>
+                    <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#b8b6b3', lineHeight: 1.6, marginBottom: '1.5rem' }}>{desc}</p>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.625rem', marginBottom: '1.75rem' }}>
                       {includes.map((item) => (
                         <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.625rem' }}>
                           <Check size={14} style={{ color: '#A78BFA', flexShrink: 0, marginTop: '3px' }} />
-                          <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#868583' }}>{item}</span>
+                          <span style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.875rem', color: '#b8b6b3' }}>{item}</span>
                         </div>
                       ))}
                     </div>
@@ -384,7 +384,7 @@ export default function DentalAutomation() {
             <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.1, letterSpacing: '-0.03em', marginTop: '1.25rem', marginBottom: '1.25rem' }}>
               Cut no-shows. Automate recall. Keep your schedule full.
             </h2>
-            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#868583', lineHeight: 1.75, maxWidth: '480px', margin: '0 auto 2.5rem' }}>
+            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '1rem', color: '#b8b6b3', lineHeight: 1.75, maxWidth: '480px', margin: '0 auto 2.5rem' }}>
               30 minutes. Free. No obligation. We'll show you exactly what automation can do for your practice.
             </p>
             <a href="/book" className="btn-gradient" style={{ padding: '1.125rem 2.25rem', fontSize: '1.0625rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -398,3 +398,4 @@ export default function DentalAutomation() {
     </div>
   );
 }
+
