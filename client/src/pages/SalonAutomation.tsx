@@ -8,6 +8,7 @@ import { ArrowRight, Check, X } from 'lucide-react';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 
+const problems = [
   { title: 'Missed calls go to voicemail and stay there', detail: '85% of callers who hit voicemail will not call back. If your front desk is busy, that inquiry is gone.' },
   { title: 'No-shows with no follow-up', detail: 'A no-show who doesn\'t hear from you is a lost client. A no-show who gets a follow-up is a re-booking opportunity.' },
   { title: 'Clients lapse and never return', detail: 'If a client goes 8 weeks without booking, the odds of them returning drop dramatically. Nobody is reaching out to bring them back.' },

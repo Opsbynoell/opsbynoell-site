@@ -8,6 +8,7 @@ import { ArrowRight, Check, Phone, X } from 'lucide-react';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 
+const stats = [
   { value: '85%', label: 'Of callers never call back after voicemail' },
   { value: '$500–$2K', label: 'Revenue per missed med spa appointment' },
   { value: '2 weeks', label: 'To full automation' },

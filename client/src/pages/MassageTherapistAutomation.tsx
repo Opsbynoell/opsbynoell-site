@@ -8,6 +8,7 @@ import { ArrowRight, Check, Phone, Quote, X } from 'lucide-react';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 
+const heroStats = [
   { value: '85%', label: 'Of callers never call back after voicemail' },
   { value: '75%', label: 'No-show reduction in 2 weeks' },
   { value: '2 weeks', label: 'To full automation' },

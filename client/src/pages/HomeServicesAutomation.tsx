@@ -8,6 +8,7 @@ import { ArrowRight, Check, X, Clock, Phone, Calendar } from 'lucide-react';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 
+const problems = [
   { title: 'No system to capture after-hours leads', detail: 'After-hours inquiries go unanswered until morning. By then, someone else has already won the job.' },
   { title: 'Cold estimates that never convert', detail: 'You sent 20 estimates last month. Half never responded. Nobody followed up. That revenue is gone.' },
   { title: 'No review requests after completed jobs', detail: 'You do great work. The customer is happy. They never leave a review. You start every new lead with a blank reputation.' },
