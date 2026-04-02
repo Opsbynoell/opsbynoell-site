@@ -50,7 +50,7 @@ function isHumanHandoffRequest(input: string): boolean {
   return HUMAN_HANDOFF_KEYWORDS.some(kw => lower.includes(kw));
 }
 
-const HUMAN_HANDOFF_RESPONSE = "Totally understand. I'll flag this for Nikki right now and she'll be in touch soon. You're also welcome to grab a time directly at opsbynoell.com/book if that's easier.";
+const HUMAN_HANDOFF_RESPONSE = "Of course. Let me get Nikki on this for you. She'll reach out shortly. You can also grab a time directly at opsbynoell.com/book if that's easier.";
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
