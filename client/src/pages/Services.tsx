@@ -267,7 +267,7 @@ export default function Services() {
             </div>
           
           
-            <h1 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2.75rem, 6vw, 4.5rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.03em', marginBottom: '1.5rem' }}>
+            <h1 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.75rem, 5vw, 3.5rem)', fontWeight: 800, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.03em', marginBottom: '1.5rem' }}>
               Missed calls answered.{' '}
               <GradientText>Leads followed up.</GradientText>
             </h1>
@@ -336,7 +336,7 @@ export default function Services() {
         <div className="container" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <SectionBadge>The Full Service Stack</SectionBadge>
-            <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
+            <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.375rem, 4vw, 2.5rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
               Seven systems. <GradientText>One integrated operation.</GradientText>
             </h2>
             <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1.0625rem', color: '#b8b6b3', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
@@ -374,7 +374,7 @@ export default function Services() {
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <SectionBadge>Who We Serve</SectionBadge>
-            <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
+            <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.375rem, 4vw, 2.5rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
               Built for <GradientText>local service businesses.</GradientText>
             </h2>
             <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1.0625rem', color: '#b8b6b3', maxWidth: '500px', margin: '0 auto', lineHeight: 1.7 }}>
@@ -414,7 +414,7 @@ export default function Services() {
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <SectionBadge>How We Work Together</SectionBadge>
-            <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
+            <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.375rem, 4vw, 2.5rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
               Start with what matters most. <GradientText>Scale from there.</GradientText>
             </h2>
             <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1.0625rem', color: '#b8b6b3', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
@@ -465,7 +465,7 @@ export default function Services() {
         <div className="container" style={{ maxWidth: '720px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <SectionBadge>FAQ</SectionBadge>
-            <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.02em' }}>
+            <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.375rem, 4vw, 2.5rem)', fontWeight: 700, color: '#ffffff', lineHeight: 1.7, letterSpacing: '-0.02em' }}>
               Common questions, <GradientText>honest answers.</GradientText>
             </h2>
           </div>
