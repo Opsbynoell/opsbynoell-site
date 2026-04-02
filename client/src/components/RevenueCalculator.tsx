@@ -24,7 +24,7 @@ interface SliderProps {
 function Slider({ label, sublabel, value, min, max, step, unit = '', onChange }: SliderProps) {
   const pct = ((value - min) / (max - min)) * 100;
   return (
-    <div style={{ marginBottom: '1rem' }}>
+    <div style={{ marginBottom: '0.625rem' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.5rem' }}>
         <div>
           <span style={{
@@ -203,7 +203,7 @@ export default function RevenueCalculator() {
   const costs = calc();
 
   return (
-    <section style={{ backgroundColor: '#0A0A0A', padding: '5rem 0', position: 'relative', overflow: 'hidden', borderTop: '1px solid #1A1A1A', borderBottom: '1px solid #1A1A1A' }}>
+    <section style={{ backgroundColor: '#0A0A0A', padding: '3rem 0', position: 'relative', overflow: 'hidden', borderTop: '1px solid #1A1A1A', borderBottom: '1px solid #1A1A1A' }}>
       {/* Top purple glow line */}
       <div style={{
         position: 'absolute', top: 0, left: 0, right: 0, height: '1px',
@@ -213,7 +213,7 @@ export default function RevenueCalculator() {
       <div className="container">
 
         {/* Header */}
-        <div style={{ marginBottom: '3rem', maxWidth: '560px' }}>
+        <div style={{ marginBottom: '1.75rem', maxWidth: '560px' }}>
           <p className="eyebrow" style={{ marginBottom: '0.75rem' }}>
             The Cost of Waiting
           </p>
@@ -586,5 +586,7 @@ export default function RevenueCalculator() {
     </section>
   );
 }
+
+
 
 
