@@ -584,7 +584,7 @@ export default function Home() {
               { audience: 'Dental Offices', line: 'Your front desk is overwhelmed. Your recall list is growing. Something has to give.' },
             ].map(({ audience, line }) => (
               <div key={audience} style={{
-                background: '#F7EDE8',
+                background: '#FFFFFF',
                 borderLeft: '3px solid #0CA2A2',
                 borderRadius: '0 8px 8px 0',
                 padding: '1.75rem',
@@ -683,7 +683,7 @@ export default function Home() {
 
             {/* Right — metrics panel */}
             <div style={{
-              background: '#F7EDE8',
+              background: '#FFFFFF',
               borderRadius: '16px',
               padding: '2rem',
             }}>
@@ -787,7 +787,7 @@ export default function Home() {
                 <div
                   key={product.title}
                   style={{
-                    background: '#F7EDE8',
+                    background: '#FFFFFF',
                     border: '1px solid #E8E8E8',
                     borderRadius: '12px',
                     padding: '2rem',

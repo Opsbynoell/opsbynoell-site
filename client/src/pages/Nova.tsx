@@ -214,7 +214,7 @@ export default function Nova() {
                 <div
                   key={feat.title}
                   style={{
-                    background: '#F7EDE8', border: '1px solid #E8E8E8',
+                    background: '#FFFFFF', border: '1px solid #E8E8E8',
                     borderRadius: '12px', padding: '2rem',
                     transition: 'box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease',
                   }}
@@ -306,7 +306,7 @@ export default function Nova() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }} className="pricing-grid">
             {/* Standalone */}
             <div style={{
-              background: '#F7EDE8', border: '1px solid #E8E8E8',
+              background: '#FFFFFF', border: '1px solid #E8E8E8',
               borderRadius: '16px', padding: '2.5rem', textAlign: 'left',
             }}>
               <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.8125rem', fontWeight: 600, color: '#7C5CFC', letterSpacing: '0.08em', textTransform: 'uppercase' as const, marginBottom: '0.75rem' }}>
