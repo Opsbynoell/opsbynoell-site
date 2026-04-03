@@ -65,7 +65,7 @@ const BOOKING_LINK = 'https://api.leadconnectorhq.com/widget/booking/hxFAP5dMiIq
 
 export default function HomeServicesAutomation() {
   return (
-    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#FFF5F0', minHeight: '100vh' }}>
       <Nav />
 
       {/* ── HERO ── */}
@@ -158,7 +158,7 @@ export default function HomeServicesAutomation() {
       <section style={{ padding: '4rem 0', borderTop: '1px solid #E5E5E5', borderBottom: '1px solid #E5E5E5' }}>
         <div className="container" style={{ maxWidth: '720px', margin: '0 auto' }}>
           <div style={{
-            background: '#FAFAF8',
+            background: '#F7EDE8',
             border: '1px solid #E5E5E5',
             borderLeft: '4px solid #0CA2A2',
             borderRadius: '12px',

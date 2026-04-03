@@ -12,7 +12,7 @@ import Footer from '@/components/Footer';
 function SectionBadge({ children }: { children: React.ReactNode }) {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.25rem' }}>
-      <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.5rem 1.25rem', background: '#FFFFFF', border: '1px solid #E5E5E5', borderRadius: '4px', fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, color: '#0CA2A2', letterSpacing: '0.1em', textTransform: 'uppercase' as const }}>
+      <span className="section-label" style={{ textAlign: 'center' }}>
         {children}
       </span>
     </div>
@@ -179,7 +179,7 @@ export default function Services() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#FFF5F0', minHeight: '100vh' }}>
       <Nav />
 
       {/* ═══ HERO ═══════════════════════════════════════════════════ */}
@@ -236,7 +236,7 @@ export default function Services() {
       <section style={{ padding: '4rem 0', borderTop: '1px solid #E5E5E5', borderBottom: '1px solid #E5E5E5' }}>
         <div className="container" style={{ maxWidth: '720px', margin: '0 auto' }}>
           <div style={{
-            background: '#FAFAF8',
+            background: '#F7EDE8',
             border: '1px solid #E5E5E5',
             borderLeft: '4px solid #0CA2A2',
             borderRadius: '12px',
@@ -261,7 +261,7 @@ export default function Services() {
 
       {/* ═══ SERVICE CARDS — compact 7-service overview ══════════════ */}
       <div className="reveal">
-      <section style={{ borderTop: '1px solid #E5E5E5', borderBottom: '1px solid #E5E5E5', background: '#FAFAF8' }}>
+      <section style={{ borderTop: '1px solid #E5E5E5', borderBottom: '1px solid #E5E5E5', background: '#F7EDE8' }}>
         <div className="container" style={{ paddingTop: 'clamp(2.5rem, 6vw, 6rem)', paddingBottom: 'clamp(2.5rem, 6vw, 6rem)' }}>
           <div style={{ textAlign: 'center', marginBottom: 'clamp(1.5rem, 4vw, 4rem)' }}>
             <SectionBadge>The Full Service Stack</SectionBadge>
@@ -339,7 +339,7 @@ export default function Services() {
 
       {/* ═══ PACKAGES / PRICING ═════════════════════════════════════ */}
       <div className="reveal">
-      <section id="pricing" style={{ padding: 'clamp(2.5rem, 6vw, 6rem) 0', background: '#FAFAF8', borderTop: '1px solid #E5E5E5', borderBottom: '1px solid #E5E5E5' }}>
+      <section id="pricing" style={{ padding: 'clamp(2.5rem, 6vw, 6rem) 0', background: '#F7EDE8', borderTop: '1px solid #E5E5E5', borderBottom: '1px solid #E5E5E5' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 'clamp(1.5rem, 4vw, 4rem)' }}>
             <SectionBadge>How We Work Together</SectionBadge>

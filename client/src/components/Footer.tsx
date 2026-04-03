@@ -11,7 +11,7 @@ import { Instagram, Linkedin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#FAFAF8', borderTop: '1px solid #E5E5E5' }}>
+    <footer style={{ backgroundColor: '#F7EDE8', borderTop: '1px solid #E5E5E5' }}>
       <div className="container" style={{ paddingTop: '3.75rem', paddingBottom: '3.75rem' }}>
         {/* Row 1 */}
         <div style={{

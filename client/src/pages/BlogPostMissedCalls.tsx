@@ -36,7 +36,7 @@ const POST = {
 
 export default function BlogPostMissedCalls() {
   return (
-    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#FFF5F0', minHeight: '100vh' }}>
       <Nav />
 
       {/* ═══ ARTICLE HERO ═══════════════════════════════════════════ */}
@@ -79,7 +79,7 @@ export default function BlogPostMissedCalls() {
 
           <FadeItem delay={0.2}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', paddingTop: '1.5rem', borderTop: '1px solid rgba(12,162,162,0.12)' }}>
-              <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'linear-gradient(135deg, #0CA2A2, #7C3AED)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Nicholas', serif", fontSize: '0.875rem', fontWeight: 700, color: '#ffffff', flexShrink: 0 }}>
+              <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#0CA2A2', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Nicholas', serif", fontSize: '0.875rem', fontWeight: 700, color: '#ffffff', flexShrink: 0 }}>
                 N
               </div>
               <div>
@@ -185,7 +185,7 @@ export default function BlogPostMissedCalls() {
       </section>
 
       {/* ═══ CTA BANNER ════════════════════════════════════════════ */}
-      <section style={{ padding: '5rem 0', borderTop: '1px solid #E5E5E5', background: '#FAFAF8' }}>
+      <section style={{ padding: '5rem 0', borderTop: '1px solid #E5E5E5', background: '#F7EDE8' }}>
         <div className="container" style={{ maxWidth: '660px', margin: '0 auto', textAlign: 'center' }}>
           <FadeItem delay={0}>
             <span style={{ display: 'inline-block', padding: '0.3rem 0.875rem', background: '#F0FAFA', border: '1px solid #E5E5E5', borderRadius: '100px', fontFamily: "'Nicholas', serif", fontSize: '0.75rem', fontWeight: 600, color: '#0CA2A2', letterSpacing: '0.08em', textTransform: 'uppercase' as const, marginBottom: '1.5rem' }}>

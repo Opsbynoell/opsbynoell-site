@@ -21,7 +21,7 @@ const H2_STYLE: React.CSSProperties = {
 };
 
 const P_STYLE: React.CSSProperties = {
-  fontFamily: "'Sora', sans-serif",
+  fontFamily: "'Nicholas', serif",
   fontSize: '0.9375rem',
   color: '#868583',
   lineHeight: 1.8,
@@ -29,7 +29,7 @@ const P_STYLE: React.CSSProperties = {
 };
 
 const UL_STYLE: React.CSSProperties = {
-  fontFamily: "'Sora', sans-serif",
+  fontFamily: "'Nicholas', serif",
   fontSize: '0.9375rem',
   color: '#868583',
   lineHeight: 1.8,
@@ -38,11 +38,11 @@ const UL_STYLE: React.CSSProperties = {
 };
 
 const CALLOUT_STYLE: React.CSSProperties = {
-  fontFamily: "'Sora', sans-serif",
+  fontFamily: "'Nicholas', serif",
   fontSize: '0.9375rem',
   color: 'rgba(245,240,235,0.8)',
   lineHeight: 1.8,
-  backgroundColor: 'rgba(167,139,250,0.06)',
+  backgroundColor: 'rgba(12, 162, 162,0.06)',
   borderLeft: '3px solid #0CA2A2',
   padding: '1rem 1.25rem',
   marginBottom: '1rem',
@@ -69,7 +69,7 @@ export default function TermsOfService() {
           }}>
             Terms of Service
           </h1>
-          <p style={{ fontFamily: "'Sora', sans-serif", fontSize: '0.9375rem', color: '#868583' }}>
+          <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9375rem', color: '#868583' }}>
             Last updated: March 25, 2026
           </p>
         </div>

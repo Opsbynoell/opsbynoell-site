@@ -106,7 +106,7 @@ function FaqAccordion({ items }: { items: FaqItem[] }) {
 
 export default function Nova() {
   return (
-    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#FFF5F0', minHeight: '100vh' }}>
       <Nav />
 
       {/* ─── HERO — very light purple tint ─── */}
@@ -348,7 +348,7 @@ export default function Nova() {
       </section>
 
       {/* ─── FAQ ─── */}
-      <section style={{ background: '#FAFAF8', padding: '5rem 0' }}>
+      <section style={{ background: '#F7EDE8', padding: '5rem 0' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <span style={{
@@ -371,7 +371,7 @@ export default function Nova() {
       </section>
 
       {/* ─── CTA ─── */}
-      <section style={{ background: '#FAFAF8', padding: '6rem 0', textAlign: 'center' }}>
+      <section style={{ background: '#F7EDE8', padding: '6rem 0', textAlign: 'center' }}>
         <div className="container" style={{ maxWidth: '640px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: "'Nicholas', serif",

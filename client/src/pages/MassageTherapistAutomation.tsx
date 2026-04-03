@@ -121,7 +121,7 @@ const pricingTiers = [
 
 export default function MassageTherapistAutomation() {
   return (
-    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#FFF5F0', minHeight: '100vh' }}>
       <Nav />
 
       {/* Hero */}
@@ -265,7 +265,7 @@ export default function MassageTherapistAutomation() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
             {industryStats.map((s, i) => (
               <div className="reveal">
-                <div style={{ padding: '2.5rem 2rem', background: '#FAFAF8', border: '1px solid #E8E8E8', borderRadius: '12px', textAlign: 'center' }}>
+                <div style={{ padding: '2.5rem 2rem', background: '#F7EDE8', border: '1px solid #E8E8E8', borderRadius: '12px', textAlign: 'center' }}>
                   <div style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2.25rem, 5vw, 3rem)', fontWeight: 800, color: '#0CA2A2', marginBottom: '0.75rem', lineHeight: 1 }}>{s.stat}</div>
                   <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9375rem', color: '#555555', lineHeight: 1.65 }}>{s.context}</p>
                 </div>
@@ -296,7 +296,7 @@ export default function MassageTherapistAutomation() {
               <div className="reveal">
                 <div style={{ padding: '2.25rem', background: tier.highlight ? 'rgba(12,162,162,0.08)' : 'rgba(12,162,162,0.03)', border: tier.highlight ? '1px solid rgba(12,162,162,0.35)' : '1px solid rgba(12,162,162,0.12)', borderRadius: '12px', height: '100%', display: 'flex', flexDirection: 'column', position: 'relative' as const }}>
                   {tier.highlight && (
-                    <div style={{ position: 'absolute' as const, top: '-13px', left: '50%', transform: 'translateX(-50%)', background: 'linear-gradient(90deg, #0CA2A2, #0CA2A2)', borderRadius: '99px', padding: '0.25rem 1rem', fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, color: '#0a0614', letterSpacing: '0.08em', textTransform: 'uppercase' as const, whiteSpace: 'nowrap' as const }}>
+                    <div style={{ position: 'absolute' as const, top: '-13px', left: '50%', transform: 'translateX(-50%)', background: 'linear-gradient(90deg, #0CA2A2, #0CA2A2)', borderRadius: '99px', padding: '0.25rem 1rem', fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, color: '#FFFFFF', letterSpacing: '0.08em', textTransform: 'uppercase' as const, whiteSpace: 'nowrap' as const }}>
                       Most Popular
                     </div>
                   )}

@@ -30,14 +30,14 @@ function Slider({ label, sublabel, value, min, max, step, unit = '', onChange }:
           <span style={{
             fontFamily: "'Nicholas', serif",
             fontSize: '0.8125rem',
-            color: 'rgba(245,240,235,0.7)',
+            color: '#555555',
             letterSpacing: '0.01em',
           }}>{label}</span>
           {sublabel && (
             <span style={{
               fontFamily: "'Nicholas', serif",
               fontSize: '0.6875rem',
-              color: 'rgba(245,240,235,0.35)',
+              color: '#AAAAAA',
               marginLeft: '0.5rem',
             }}>{sublabel}</span>
           )}
@@ -53,7 +53,7 @@ function Slider({ label, sublabel, value, min, max, step, unit = '', onChange }:
           {unit === '$' ? `$${value.toLocaleString()}` : `${value}${unit}`}
         </span>
       </div>
-      <div style={{ position: 'relative', height: '4px', backgroundColor: 'rgba(255,255,255,0.08)', borderRadius: '2px' }}>
+      <div style={{ position: 'relative', height: '4px', backgroundColor: '#E5E5E5', borderRadius: '2px' }}>
         <div style={{
           position: 'absolute',
           left: 0,
@@ -118,7 +118,7 @@ function CostPill({ label, cost, assumption }: CostPillProps) {
           display: 'flex',
           alignItems: 'center',
           gap: '0.5rem',
-          backgroundColor: 'rgba(255,255,255,0.03)',
+          backgroundColor: 'rgba(12,162,162,0.03)',
           border: '1px solid rgba(12,162,162,0.15)',
           borderRadius: '0.375rem',
           padding: '0.625rem 0.875rem',
@@ -133,13 +133,13 @@ function CostPill({ label, cost, assumption }: CostPillProps) {
         }}
         onMouseLeave={e => {
           (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(12,162,162,0.15)';
-          (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'rgba(255,255,255,0.03)';
+          (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'rgba(12,162,162,0.03)';
         }}
       >
         <span style={{
           fontFamily: "'Nicholas', serif",
           fontSize: '0.8125rem',
-          color: 'rgba(245,240,235,0.55)',
+          color: '#555555',
           flexGrow: 1,
         }}>{label}</span>
         <span style={{
@@ -168,7 +168,7 @@ function CostPill({ label, cost, assumption }: CostPillProps) {
           <p style={{
             fontFamily: "'Nicholas', serif",
             fontSize: '0.6875rem',
-            color: 'rgba(245,240,235,0.5)',
+            color: '#555555',
             lineHeight: 1.6,
           }}>{assumption}</p>
         </div>
@@ -203,7 +203,7 @@ export default function RevenueCalculator() {
   const costs = calc();
 
   return (
-    <section style={{ backgroundColor: '#FFFFFF', padding: '5rem 0', position: 'relative', overflow: 'hidden', borderTop: '1px solid #1A1A1A', borderBottom: '1px solid #1A1A1A' }}>
+    <section style={{ backgroundColor: '#F7EDE8', padding: '5rem 0', position: 'relative', overflow: 'hidden', borderTop: '1px solid #E5E5E5', borderBottom: '1px solid #E5E5E5' }}>
       {/* Top purple glow line */}
       <div style={{
         position: 'absolute', top: 0, left: 0, right: 0, height: '1px',
@@ -221,7 +221,7 @@ export default function RevenueCalculator() {
             fontFamily: "'Nicholas', serif",
             fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
             fontWeight: 800,
-            color: '#F5F0EC',
+            color: '#1A1A1A',
             lineHeight: 1.1,
             letterSpacing: '-0.02em',
             marginBottom: '0.875rem',
@@ -231,7 +231,7 @@ export default function RevenueCalculator() {
           <p style={{
             fontFamily: "'Nicholas', serif",
             fontSize: '0.9375rem',
-            color: '#868583',
+            color: '#555555',
             lineHeight: 1.75,
           }}>
             Adjust the sliders to match your business. The estimates update instantly. Click any cost row to see the assumption behind the number.
@@ -318,10 +318,10 @@ export default function RevenueCalculator() {
             <p style={{
               fontFamily: "'Nicholas', serif",
               fontSize: '0.6875rem',
-              color: 'rgba(245,240,235,0.2)',
+              color: '#AAAAAA',
               lineHeight: 1.6,
               marginTop: '1.5rem',
-              borderTop: '1px solid rgba(255,255,255,0.05)',
+              borderTop: '1px solid #E5E5E5',
               paddingTop: '1rem',
             }}>
               These are conservative estimates based on industry averages. A Revenue Audit gives you the precise numbers specific to your business, your market, and your gaps.
@@ -405,7 +405,7 @@ export default function RevenueCalculator() {
                 <p style={{
                   fontFamily: "'Nicholas', serif",
                   fontSize: '0.6875rem',
-                  color: 'rgba(245,240,235,0.3)',
+                  color: '#AAAAAA',
                   marginTop: '0.25rem',
                 }}>
                   per month, conservative estimate
@@ -432,7 +432,7 @@ export default function RevenueCalculator() {
               <p style={{
                 fontFamily: "'Nicholas', serif",
                 fontSize: '0.9375rem',
-                color: '#868583',
+                color: '#555555',
                 lineHeight: 1.75,
                 marginBottom: '1.25rem',
               }}>
@@ -455,7 +455,7 @@ export default function RevenueCalculator() {
                   textDecoration: 'none',
                   transition: 'background-color 0.2s ease',
                 }}
-                onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#9370e8')}
+                onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#0A8F8F')}
                 onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#0CA2A2')}
               >
                 Get My Real Numbers, Free

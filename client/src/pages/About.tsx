@@ -31,7 +31,7 @@ function SectionBadge({ children }: { children: React.ReactNode }) {
     <span style={{
       display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
       padding: '0.375rem 1rem', borderRadius: '99px',
-      border: '1px solid #E5E5E5', background: '#FAFAF8',
+      border: '1px solid #E5E5E5', background: '#F7EDE8',
       fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600,
       letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#0CA2A2',
     }}>
@@ -67,7 +67,7 @@ const differentiators = [
 
 export default function About() {
   return (
-    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#FFF5F0', minHeight: '100vh' }}>
       <Nav />
 
       {/* ─── HERO ─── */}
@@ -215,7 +215,7 @@ export default function About() {
                         letterSpacing: '0.15em', textTransform: 'uppercase',
                         color: '#0CA2A2', border: 'none',
                         padding: '0.25rem 0.625rem', borderRadius: '4px',
-                        background: '#FAFAF8',
+                        background: '#F7EDE8',
                       }}>
                         Signature Promise
                       </span>

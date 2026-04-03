@@ -116,7 +116,7 @@ function FAQSection() {
                     fontFamily: "'Nicholas', serif",
                     fontSize: '0.9375rem',
                     fontWeight: 600,
-                    color: open === i ? '#0CA2A2' : '#F5F0EC',
+                    color: open === i ? '#0CA2A2' : '#1A1A1A',
                     lineHeight: 1.4,
                     transition: 'color 0.2s ease',
                   }}>
@@ -218,7 +218,7 @@ const BUILDS = [
 
 export default function Solutions() {
   return (
-    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#FFF5F0', minHeight: '100vh' }}>
       <Nav />
 
       {/* ─── HERO ─── */}

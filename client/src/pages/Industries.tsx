@@ -79,7 +79,7 @@ const industries = [
 
 export default function Industries() {
   return (
-    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#FFF5F0', minHeight: '100vh' }}>
       <Nav />
 
       {/* ─── HERO ─── */}

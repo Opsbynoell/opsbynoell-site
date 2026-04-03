@@ -5,7 +5,7 @@ import { ArrowRight, Home } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh', backgroundColor: '#FFFFFF', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ backgroundColor: '#FFF5F0', minHeight: '100vh', backgroundColor: '#FFFFFF', display: 'flex', flexDirection: 'column' }}>
       <Nav />
 
       <main style={{

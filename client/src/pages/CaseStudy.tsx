@@ -41,7 +41,7 @@ const built = [
 
 export default function CaseStudy() {
   return (
-    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#FFF5F0', minHeight: '100vh' }}>
       <Nav />
 
       {/* ─── HERO ─── */}
@@ -129,7 +129,7 @@ export default function CaseStudy() {
             </div>
 
             <div className="reveal" style={{
-              background: '#FAFAF8',
+              background: '#F7EDE8',
               border: '1px solid #E8E8E8',
               borderLeft: '3px solid #0CA2A2',
               borderRadius: '8px',
@@ -254,7 +254,7 @@ export default function CaseStudy() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2rem', alignItems: 'start' }} className="lg:grid-cols-2">
             {/* Quote */}
-            <div className="reveal" style={{ background: '#FAFAF8', border: '1px solid #E8E8E8', borderLeft: '3px solid #0CA2A2', borderRadius: '8px', padding: '2.5rem' }}>
+            <div className="reveal" style={{ background: '#F7EDE8', border: '1px solid #E8E8E8', borderLeft: '3px solid #0CA2A2', borderRadius: '8px', padding: '2.5rem' }}>
               <p style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.125rem, 2vw, 1.5rem)', fontWeight: 600, color: '#1A1A1A', lineHeight: 1.55, marginBottom: '1.5rem' }}>
                 "I used to dread Mondays because there would always be gaps I did not expect. Now I open my calendar and it is just full. The reminders go out and people show up. I do not think about it anymore."
               </p>
@@ -379,7 +379,7 @@ export default function CaseStudy() {
 
             {/* After */}
             <div className="reveal" style={{
-              background: '#FAFAF8',
+              background: '#F7EDE8',
               borderLeft: '2px solid rgba(12,162,162,0.4)',
               padding: '2.5rem', height: '100%',
             }}>

@@ -108,7 +108,7 @@ const PACKAGES = [
 
 export default function DentalAutomation() {
   return (
-    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#FFF5F0', minHeight: '100vh' }}>
       <Nav />
 
       {/* ═══ HERO ═══════════════════════════════════════════════════ */}
@@ -176,7 +176,7 @@ export default function DentalAutomation() {
             </div>
             {/* Solutions */}
             <div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0', background: '#FAFAF8', border: '1px solid #E8E8E8', borderRadius: '12px', overflow: 'hidden' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0', background: '#F7EDE8', border: '1px solid #E8E8E8', borderRadius: '12px', overflow: 'hidden' }}>
                 {solutions.map((s, i) => (
                   <div key={i} className="reveal" style={{ padding: '1.25rem 1.5rem', borderBottom: i < solutions.length - 1 ? '1px solid rgba(12,162,162,0.08)' : 'none', display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
                     <div style={{ width: '22px', height: '22px', borderRadius: '6px', background: '#E5E5E5', border: '1px solid #E5E5E5', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
@@ -197,7 +197,7 @@ export default function DentalAutomation() {
 
       {/* ═══ WHAT WE BUILD ══════════════════════════════════════════ */}
       <div className="reveal">
-      <section style={{ padding: 'clamp(2rem, 4vw, 2.5rem) 0', borderTop: '1px solid #E5E5E5', background: '#FAFAF8' }}>
+      <section style={{ padding: 'clamp(2rem, 4vw, 2.5rem) 0', borderTop: '1px solid #E5E5E5', background: '#F7EDE8' }}>
         <div className="container">
           <div className="reveal" style={{ textAlign: 'center', marginBottom: 'clamp(1.25rem, 3vw, 3rem)' }}>
             <SectionBadge>What We Build For You</SectionBadge>
@@ -241,7 +241,7 @@ export default function DentalAutomation() {
       <section style={{ padding: '4rem 0', borderTop: '1px solid #E5E5E5', borderBottom: '1px solid #E5E5E5' }}>
         <div className="container" style={{ maxWidth: '720px', margin: '0 auto' }}>
           <div className="reveal" style={{
-            background: '#FAFAF8',
+            background: '#F7EDE8',
             border: '1px solid #E5E5E5',
             borderLeft: '4px solid #0CA2A2',
             borderRadius: '12px',

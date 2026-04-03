@@ -180,7 +180,7 @@ export default function RevenueCalculatorPage() {
   const interpretation = getInterpretation(results.totalLeak);
 
   return (
-    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#FFF5F0', minHeight: '100vh' }}>
       <Nav />
 
       {/* ═══ HERO ══════════════════════════════════════════════════ */}
@@ -256,7 +256,7 @@ export default function RevenueCalculatorPage() {
                 style={{
                   width: '100%',
                   padding: '1.125rem',
-                  background: 'linear-gradient(135deg, #7C3AED 0%, #0CA2A2 100%)',
+                  background: '#FFF5F0',
                   border: 'none',
                   borderRadius: '12px',
                   fontFamily: "'Nicholas', serif",

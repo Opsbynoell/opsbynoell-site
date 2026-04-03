@@ -21,8 +21,7 @@ function FadeItem({ children, delay = 0, style = {} }: { children: React.ReactNo
 
 function SectionBadge({ children }: { children: React.ReactNode }) {
   return (
-    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.375rem 1rem', borderRadius: '99px', border: '1px solid #E5E5E5', background: '#FAFAF8', fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#0CA2A2' }}>
-      <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#0CA2A2', display: 'inline-block' }} />
+    <span className="section-label">
       {children}
     </span>
   );
@@ -69,7 +68,7 @@ const afterItems = [
 
 export default function MassageTherapistCaseStudy() {
   return (
-    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#FFF5F0', minHeight: '100vh' }}>
       <Nav />
 
       {/* ─── HERO ─── */}
@@ -79,7 +78,7 @@ export default function MassageTherapistCaseStudy() {
           <FadeItem delay={0}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
               <SectionBadge>Case Study · Laguna Niguel, CA</SectionBadge>
-              <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.625rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#FFFFFF', background: '#0CA2A2', padding: '0.3rem 0.875rem', borderRadius: '99px' }}>
+              <span className="section-label">
                 Founding Client Partner
               </span>
             </div>

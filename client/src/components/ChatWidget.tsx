@@ -281,8 +281,10 @@ export default function ChatWidget() {
     return () => clearTimeout(timer);
   }, [location, isOpen, proactiveTriggered]);
 
-  // Auto-open after 45 seconds if all conditions are met
+  // Auto-open after 90 seconds — only on /services and /nova pages
   useEffect(() => {
+    const allowedPages = ['/services', '/nova'];
+    if (!allowedPages.includes(location)) return;
     if (autoOpenTriggered) return;
     if (hasManuallyClosed) return;
     if (hasOpenedOnce) return;
@@ -305,10 +307,10 @@ export default function ChatWidget() {
         }]);
         return true;
       });
-    }, 45000);
+    }, 90000);
 
     return () => clearTimeout(timer);
-  }, [autoOpenTriggered, hasManuallyClosed, hasOpenedOnce]);
+  }, [autoOpenTriggered, hasManuallyClosed, hasOpenedOnce, location]);
 
   // Outside-click: only collapse if the visitor has NOT yet sent a message.
   // Once hasEngaged is true, the widget stays open until the X button is clicked.
@@ -546,10 +548,10 @@ export default function ChatWidget() {
         {hasUnread && !isOpen && (
           <div
             style={{
-              backgroundColor: '#FAFAF8',
+              backgroundColor: '#F7EDE8',
               borderWidth: '1px',
               borderStyle: 'solid',
-              borderColor: '#2A2A2A',
+              borderColor: '#E5E5E5',
               padding: '0.875rem 1rem',
               maxWidth: '220px',
               borderRadius: '12px',
@@ -562,7 +564,7 @@ export default function ChatWidget() {
             <p style={{
               fontFamily: "'Nicholas', serif",
               fontSize: '0.8125rem',
-              color: '#F5F0EC',
+              color: '#1A1A1A',
               lineHeight: 1.5,
               marginBottom: '0.375rem',
             }}>
@@ -807,7 +809,7 @@ export default function ChatWidget() {
                   onMouseEnter={e => {
                     (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'rgba(12,162,162,0.08)';
                     (e.currentTarget as HTMLButtonElement).style.borderColor = '#0CA2A2';
-                    (e.currentTarget as HTMLButtonElement).style.color = '#F5F0EC';
+                    (e.currentTarget as HTMLButtonElement).style.color = '#0CA2A2';
                   }}
                   onMouseLeave={e => {
                     (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'transparent';
@@ -864,7 +866,7 @@ export default function ChatWidget() {
           {/* Book CTA after chat */}
           {stage === 'chat' && messages.length >= 4 && !isTyping && (
             <div style={{
-              backgroundColor: '#FAFAF8',
+              backgroundColor: '#F7EDE8',
               borderWidth: '1px',
               borderStyle: 'solid',
               borderColor: '#E5E5E5',
@@ -975,7 +977,7 @@ export default function ChatWidget() {
         {isCapturing && (
           <div style={{
             padding: '0.375rem 0.75rem 0',
-            backgroundColor: '#FAFAF8',
+            backgroundColor: '#F7EDE8',
             textAlign: 'center',
             flexShrink: 0,
           }}>
@@ -991,7 +993,7 @@ export default function ChatWidget() {
         {/* Footer */}
         <div style={{
           padding: '0.5rem 0.75rem',
-          backgroundColor: '#FAFAF8',
+          backgroundColor: '#F7EDE8',
           borderTop: '1px solid #E5E5E5',
           textAlign: 'center',
           flexShrink: 0,

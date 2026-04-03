@@ -98,7 +98,7 @@ const PACKAGES = [
 
 export default function SalonAutomation() {
   return (
-    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#FFF5F0', minHeight: '100vh' }}>
       <Nav />
 
       {/* ── Hero ── */}
@@ -243,7 +243,7 @@ export default function SalonAutomation() {
       <section style={{ padding: '4rem 0', borderTop: '1px solid #E5E5E5', borderBottom: '1px solid #E5E5E5' }}>
         <div className="container" style={{ maxWidth: '720px', margin: '0 auto' }}>
           <div style={{
-            background: '#FAFAF8',
+            background: '#F7EDE8',
             border: '1px solid #E5E5E5',
             borderLeft: '4px solid #0CA2A2',
             borderRadius: '12px',
@@ -267,7 +267,7 @@ export default function SalonAutomation() {
       </div>
 
       <div className="reveal">
-      <section id="pricing" style={{ padding: 'clamp(2.5rem, 6vw, 6rem) 0', background: '#FAFAF8', borderTop: '1px solid #E5E5E5', borderBottom: '1px solid #E5E5E5' }}>
+      <section id="pricing" style={{ padding: 'clamp(2.5rem, 6vw, 6rem) 0', background: '#F7EDE8', borderTop: '1px solid #E5E5E5', borderBottom: '1px solid #E5E5E5' }}>
         <div className="container">
           <div className="reveal">
             <div style={{ textAlign: 'center', marginBottom: 'clamp(1.5rem, 4vw, 4rem)' }}>

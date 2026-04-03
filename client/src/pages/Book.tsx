@@ -49,7 +49,7 @@ export default function Book() {
   };
 
   return (
-    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#FFF5F0', minHeight: '100vh' }}>
       <Nav />
 
       {/* ─── COMPACT CENTERED HERO ─── */}
@@ -184,7 +184,7 @@ export default function Book() {
       <section style={{ padding: 'clamp(2rem, 4vw, 2.5rem) 0', borderTop: '1px solid #E5E5E5', borderBottom: '1px solid #E5E5E5' }}>
         <div className="container" style={{ maxWidth: '720px', margin: '0 auto' }}>
           <div style={{
-            background: '#FAFAF8',
+            background: '#F7EDE8',
             border: '1px solid #E5E5E5',
             borderLeft: '4px solid #0CA2A2',
             borderRadius: '12px',

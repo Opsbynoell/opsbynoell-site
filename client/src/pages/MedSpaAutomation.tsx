@@ -128,7 +128,7 @@ const packages = [
 
 export default function MedSpaAutomation() {
   return (
-    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#FFF5F0', minHeight: '100vh' }}>
       <Nav />
 
       {/* Hero */}
@@ -336,7 +336,7 @@ export default function MedSpaAutomation() {
       <section style={{ padding: '4rem 0', borderTop: '1px solid #E5E5E5', borderBottom: '1px solid #E5E5E5' }}>
         <div className="container" style={{ maxWidth: '720px', margin: '0 auto' }}>
           <div style={{
-            background: '#FAFAF8',
+            background: '#F7EDE8',
             border: '1px solid #E5E5E5',
             borderLeft: '4px solid #0CA2A2',
             borderRadius: '12px',
@@ -378,7 +378,7 @@ export default function MedSpaAutomation() {
               <div className="reveal">
                 <div style={{ padding: '2.25rem', background: pkg.featured ? 'linear-gradient(135deg, rgba(12,162,162,0.12) 0%, rgba(12,162,162,0.06) 100%)' : 'rgba(12,162,162,0.03)', border: pkg.featured ? '1px solid rgba(12,162,162,0.4)' : '1px solid rgba(12,162,162,0.12)', borderRadius: '12px', height: '100%', display: 'flex', flexDirection: 'column', position: 'relative' }}>
                   {pkg.featured && (
-                    <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: 'linear-gradient(90deg, #0CA2A2, #0CA2A2)', borderRadius: '99px', padding: '0.25rem 1rem', fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: '#0a0010', whiteSpace: 'nowrap' }}>
+                    <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: 'linear-gradient(90deg, #0CA2A2, #0CA2A2)', borderRadius: '99px', padding: '0.25rem 1rem', fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: '#FFFFFF', whiteSpace: 'nowrap' }}>
                       Most Popular
                     </div>
                   )}

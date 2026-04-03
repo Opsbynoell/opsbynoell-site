@@ -15,7 +15,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { Phone, MessageSquare, Calendar, Star, Filter, RefreshCw, ArrowRight, Check, Play } from 'lucide-react';
+import { Phone, MessageSquare, Calendar, Star, Filter, RefreshCw, ArrowRight, Check } from 'lucide-react';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 
@@ -164,7 +164,7 @@ const products = [
     icon: Phone,
     iconBg: '#0CA2A2',
     title: 'Missed Call Recovery',
-    description: "Every missed call gets an instant text-back. The lead that used to vanish now stays warm — and you never even know it happened. That's the point.",
+    description: "Every missed call gets an instant text-back. The lead that used to vanish now stays warm. You never even know it happened. That's the point.",
     link: null,
   },
   {
@@ -185,14 +185,14 @@ const products = [
     icon: Star,
     iconBg: '#F5A623',
     title: 'Review Generation',
-    description: "After every session, the right message goes out at the right time. Santa went from 0 to 40+ Google reviews in 8 weeks — without asking a single client herself.",
+    description: "After every session, the right message goes out at the right time. Santa went from 0 to 40+ Google reviews in 8 weeks, without asking a single client herself.",
     link: null,
   },
   {
     icon: Filter,
     iconBg: '#3B82F6',
     title: 'Lead Pipeline',
-    description: "No more checking three apps, two inboxes, and a voicemail. Every lead — call, DM, web form — one place. Nothing falls through.",
+    description: "No more checking three apps, two inboxes, and a voicemail. Every lead, every call, every DM, every web form. One place. Nothing falls through.",
     link: null,
   },
   {
@@ -212,7 +212,7 @@ export default function Home() {
 
       {/* ═══ SECTION 1: HERO ════════════════════════════════════════ */}
       <section style={{
-        background: '#FFFFFF',
+        background: '#FFF5F0',
         paddingTop: '120px',
         paddingBottom: '5rem',
         minHeight: '100vh',
@@ -225,7 +225,7 @@ export default function Home() {
             <div className="hero-text">
               {/* Section label */}
               <span className="section-label" style={{ marginBottom: '1.25rem', animationFillMode: 'both', animation: 'fadeIn 0.5s ease both 0s' }}>
-                Practice Growth System
+                Done-for-You Front Desk + Follow-Up System
               </span>
 
               {/* H1 */}
@@ -251,25 +251,26 @@ export default function Home() {
                 color: '#555555',
                 lineHeight: 1.6,
                 maxWidth: '480px',
+                marginBottom: '1rem',
+                animation: 'fadeIn 0.5s ease both 0.4s',
+                animationFillMode: 'both',
+                opacity: 0,
+              }}>
+                We build, install, and manage your entire front desk and follow-up system. Every missed call recovered. Every lead answered. Your calendar stays full. You stay focused on the client in front of you.
+              </p>
+              <p style={{
+                fontFamily: "'Nicholas', serif",
+                fontSize: '0.9375rem',
+                color: '#0CA2A2',
+                fontWeight: 600,
+                lineHeight: 1.6,
+                maxWidth: '480px',
                 marginBottom: '2rem',
                 animation: 'fadeIn 0.5s ease both 0.4s',
                 animationFillMode: 'both',
                 opacity: 0,
               }}>
-                You're with a client. Your phone rings. Nobody picks up. That lead? Gone.
-              </p>
-              <p style={{
-                fontFamily: "'Nicholas', serif",
-                fontSize: '1.125rem',
-                color: '#555555',
-                lineHeight: 1.6,
-                maxWidth: '480px',
-                marginBottom: '2.5rem',
-                animation: 'fadeIn 0.5s ease both 0.4s',
-                animationFillMode: 'both',
-                opacity: 0,
-              }}>
-                Ops by Noell runs your scheduling, follow-ups, and client communication automatically — so your practice is always responding, even when you're not.
+                Built for massage therapists, med spas, salons, dental practices, and estheticians in Orange County.
               </p>
 
               {/* CTAs */}
@@ -282,30 +283,41 @@ export default function Home() {
                 animationFillMode: 'both',
                 opacity: 0,
               }}>
-                <a
-                  href="/book"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    background: '#0CA2A2',
-                    color: '#FFFFFF',
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0.5rem' }}>
+                  <a
+                    href="/book"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      background: '#0CA2A2',
+                      color: '#FFFFFF',
+                      fontFamily: "'Nicholas', serif",
+                      fontSize: '1rem',
+                      fontWeight: 600,
+                      padding: '0 1.75rem',
+                      height: '48px',
+                      borderRadius: '8px',
+                      textDecoration: 'none',
+                      transition: 'background-color 0.15s ease',
+                    }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = '#0A8F8F'; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = '#0CA2A2'; }}
+                  >
+                    Get Your Free Audit
+                  </a>
+                  <p style={{
                     fontFamily: "'Nicholas', serif",
-                    fontSize: '1rem',
-                    fontWeight: 600,
-                    padding: '0 1.75rem',
-                    height: '48px',
-                    borderRadius: '8px',
-                    textDecoration: 'none',
-                    transition: 'background-color 0.15s ease',
-                  }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = '#0A8F8F'; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = '#0CA2A2'; }}
-                >
-                  Get Your Free Audit
-                </a>
+                    fontSize: '0.875rem',
+                    color: '#AAAAAA',
+                    marginTop: '0.25rem',
+                  }}>
+                    Case study: 4 no-shows/week to less than 1 in 14 days (Laguna Niguel massage practice)
+                  </p>
+                </div>
                 <a
-                  href="/nova"
+                  href="#case-study"
+                  onClick={(e) => { e.preventDefault(); document.getElementById('case-study')?.scrollIntoView({ behavior: 'smooth' }); }}
                   style={{
                     fontFamily: "'Nicholas', serif",
                     fontSize: '0.9375rem',
@@ -313,9 +325,10 @@ export default function Home() {
                     color: '#0CA2A2',
                     textDecoration: 'underline',
                     textUnderlineOffset: '3px',
+                    cursor: 'pointer',
                   }}
                 >
-                  Watch how Nova works →
+                  See what you're missing
                 </a>
               </div>
             </div>
@@ -330,7 +343,7 @@ export default function Home() {
 
       {/* ═══ SECTION 2: SOCIAL PROOF BAR ════════════════════════════ */}
       <section style={{
-        background: '#FAFAF8',
+        background: '#F7EDE8',
         padding: '5rem 0',
         animation: 'fadeInUp 0.6s ease both 0.2s',
         animationFillMode: 'both',
@@ -395,7 +408,7 @@ export default function Home() {
 
 
       {/* ═══ FOUNDER QUOTE ══════════════════════════════════════════ */}
-      <section style={{ background: '#FFFFFF', padding: '4rem 0', textAlign: 'center' }}>
+      <section style={{ background: '#FFF5F0', padding: '4rem 0', textAlign: 'center' }}>
         <div className="container" style={{ maxWidth: '640px' }}>
           <p style={{
             fontFamily: "'Nicholas', serif",
@@ -461,7 +474,27 @@ export default function Home() {
             lineHeight: 1.7,
             marginBottom: '1.25rem',
           }}>
-            You know that feeling — checking your phone between sessions, wondering who you missed. Doing the math on Sunday night. Thinking about Monday before you've finished the weekend.
+            You didn't start your business to stare at your phone between appointments. You started it because you're great at what you do.
+          </p>
+
+          <p style={{
+            fontFamily: "'Nicholas', serif",
+            fontSize: '1.125rem',
+            color: '#555555',
+            lineHeight: 1.7,
+            marginBottom: '1.25rem',
+          }}>
+            You know that feeling. Checking your phone between sessions, wondering who you missed. Doing the math on Sunday night. Thinking about Monday before the weekend is over.
+          </p>
+
+          <p style={{
+            fontFamily: "'Nicholas', serif",
+            fontSize: '1.125rem',
+            color: '#555555',
+            lineHeight: 1.7,
+            marginBottom: '1.25rem',
+          }}>
+            No-shows aren't just annoying. They're $150 holes in your day. And the missed calls you never see are worse.
           </p>
 
           <p style={{
@@ -487,7 +520,7 @@ export default function Home() {
             lineHeight: 1.7,
             marginBottom: '2.5rem',
           }}>
-            This isn't a marketing problem. It's an operations problem — and it's fixable without hiring anyone.
+            This isn't a marketing problem. It's an operations problem. And it's fixable without hiring anyone.
           </p>
 
           {/* Quote block */}
@@ -520,7 +553,7 @@ export default function Home() {
 
 
       {/* ═══ SECTION 3b: WHO THIS IS FOR ════════════════════════════ */}
-      <section style={{ background: '#FAFAF8', padding: '5rem 0' }}>
+      <section style={{ background: '#F7EDE8', padding: '5rem 0' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <span className="section-label" style={{ marginBottom: '1rem', display: 'block' }}>
@@ -545,7 +578,7 @@ export default function Home() {
           className="audience-grid"
           >
             {[
-              { audience: 'Massage Therapists', line: "You're in a room. Hands on a client. Your phone is at the front desk — and it's ringing." },
+              { audience: 'Massage Therapists', line: "You're in a room. Hands on a client. Your phone is at the front desk, and it's ringing." },
               { audience: 'Med Spa Owners', line: "High-value leads. Short booking windows. You can't afford 'I'll call them back later.'" },
               { audience: 'Salon Owners', line: 'You built this so you could do hair, not return voicemails at 9 PM.' },
               { audience: 'Dental Offices', line: 'Your front desk is overwhelmed. Your recall list is growing. Something has to give.' },
@@ -581,7 +614,7 @@ export default function Home() {
       </section>
 
       {/* ═══ SECTION 7: CASE STUDY — SANTA ══════════════════════════ */}
-      <section style={{ background: '#FFFFFF', padding: '5rem 0' }}>
+      <section id="case-study" style={{ background: '#FFFFFF', padding: '5rem 0' }}>
         <div className="container">
           <div style={{
             display: 'grid',
@@ -650,7 +683,7 @@ export default function Home() {
 
             {/* Right — metrics panel */}
             <div style={{
-              background: '#FAFAF8',
+              background: '#F7EDE8',
               borderRadius: '16px',
               padding: '2rem',
             }}>
@@ -713,7 +746,7 @@ export default function Home() {
       </section>
 
       {/* ═══ SECTION 4: PRODUCT GRID ════════════════════════════════ */}
-      <section style={{ background: '#FAFAF8', padding: '5rem 0' }}>
+      <section style={{ background: '#F7EDE8', padding: '5rem 0' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <span className="section-label" style={{ marginBottom: '1rem', display: 'block' }}>
@@ -863,7 +896,7 @@ export default function Home() {
                 lineHeight: 1.6,
                 marginBottom: '1.25rem',
               }}>
-                Nova is not a FAQ bot. It holds real conversations, qualifies your leads, handles objections, and books appointments — all in the tone of your practice.
+                Nova is not a FAQ bot. It holds real conversations, qualifies your leads, handles objections, and books appointments, all in the tone of your practice.
               </p>
 
               <p style={{
@@ -880,7 +913,7 @@ export default function Home() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
                 {[
                   'Works in Instagram DMs, Google Business Messages, web chat, and SMS',
-                  'Learns your services, pricing, and availability — answers like a knowledgeable front desk person',
+                  'Learns your services, pricing, and availability, and answers like a knowledgeable front desk person',
                 ].map((bullet) => (
                   <div key={bullet} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                     <Check size={16} color="#0CA2A2" style={{ flexShrink: 0, marginTop: '3px' }} />
@@ -925,7 +958,7 @@ export default function Home() {
                 fontSize: '0.875rem',
                 color: '#555555',
               }}>
-                Available as standalone product or bundled with the full system.
+                Nova is included in the Ops System. Standalone available on request.
               </p>
             </div>
 
@@ -937,9 +970,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══ SECTION 6: VIDEO ════════════════════════════════════════ */}
-      <section style={{ background: '#FAFAF8', padding: '5rem 0' }}>
-        <div className="container" style={{ textAlign: 'center' }}>
+      {/* ═══ SECTION 6: SEE IT IN ACTION ══════════════════════════ */}
+      <section style={{ background: '#F7EDE8', padding: '5rem 0' }}>
+        <div className="container" style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto' }}>
           <span className="section-label" style={{ marginBottom: '1rem', display: 'block' }}>
             See It In Action
           </span>
@@ -950,51 +983,48 @@ export default function Home() {
             fontWeight: 700,
             color: '#1A1A1A',
             lineHeight: 1.2,
-            marginBottom: '2.5rem',
+            marginBottom: '1.5rem',
           }}>
-            Watch how it works in a real practice.
+            Ask Nova a question right now.
           </h2>
 
-          {/* Video placeholder — 16:9 dark rectangle with play button */}
-          <div style={{
-            position: 'relative',
-            maxWidth: '800px',
-            margin: '0 auto',
-            aspectRatio: '16/9',
-            background: '#1A1A1A',
-            borderRadius: '12px',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            overflow: 'hidden',
+          <p style={{
+            fontFamily: "'Nicholas', serif",
+            fontSize: '1.0625rem',
+            color: '#555555',
+            lineHeight: 1.7,
+            marginBottom: '2rem',
           }}>
-            {/* Play button */}
-            <div style={{
-              width: '72px',
-              height: '72px',
-              borderRadius: '50%',
-              border: '2px solid rgba(255,255,255,0.6)',
-              display: 'flex',
+            Demo video publishing this week. In the meantime, the chat widget in the bottom right corner is the real thing. Ask Nova anything about Ops by Noell and see exactly how it responds to your clients.
+          </p>
+
+          <a
+            href="/book"
+            style={{
+              display: 'inline-flex',
               alignItems: 'center',
-              justifyContent: 'center',
-              marginBottom: '1rem',
-            }}>
-              <Play size={28} color="#FFFFFF" fill="#FFFFFF" style={{ marginLeft: '4px' }} />
-            </div>
-            <p style={{
+              gap: '0.5rem',
+              background: '#0CA2A2',
+              color: '#FFFFFF',
               fontFamily: "'Nicholas', serif",
-              fontSize: '0.875rem',
-              color: 'rgba(255,255,255,0.6)',
-            }}>
-              Product demo — 90 seconds
-            </p>
-          </div>
+              fontSize: '1rem',
+              fontWeight: 600,
+              padding: '0 1.75rem',
+              height: '48px',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              transition: 'background-color 0.15s ease',
+            }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = '#0A8F8F'; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = '#0CA2A2'; }}
+          >
+            Book a live walkthrough instead
+          </a>
         </div>
       </section>
 
       {/* ═══ SECTION 8: HOW IT WORKS ════════════════════════════════ */}
-      <section id="how-it-works" style={{ background: '#FAFAF8', padding: '5rem 0' }}>
+      <section id="how-it-works" style={{ background: '#F7EDE8', padding: '5rem 0' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <span className="section-label" style={{ marginBottom: '1rem', display: 'block' }}>
@@ -1022,7 +1052,7 @@ export default function Home() {
               {
                 num: '01',
                 title: 'Audit',
-                desc: 'We look at your current setup — calls, scheduling, follow-ups. We show you exactly where revenue is leaking and how much.',
+                desc: 'We look at your current setup: calls, scheduling, follow-ups. We show you exactly where revenue is leaking and how much.',
               },
               {
                 num: '02',

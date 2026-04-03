@@ -57,7 +57,7 @@ const POSTS = [
 
 export default function Blog() {
   return (
-    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#FFF5F0', minHeight: '100vh' }}>
       <Nav />
 
       {/* ═══ PAGE HERO ══════════════════════════════════════════════ */}
@@ -65,7 +65,7 @@ export default function Blog() {
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '900px', margin: '0 auto' }}>
           <FadeItem delay={0}>
-            <span style={{ display: 'inline-block', padding: '0.25rem 0.75rem', background: '#FFFFFF', border: '1px solid #E5E5E5', borderRadius: '100px', fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, color: '#0CA2A2', letterSpacing: '0.1em', textTransform: 'uppercase' as const, marginBottom: '1.25rem' }}>
+            <span className="section-label" style={{ marginBottom: '1.25rem', display: 'block' }}>
               The Ops Blog
             </span>
           </FadeItem>
@@ -103,7 +103,7 @@ export default function Blog() {
                     style={{ background: 'rgba(12,162,162,0.03)', border: '1px solid #E8E8E8', borderRadius: '16px', padding: '2.25rem', transition: 'all 0.2s ease' }}
                   >
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap' as const }}>
-                      <span style={{ display: 'inline-block', padding: '0.2rem 0.625rem', background: '#E5E5E5', border: '1px solid rgba(12,162,162,0.22)', borderRadius: '100px', fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600, color: '#0CA2A2', letterSpacing: '0.08em', textTransform: 'uppercase' as const }}>
+                      <span className="section-label">
                         {post.category}
                       </span>
                       <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontFamily: "'Nicholas', serif", fontSize: '0.8125rem', color: '#555555' }}>
@@ -131,7 +131,7 @@ export default function Blog() {
       </section>
 
       {/* ═══ CTA STRIP ══════════════════════════════════════════════ */}
-      <section style={{ padding: '5rem 0', borderTop: '1px solid #E5E5E5', background: '#FAFAF8', textAlign: 'center' }}>
+      <section style={{ padding: '5rem 0', borderTop: '1px solid #E5E5E5', background: '#F7EDE8', textAlign: 'center' }}>
         <div className="container" style={{ maxWidth: '620px', margin: '0 auto' }}>
           <FadeItem delay={0}>
             <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 800, color: '#1A1A1A', lineHeight: 1.12, letterSpacing: '-0.03em', marginBottom: '1rem' }}>

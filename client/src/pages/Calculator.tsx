@@ -9,7 +9,7 @@ import RevenueCalculator from '@/components/RevenueCalculator';
 
 export default function Calculator() {
   return (
-    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#FFF5F0', minHeight: '100vh' }}>
       <Nav />
 
       {/* Hero */}
