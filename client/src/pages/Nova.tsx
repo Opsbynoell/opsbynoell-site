@@ -188,7 +188,7 @@ export default function Nova() {
       </section>
 
       {/* ─── FEATURES GRID ─── */}
-      <section style={{ background: '#FFFFFF', padding: '5rem 0' }}>
+      <section style={{ background: '#FFF5F0', padding: '5rem 0' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <span style={{
@@ -214,7 +214,7 @@ export default function Nova() {
                 <div
                   key={feat.title}
                   style={{
-                    background: '#FFFFFF', border: '1px solid #E8E8E8',
+                    background: '#F7EDE8', border: '1px solid #E8E8E8',
                     borderRadius: '12px', padding: '2rem',
                     transition: 'box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease',
                   }}
@@ -286,7 +286,7 @@ export default function Nova() {
       </section>
 
       {/* ─── PRICING ─── */}
-      <section style={{ background: '#FFFFFF', padding: '5rem 0' }}>
+      <section style={{ background: '#FFF5F0', padding: '5rem 0' }}>
         <div className="container" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
           <span style={{
             fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 600,
@@ -306,7 +306,7 @@ export default function Nova() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }} className="pricing-grid">
             {/* Standalone */}
             <div style={{
-              background: '#FFFFFF', border: '1px solid #E8E8E8',
+              background: '#F7EDE8', border: '1px solid #E8E8E8',
               borderRadius: '16px', padding: '2.5rem', textAlign: 'left',
             }}>
               <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.8125rem', fontWeight: 600, color: '#7C5CFC', letterSpacing: '0.08em', textTransform: 'uppercase' as const, marginBottom: '0.75rem' }}>

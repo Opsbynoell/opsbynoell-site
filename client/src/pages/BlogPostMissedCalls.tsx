@@ -173,10 +173,10 @@ export default function BlogPostMissedCalls() {
       {/* ═══ INLINE CTA — CALCULATOR ════════════════════════════════ */}
       <section style={{ padding: '3rem 0' }}>
         <div className="container" style={{ maxWidth: '760px', margin: '0 auto' }}>
-          <div style={{ background: '#FFFFFF', border: 'none', borderRadius: '16px', padding: '2.5rem', display: 'flex', flexDirection: 'column' as const, alignItems: 'center', textAlign: 'center' as const }}>
+          <div style={{ background: '#F7EDE8', border: 'none', borderRadius: '16px', padding: '2.5rem', display: 'flex', flexDirection: 'column' as const, alignItems: 'center', textAlign: 'center' as const }}>
             <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#0CA2A2', marginBottom: '0.75rem' }}>Free Calculator</p>
-            <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.5rem', fontWeight: 700, color: '#ffffff', marginBottom: '0.75rem', lineHeight: 1.2 }}>Find out what your missed calls are costing you</h3>
-            <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9375rem', color: '#b8b6b3', lineHeight: 1.7, marginBottom: '1.5rem', maxWidth: '460px' }}>Enter your numbers and see your annual revenue leak in under 3 minutes.</p>
+            <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.5rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '0.75rem', lineHeight: 1.2 }}>Find out what your missed calls are costing you</h3>
+            <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9375rem', color: '#555555', lineHeight: 1.7, marginBottom: '1.5rem', maxWidth: '460px' }}>Enter your numbers and see your annual revenue leak in under 3 minutes.</p>
             <a href="/resources/revenue-calculator" className="btn-gradient" style={{ padding: '0.875rem 1.75rem', fontSize: '0.9375rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
               Get the Calculator <ArrowRight size={15} />
             </a>

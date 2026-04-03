@@ -22,7 +22,7 @@ export default function Calculator() {
       }}>
         <div style={{
           position: 'absolute', inset: 0, pointerEvents: 'none',
-          background: '#FFFFFF',
+          background: '#FFF5F0',
         }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <p style={{

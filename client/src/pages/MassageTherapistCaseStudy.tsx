@@ -142,8 +142,8 @@ export default function MassageTherapistCaseStudy() {
                   She was excellent at her work. Her operations were silently costing her thousands every month in missed opportunities.
                 </p>
               </div>
-              <div style={{ background: '#FFFFFF', border: '1px solid #E5E5E5', borderLeft: '3px solid #0CA2A2', borderRadius: '8px', padding: '3rem' }}>
-                <p style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.125rem, 2vw, 1.5rem)', fontWeight: 600, color: '#ffffff', lineHeight: 1.5, marginBottom: '1.5rem' }}>
+              <div style={{ background: '#F7EDE8', border: '1px solid #E5E5E5', borderLeft: '3px solid #0CA2A2', borderRadius: '8px', padding: '3rem' }}>
+                <p style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.125rem, 2vw, 1.5rem)', fontWeight: 600, color: '#1A1A1A', lineHeight: 1.5, marginBottom: '1.5rem' }}>
                   "25 years of exceptional client work. Zero digital infrastructure. Santa was our founding client partner and the perfect proof of concept for what AI automation could do for a solo service business."
                 </p>
                 <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#0CA2A2' }}>
@@ -241,7 +241,7 @@ export default function MassageTherapistCaseStudy() {
                 { value: '14 days', label: 'From zero to fully live', color: '#0CA2A2' },
                 { value: '$33,000+', label: 'Annual revenue recovered', color: '#0CA2A2' },
               ].map(({ value, label, color }) => (
-                <div key={label} style={{ textAlign: 'center', padding: '2rem', background: '#FFFFFF', border: '1px solid rgba(12,162,162,0.12)', borderRadius: '10px' }}>
+                <div key={label} style={{ textAlign: 'center', padding: '2rem', background: '#F7EDE8', border: '1px solid rgba(12,162,162,0.12)', borderRadius: '10px' }}>
                   <div style={{ fontFamily: "'Nicholas', serif", fontSize: '2rem', fontWeight: 800, color, lineHeight: 1.1, marginBottom: '0.5rem' }}>{value}</div>
                   <div style={{ fontFamily: "'Nicholas', serif", fontSize: '0.8125rem', color: '#555555' }}>{label}</div>
                 </div>
@@ -267,7 +267,7 @@ export default function MassageTherapistCaseStudy() {
               </div>
             </FadeItem>
             <FadeItem delay={0.12}>
-              <div style={{ background: '#FFFFFF', borderLeft: '2px solid rgba(12,162,162,0.4)', padding: '2.5rem', height: '100%' }}>
+              <div style={{ background: '#F7EDE8', borderLeft: '2px solid rgba(12,162,162,0.4)', padding: '2.5rem', height: '100%' }}>
                 <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.625rem', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#0CA2A2', marginBottom: '1.5rem', paddingBottom: '1rem', borderBottom: '1px solid rgba(12,162,162,0.2)' }}>
                   After Ops by Noell
                 </p>

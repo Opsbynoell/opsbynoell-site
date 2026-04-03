@@ -310,7 +310,7 @@ export default function MedSpaAutomation() {
               </h2>
             </div>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: '#FFFFFF', borderRadius: '12px', overflow: 'hidden' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: '#F7EDE8', borderRadius: '12px', overflow: 'hidden' }}>
             {solutions.map((s, i) => (
               <div className="reveal">
                 <div style={{ background: s.highlight ? 'rgba(12,162,162,0.08)' : (i % 2 === 0 ? 'rgba(12,162,162,0.02)' : 'rgba(12,162,162,0.04)'), padding: '1.75rem 2rem', display: 'flex', alignItems: 'flex-start', gap: '1.5rem', borderLeft: s.highlight ? '2px solid #0CA2A2' : 'none' }}>

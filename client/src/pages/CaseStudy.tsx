@@ -219,7 +219,7 @@ export default function CaseStudy() {
             </p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: '#FFFFFF', borderRadius: '12px', overflow: 'hidden' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: '#F7EDE8', borderRadius: '12px', overflow: 'hidden' }}>
             {built.map((item, i) => (
               <div key={i} className="reveal" style={{
                 background: i % 2 === 0 ? 'rgba(12,162,162,0.02)' : 'rgba(12,162,162,0.04)',

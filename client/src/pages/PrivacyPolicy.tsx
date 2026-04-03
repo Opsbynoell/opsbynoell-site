@@ -51,11 +51,11 @@ const CALLOUT_STYLE: React.CSSProperties = {
 
 export default function PrivacyPolicy() {
   return (
-    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#FFF5F0', minHeight: '100vh' }}>
       <Nav />
 
       {/* Hero */}
-      <section style={{ backgroundColor: '#FFFFFF', paddingTop: '7rem', paddingBottom: '4rem' }}>
+      <section style={{ backgroundColor: '#FFF5F0', paddingTop: '7rem', paddingBottom: '4rem' }}>
         <div className="container">
           <p className="eyebrow" style={{ color: '#0CA2A2', marginBottom: '1rem' }}>Legal</p>
           <h1 style={{
@@ -76,7 +76,7 @@ export default function PrivacyPolicy() {
       </section>
 
       {/* Content */}
-      <section style={{ paddingTop: '4rem', paddingBottom: '5rem', backgroundColor: '#FFFFFF' }}>
+      <section style={{ paddingTop: '4rem', paddingBottom: '5rem', backgroundColor: '#FFF5F0' }}>
         <div className="container" style={{ maxWidth: '760px', margin: '0 auto' }}>
 
           <div style={SECTION_STYLE}>

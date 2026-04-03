@@ -163,8 +163,8 @@ export default function BlogPostLagunaNoShow() {
               </p>
 
               {/* Pull quote */}
-              <blockquote style={{ margin: '2.5rem 0', padding: '1.75rem 2rem', background: '#FFFFFF', borderLeft: '3px solid #0CA2A2', borderRadius: '0 12px 12px 0' }}>
-                <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1.25rem', fontWeight: 600, color: '#ffffff', lineHeight: 1.6, margin: '0 0 0.75rem', fontStyle: 'italic' }}>
+              <blockquote style={{ margin: '2.5rem 0', padding: '1.75rem 2rem', background: '#F7EDE8', borderLeft: '3px solid #0CA2A2', borderRadius: '0 12px 12px 0' }}>
+                <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1.25rem', fontWeight: 600, color: '#1A1A1A', lineHeight: 1.6, margin: '0 0 0.75rem', fontStyle: 'italic' }}>
                   "I used to dread Mondays because there would always be gaps I did not expect. Now I open my calendar and it is just full. The reminders go out and people show up. I do not think about it anymore."
                 </p>
                 <footer style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#0CA2A2', fontWeight: 600 }}>

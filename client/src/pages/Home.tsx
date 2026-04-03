@@ -428,7 +428,7 @@ export default function Home() {
 
       {/* ═══ SECTION 3: PROBLEM / PAIN ══════════════════════════════ */}
       <section style={{
-        background: '#FFFFFF',
+        background: '#FFF5F0',
         padding: '7.5rem 0',
       }}>
         <div className="container" style={{ maxWidth: '720px', margin: '0 auto' }}>
@@ -584,7 +584,7 @@ export default function Home() {
               { audience: 'Dental Offices', line: 'Your front desk is overwhelmed. Your recall list is growing. Something has to give.' },
             ].map(({ audience, line }) => (
               <div key={audience} style={{
-                background: '#FFFFFF',
+                background: '#F7EDE8',
                 borderLeft: '3px solid #0CA2A2',
                 borderRadius: '0 8px 8px 0',
                 padding: '1.75rem',
@@ -614,7 +614,7 @@ export default function Home() {
       </section>
 
       {/* ═══ SECTION 7: CASE STUDY — SANTA ══════════════════════════ */}
-      <section id="case-study" style={{ background: '#FFFFFF', padding: '5rem 0' }}>
+      <section id="case-study" style={{ background: '#FFF5F0', padding: '5rem 0' }}>
         <div className="container">
           <div style={{
             display: 'grid',
@@ -787,7 +787,7 @@ export default function Home() {
                 <div
                   key={product.title}
                   style={{
-                    background: '#FFFFFF',
+                    background: '#F7EDE8',
                     border: '1px solid #E8E8E8',
                     borderRadius: '12px',
                     padding: '2rem',
@@ -853,7 +853,7 @@ export default function Home() {
       </section>
 
       {/* ═══ SECTION 5: NOVA SPOTLIGHT ══════════════════════════════ */}
-      <section style={{ background: '#FFFFFF', padding: '5rem 0' }}>
+      <section style={{ background: '#FFF5F0', padding: '5rem 0' }}>
         <div className="container">
           <div style={{
             display: 'grid',
