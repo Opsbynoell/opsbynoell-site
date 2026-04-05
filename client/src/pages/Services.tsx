@@ -1,444 +1,242 @@
-/*
- * OPS BY NOELL — Services Page (NeuraFlas Design System)
- * Merged: Solutions + Services + Industries
- * Sections: Hero → What We Build (7 builds) → Service Deep-Dives (7) → Who We Serve (6 industries) → Packages → FAQ → CTA
- */
-
-import { useState } from 'react';
-import { ArrowRight, Zap, MessageSquare, Phone, Calendar, Star, Megaphone, Settings, ChevronDown, Check, Scissors, Heart, Smile, Home as HomeIcon, Dumbbell, Stethoscope } from 'lucide-react';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
+import { Container } from '@/components/agenforce/container';
+import { Heading } from '@/components/agenforce/heading';
+import { Subheading } from '@/components/agenforce/subheading';
+import { GradientDivider } from '@/components/agenforce/gradient-divider';
+import { Button } from '@/components/agenforce/ui/button';
+import { Pricing } from '@/components/agenforce/pricing';
+import { FAQs } from '@/components/agenforce/faqs';
+import {
+  CardContent,
+  CardDescription,
+  CardSkeleton,
+} from '@/components/agenforce/features-secondary/index';
+import { SkeletonOne as SecSkeletonOne } from '@/components/agenforce/features-secondary/skeletons/first';
+import { SkeletonTwo as SecSkeletonTwo } from '@/components/agenforce/features-secondary/skeletons/second';
+import React from 'react';
 
-function SectionBadge({ children }: { children: React.ReactNode }) {
-  return (
-    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.25rem' }}>
-      <span className="section-label" style={{ textAlign: 'center' }}>
-        {children}
-      </span>
-    </div>
-  );
-}
-
-function GradientText({ children }: { children: React.ReactNode }) {
-  return (
-    <span style={{ background: 'linear-gradient(90deg, #0CA2A2 0%, #0DCFCF 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-      {children}
-    </span>
-  );
-}
-
-const SERVICES = [
+const steps = [
   {
-    icon: Phone, number: '01', title: 'Missed Call Text-Back',
-    desc: 'Fires a personalized text to missed callers within seconds, before they dial your competitor.',
-    stat: '85% of callers never call back after voicemail.',
-    href: '/dental-automation',
+    num: '01',
+    title: 'Audit',
+    description:
+      'We map your current client journey in 30 minutes: where calls go unanswered, where no-shows happen, where reviews stall. You see the revenue gap in real numbers.',
   },
   {
-    icon: Calendar, number: '02', title: 'AI Booking + Reminder System',
-    desc: 'Lets clients book 24/7 and automatically sends reminders that cut no-shows in half.',
-    stat: 'No-shows cost 10–15% of annual revenue.',
-    href: '/massage-therapist-automation',
+    num: '02',
+    title: 'Build',
+    description:
+      'We configure every automation to match your practice: your name, your tone, your booking system. Nothing generic. We test everything before we go live.',
   },
   {
-    icon: Star, number: '03', title: 'Automated Review Generation',
-    desc: 'Sends a timed review request after every appointment, turning satisfied clients into five-star proof.',
-    stat: '93% of consumers read reviews before choosing.',
-    href: '/med-spa-automation',
-  },
-  {
-    icon: MessageSquare, number: '04', title: 'Lead Follow-Up Automation',
-    desc: 'Multi-touch sequences that re-engage cold leads and win-back clients who went quiet.',
-    stat: '80% of sales need 5+ follow-up touches.',
-    href: '/salon-automation',
-  },
-  {
-    icon: Megaphone, number: '05', title: 'Marketing Automation',
-    desc: 'Keeps your brand in front of past clients with birthday messages, win-backs, and referral asks — automatically.',
-    stat: 'New clients cost 5–7x more than repeat ones.',
-    href: '/home-services-automation',
-  },
-  {
-    icon: Zap, number: '06', title: 'AI Voice Receptionist',
-    desc: 'Answers every call after hours, handles FAQs, and books directly into your calendar — no voicemail.',
-    stat: 'Most missed calls happen outside business hours.',
-    href: '/book',
-  },
-  {
-    icon: Settings, number: '07', title: 'Custom Operations Buildout',
-    desc: 'We scope and build the exact workflows your business needs: onboarding, handoffs, reporting, and beyond.',
-    stat: 'Built around your operation, not a template.',
-    href: '/book',
+    num: '03',
+    title: 'Run',
+    description:
+      'We manage and monitor the system for you. When something needs adjusting, we handle it. You get a monthly report showing what it caught and what it recovered.',
   },
 ];
 
-const INDUSTRIES = [
+const systems = [
   {
-    icon: Scissors, name: 'Salons & Spas', tagline: 'Fill your chair. Keep it full.',
-    href: '/salon-automation',
-    desc: 'Missed calls, last-minute cancellations, and clients who never come back are the three biggest revenue leaks in salon and spa businesses. We automate the entire client lifecycle — from the first call to the fifth visit.',
-    outcome: 'Salons using our systems typically see 30–50% fewer no-shows and a measurable increase in repeat bookings within 60 days.',
+    title: 'Missed Call Text-Back',
+    description:
+      'When a client calls and you miss it, they get a text within seconds. Personalized, on-brand, and with a direct booking link. 85% of callers never call back after voicemail — this catches them first.',
   },
   {
-    icon: Heart, name: 'Wellness & Massage', tagline: 'Your practice, running on autopilot.',
-    href: '/massage-therapist-automation',
-    desc: 'Solo practitioners and small wellness studios lose clients not because of bad service, but because nothing happens between appointments. No follow-up. No reminders. No review requests. We fix the invisible gaps.',
-    outcome: 'Our founding client, a 25-year massage therapist in Laguna Niguel, went from zero digital infrastructure to a fully automated practice in two weeks.',
+    title: 'Nova AI Chat',
+    description:
+      'A 24/7 chat assistant trained on your services, pricing, and availability. Books appointments, answers questions, and qualifies leads while you sleep.',
   },
   {
-    icon: Smile, name: 'Dental & Med Spa', tagline: 'Every missed call is a missed patient.',
-    href: '/dental-automation',
-    desc: 'Dental offices and med spas run on high-value appointments. A single missed call can cost $500–$2,000 in lost revenue. We install systems that respond instantly, confirm appointments automatically, and keep your schedule full.',
-    outcome: 'Automated appointment confirmation and recall systems reduce no-shows and recover patients who would otherwise churn silently.',
+    title: 'Appointment Confirmations',
+    description:
+      'Automated confirmation texts and 24-hour reminders that dramatically reduce no-shows. Includes a one-tap confirm or reschedule option so you know who is actually coming.',
   },
   {
-    icon: HomeIcon, name: 'Home Services', tagline: 'Never miss a job request again.',
-    href: '/home-services-automation',
-    desc: "Plumbers, HVAC technicians, electricians, and contractors lose jobs every day to missed calls and slow response times. The first company to respond wins the job. We make sure that company is yours.",
-    outcome: 'Home service businesses using missed call text-back and automated follow-up recover 20–40% of leads that would otherwise go to a competitor.',
+    title: 'Review Generation',
+    description:
+      'After every completed appointment, a timed review request goes out automatically. Clients who had a great experience become your loudest advocates on Google.',
   },
   {
-    icon: Dumbbell, name: 'Fitness & Personal Training', tagline: 'Fill your classes. Retain your members.',
-    href: '/book',
-    desc: "Gyms, studios, and personal trainers face constant churn. Members stop showing up before they cancel, and by then it\'s too late. We build re-engagement systems that catch at-risk clients before they leave.",
-    outcome: 'Automated re-engagement sequences and milestone-based review requests improve retention and build social proof consistently.',
+    title: 'Lead Pipeline',
+    description:
+      'Every inquiry that does not book immediately gets tracked and followed up with. Automated nurture sequences that turn leads into clients without manual effort.',
   },
   {
-    icon: Stethoscope, name: 'Healthcare & Chiropractic', tagline: 'Reduce no-shows. Improve patient retention.',
-    href: '/book',
-    desc: "Healthcare practices lose thousands monthly to no-shows and patients who don\'t return for follow-up care. We build HIPAA-aware automation systems that reduce no-shows, automate recall, and keep your schedule optimized.",
-    outcome: 'Automated appointment reminders and recall sequences reduce no-shows by 30–50% and recover patients who would otherwise churn.',
+    title: 'Reactivation Campaigns',
+    description:
+      'Past clients who have gone quiet get a targeted re-engagement sequence. On average, one campaign recovers 8 to 12 lapsed clients per send.',
   },
 ];
 
-const PACKAGES = [
-  {
-    name: 'Entry',
-    subtitle: 'AI Receptionist — Start Here',
-    price: '$197',
-    period: '/mo · + $297 setup',
-    desc: 'The fastest way to stop losing leads to voicemail. One system, done for you, live in a week. A great first step before committing to a full stack.',
-    includes: ['Missed Call Text-Back', 'AI Voice Receptionist (after-hours)', 'Onboarding & setup included', 'Ongoing management & maintenance'],
-    cta: 'Book a Free 30-Minute Audit',
-    featured: false,
-  },
-  {
-    name: 'Starter',
-    subtitle: 'Lead Capture + Booking Fix',
-    price: '$797',
-    period: '/mo · + $997 setup',
-    desc: 'The essential foundation for any local service business. Stop losing leads from missed calls and start filling your calendar automatically.',
-    includes: ['Missed Call Text-Back', 'AI Booking + Reminder System', 'Onboarding & setup included', 'Ongoing management & maintenance'],
-    cta: 'Book a Free 30-Minute Audit',
-    featured: false,
-  },
-  {
-    name: 'Growth',
-    subtitle: 'Full AI Back Office',
-    price: '$1,497',
-    period: '/mo · + $1,497 setup',
-    desc: 'The complete operational transformation. Every system working together to capture, convert, retain, and grow, on autopilot.',
-    includes: ['Everything in Starter', 'Automated Review Generation', 'Lead Follow-Up Automation', 'Marketing Automation', 'Priority support & optimization'],
-    cta: 'Most Popular',
-    featured: true,
-  },
-  {
-    name: 'Revenue Audit',
-    subtitle: "Know exactly where you\'re leaking",
-    price: '$497',
-    period: 'one-time',
-    desc: 'A deep-dive into your current operations to identify every revenue leak, prioritize the highest-impact fixes, and build a custom automation roadmap.',
-    includes: ['60-minute operations deep-dive', 'Revenue leak analysis', 'Custom automation roadmap', 'ROI projections per system', 'Credited toward any package'],
-    cta: 'Book Revenue Audit',
-    featured: false,
-  },
-  {
-    name: 'Custom',
-    subtitle: 'Full Operations Buildout',
-    price: 'Scoped',
-    period: 'pricing after audit',
-    desc: 'For businesses with complex or unique operational needs. We scope, build, and manage a fully custom automation stack: internal workflows, integrations, team systems, and beyond.',
-    includes: ['Deep-dive operations scoping', 'Custom workflow & process automation', 'Team systems & internal integrations', 'Client onboarding automation', 'Reporting & data pipelines', 'Ongoing management & iteration'],
-    cta: 'Book a Scoping Call',
-    featured: false,
-  },
-];
-
-const FAQS = [
-  { q: 'Do I need to sign a long-term contract?', a: "No. All plans are month-to-month. We earn your business every month by delivering results. You can cancel anytime with 30 days notice. No penalties, no lock-in." },
-  { q: 'How long does it take to get set up?', a: "Most clients are fully live within 7–14 days of signing. We handle all the technical setup, integrations, and testing. You just need to show up for a 60-minute onboarding call." },
-  { q: 'Do I need any technical knowledge?', a: "None at all. We build, manage, and maintain everything. You'll see the results, not the dashboards. If you ever want visibility into performance, we provide clear weekly or monthly reports." },
-  { q: 'What if I already use a CRM or booking software?', a: "We integrate with the tools you already use: HubSpot, Calendly, Acuity, Jane App, Mindbody, and more. If you already have a CRM, we\'ll build around it rather than replace it. We\'ll scope the integration during your free intro call." },
-  { q: 'How does the process start?', a: "It starts with a free 30-minute intro call. We learn about your business, you learn about us, and we figure out if we\'re a fit. If it makes sense to move forward, we schedule a Revenue Audit to map your exact gaps and design your system." },
-  { q: 'Can I upgrade or add more systems later?', a: "Absolutely. Most clients start with one system and add more as they see results. We\'ll proactively recommend additions when we spot new opportunities in your operation." },
-  { q: 'What do you do with my business data?', a: "We don\'t sell your data. Ever. We build systems for your business, not a database for ours. Anything you share with us is used solely to build and manage your automation stack. No third-party sharing, no marketing lists." },
-];
-
-/* ─── MAIN ──────────────────────────────────────────────────────── */
 export default function Services() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
   return (
-    <div style={{ backgroundColor: '#FFF5F0', minHeight: '100vh' }}>
+    <>
       <Nav />
+      <main className="pt-[72px]">
 
-      {/* ═══ HERO ═══════════════════════════════════════════════════ */}
-      <section style={{ position: 'relative', paddingTop: '160px', paddingBottom: '100px', textAlign: 'center', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'none' }} />
-        <div style={{ position: 'absolute', top: '5%', left: '50%', transform: 'translateX(-50%)', width: '700px', height: '700px', pointerEvents: 'none', background: 'radial-gradient(ellipse at center, rgba(255,255,255,0),0.14) 0%, rgba(12,162,162,0.05) 40%, transparent 70%)' }} />
-
-        <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '820px', margin: '0 auto' }}>
-          
-            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.375rem 1rem', background: '#E5E5E5', border: 'none', borderRadius: '4px', fontFamily: "'Nicholas', serif", fontSize: '0.875rem', fontWeight: 500, color: '#0CA2A2' }}>
-                Done-For-You · Built For Your Business
-              </span>
+        {/* ── HERO ── */}
+        <section className="pt-10 md:pt-20 lg:pt-32 relative overflow-hidden bg-white">
+          <Container className="text-center">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 border border-neutral-200 text-sm font-medium text-neutral-600 mb-6 font-inter">
+              The System
             </div>
-          
-          
-            <h1 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.75rem, 5vw, 3.5rem)', fontWeight: 800, color: '#1A1A1A', lineHeight: 1.7, letterSpacing: '-0.03em', marginBottom: '1.5rem' }}>
-              Missed calls answered.{' '}
-              <GradientText>Leads followed up.</GradientText>
-            </h1>
-          
-          
-            <p style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1rem, 2vw, 1.175rem)', color: '#555555', lineHeight: 1.75, maxWidth: '580px', margin: '0 auto 2.5rem' }}>
-              Clients booked, retained, and reviewed — every system on this page is built for you, installed by us, and running before you know it. No software to learn. No setup on your end.
-            </p>
-          
-          
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="/book" className="btn-gradient" style={{ padding: '1rem 2rem', fontSize: '1rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                Book a Free 30-Minute Audit <ArrowRight size={16} />
-              </a>
-              <a href="#pricing" className="btn-outline" style={{ padding: '1rem 2rem', fontSize: '1rem' }}>
-                View Pricing
-              </a>
-            </div>
-          
-          
-            <div style={{ marginTop: '2.5rem', display: 'inline-block', background: '#F5F5F5', border: '1px solid #E5E5E5', borderRadius: '12px', padding: '1.5rem 2rem', maxWidth: '460px', textAlign: 'left' }}>
-              <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1.125rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '0.5rem' }}>Start with one system.</p>
-              <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9375rem', color: '#555555', lineHeight: 1.7, marginBottom: '1.25rem' }}>
-                Missed Call Text-Back — $297 setup + $197/month. No sales call needed.
-              </p>
-              <a href="/book" className="btn-gradient" style={{ padding: '0.75rem 1.5rem', fontSize: '0.9375rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                Get Started for $297 <ArrowRight size={14} />
-              </a>
-            </div>
-          
-        </div>
-      </section>
+            <Heading as="h1" className="mx-auto max-w-3xl">
+              Everything your practice needs to stop leaking revenue.
+            </Heading>
+            <Subheading className="mx-auto mt-4 mb-8">
+              Six systems. One flat rate. We build it, install it, and manage it.
+            </Subheading>
+            <Button asChild>
+              <a href="/book">Get Your Free Audit</a>
+            </Button>
+          </Container>
+          <GradientDivider />
+        </section>
 
+        {/* ── 6 SYSTEMS ── */}
+        <section className="pt-10 md:pt-20 lg:pt-32 relative overflow-hidden">
+          <Container>
+            <div className="text-center mb-10 md:mb-16">
+              <Subheading className="mx-auto">What We Build</Subheading>
+              <Heading className="mt-2">Six systems. All managed for you.</Heading>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 border-y border-neutral-200 divide-y md:divide-y-0 md:divide-x divide-neutral-200">
+              <div>
+                <CardContent>
+                  <h2 className="text-lg font-bold text-neutral-800">{systems[0].title}</h2>
+                  <CardDescription>{systems[0].description}</CardDescription>
+                </CardContent>
+                <CardSkeleton>
+                  <SecSkeletonOne />
+                </CardSkeleton>
+              </div>
+              <div>
+                <CardContent>
+                  <h2 className="text-lg font-bold text-neutral-800">{systems[1].title}</h2>
+                  <CardDescription>{systems[1].description}</CardDescription>
+                </CardContent>
+                <CardSkeleton className="mask-radial-from-50% mask-t-from-50%">
+                  <SecSkeletonTwo />
+                </CardSkeleton>
+              </div>
+            </div>
 
-      {/* ─── Santa Testimonial ─── */}
-      <div className="reveal">
-      <section style={{ padding: '4rem 0', borderTop: '1px solid #E5E5E5', borderBottom: '1px solid #E5E5E5' }}>
-        <div className="container" style={{ maxWidth: '720px', margin: '0 auto' }}>
-          <div style={{
-            background: '#F7EDE8',
-            border: '1px solid #E5E5E5',
-            borderLeft: '4px solid #0CA2A2',
-            borderRadius: '12px',
-            padding: '2.5rem 3rem',
-            textAlign: 'center',
-          }}>
-            <div style={{ display: 'flex', gap: '0.25rem', justifyContent: 'center', marginBottom: '1.25rem' }}>
-              {[1,2,3,4,5].map((i) => (
-                <svg key={i} width="15" height="15" viewBox="0 0 24 24" fill="#0CA2A2" style={{ display: 'inline-block' }}><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <div className="grid grid-cols-1 md:grid-cols-2 border-b border-neutral-200 divide-y md:divide-y-0 md:divide-x divide-neutral-200">
+              <div>
+                <CardContent>
+                  <h2 className="text-lg font-bold text-neutral-800">{systems[2].title}</h2>
+                  <CardDescription>{systems[2].description}</CardDescription>
+                </CardContent>
+                <CardSkeleton>
+                  <SecSkeletonOne />
+                </CardSkeleton>
+              </div>
+              <div>
+                <CardContent>
+                  <h2 className="text-lg font-bold text-neutral-800">{systems[3].title}</h2>
+                  <CardDescription>{systems[3].description}</CardDescription>
+                </CardContent>
+                <CardSkeleton className="mask-radial-from-50% mask-t-from-50%">
+                  <SecSkeletonTwo />
+                </CardSkeleton>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-neutral-200">
+              <div>
+                <CardContent>
+                  <h2 className="text-lg font-bold text-neutral-800">{systems[4].title}</h2>
+                  <CardDescription>{systems[4].description}</CardDescription>
+                </CardContent>
+                <CardSkeleton>
+                  <SecSkeletonOne />
+                </CardSkeleton>
+              </div>
+              <div>
+                <CardContent>
+                  <h2 className="text-lg font-bold text-neutral-800">{systems[5].title}</h2>
+                  <CardDescription>{systems[5].description}</CardDescription>
+                </CardContent>
+                <CardSkeleton className="mask-radial-from-50% mask-t-from-50%">
+                  <SecSkeletonTwo />
+                </CardSkeleton>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10 md:mt-20">
+              <div>
+                <h3 className="font-bold text-lg text-neutral-600">No software to learn</h3>
+                <p className="text-neutral-500 text-base mt-2">
+                  We manage everything. You get a monthly report showing what was caught and what was recovered.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg text-neutral-600">Works with your tools</h3>
+                <p className="text-neutral-500 text-base mt-2">
+                  We layer on top of your existing booking software. No migrations, no retraining your staff.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg text-neutral-600">Results in 14 days</h3>
+                <p className="text-neutral-500 text-base mt-2">
+                  Most practices see measurable improvement in no-shows and missed call recovery within two weeks of going live.
+                </p>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* ── HOW IT WORKS ── */}
+        <section id="how-it-works" className="py-20 lg:py-32 bg-white">
+          <Container>
+            <div className="text-center mb-16">
+              <Subheading className="mx-auto">How It Works</Subheading>
+              <Heading className="mt-2">Three steps. Then it runs while you work.</Heading>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              {steps.map((step) => (
+                <div key={step.num}>
+                  <p className="text-6xl font-bold font-display text-neutral-100">{step.num}</p>
+                  <h3 className="text-xl font-bold text-neutral-800 mt-2 font-display">{step.title}</h3>
+                  <p className="text-neutral-500 mt-3 font-inter">{step.description}</p>
+                </div>
               ))}
             </div>
-            <p style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.125rem, 2vw, 1.375rem)', fontWeight: 600, color: '#1A1A1A', lineHeight: 1.65, marginBottom: '1.25rem', fontStyle: 'italic' }}>
-              "I used to dread Mondays because there would always be gaps I did not expect. Now I open my calendar and it is just full. The reminders go out and people show up. I do not think about it anymore."
-            </p>
-            <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#0CA2A2' }}>
-              Santa M. — Licensed Massage Therapist, Laguna Niguel CA
-            </p>
-          </div>
-        </div>
-      </section>
-      </div>
-
-      {/* ═══ SERVICE CARDS — compact 7-service overview ══════════════ */}
-      <div className="reveal">
-      <section style={{ borderTop: '1px solid #E5E5E5', borderBottom: '1px solid #E5E5E5', background: '#F7EDE8' }}>
-        <div className="container" style={{ paddingTop: 'clamp(2.5rem, 6vw, 6rem)', paddingBottom: 'clamp(2.5rem, 6vw, 6rem)' }}>
-          <div style={{ textAlign: 'center', marginBottom: 'clamp(1.5rem, 4vw, 4rem)' }}>
-            <SectionBadge>The Full Service Stack</SectionBadge>
-            <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.375rem, 4vw, 2.5rem)', fontWeight: 700, color: '#1A1A1A', lineHeight: 1.7, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
-              Seven systems. <GradientText>One integrated operation.</GradientText>
-            </h2>
-            <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1.0625rem', color: '#555555', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
-              Each service is done-for-you from day one — designed, built, and managed by us. You don't touch a single setting.
-            </p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.25rem' }}>
-            {SERVICES.map(({ icon: Icon, number, title, desc, stat, href }, i) => (
-              <div className="reveal">
-                <div className="feature-card" style={{ padding: '1.75rem', display: 'flex', flexDirection: 'column', gap: '1rem', height: '100%', boxSizing: 'border-box' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <span style={{ fontFamily: "'Nicholas', serif", fontSize: '1.625rem', fontWeight: 800, color: 'rgba(12,162,162,0.25)', lineHeight: 1, flexShrink: 0 }}>{number}</span>
-                    <div style={{ width: '36px', height: '36px', background: '#E5E5E5', border: '1px solid #E8E8E8', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <Icon size={16} style={{ color: '#0CA2A2' }} />
-                    </div>
-                    <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.0625rem', fontWeight: 700, color: '#1A1A1A', lineHeight: 1.7, margin: 0 }}>{title}</h3>
-                  </div>
-                  <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9rem', color: '#555555', lineHeight: 1.65, margin: 0 }}>{desc}</p>
-                  <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', fontWeight: 600, color: '#0CA2A2', margin: 0 }}>{stat}</p>
-                  <a href={href} style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', fontWeight: 600, color: '#0CA2A2', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.3rem', marginTop: 'auto' }}>
-                    See how it works <ArrowRight size={12} />
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      </div>
-
-      {/* ═══ WHO WE SERVE — 6 industries ═══════════════════════════ */}
-      <div className="reveal">
-      <section style={{ padding: 'clamp(2.5rem, 6vw, 6rem) 0' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: 'clamp(1.5rem, 4vw, 4rem)' }}>
-            <SectionBadge>Who We Serve</SectionBadge>
-            <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.375rem, 4vw, 2.5rem)', fontWeight: 700, color: '#1A1A1A', lineHeight: 1.7, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
-              Built for <GradientText>local service businesses.</GradientText>
-            </h2>
-            <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1.0625rem', color: '#555555', maxWidth: '500px', margin: '0 auto', lineHeight: 1.7 }}>
-              If your business runs on bookings and phone calls, we build the AI systems that make sure nothing falls through the cracks.
-            </p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
-            {INDUSTRIES.map(({ icon: Icon, name, tagline, desc, outcome, href }, i) => (
-              <div className="reveal">
-                <a href={href} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-                  <div className="feature-card" style={{ padding: '2rem', height: '100%', display: 'flex', flexDirection: 'column', gap: '1rem', cursor: 'pointer', transition: 'border-color 0.2s ease', boxSizing: 'border-box' }}>
-                    <div className="icon-box"><Icon size={20} style={{ color: '#0CA2A2' }} /></div>
-                    <div>
-                      <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.125rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '0.25rem' }}>{name}</h3>
-                      <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', fontWeight: 600, color: '#0CA2A2' }}>{tagline}</p>
-                    </div>
-                    <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9rem', color: '#555555', lineHeight: 1.7, flex: 1 }}>{desc}</p>
-                    <div style={{ borderTop: '1px solid #E5E5E5', paddingTop: '1rem', display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: '1rem' }}>
-                      <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#0CA2A2', lineHeight: 1.65, fontStyle: 'italic', flex: 1 }}>{outcome}</p>
-                      <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', fontWeight: 600, color: '#0CA2A2', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '0.25rem', flexShrink: 0 }}>
-                        See how it works <ArrowRight size={13} />
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      </div>
-
-      {/* ═══ PACKAGES / PRICING ═════════════════════════════════════ */}
-      <div className="reveal">
-      <section id="pricing" style={{ padding: 'clamp(2.5rem, 6vw, 6rem) 0', background: '#F7EDE8', borderTop: '1px solid #E5E5E5', borderBottom: '1px solid #E5E5E5' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: 'clamp(1.5rem, 4vw, 4rem)' }}>
-            <SectionBadge>How We Work Together</SectionBadge>
-            <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.375rem, 4vw, 2.5rem)', fontWeight: 700, color: '#1A1A1A', lineHeight: 1.7, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
-              Start with what matters most. <GradientText>Scale from there.</GradientText>
-            </h2>
-            <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1.0625rem', color: '#555555', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
-              Every package is 100% done-for-you. We build it, connect it to your business, and once it's live, it runs. You don't touch a setting.
-            </p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
-            {PACKAGES.map(({ name, subtitle, price, period, desc, includes, cta, featured }, i) => (
-              <div className="reveal">
-                <div className={featured ? 'pricing-card featured' : 'pricing-card'} style={{ padding: '2rem', position: 'relative', display: 'flex', flexDirection: 'column', height: '100%' }}>
-                  {featured && (
-                    <div style={{ position: 'absolute', top: '-1px', left: '50%', transform: 'translateX(-50%)', padding: '0.25rem 1rem', background: '#0CA2A2', borderRadius: '0 0 12px 12px', fontFamily: "'Nicholas', serif", fontSize: '0.75rem', fontWeight: 700, color: '#FFFFFF', whiteSpace: 'nowrap' }}>
-                      Most Popular
-                    </div>
-                  )}
-                  <div style={{ marginTop: featured ? '1rem' : 0, flex: 1 }}>
-                    <h3 style={{ fontFamily: "'Nicholas', serif", fontSize: '1.25rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '0.25rem' }}>{name}</h3>
-                    <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.75rem', fontWeight: 600, color: '#0CA2A2', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '1rem' }}>{subtitle}</p>
-                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.375rem', marginBottom: '0.375rem' }}>
-                      <span style={{ fontFamily: "'Nicholas', serif", fontSize: '2.25rem', fontWeight: 800, color: '#1A1A1A' }}>{price}</span>
-                      <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#555555' }}>{period}</span>
-                    </div>
-                    <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#555555', lineHeight: 1.6, marginBottom: '1.5rem' }}>{desc}</p>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.625rem', marginBottom: '1.75rem' }}>
-                      {includes.map((item) => (
-                        <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.625rem' }}>
-                          <Check size={14} style={{ color: '#0CA2A2', flexShrink: 0, marginTop: '3px' }} />
-                          <span style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#555555' }}>{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <a href="/book" className={featured ? 'btn-gradient' : 'btn-outline'} style={{ textAlign: 'center', display: 'block', fontWeight: 700 }}>
-                    {cta}
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      </div>
-
-      {/* ═══ FAQ ════════════════════════════════════════════════════ */}
-      <div className="reveal">
-      <section style={{ padding: 'clamp(2.5rem, 6vw, 6rem) 0' }}>
-        <div className="container" style={{ maxWidth: '720px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-            <SectionBadge>FAQ</SectionBadge>
-            <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(1.375rem, 4vw, 2.5rem)', fontWeight: 700, color: '#1A1A1A', lineHeight: 1.7, letterSpacing: '-0.02em' }}>
-              Common questions, <GradientText>honest answers.</GradientText>
-            </h2>
-          </div>
-
-          {FAQS.map(({ q, a }, i) => (
-            <div key={i} className="faq-item">
-              <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1.5rem 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', gap: '1rem' }}>
-                <span style={{ fontFamily: "'Nicholas', serif", fontSize: '1.0625rem', fontWeight: 600, color: openFaq === i ? '#ffffff' : '#e2e8f0', lineHeight: 1.7 }}>{q}</span>
-                <ChevronDown size={18} style={{ color: '#0CA2A2', flexShrink: 0, transition: 'transform 0.25s ease', transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)' }} />
-              </button>
-              {openFaq === i && (
-                <div style={{ paddingBottom: '1.5rem' }}>
-                  <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.9375rem', color: '#555555', lineHeight: 1.75 }}>{a}</p>
-                </div>
-              )}
+            <div className="mt-12 text-center">
+              <Button asChild>
+                <a href="/book">Book your free audit</a>
+              </Button>
             </div>
-          ))}
-        </div>
-      </section>
-      </div>
+          </Container>
+        </section>
 
-      {/* ═══ CTA ════════════════════════════════════════════════════ */}
-      <div className="reveal">
-      <section style={{ padding: 'clamp(2.5rem, 6vw, 7rem) 0', textAlign: 'center', position: 'relative', overflow: 'hidden', borderTop: '1px solid #E5E5E5' }}>
-        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(ellipse at center, rgba(255,255,255,0),0.12) 0%, transparent 65%)' }} />
-        <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '660px', margin: '0 auto' }}>
-          <SectionBadge>The First Step Is Free</SectionBadge>
-          <h2 style={{ fontFamily: "'Nicholas', serif", fontSize: 'clamp(2rem, 5vw, 3.25rem)', fontWeight: 800, color: '#1A1A1A', lineHeight: 1.7, letterSpacing: '-0.03em', marginBottom: '1.25rem' }}>
-            Not sure where to start?<br /><GradientText>Let's talk for 30 minutes.</GradientText>
-          </h2>
-          <p style={{ fontFamily: "'Nicholas', serif", fontSize: '1.0625rem', color: '#555555', maxWidth: '480px', margin: '0 auto 2.5rem', lineHeight: 1.75 }}>
-            A free intro call is the lowest-risk way to find out if automation is right for your business. No pitch. No pressure. Just a real conversation.
-          </p>
-          <a href="/book" className="btn-gradient" style={{ padding: '1.125rem 2.25rem', fontSize: '1.0625rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-            Book a Free 30-Minute Audit <ArrowRight size={17} />
-          </a>
-          <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#555555', marginTop: '1.25rem' }}>No commitment. No credit card. Just a conversation.</p>
-          <p style={{ fontFamily: "'Nicholas', serif", fontSize: '0.875rem', color: '#4B5563', marginTop: '0.625rem' }}>We don't sell your data. Ever. We build systems for your business, not a database for ours.</p>
-        </div>
-      </section>
-      </div>
+        {/* ── PRICING ── */}
+        <Pricing />
 
+        {/* ── FAQ ── */}
+        <FAQs />
+
+        {/* ── BOTTOM CTA ── */}
+        <section className="py-20 md:py-32 bg-neutral-950 relative overflow-hidden">
+          <Container>
+            <div className="text-center">
+              <Heading className="text-white">
+                Ready to see what you're losing?
+              </Heading>
+              <Subheading className="text-neutral-400 py-6 mx-auto">
+                Free 30-minute audit. We show you your numbers. No pitch. No slides.
+              </Subheading>
+              <Button className="shadow-brand" asChild>
+                <a href="/book">Book Your Free Audit</a>
+              </Button>
+            </div>
+          </Container>
+        </section>
+
+      </main>
       <Footer />
-    </div>
+    </>
   );
 }

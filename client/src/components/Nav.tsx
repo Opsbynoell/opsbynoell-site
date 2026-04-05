@@ -12,10 +12,11 @@ import { Link, useLocation } from 'wouter';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
 const navLinks = [
-  { label: 'How It Works', href: '/#how-it-works' },
+  { label: 'How It Works', href: '/services#how-it-works' },
   { label: 'Nova Support', href: '/nova' },
-  { label: 'Results', href: '/case-study' },
-  { label: 'Book a Free Audit', href: '/book' },
+  { label: 'Results', href: '/#results' },
+  { label: 'About', href: '/#about' },
+  { label: 'Pricing', href: '/services#pricing' },
 ];
 
 const industries = [
